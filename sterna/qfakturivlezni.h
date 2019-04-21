@@ -18,8 +18,8 @@ public:
     virtual void pressF3();
     virtual void pressF4();
     virtual void pressEscape();
-    QStandardItemModel* QFakturiVlezni::getModel();
-    QStandardItemModel* QFakturiVlezni::getModel2();
+    QStandardItemModel* getModel();
+    QStandardItemModel* getModel2();
     QStringList getPriemnicaInfo();
 	void setInitSearchText(QString text, QDateTime &date1, QDateTime &date2);
 	virtual void refresh();

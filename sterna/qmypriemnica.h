@@ -18,8 +18,8 @@ public:
 	virtual void pressF3();
 	virtual void pressF4();
 	virtual void pressEscape();
-    QStandardItemModel* QMyPriemnica::getModel();
-    QStandardItemModel* QMyPriemnica::getModel2();
+    QStandardItemModel* getModel();
+    QStandardItemModel* getModel2();
     QStringList getPriemnicaInfo();
 	virtual void refresh();
 

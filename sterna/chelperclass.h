@@ -6,6 +6,7 @@
 #include <QFile>
 #include <QDataStream>
 #include <QTextStream>
+#include <QtMath>
 
 
 class CHelperClass : public QObject
@@ -15,9 +16,10 @@ class CHelperClass : public QObject
 public:
     CHelperClass(QObject *parent);
     ~CHelperClass();
+
+    int genSifraArtikal();
     bool isKomintentExists(const QString &komName);
     bool isArtikliExists(const QString &komName);
-    int genSifraArtikal();
     bool isBankExists(const QString &komName);
     bool isFakturaExists(const QString &fakturaId, const QString& tip);
     void fakturaStatus(QStandardItem *item, const QString& tip);

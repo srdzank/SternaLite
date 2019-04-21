@@ -18,8 +18,8 @@ public:
 	virtual void pressF3();
 	virtual void pressF4();
 	virtual void pressEscape();
-    QStandardItemModel* QMyIzjava::getModel();
-    QStandardItemModel* QMyIzjava::getModel2();
+    QStandardItemModel* getModel();
+    QStandardItemModel* getModel2();
     QStringList getIzjavaInfo();
 	virtual void refresh();
 	void setInitSearchText(QString text);

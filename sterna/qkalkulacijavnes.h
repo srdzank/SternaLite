@@ -1,4 +1,4 @@
-#ifndef QKalkulacijaVNES_H
+﻿#ifndef QKalkulacijaVNES_H
 #define QKalkulacijaVNES_H
 
 #include "qmybaseformwidget.h"
@@ -47,7 +47,7 @@ private:
     void currentChanged ( const QModelIndex & current, const QModelIndex & previous );
 	void lineEditPressReturn();
 	bool validateKomintent();
-	bool validateПревозник();
+    bool validatePrevoznik();
 	float m_sumaIznosStavki;
 	float m_sumaTrosoci;
 	bool isKomintent;

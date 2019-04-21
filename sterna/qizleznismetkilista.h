@@ -24,10 +24,10 @@ public:
     QStringList geInfo();
     void setInitText(QString text, QDateTime &date1, QDateTime &date2);
 	void setInitTextSmetki(QString text, QDateTime &date1, QDateTime &date2);
-	void QIzlezniSmetkiLista::setTableColumnWidths(int ccolumn);
-	void QIzlezniSmetkiLista::getTableColumnWidths(int ccolumn);
-	void QIzlezniSmetkiLista::setTableColumnWidths_detail(int ccolumn);
-	void QIzlezniSmetkiLista::getTableColumnWidths_detail(int ccolumn);
+    void setTableColumnWidths(int ccolumn);
+    void getTableColumnWidths(int ccolumn);
+    void setTableColumnWidths_detail(int ccolumn);
+    void getTableColumnWidths_detail(int ccolumn);
 
 	void setRow(int mrow);
 	int getRow();

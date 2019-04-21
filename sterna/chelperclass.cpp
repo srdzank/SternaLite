@@ -1386,11 +1386,11 @@ QString CHelperClass::checkFiscal()
 	if( !file.open( QIODevice::ReadOnly) )
 	{
 		int stop = 0;
-		return false;
+        return "";
 	}
 
 	QTextStream stream( &file);
-	QString line;
+    QString line;
 	while(!stream.atEnd())
 	{
 		line += stream.readLine();   

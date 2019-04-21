@@ -18,8 +18,8 @@ public:
 	virtual void pressF3();
 	virtual void pressF4();
 	virtual void pressEscape();
-    QStandardItemModel* QMyKalkulacija::getModel();
-    QStandardItemModel* QMyKalkulacija::getModel2();
+    QStandardItemModel* getModel();
+    QStandardItemModel* getModel2();
     QStringList getKalkulacijaInfo();
 	virtual void refresh();
     void setInitSearchText(QString text, const QDateTime &date1, const QDateTime &date2);

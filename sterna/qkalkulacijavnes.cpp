@@ -1179,7 +1179,7 @@ bool QKalkulacijaVnes::validateKomintent()
 	return stat;
 }
 
-bool QKalkulacijaVnes::validateПревозник()
+bool QKalkulacijaVnes::validatePrevoznik()
 {
 	bool stat = false;
 	CHelperClass hclass(this);
