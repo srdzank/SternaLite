@@ -2406,6 +2406,7 @@ void sterna::connectToDatabase()
 //    db.setPassword("zEn");
 
     QSqlDatabase db = QSqlDatabase::addDatabase("QODBC");
+    QString path = QCoreApplication::applicationDirPath() ;
     db.setDatabaseName("Driver={Microsoft Access Driver (*.mdb, *.accdb)};DSN='';DBQ=" + QCoreApplication::applicationDirPath() + "/Baza.mdb");
     db.setPassword("zEn");
 
