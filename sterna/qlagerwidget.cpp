@@ -57,7 +57,8 @@ void QLagerWidget::lista(const QString& nameSearch)
 		"left join magacin on  magacin.artikal_id = artikli.ID "
 		"where  (magacin.dok_tip <> 150) and (artikli.artikal like '%" + nameSearch + 
 		"%' or artikli.sifra like '" + nameSearch +"%') "
-		"group by artikli.ID, artikli.sifra, artikli.artikal, artikli.edm, komintent_id order by artikli.ID";
+        "group by artikli.ID, artikli.sifra, artikli.artikal, artikli.edm, komintent_id order by artikli.ID"
+        " limit 100 ";
 	QSqlQuery query(temp);
     QSqlError err = query.lastError(); 
     model = new QStandardItemModel(r, c);

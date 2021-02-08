@@ -60,12 +60,13 @@ void QKomintentiLista::lista(const QString& nameSearch)
     temp = " select  id, sifra, naziv, adresa, tel, mobil, zirosmetka, edb, deponent, sifdejnost, mb, "
            " zabeleska1, zabeleska2, rabat, grad "
            " from komintenti " 
-           " where naziv like '"+ nameSearch +"%' or sifra like '"+ nameSearch +"%' ";
+           " where naziv like '"+ nameSearch +"%' or sifra like '"+ nameSearch +"%' "
+           " limit 100 ";
 
     QSqlQuery query(temp);
     model = new QStandardItemModel(r,c);
-    model->setHeaderData( 0, Qt::Horizontal, trUtf8("Id"));
-    model->setHeaderData( 1, Qt::Horizontal, trUtf8("Шифра"));
+    model->setHeaderData( 0, Qt::Horizontal, ("Id"));
+    model->setHeaderData( 1, Qt::Horizontal, ("Шифра"));
     model->setHeaderData( 2, Qt::Horizontal, trUtf8("Назив"));
     model->setHeaderData( 3, Qt::Horizontal, trUtf8("Адреса"));
     model->setHeaderData( 4, Qt::Horizontal, trUtf8("Тел"));

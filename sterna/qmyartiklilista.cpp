@@ -77,7 +77,8 @@ void QMyArtikliLista::lista(const QString& nameSearch)
         temp = "select id, sifra, artikal, edm, ref, kataloski_broj, "
             "art_nabavna_cena, art_nabavna_cena_valuta,  "
             "art_prodazna_cena, art_prodazna_cena_valuta, ddv "
-            " from artikli where artikal like '"+nameSearch+"%' or sifra like '"+nameSearch+"%'";
+            " from artikli where artikal like '"+nameSearch+"%' or sifra like '"+nameSearch+"%'"
+            " limit 100 ";
 
     QSqlQuery query(temp);
     model = new QStandardItemModel(r,c);
