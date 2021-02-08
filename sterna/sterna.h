@@ -46,6 +46,7 @@
 #include "qmyporackismetki.h"
 #include <QPrinter>
 #include <QDir>
+#include <QPainterPath>
 
 class sterna : public QMainWindow
 {

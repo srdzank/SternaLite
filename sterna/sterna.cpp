@@ -2405,20 +2405,35 @@ void sterna::connectToDatabase()
 //    db.setDatabaseName("sterna");
 //    db.setPassword("zEn");
 
-    QSqlDatabase db = QSqlDatabase::addDatabase("QODBC");
-    QString path = QCoreApplication::applicationDirPath() ;
-    db.setDatabaseName("Driver={Microsoft Access Driver (*.mdb, *.accdb)};DSN='';DBQ=" + QCoreApplication::applicationDirPath() + "/Baza.mdb");
-    db.setPassword("zEn");
+//    QSqlDatabase db = QSqlDatabase::addDatabase("QODBC");
+//    QString path = QCoreApplication::applicationDirPath() + "/Baza.mdb" ;
+//    db.setDatabaseName("DRIVER={Microsoft Access Driver (*.mdb)};FIL={MS Access};DBQ=" + QCoreApplication::applicationDirPath() + "/Baza.mdb");
+//    db.setPassword("zEn");
+
+//    if (!db.open())
+//	{
+//		QMessageBox msgBox;
+//        msgBox.setText("Connection with database failed !!!"+db.lastError().text());
+//		msgBox.setStandardButtons(QMessageBox::Ok);
+//		msgBox.setDefaultButton(QMessageBox::Ok);
+//		int ret = msgBox.exec();
+//	}
+//	QSqlError a = db.lastError();
+
+    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
+    db.setDatabaseName("Baza.db");
 
     if (!db.open())
-	{
-		QMessageBox msgBox;
+    {
+        QMessageBox msgBox;
         msgBox.setText("Connection with database failed !!!"+db.lastError().text());
-		msgBox.setStandardButtons(QMessageBox::Ok);
-		msgBox.setDefaultButton(QMessageBox::Ok);
-		int ret = msgBox.exec();	
-	}
-	QSqlError a = db.lastError();
+        msgBox.setStandardButtons(QMessageBox::Ok);
+        msgBox.setDefaultButton(QMessageBox::Ok);
+        int ret = msgBox.exec();
+    }
+    QSqlError a = db.lastError();
+
+
 }
 
 void sterna::on_actionDDV_triggered()
