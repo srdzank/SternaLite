@@ -2,7 +2,7 @@
 #include <QSqlQuery>
 #include <QSqlRecord>
 #include <QSqlError>
-#include <QDesktopWidget>
+#include <QScreen>
 #include "chelperclass.h"
 #include "xx.h"
 
@@ -62,10 +62,10 @@ void QAnalitikaArtikliWidget::lista(const QString& nameSearch)
     QSqlQuery query(temp);
     QSqlError err = query.lastError();
     model = new QStandardItemModel(r, c);
-    model->setHeaderData( 0, Qt::Horizontal, trUtf8("Ид."));
-    model->setHeaderData( 1, Qt::Horizontal, trUtf8("Шифра"));
-    model->setHeaderData( 2, Qt::Horizontal, trUtf8("Артикал"));
-    model->setHeaderData( 3, Qt::Horizontal, trUtf8("Едм"));
+    model->setHeaderData( 0, Qt::Horizontal, tr("Ид."));
+    model->setHeaderData( 1, Qt::Horizontal, tr("Шифра"));
+    model->setHeaderData( 2, Qt::Horizontal, tr("Артикал"));
+    model->setHeaderData( 3, Qt::Horizontal, tr("Едм"));
 
     ui.tableView->setModel(model);
     header = new QHeaderView(Qt::Horizontal, this);
@@ -177,15 +177,15 @@ void QAnalitikaArtikliWidget::lista_detail(const QString& nameSearch)
     QSqlQuery query(temp);
 
     model2 = new QStandardItemModel(r,c);
-    nameSearch != "-1" ? model2->setHeaderData( 0, Qt::Horizontal, trUtf8("Датум на\nкнижење")) : model2->setHeaderData( 0, Qt::Horizontal, trUtf8(""));
-    nameSearch != "-1" ? model2->setHeaderData( 1, Qt::Horizontal, trUtf8("Док.Ид.\n")) : model2->setHeaderData( 1, Qt::Horizontal, trUtf8(""));
-    nameSearch != "-1" ? model2->setHeaderData( 2, Qt::Horizontal, trUtf8("Датум на\nдокумент")) : model2->setHeaderData( 2, Qt::Horizontal, trUtf8(""));
-    nameSearch != "-1" ? model2->setHeaderData( 3, Qt::Horizontal, trUtf8("Назив на \nкоминтент")) : model2->setHeaderData( 3, Qt::Horizontal, trUtf8(""));
-    nameSearch != "-1" ? model2->setHeaderData( 4, Qt::Horizontal, trUtf8("Влез\n")) : model2->setHeaderData( 4, Qt::Horizontal, trUtf8(""));
-    nameSearch != "-1" ? model2->setHeaderData( 5, Qt::Horizontal, trUtf8("Излез\n")) : model2->setHeaderData( 5, Qt::Horizontal, trUtf8(""));
-    nameSearch != "-1" ? model2->setHeaderData( 6, Qt::Horizontal, trUtf8("Состојба\n")) : model2->setHeaderData( 6, Qt::Horizontal, trUtf8(""));
-	nameSearch != "-1" ? model2->setHeaderData( 7, Qt::Horizontal, trUtf8("Наб.цена\nсо ДДВ")) : model2->setHeaderData( 7, Qt::Horizontal, trUtf8(""));
-	nameSearch != "-1" ? model2->setHeaderData( 8, Qt::Horizontal, trUtf8("Прод.цена\n со ДДВ")) : model2->setHeaderData( 8, Qt::Horizontal, trUtf8(""));
+    nameSearch != "-1" ? model2->setHeaderData( 0, Qt::Horizontal, tr("Датум на\nкнижење")) : model2->setHeaderData( 0, Qt::Horizontal, tr(""));
+    nameSearch != "-1" ? model2->setHeaderData( 1, Qt::Horizontal, tr("Док.Ид.\n")) : model2->setHeaderData( 1, Qt::Horizontal, tr(""));
+    nameSearch != "-1" ? model2->setHeaderData( 2, Qt::Horizontal, tr("Датум на\nдокумент")) : model2->setHeaderData( 2, Qt::Horizontal, tr(""));
+    nameSearch != "-1" ? model2->setHeaderData( 3, Qt::Horizontal, tr("Назив на \nкоминтент")) : model2->setHeaderData( 3, Qt::Horizontal, tr(""));
+    nameSearch != "-1" ? model2->setHeaderData( 4, Qt::Horizontal, tr("Влез\n")) : model2->setHeaderData( 4, Qt::Horizontal, tr(""));
+    nameSearch != "-1" ? model2->setHeaderData( 5, Qt::Horizontal, tr("Излез\n")) : model2->setHeaderData( 5, Qt::Horizontal, tr(""));
+    nameSearch != "-1" ? model2->setHeaderData( 6, Qt::Horizontal, tr("Состојба\n")) : model2->setHeaderData( 6, Qt::Horizontal, tr(""));
+	nameSearch != "-1" ? model2->setHeaderData( 7, Qt::Horizontal, tr("Наб.цена\nсо ДДВ")) : model2->setHeaderData( 7, Qt::Horizontal, tr(""));
+	nameSearch != "-1" ? model2->setHeaderData( 8, Qt::Horizontal, tr("Прод.цена\n со ДДВ")) : model2->setHeaderData( 8, Qt::Horizontal, tr(""));
     
 	ui.tableView_2->setModel(model2);
     header2 = new QHeaderView(Qt::Horizontal, this);
@@ -202,7 +202,7 @@ void QAnalitikaArtikliWidget::lista_detail(const QString& nameSearch)
 			continue;
 		}
 		
-		if((query.value(4).toInt() == 48)&&(query.value(9).toString() == trUtf8("сторно фискална сметка")))
+		if((query.value(4).toInt() == 48)&&(query.value(9).toString() == tr("сторно фискална сметка")))
 		{
 			continue;
 		}
@@ -221,11 +221,11 @@ void QAnalitikaArtikliWidget::lista_detail(const QString& nameSearch)
                 QString strTip = "";
                 switch (query.value(4).toInt())
                 {
-                case 20: strTip = trUtf8("ПРИЕМН."); break;
-                case 21: strTip = trUtf8("ИЗЈАВА"); break;
-				case 25: strTip = trUtf8("ПОВРАТ."); break;
-				case 60: strTip = trUtf8("ИСПРАТ."); break;
-                case 48: strTip = trUtf8("СМЕТКА"); break;
+                case 20: strTip = tr("ПРИЕМН."); break;
+                case 21: strTip = tr("ИЗЈАВА"); break;
+				case 25: strTip = tr("ПОВРАТ."); break;
+				case 60: strTip = tr("ИСПРАТ."); break;
+                case 48: strTip = tr("СМЕТКА"); break;
                 }
 
                 QString temp = strTip + " (" + query.value(1).toString() + ") ";

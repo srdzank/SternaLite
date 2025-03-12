@@ -1,7 +1,7 @@
 #include "qkomintentilista.h"
 #include <QSqlQuery>
 #include <QSqlRecord>
-#include <QDesktopWidget>
+#include <QScreen>
 #include "xx.h"
 
 
@@ -67,19 +67,19 @@ void QKomintentiLista::lista(const QString& nameSearch)
     model = new QStandardItemModel(r,c);
     model->setHeaderData( 0, Qt::Horizontal, ("Id"));
     model->setHeaderData( 1, Qt::Horizontal, ("Шифра"));
-    model->setHeaderData( 2, Qt::Horizontal, trUtf8("Назив"));
-    model->setHeaderData( 3, Qt::Horizontal, trUtf8("Адреса"));
-    model->setHeaderData( 4, Qt::Horizontal, trUtf8("Тел"));
-    model->setHeaderData( 5, Qt::Horizontal, trUtf8("Мобилен"));
-    model->setHeaderData( 6, Qt::Horizontal, trUtf8("Жиро сметка"));
-    model->setHeaderData( 7, Qt::Horizontal, trUtf8("Едб."));
-    model->setHeaderData( 8, Qt::Horizontal, trUtf8("Банка Депонент"));
-    model->setHeaderData( 9, Qt::Horizontal, trUtf8("Шифра дејност"));
-    model->setHeaderData( 10, Qt::Horizontal, trUtf8("Матичен Број"));
-    model->setHeaderData( 11, Qt::Horizontal, trUtf8("Забелешка"));
-    model->setHeaderData( 12, Qt::Horizontal, trUtf8("Забелешка"));
-    model->setHeaderData( 13, Qt::Horizontal, trUtf8("Рабат"));
-    model->setHeaderData( 14, Qt::Horizontal, trUtf8("Град"));
+    model->setHeaderData( 2, Qt::Horizontal, tr("Назив"));
+    model->setHeaderData( 3, Qt::Horizontal, tr("Адреса"));
+    model->setHeaderData( 4, Qt::Horizontal, tr("Тел"));
+    model->setHeaderData( 5, Qt::Horizontal, tr("Мобилен"));
+    model->setHeaderData( 6, Qt::Horizontal, tr("Жиро сметка"));
+    model->setHeaderData( 7, Qt::Horizontal, tr("Едб."));
+    model->setHeaderData( 8, Qt::Horizontal, tr("Банка Депонент"));
+    model->setHeaderData( 9, Qt::Horizontal, tr("Шифра дејност"));
+    model->setHeaderData( 10, Qt::Horizontal, tr("Матичен Број"));
+    model->setHeaderData( 11, Qt::Horizontal, tr("Забелешка"));
+    model->setHeaderData( 12, Qt::Horizontal, tr("Забелешка"));
+    model->setHeaderData( 13, Qt::Horizontal, tr("Рабат"));
+    model->setHeaderData( 14, Qt::Horizontal, tr("Град"));
     ui.tableView->setModel(model);
     
     header = new QHeaderView(Qt::Horizontal, this);
@@ -192,7 +192,7 @@ void QKomintentiLista::on_pushButton_3_clicked()
 	if (chlp->isKomintentExistsInStore(m_selectedText))
 	{
 		QMessageBox msgBox;
-		msgBox.setText(trUtf8("Коминтентот е употребен и\nнеможе да се избрише!"));
+		msgBox.setText(tr("Коминтентот е употребен и\nнеможе да се избрише!"));
 		msgBox.setStandardButtons(QMessageBox::Ok);
 		msgBox.setDefaultButton(QMessageBox::Ok);
 		msgBox.exec();
@@ -201,8 +201,8 @@ void QKomintentiLista::on_pushButton_3_clicked()
 	}	
 
 	QMessageBox msgBox;
-	msgBox.setText(trUtf8("Warning"));
-	msgBox.setInformativeText(trUtf8("Коминтентот ке биде ИЗБРИШАН.!!!"));
+	msgBox.setText(tr("Warning"));
+	msgBox.setInformativeText(tr("Коминтентот ке биде ИЗБРИШАН.!!!"));
 	msgBox.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
 	msgBox.setDefaultButton(QMessageBox::Ok);	int ret = msgBox.exec();
 	if (ret == QMessageBox::Ok )
@@ -213,7 +213,7 @@ void QKomintentiLista::on_pushButton_3_clicked()
 		if(query.exec())
 		{
 			QMessageBox msgBox;
-			msgBox.setText(trUtf8("Коминтентот e ИЗБРИШАН."));
+			msgBox.setText(tr("Коминтентот e ИЗБРИШАН."));
 			msgBox.setStandardButtons(QMessageBox::Ok);
 			msgBox.setDefaultButton(QMessageBox::Ok);
 			msgBox.exec();
@@ -222,7 +222,7 @@ void QKomintentiLista::on_pushButton_3_clicked()
 		else
 		{
 			QMessageBox msgBox;
-			msgBox.setText(trUtf8("Коминтентот НЕ Е ИЗБРИШАН."));
+			msgBox.setText(tr("Коминтентот НЕ Е ИЗБРИШАН."));
 			msgBox.setStandardButtons(QMessageBox::Ok);
 			msgBox.setDefaultButton(QMessageBox::Ok);
 		}

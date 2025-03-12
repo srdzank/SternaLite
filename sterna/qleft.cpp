@@ -7,10 +7,10 @@ QLeft::QLeft(QWidget *parent)
 {
 	ui.setupUi(this);
 	item = new QTreeWidgetItem(ui.treeWidget);
-	item->setText(0, trUtf8("Документи"));
+    item->setText(0, tr("Документи"));
     QIcon icon(":/sterna/Resources/arrow-down-icon.png");
     item->setIcon(0, icon);
-	itemsMap.insertMulti(item, 0);
+    itemsMap.insert(item, 0);
 	item->setExpanded(true);
 }
 
@@ -24,7 +24,7 @@ void QLeft::addTreeWidgetItem(QString itemInfo, QWidget *fWidget)
 	itemChild->setText(0, itemInfo);
     QIcon icon(":/sterna/Resources/k-color-chooser-icon.png");
     itemChild->setIcon(0, icon);
-    itemsMap.insertMulti(itemChild, fWidget);
+    itemsMap.insert(itemChild, fWidget);
 	items.append(itemChild);
 	QMap<QTreeWidgetItem*, QWidget*>::const_iterator i;
 	for (i = itemsMap.begin(); i != itemsMap.end(); i++)

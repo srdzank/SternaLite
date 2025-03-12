@@ -54,7 +54,7 @@ class sterna : public QMainWindow
 
 public:
 	static float ZeroPointFive;
-    sterna(QWidget *parent = 0, Qt::WindowFlags flags = 0);
+    sterna(QWidget *parent = 0, Qt::WindowFlags flags = Qt::WindowFlags());
 	~sterna();
 	void createDockWindows();
 	void connectToDatabase();

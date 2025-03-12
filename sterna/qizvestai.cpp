@@ -2,7 +2,7 @@
 #include <QPainter>
 #include <QGraphicsScene>
 #include "qizvestaiwidget.h"
-#include <QDesktopWidget>
+#include <QScreen>
 #include <QDate>
 
 
@@ -14,7 +14,7 @@ QIzvestai::QIzvestai(QWidget *parent)
 	scrollArea.setParent(this);
 	showMaximized();
 	scrollArea.setBackgroundRole(QPalette::Light);// set background of scroll Area
-	scrollArea.setGeometry(0, 0, qApp->desktop()->geometry().width() - 210, qApp->desktop()->geometry().height() - 165);
+    scrollArea.setGeometry(0, 0, QGuiApplication::primaryScreen()->geometry().width() - 210, QGuiApplication::primaryScreen()->geometry().height() - 165);
 	izvestai = showMyWidget<QIzvestaiWidget>(izvestai); 
     connect(izvestai,SIGNAL(closeW()),this,SLOT(closeW()));
     scrollArea.setWidget(izvestai);

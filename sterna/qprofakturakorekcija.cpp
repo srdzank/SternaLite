@@ -10,10 +10,10 @@ QProFakturiKorekcija::QProFakturiKorekcija(QWidget *parent)
 	ui.setupUi(this);
 	ui.pushButton->setFocus();
 	model = new QStandardItemModel(0,4);
-	model->setHeaderData( 0, Qt::Horizontal, trUtf8("Шифра"));
-	model->setHeaderData( 1, Qt::Horizontal, trUtf8("Артикал"));
-	model->setHeaderData( 2, Qt::Horizontal, trUtf8("Едм"));
-	model->setHeaderData( 3, Qt::Horizontal, trUtf8("Влезна количина"));
+	model->setHeaderData( 0, Qt::Horizontal, tr("Шифра"));
+	model->setHeaderData( 1, Qt::Horizontal, tr("Артикал"));
+	model->setHeaderData( 2, Qt::Horizontal, tr("Едм"));
+	model->setHeaderData( 3, Qt::Horizontal, tr("Влезна количина"));
 
 	ui.tableView->setModel(model);
 	header = new QHeaderView(Qt::Horizontal, this);
@@ -248,7 +248,7 @@ void QProFakturiKorekcija::on_pushButton_4_clicked()
         }
 
         QMessageBox msgBox;
-        msgBox.setText(trUtf8("Приемницата е успешно корегирана."));
+        msgBox.setText(tr("Приемницата е успешно корегирана."));
         msgBox.setStandardButtons(QMessageBox::Ok);
         msgBox.setDefaultButton(QMessageBox::Ok);
         msgBox.exec();
@@ -257,7 +257,7 @@ void QProFakturiKorekcija::on_pushButton_4_clicked()
     catch (...)
     {
         QMessageBox msgBox;
-        msgBox.setText(trUtf8("Приемницата не е корегирана !!!."));
+        msgBox.setText(tr("Приемницата не е корегирана !!!."));
         msgBox.setStandardButtons(QMessageBox::Ok);
         msgBox.setDefaultButton(QMessageBox::Ok);
         msgBox.exec();

@@ -2,7 +2,7 @@
 #include <QSqlQuery>
 #include <QSqlRecord>
 #include <QSqlError>
-#include <QDesktopWidget>
+#include <QScreen>
 #include "chelperclass.h"
 
 QKomintentiAnalitikaWidget::QKomintentiAnalitikaWidget(QWidget *parent)
@@ -11,8 +11,8 @@ QKomintentiAnalitikaWidget::QKomintentiAnalitikaWidget(QWidget *parent)
     ,m_selectedTextName("")
 {
 	ui.setupUi(this);
-	QDesktopWidget desk;
-	QRect deskRect = desk.screenGeometry();
+    QScreen *desk = QGuiApplication::primaryScreen();
+    QRect deskRect = desk->geometry();  // Get screen geometry
 	ui.layoutWidget->setFixedWidth(deskRect.width() - 250);
 	ui.layoutWidget->setFixedHeight(deskRect.height()-200);
     ui.tableView->setSelectionMode(QAbstractItemView::SingleSelection);
@@ -62,17 +62,17 @@ void QKomintentiAnalitikaWidget::listaArtikli(const QString& nameSearch)
 	temp += "%' ";
 	QSqlQuery query(temp);
 	model = new QStandardItemModel(r,c);
-	model->setHeaderData( 0, Qt::Horizontal, trUtf8("Id."));
-	model->setHeaderData( 1, Qt::Horizontal, trUtf8("Шифра"));
-	model->setHeaderData( 2, Qt::Horizontal, trUtf8("Артикал"));
-	model->setHeaderData( 3, Qt::Horizontal, trUtf8("Едм"));
-	model->setHeaderData( 4, Qt::Horizontal, trUtf8("Реф"));
-	model->setHeaderData( 5, Qt::Horizontal, trUtf8("Каталошки број"));
-	model->setHeaderData( 6, Qt::Horizontal, trUtf8("Набавна цена"));
-	model->setHeaderData( 7, Qt::Horizontal, trUtf8("Валута"));
-	model->setHeaderData( 8, Qt::Horizontal, trUtf8("Продажна цена"));
-	model->setHeaderData( 9, Qt::Horizontal, trUtf8("Валута"));
-	model->setHeaderData( 10, Qt::Horizontal, trUtf8("ДДВ"));
+	model->setHeaderData( 0, Qt::Horizontal, tr("Id."));
+	model->setHeaderData( 1, Qt::Horizontal, tr("Шифра"));
+	model->setHeaderData( 2, Qt::Horizontal, tr("Артикал"));
+	model->setHeaderData( 3, Qt::Horizontal, tr("Едм"));
+	model->setHeaderData( 4, Qt::Horizontal, tr("Реф"));
+	model->setHeaderData( 5, Qt::Horizontal, tr("Каталошки број"));
+	model->setHeaderData( 6, Qt::Horizontal, tr("Набавна цена"));
+	model->setHeaderData( 7, Qt::Horizontal, tr("Валута"));
+	model->setHeaderData( 8, Qt::Horizontal, tr("Продажна цена"));
+	model->setHeaderData( 9, Qt::Horizontal, tr("Валута"));
+	model->setHeaderData( 10, Qt::Horizontal, tr("ДДВ"));
 
 	ui.tableView->setModel(model);
 	header = new QHeaderView(Qt::Horizontal, this);
@@ -134,20 +134,20 @@ void QKomintentiAnalitikaWidget::listaKomintenti(const QString& nameSearch)
 	temp += "%' ";
 	QSqlQuery query(temp);
 	model = new QStandardItemModel(r,c);
-	model->setHeaderData( 0, Qt::Horizontal, trUtf8("Ид."));
-	model->setHeaderData( 1, Qt::Horizontal, trUtf8("Назив"));
-	model->setHeaderData( 2, Qt::Horizontal, trUtf8("Адреса"));
-	model->setHeaderData( 3, Qt::Horizontal, trUtf8("Тел"));
-	model->setHeaderData( 4, Qt::Horizontal, trUtf8("Мобилен"));
-	model->setHeaderData( 5, Qt::Horizontal, trUtf8("Жиро сметка"));
-	model->setHeaderData( 6, Qt::Horizontal, trUtf8("Едб."));
-	model->setHeaderData( 7, Qt::Horizontal, trUtf8("Банка Депонент"));
-	model->setHeaderData( 8, Qt::Horizontal, trUtf8("Шифра дејност"));
-	model->setHeaderData( 9, Qt::Horizontal, trUtf8("Матичен Број"));
-	model->setHeaderData( 10, Qt::Horizontal, trUtf8("Забелешка"));
-	model->setHeaderData( 11, Qt::Horizontal, trUtf8("Забелешка"));
-	model->setHeaderData( 12, Qt::Horizontal, trUtf8("Рабат"));
-	model->setHeaderData( 13, Qt::Horizontal, trUtf8("Град"));
+	model->setHeaderData( 0, Qt::Horizontal, tr("Ид."));
+	model->setHeaderData( 1, Qt::Horizontal, tr("Назив"));
+	model->setHeaderData( 2, Qt::Horizontal, tr("Адреса"));
+	model->setHeaderData( 3, Qt::Horizontal, tr("Тел"));
+	model->setHeaderData( 4, Qt::Horizontal, tr("Мобилен"));
+	model->setHeaderData( 5, Qt::Horizontal, tr("Жиро сметка"));
+	model->setHeaderData( 6, Qt::Horizontal, tr("Едб."));
+	model->setHeaderData( 7, Qt::Horizontal, tr("Банка Депонент"));
+	model->setHeaderData( 8, Qt::Horizontal, tr("Шифра дејност"));
+	model->setHeaderData( 9, Qt::Horizontal, tr("Матичен Број"));
+	model->setHeaderData( 10, Qt::Horizontal, tr("Забелешка"));
+	model->setHeaderData( 11, Qt::Horizontal, tr("Забелешка"));
+	model->setHeaderData( 12, Qt::Horizontal, tr("Рабат"));
+	model->setHeaderData( 13, Qt::Horizontal, tr("Град"));
 	ui.tableView->setModel(model);
 	header = new QHeaderView(Qt::Horizontal, this);
 	ui.tableView->setHorizontalHeader(header);
@@ -419,16 +419,16 @@ void QKomintentiAnalitikaWidget::funcART_IZLFKT()
 	QSqlQuery query(temp);
 
 	model2 = new QStandardItemModel(r,c);
-	model2->setHeaderData( 0, Qt::Horizontal, trUtf8("Ид."));
-	model2->setHeaderData( 1, Qt::Horizontal, trUtf8("Шифра"));
-	model2->setHeaderData( 2, Qt::Horizontal, trUtf8("Артикал"));
-	model2->setHeaderData( 3, Qt::Horizontal, trUtf8("Кол."));
-	model2->setHeaderData( 4, Qt::Horizontal, trUtf8("Едм."));
-	model2->setHeaderData( 5, Qt::Horizontal, trUtf8("Цена"));
-	model2->setHeaderData( 6, Qt::Horizontal, trUtf8("Рабат"));
-	model2->setHeaderData( 7, Qt::Horizontal, trUtf8("Износ"));
-	model2->setHeaderData( 8, Qt::Horizontal, trUtf8("ДДВ"));
-	model2->setHeaderData( 9, Qt::Horizontal, trUtf8("Износ со ДДВ"));
+	model2->setHeaderData( 0, Qt::Horizontal, tr("Ид."));
+	model2->setHeaderData( 1, Qt::Horizontal, tr("Шифра"));
+	model2->setHeaderData( 2, Qt::Horizontal, tr("Артикал"));
+	model2->setHeaderData( 3, Qt::Horizontal, tr("Кол."));
+	model2->setHeaderData( 4, Qt::Horizontal, tr("Едм."));
+	model2->setHeaderData( 5, Qt::Horizontal, tr("Цена"));
+	model2->setHeaderData( 6, Qt::Horizontal, tr("Рабат"));
+	model2->setHeaderData( 7, Qt::Horizontal, tr("Износ"));
+	model2->setHeaderData( 8, Qt::Horizontal, tr("ДДВ"));
+	model2->setHeaderData( 9, Qt::Horizontal, tr("Износ со ДДВ"));
 	ui.tableView_2->setModel(model2);
 	header2 = new QHeaderView(Qt::Horizontal, this);
 	ui.tableView_2->setHorizontalHeader(header2);
@@ -489,16 +489,16 @@ void QKomintentiAnalitikaWidget::funcART_VLZFKT()
 	QSqlQuery query(temp);
 
 	model2 = new QStandardItemModel(r,c);
-	model2->setHeaderData( 0, Qt::Horizontal, trUtf8("Ид."));
-	model2->setHeaderData( 1, Qt::Horizontal, trUtf8("Шифра"));
-	model2->setHeaderData( 2, Qt::Horizontal, trUtf8("Артикал"));
-	model2->setHeaderData( 3, Qt::Horizontal, trUtf8("Кол."));
-	model2->setHeaderData( 4, Qt::Horizontal, trUtf8("Едм."));
-	model2->setHeaderData( 5, Qt::Horizontal, trUtf8("Цена"));
-	model2->setHeaderData( 6, Qt::Horizontal, trUtf8("Рабат"));
-	model2->setHeaderData( 7, Qt::Horizontal, trUtf8("Износ"));
-	model2->setHeaderData( 8, Qt::Horizontal, trUtf8("ДДВ"));
-	model2->setHeaderData( 9, Qt::Horizontal, trUtf8("Износ со ДДВ"));
+	model2->setHeaderData( 0, Qt::Horizontal, tr("Ид."));
+	model2->setHeaderData( 1, Qt::Horizontal, tr("Шифра"));
+	model2->setHeaderData( 2, Qt::Horizontal, tr("Артикал"));
+	model2->setHeaderData( 3, Qt::Horizontal, tr("Кол."));
+	model2->setHeaderData( 4, Qt::Horizontal, tr("Едм."));
+	model2->setHeaderData( 5, Qt::Horizontal, tr("Цена"));
+	model2->setHeaderData( 6, Qt::Horizontal, tr("Рабат"));
+	model2->setHeaderData( 7, Qt::Horizontal, tr("Износ"));
+	model2->setHeaderData( 8, Qt::Horizontal, tr("ДДВ"));
+	model2->setHeaderData( 9, Qt::Horizontal, tr("Износ со ДДВ"));
 	ui.tableView_2->setModel(model2);
 	header2 = new QHeaderView(Qt::Horizontal, this);
 	ui.tableView_2->setHorizontalHeader(header2);
@@ -559,12 +559,12 @@ void QKomintentiAnalitikaWidget::funcART_ISP()
 	QSqlQuery query(temp);
 
 	model2 = new QStandardItemModel(r,c);
-	model2->setHeaderData( 0, Qt::Horizontal, trUtf8("Ид."));
-	model2->setHeaderData( 1, Qt::Horizontal, trUtf8("Шифра"));
-	model2->setHeaderData( 2, Qt::Horizontal, trUtf8("Артикал"));
-	model2->setHeaderData( 3, Qt::Horizontal, trUtf8("Едм."));
-	model2->setHeaderData( 4, Qt::Horizontal, trUtf8("Количина"));
-	model2->setHeaderData( 5, Qt::Horizontal, trUtf8("Цена"));
+	model2->setHeaderData( 0, Qt::Horizontal, tr("Ид."));
+	model2->setHeaderData( 1, Qt::Horizontal, tr("Шифра"));
+	model2->setHeaderData( 2, Qt::Horizontal, tr("Артикал"));
+	model2->setHeaderData( 3, Qt::Horizontal, tr("Едм."));
+	model2->setHeaderData( 4, Qt::Horizontal, tr("Количина"));
+	model2->setHeaderData( 5, Qt::Horizontal, tr("Цена"));
 	ui.tableView_2->setModel(model2);
 	header2 = new QHeaderView(Qt::Horizontal, this);
 	ui.tableView_2->setHorizontalHeader(header2);
@@ -619,12 +619,12 @@ void QKomintentiAnalitikaWidget::funcART_PRM()
 	QSqlQuery query(temp);
 
 	model2 = new QStandardItemModel(r,c);
-	model2->setHeaderData( 0, Qt::Horizontal, trUtf8("Ид."));
-	model2->setHeaderData( 1, Qt::Horizontal, trUtf8("Шифра"));
-	model2->setHeaderData( 2, Qt::Horizontal, trUtf8("Артикал"));
-	model2->setHeaderData( 3, Qt::Horizontal, trUtf8("Едм."));
-	model2->setHeaderData( 4, Qt::Horizontal, trUtf8("Количина"));
-	model2->setHeaderData( 5, Qt::Horizontal, trUtf8("Цена"));
+	model2->setHeaderData( 0, Qt::Horizontal, tr("Ид."));
+	model2->setHeaderData( 1, Qt::Horizontal, tr("Шифра"));
+	model2->setHeaderData( 2, Qt::Horizontal, tr("Артикал"));
+	model2->setHeaderData( 3, Qt::Horizontal, tr("Едм."));
+	model2->setHeaderData( 4, Qt::Horizontal, tr("Количина"));
+	model2->setHeaderData( 5, Qt::Horizontal, tr("Цена"));
 	ui.tableView_2->setModel(model2);
 	header2 = new QHeaderView(Qt::Horizontal, this);
 	ui.tableView_2->setHorizontalHeader(header2);
@@ -689,10 +689,10 @@ void QKomintentiAnalitikaWidget::funcKOM_IZLFKT()
 	QSqlQuery query(temp);
 
 	model2 = new QStandardItemModel(r,c);
-	model2->setHeaderData( 0, Qt::Horizontal, trUtf8("Излезна Факт."));
-	model2->setHeaderData( 1, Qt::Horizontal, trUtf8("Артикал"));
-	model2->setHeaderData( 2, Qt::Horizontal, trUtf8("Вк. излезна кол"));
-	model2->setHeaderData( 3, Qt::Horizontal, trUtf8("Вк. износ со ДДВ"));
+	model2->setHeaderData( 0, Qt::Horizontal, tr("Излезна Факт."));
+	model2->setHeaderData( 1, Qt::Horizontal, tr("Артикал"));
+	model2->setHeaderData( 2, Qt::Horizontal, tr("Вк. излезна кол"));
+	model2->setHeaderData( 3, Qt::Horizontal, tr("Вк. износ со ДДВ"));
 	ui.tableView_2->setModel(model2);
 	header2 = new QHeaderView(Qt::Horizontal, this);
 	ui.tableView_2->setHorizontalHeader(header2);
@@ -752,10 +752,10 @@ void QKomintentiAnalitikaWidget::funcKOM_VLZFKT()
 	QSqlQuery query(temp);
 
 	model2 = new QStandardItemModel(r,c);
-	model2->setHeaderData( 0, Qt::Horizontal, trUtf8("Влезна Факт."));
-	model2->setHeaderData( 1, Qt::Horizontal, trUtf8("Артикал"));
-	model2->setHeaderData( 2, Qt::Horizontal, trUtf8("Вк. влезна кол"));
-	model2->setHeaderData( 3, Qt::Horizontal, trUtf8("Вк. износ со ДДВ"));
+	model2->setHeaderData( 0, Qt::Horizontal, tr("Влезна Факт."));
+	model2->setHeaderData( 1, Qt::Horizontal, tr("Артикал"));
+	model2->setHeaderData( 2, Qt::Horizontal, tr("Вк. влезна кол"));
+	model2->setHeaderData( 3, Qt::Horizontal, tr("Вк. износ со ДДВ"));
 	ui.tableView_2->setModel(model2);
 	header2 = new QHeaderView(Qt::Horizontal, this);
 	ui.tableView_2->setHorizontalHeader(header2);
@@ -814,10 +814,10 @@ void QKomintentiAnalitikaWidget::funcKOM_ISP()
 	QSqlQuery query(temp);
 
 	model2 = new QStandardItemModel(r,c);
-	model2->setHeaderData( 0, Qt::Horizontal, trUtf8("Излезна Факт."));
-	model2->setHeaderData( 1, Qt::Horizontal, trUtf8("Артикал"));
-	model2->setHeaderData( 2, Qt::Horizontal, trUtf8("Вк. влезна кол"));
-	model2->setHeaderData( 3, Qt::Horizontal, trUtf8("Вк. излезна кол"));
+	model2->setHeaderData( 0, Qt::Horizontal, tr("Излезна Факт."));
+	model2->setHeaderData( 1, Qt::Horizontal, tr("Артикал"));
+	model2->setHeaderData( 2, Qt::Horizontal, tr("Вк. влезна кол"));
+	model2->setHeaderData( 3, Qt::Horizontal, tr("Вк. излезна кол"));
 	ui.tableView_2->setModel(model2);
 	header2 = new QHeaderView(Qt::Horizontal, this);
 	ui.tableView_2->setHorizontalHeader(header2);
@@ -876,10 +876,10 @@ void QKomintentiAnalitikaWidget::funcKOM_PRM()
 	QSqlQuery query(temp);
 
 	model2 = new QStandardItemModel(r,c);
-	model2->setHeaderData( 0, Qt::Horizontal, trUtf8("Влезна Факт."));
-	model2->setHeaderData( 1, Qt::Horizontal, trUtf8("Артикал"));
-	model2->setHeaderData( 2, Qt::Horizontal, trUtf8("Вк. влезна кол"));
-	model2->setHeaderData( 3, Qt::Horizontal, trUtf8("Вк. излезна кол"));
+	model2->setHeaderData( 0, Qt::Horizontal, tr("Влезна Факт."));
+	model2->setHeaderData( 1, Qt::Horizontal, tr("Артикал"));
+	model2->setHeaderData( 2, Qt::Horizontal, tr("Вк. влезна кол"));
+	model2->setHeaderData( 3, Qt::Horizontal, tr("Вк. излезна кол"));
 	ui.tableView_2->setModel(model2);
 	header2 = new QHeaderView(Qt::Horizontal, this);
 	ui.tableView_2->setHorizontalHeader(header2);

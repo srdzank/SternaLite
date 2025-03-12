@@ -12,14 +12,14 @@ QProFakturiVnes::QProFakturiVnes(QWidget *parent)
 	ui.setupUi(this);
 	ui.pushButton->setFocus();
 	model = new QStandardItemModel(0,8);
-	model->setHeaderData( 0, Qt::Horizontal, trUtf8("Ид."));
-	model->setHeaderData( 1, Qt::Horizontal, trUtf8("Шифра"));
-	model->setHeaderData( 2, Qt::Horizontal, trUtf8("Артикал"));
-	model->setHeaderData( 3, Qt::Horizontal, trUtf8("Едм"));
-	model->setHeaderData( 4, Qt::Horizontal, trUtf8("Реф."));
-	model->setHeaderData( 5, Qt::Horizontal, trUtf8("Катал. број"));
-	model->setHeaderData( 6, Qt::Horizontal, trUtf8("Цена"));
-	model->setHeaderData( 7, Qt::Horizontal, trUtf8("Количина"));
+	model->setHeaderData( 0, Qt::Horizontal, tr("Ид."));
+	model->setHeaderData( 1, Qt::Horizontal, tr("Шифра"));
+	model->setHeaderData( 2, Qt::Horizontal, tr("Артикал"));
+	model->setHeaderData( 3, Qt::Horizontal, tr("Едм"));
+	model->setHeaderData( 4, Qt::Horizontal, tr("Реф."));
+	model->setHeaderData( 5, Qt::Horizontal, tr("Катал. број"));
+	model->setHeaderData( 6, Qt::Horizontal, tr("Цена"));
+	model->setHeaderData( 7, Qt::Horizontal, tr("Количина"));
 	ui.lineEdit->setText("Press Lista na komintenti ->");
 	ui.lineEdit->selectAll();
 
@@ -229,7 +229,7 @@ void QProFakturiVnes::on_pushButton_4_clicked()
         }
 
         QMessageBox msgBox;
-        msgBox.setText(trUtf8("Приемницата е успешно внесена."));
+        msgBox.setText(tr("Приемницата е успешно внесена."));
         msgBox.setStandardButtons(QMessageBox::Ok);
         msgBox.setDefaultButton(QMessageBox::Ok);
         msgBox.exec();
@@ -252,7 +252,7 @@ void QProFakturiVnes::on_pushButton_4_clicked()
         query.exec();
 
         QMessageBox msgBox;
-        msgBox.setText(trUtf8("Приемницата не е внесена !!!."));
+        msgBox.setText(tr("Приемницата не е внесена !!!."));
         msgBox.setStandardButtons(QMessageBox::Ok);
         msgBox.setDefaultButton(QMessageBox::Ok);
         msgBox.exec();

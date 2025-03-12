@@ -1,7 +1,7 @@
 #include "qbankilista.h"
 #include <QSqlQuery>
 #include <QSqlRecord>
-#include <QDesktopWidget>
+#include <QScreen>
 #include "xx.h"
 
 
@@ -48,9 +48,9 @@ void QBankiLista::lista(const QString& nameSearch)
     temp += "%' order by BankId desc";
     QSqlQuery query(temp);
     model = new QStandardItemModel(r,c);
-    model->setHeaderData( 0, Qt::Horizontal, trUtf8("Ид."));
-    model->setHeaderData( 1, Qt::Horizontal, trUtf8("Назив"));
-    model->setHeaderData( 2, Qt::Horizontal, trUtf8("Жиро сметка"));
+    model->setHeaderData( 0, Qt::Horizontal, tr("Ид."));
+    model->setHeaderData( 1, Qt::Horizontal, tr("Назив"));
+    model->setHeaderData( 2, Qt::Horizontal, tr("Жиро сметка"));
     ui.tableView->setModel(model);
     header = new QHeaderView(Qt::Horizontal, this);
     header->setSectionsClickable(true);

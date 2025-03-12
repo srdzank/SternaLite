@@ -76,92 +76,92 @@ sterna::sterna(QWidget *parent, Qt::WindowFlags flags)
 {
 	ui.setupUi(this);
 	
-	moi_periodicen = trUtf8("Периодичен Извештај");
-	moi_artikli = trUtf8("Артикли");
-	moi_banki = trUtf8("Банки");
-	moi_ddv = trUtf8("ДДВ");
-	moi_faktura = trUtf8("Испратници-Фактури");
-    moi_fakturavlezna = trUtf8("Влезни Фактури");
-	moi_ispratnici = trUtf8("Испратници");
-	moi_izvod = trUtf8("Изводи");
-	moi_komintenti = trUtf8("Коминтенти");
-	moi_kasa = trUtf8("Каса");
-	moi_kartici = trUtf8("Картици");
-	moi_lagerlista = trUtf8("Лагер Листа");
-	moi_priemlista = trUtf8("Прием на Артикли");
-	moi_izvestai = trUtf8("Извештаи");
-	moi_povratnica = trUtf8("Повратници");
-	moi_priemnici = trUtf8("Приемници");
-	moi_kalkulacija = trUtf8("Приемница-Калкулација");
-	moi_profakturi = trUtf8("Про-Фактури");
-	moi_komintenti_analitika = trUtf8("Аналитика по Коминтент");
-	moi_analitikaArtikli = trUtf8("Аналитика по Артикли");
-	moi_analitikaKomintenti = trUtf8("Аналитика по Коминтенти");
-	moi_finanalitikaKomintenti = trUtf8("Обврски-Финансова Аналитика по Коминтенти");
-	moi_odobrenie = trUtf8("Книжно одобрение");
-	moi_izjava = trUtf8("Изјава");
-	moi_dnevenpromet = trUtf8("Дневен Промет");
-	moi_employe = trUtf8("Вработени");
-	moi_smetki = trUtf8("Сметки");
-	moi_promena_ceni = trUtf8("Извештај за промена на цени");
-	moi_faktmaster = trUtf8("Фактури");
-	moi_profakturimaster = trUtf8("Про-Фактури");
-	moi_povratnicamaster = trUtf8("Повратници");
-	moi_popis = trUtf8("Попис");
-	moi_porackismetki = trUtf8("Порачки-Сметки");	
+	moi_periodicen = tr("Периодичен Извештај");
+	moi_artikli = tr("Артикли");
+	moi_banki = tr("Банки");
+	moi_ddv = tr("ДДВ");
+	moi_faktura = tr("Испратници-Фактури");
+    moi_fakturavlezna = tr("Влезни Фактури");
+	moi_ispratnici = tr("Испратници");
+	moi_izvod = tr("Изводи");
+	moi_komintenti = tr("Коминтенти");
+	moi_kasa = tr("Каса");
+	moi_kartici = tr("Картици");
+	moi_lagerlista = tr("Лагер Листа");
+	moi_priemlista = tr("Прием на Артикли");
+	moi_izvestai = tr("Извештаи");
+	moi_povratnica = tr("Повратници");
+	moi_priemnici = tr("Приемници");
+	moi_kalkulacija = tr("Приемница-Калкулација");
+	moi_profakturi = tr("Про-Фактури");
+	moi_komintenti_analitika = tr("Аналитика по Коминтент");
+	moi_analitikaArtikli = tr("Аналитика по Артикли");
+	moi_analitikaKomintenti = tr("Аналитика по Коминтенти");
+	moi_finanalitikaKomintenti = tr("Обврски-Финансова Аналитика по Коминтенти");
+	moi_odobrenie = tr("Книжно одобрение");
+	moi_izjava = tr("Изјава");
+	moi_dnevenpromet = tr("Дневен Промет");
+	moi_employe = tr("Вработени");
+	moi_smetki = tr("Сметки");
+	moi_promena_ceni = tr("Извештај за промена на цени");
+	moi_faktmaster = tr("Фактури");
+	moi_profakturimaster = tr("Про-Фактури");
+	moi_povratnicamaster = tr("Повратници");
+	moi_popis = tr("Попис");
+	moi_porackismetki = tr("Порачки-Сметки");	
 
 	moi_god = QString::number(QDate::currentDate().year(), 10);
 
 #ifdef _demo
-	moi_firma_info1 = trUtf8("ДПТУ Демо ДООЕЛ - Скопје");
-	moi_firma_info2 = trUtf8("Ул. Скопска  бб");
-    moi_firma_info3 = trUtf8("Скопје");
-	moi_firma_tel = trUtf8("тел. +389 02/ 3123123");
-	moi_firma_email = trUtf8("е-маил: info@website.com.mk");
+	moi_firma_info1 = tr("ДПТУ Демо ДООЕЛ - Скопје");
+	moi_firma_info2 = tr("Ул. Скопска  бб");
+    moi_firma_info3 = tr("Скопје");
+	moi_firma_tel = tr("тел. +389 02/ 3123123");
+	moi_firma_email = tr("е-маил: info@website.com.mk");
 	moi_firma_web = ("http://www.website.com.mk");
-	moi_firma_banka1 = trUtf8("Стопанска банка: DM200001234567890");
-	moi_firma_banka2 = trUtf8("ПроКредит банка:  DM380123456789012");
-	moi_firma_edb = trUtf8("Даночен број  МК4012345678901");
+	moi_firma_banka1 = tr("Стопанска банка: DM200001234567890");
+	moi_firma_banka2 = tr("ПроКредит банка:  DM380123456789012");
+	moi_firma_edb = tr("Даночен број  МК4012345678901");
 	moi_logo = ":/sterna/Resources/ddv.png";
-	moi_izjava1 = trUtf8("Изјавувам дека продавам артикли од домашно");
-	moi_izjava2 = trUtf8("потекло кои се во моја сопственост________");
+	moi_izjava1 = tr("Изјавувам дека продавам артикли од домашно");
+	moi_izjava2 = tr("потекло кои се во моја сопственост________");
 	moi_prefix_prodavnica = "";
-    moi_direktor = trUtf8("Демо Директор");
-    moi_fakturiral = trUtf8("");
+    moi_direktor = tr("Демо Директор");
+    moi_fakturiral = tr("");
 
 #endif //_demo
 
 #ifdef _juruk_01
-	moi_firma_info1 = trUtf8("ДИЗАЈН СТУДИО ЈУРУКОВ ДООЕЛ увоз-извоз  Битола");
-	moi_firma_info2 = trUtf8("Ул.Климент Охридски 20 б");
-	moi_firma_info3 = trUtf8("Битола");
-	moi_firma_tel = trUtf8("тел. (+389 47) 227-833,228-965 ");
-	moi_firma_email = trUtf8("е-маил: studiojurukov@gmail.com");
+	moi_firma_info1 = tr("ДИЗАЈН СТУДИО ЈУРУКОВ ДООЕЛ увоз-извоз  Битола");
+	moi_firma_info2 = tr("Ул.Климент Охридски 20 б");
+	moi_firma_info3 = tr("Битола");
+	moi_firma_tel = tr("тел. (+389 47) 227-833,228-965 ");
+	moi_firma_email = tr("е-маил: studiojurukov@gmail.com");
 	moi_firma_web = ("http://www.juruklight.com");
-	moi_firma_banka1 = trUtf8("");
-	moi_firma_banka2 = trUtf8("Стопанска Банка Скопје:200002850612615");
-	moi_firma_edb = trUtf8("ЕДБ 400201554058");
+	moi_firma_banka1 = tr("");
+	moi_firma_banka2 = tr("Стопанска Банка Скопје:200002850612615");
+	moi_firma_edb = tr("ЕДБ 400201554058");
 	moi_logo = ":/sterna/Resources/jurukov1.png";
-	moi_izjava1 = trUtf8("Изјавувам дека продавам артикли од домашно");
-	moi_izjava2 = trUtf8("потекло кои се во моја сопственост________");
+	moi_izjava1 = tr("Изјавувам дека продавам артикли од домашно");
+	moi_izjava2 = tr("потекло кои се во моја сопственост________");
 	moi_prefix_prodavnica = "/01";
-	moi_direktor = trUtf8("Елена Ј.Раповске");
-	moi_fakturiral = trUtf8("");
+	moi_direktor = tr("Елена Ј.Раповске");
+	moi_fakturiral = tr("");
 
 #endif //_demo
 #ifdef _juruk_02
-	moi_firma_info1 = trUtf8("ДИЗАЈН СТУДИО ЈУРУКОВ ДООЕЛ увоз-извоз  Битола");
-	moi_firma_info2 = trUtf8("Ул.Климент Охридски 20 б");
-	moi_firma_info3 = trUtf8("Битола");
-	moi_firma_tel = trUtf8("тел. (+389 47) 227-833,228-965 ");
-	moi_firma_email = trUtf8("е-маил: studiojurukov@gmail.com");
+	moi_firma_info1 = tr("ДИЗАЈН СТУДИО ЈУРУКОВ ДООЕЛ увоз-извоз  Битола");
+	moi_firma_info2 = tr("Ул.Климент Охридски 20 б");
+	moi_firma_info3 = tr("Битола");
+	moi_firma_tel = tr("тел. (+389 47) 227-833,228-965 ");
+	moi_firma_email = tr("е-маил: studiojurukov@gmail.com");
 	moi_firma_web = ("http://www.juruklight.com");
-	moi_firma_banka1 = trUtf8("");
-	moi_firma_banka2 = trUtf8("Стопанска Банка Скопје:200002850612615");
-	moi_firma_edb = trUtf8("ЕДБ 400201554058");
+	moi_firma_banka1 = tr("");
+	moi_firma_banka2 = tr("Стопанска Банка Скопје:200002850612615");
+	moi_firma_edb = tr("ЕДБ 400201554058");
 	moi_logo = ":/sterna/Resources/jurukov1.png";
-	moi_izjava1 = trUtf8("Изјавувам дека продавам артикли од домашно");
-	moi_izjava2 = trUtf8("потекло кои се во моја сопственост________");
+	moi_izjava1 = tr("Изјавувам дека продавам артикли од домашно");
+	moi_izjava2 = tr("потекло кои се во моја сопственост________");
 	moi_prefix_prodavnica = "/02";
 	moi_direktor = "";
 	moi_fakturiral = "";
@@ -169,118 +169,118 @@ sterna::sterna(QWidget *parent, Qt::WindowFlags flags)
 #endif //_demo
 	
 #ifdef _ekolend
-	moi_firma_info1 = trUtf8("ДПТУ ЕКОЛЕНД ДООЕЛ - Скопје");
-	moi_firma_info2 = trUtf8("Ул. Коце Металец  2a/39");
-    moi_firma_info3 = trUtf8("Скопје");
-	moi_firma_tel = trUtf8("тел. +389 02/ 3220889");
-	moi_firma_email = trUtf8("е-маил: dusan@steeltime.mk");
+	moi_firma_info1 = tr("ДПТУ ЕКОЛЕНД ДООЕЛ - Скопје");
+	moi_firma_info2 = tr("Ул. Коце Металец  2a/39");
+    moi_firma_info3 = tr("Скопје");
+	moi_firma_tel = tr("тел. +389 02/ 3220889");
+	moi_firma_email = tr("е-маил: dusan@steeltime.mk");
 	moi_firma_web = ("http://www.steeltime.mk");
-	moi_firma_banka1 = trUtf8("Стопанска банка: 200001295740930");
-	moi_firma_banka2 = trUtf8("ПроКредит банка:  380176911504193");
-	moi_firma_edb = trUtf8("Даночен број  МК4011006125146");
+	moi_firma_banka1 = tr("Стопанска банка: 200001295740930");
+	moi_firma_banka2 = tr("ПроКредит банка:  380176911504193");
+	moi_firma_edb = tr("Даночен број  МК4011006125146");
 	moi_logo = ":/sterna/Resources/microsoft_logo.png";
-	moi_izjava1 = trUtf8("Изјавувам дека продавам артикли од домашно потекло кои ");
-	moi_izjava2 = trUtf8("се во моја сопственост__________________________________");
+	moi_izjava1 = tr("Изјавувам дека продавам артикли од домашно потекло кои ");
+	moi_izjava2 = tr("се во моја сопственост__________________________________");
 #endif //_ekolend
 
 #ifdef _ekoultima
-	moi_firma_info1 = trUtf8("ЕКО УЛТИМА ДООЕЛ ");
-	moi_firma_info2 = trUtf8("Ул. Герника бр.1 - Н. Драчево");
-	moi_firma_info3 = trUtf8("Скопје");
-    moi_firma_tel = trUtf8("тел. +389  077 939 550");
-	moi_firma_email = trUtf8("е-маил: ekoultima@gmail.com");
+	moi_firma_info1 = tr("ЕКО УЛТИМА ДООЕЛ ");
+	moi_firma_info2 = tr("Ул. Герника бр.1 - Н. Драчево");
+	moi_firma_info3 = tr("Скопје");
+    moi_firma_tel = tr("тел. +389  077 939 550");
+	moi_firma_email = tr("е-маил: ekoultima@gmail.com");
 	moi_firma_web = ("");
-	moi_firma_banka1 = trUtf8("Охридска Банка: 530-0101014716-33");
-	moi_firma_banka2 = trUtf8("");
-	moi_firma_edb = trUtf8("Даночен број  MK4058011510526");
+	moi_firma_banka1 = tr("Охридска Банка: 530-0101014716-33");
+	moi_firma_banka2 = tr("");
+	moi_firma_edb = tr("Даночен број  MK4058011510526");
 	moi_logo = "";
-	moi_izjava1 = trUtf8("Изјавувам дека продавам артикли од домашно потекло ");
-	moi_izjava2 = trUtf8("кои се во моја сопственост_________________________");
+	moi_izjava1 = tr("Изјавувам дека продавам артикли од домашно потекло ");
+	moi_izjava2 = tr("кои се во моја сопственост_________________________");
 #endif //_ekoultima
 
 #ifdef _bubo
-	moi_firma_info1 = trUtf8("БУ-БО МЕТАЛИКА ДООЕЛ - Скопје");
-	moi_firma_info2 = trUtf8("ул. Лука Геров б.б. - Населба Даме Груев - Скопје");
-    moi_firma_info3 = trUtf8("Скопје");
-	moi_firma_tel = trUtf8("тел/факс +389 02/ 204-4920");
-	moi_firma_email = trUtf8("bubometalika@yahoo.com");
+	moi_firma_info1 = tr("БУ-БО МЕТАЛИКА ДООЕЛ - Скопје");
+	moi_firma_info2 = tr("ул. Лука Геров б.б. - Населба Даме Груев - Скопје");
+    moi_firma_info3 = tr("Скопје");
+	moi_firma_tel = tr("тел/факс +389 02/ 204-4920");
+	moi_firma_email = tr("bubometalika@yahoo.com");
 	moi_firma_web = ("");
-	moi_firma_banka1 = trUtf8("ПроКредит банка:  380276836700116");
-	moi_firma_banka2 = trUtf8("");
-	moi_firma_edb = trUtf8("Даночен број  4044010502600");
+	moi_firma_banka1 = tr("ПроКредит банка:  380276836700116");
+	moi_firma_banka2 = tr("");
+	moi_firma_edb = tr("Даночен број  4044010502600");
 	moi_logo = "";
-	moi_izjava1 = trUtf8("Изјавувам дека продавам артикли од домашно потекло ");
-	moi_izjava2 = trUtf8("кои се во моја сопственост_________________________");
+	moi_izjava1 = tr("Изјавувам дека продавам артикли од домашно потекло ");
+	moi_izjava2 = tr("кои се во моја сопственост_________________________");
 #endif // _bubo
 
 #ifdef _alea
-    moi_firma_info1 = trUtf8("Т.Д. АЛЕА  ");
-    moi_firma_info2 = trUtf8("бул.Јане Сандански бр.25-1/31");
-    moi_firma_info3 = trUtf8("1000 Скопје");
-    moi_firma_tel = trUtf8("тел. +3892 3296 630");
-    moi_firma_email = trUtf8(" e-mail : alea@alea.com.mk");
+    moi_firma_info1 = tr("Т.Д. АЛЕА  ");
+    moi_firma_info2 = tr("бул.Јане Сандански бр.25-1/31");
+    moi_firma_info3 = tr("1000 Скопје");
+    moi_firma_tel = tr("тел. +3892 3296 630");
+    moi_firma_email = tr(" e-mail : alea@alea.com.mk");
     moi_firma_web = ("http://www.alea.com.mk");
-    moi_firma_banka1 = trUtf8("Стопанска банка: 200000024351745");
-    moi_firma_banka2 = trUtf8("Охридска банка: 530010100285129");
-    moi_firma_edb = trUtf8("ЕДБ. МК4030993158284");
+    moi_firma_banka1 = tr("Стопанска банка: 200000024351745");
+    moi_firma_banka2 = tr("Охридска банка: 530010100285129");
+    moi_firma_edb = tr("ЕДБ. МК4030993158284");
     moi_logo = ":/sterna/Resources/alea.png";
-    moi_izjava1 = trUtf8("Изјавувам дека продавам артикли од домашно");
-    moi_izjava2 = trUtf8("потекло кои се во моја сопственост________");
-	moi_direktor = trUtf8("Недим Куловиќ");
-	moi_fakturiral = trUtf8("Недим Куловиќ");
+    moi_izjava1 = tr("Изјавувам дека продавам артикли од домашно");
+    moi_izjava2 = tr("потекло кои се во моја сопственост________");
+	moi_direktor = tr("Недим Куловиќ");
+	moi_fakturiral = tr("Недим Куловиќ");
 
 #endif 
 	//_demo
 
 #ifdef _doralek
-	moi_firma_info1 = trUtf8("Д.T.У. ДОРАЛЕК ДООЕЛ експорт-импорт Скопје ");
-	moi_firma_info2 = trUtf8("Адреса: “Коле Неделковски” бр.50");
-	moi_firma_info3 = trUtf8("1000  Скопје, Р. Македонија");
-	moi_firma_tel = trUtf8("тел: +389 (0)2 3296-715, факс: + 389 (0)2 3296-691");
-	moi_firma_email = trUtf8(" e-mail: doralek@t-home.mk");
+	moi_firma_info1 = tr("Д.T.У. ДОРАЛЕК ДООЕЛ експорт-импорт Скопје ");
+	moi_firma_info2 = tr("Адреса: “Коле Неделковски” бр.50");
+	moi_firma_info3 = tr("1000  Скопје, Р. Македонија");
+	moi_firma_tel = tr("тел: +389 (0)2 3296-715, факс: + 389 (0)2 3296-691");
+	moi_firma_email = tr(" e-mail: doralek@t-home.mk");
 	moi_firma_web = ("");
-	moi_firma_banka1 = trUtf8("НЛБ Тутунска банка: 210064984850150");
-	moi_firma_banka2 = trUtf8("");
-	moi_firma_edb = trUtf8("ЕДБ. МК4080009504557 ");
+	moi_firma_banka1 = tr("НЛБ Тутунска банка: 210064984850150");
+	moi_firma_banka2 = tr("");
+	moi_firma_edb = tr("ЕДБ. МК4080009504557 ");
 	moi_logo = ":/sterna/Resources/hsg.png";
-	moi_izjava1 = trUtf8("Изјавувам дека продавам артикли од домашно");
-	moi_izjava2 = trUtf8("потекло кои се во моја сопственост________");
+	moi_izjava1 = tr("Изјавувам дека продавам артикли од домашно");
+	moi_izjava2 = tr("потекло кои се во моја сопственост________");
 	moi_direktor = "";
 	moi_fakturiral = "";
 
 #endif //_demo
 
 #ifdef _global
-	moi_firma_info1 = trUtf8("ДТУ ГЛОБАЛ ГРЕЕН РЕЦИКЛИНГ ДООЕЛ увоз-извоз Скопје");
-	moi_firma_info2 = trUtf8("ул.Булевар МАКЕДОНСКО-КОСОВСКА БРИГАДА бр.87 ");
-	moi_firma_info3 = trUtf8("1000 Скопје - Чаир");
-	moi_firma_tel = trUtf8("тел: 076 98 22 22");
-	moi_firma_email = trUtf8(" e-mail : ");
+	moi_firma_info1 = tr("ДТУ ГЛОБАЛ ГРЕЕН РЕЦИКЛИНГ ДООЕЛ увоз-извоз Скопје");
+	moi_firma_info2 = tr("ул.Булевар МАКЕДОНСКО-КОСОВСКА БРИГАДА бр.87 ");
+	moi_firma_info3 = tr("1000 Скопје - Чаир");
+	moi_firma_tel = tr("тел: 076 98 22 22");
+	moi_firma_email = tr(" e-mail : ");
 	moi_firma_web = ("");
-	moi_firma_banka1 = trUtf8("Тутунска банка: 210068436970152");
-	moi_firma_banka2 = trUtf8("");
-	moi_firma_edb = trUtf8("ЕДБ. 4082013510513");
+	moi_firma_banka1 = tr("Тутунска банка: 210068436970152");
+	moi_firma_banka2 = tr("");
+	moi_firma_edb = tr("ЕДБ. 4082013510513");
 	moi_logo = ":/sterna/Resources/ddv3.png";
-	moi_izjava1 = trUtf8("Изјавувам дека продавам артикли од домашно");
-	moi_izjava2 = trUtf8("потекло кои се во моја сопственост________");
+	moi_izjava1 = tr("Изјавувам дека продавам артикли од домашно");
+	moi_izjava2 = tr("потекло кои се во моја сопственост________");
 	moi_direktor = "";
 	moi_fakturiral = "";
 
 #endif 
 
 #ifdef _hsg
-    moi_firma_info1 = trUtf8("Хардвер-Софтвер Груп");
-    moi_firma_info2 = trUtf8("ул.Скопска бр.7896 ");
-	moi_firma_info3 = trUtf8("1000 Скопје ");
-    moi_firma_tel = trUtf8("тел: 070 100-000");
-    moi_firma_email = trUtf8("hsghsg@gmail.com");
+    moi_firma_info1 = tr("Хардвер-Софтвер Груп");
+    moi_firma_info2 = tr("ул.Скопска бр.7896 ");
+	moi_firma_info3 = tr("1000 Скопје ");
+    moi_firma_tel = tr("тел: 070 100-000");
+    moi_firma_email = tr("hsghsg@gmail.com");
 	moi_firma_web = "";
-    moi_firma_banka1 = trUtf8("Тутунска банка: 210-0000000000-00");
-	moi_firma_banka2 = trUtf8("");
-    moi_firma_edb = trUtf8("ЕДБ. MK4080000000000");
+    moi_firma_banka1 = tr("Тутунска банка: 210-0000000000-00");
+	moi_firma_banka2 = tr("");
+    moi_firma_edb = tr("ЕДБ. MK4080000000000");
 	moi_logo = ":/sterna/Resources/hsg.png";
-	moi_izjava1 = trUtf8("Изјавувам дека продавам артикли од домашно");
-	moi_izjava2 = trUtf8("потекло кои се во моја сопственост________");
+	moi_izjava1 = tr("Изјавувам дека продавам артикли од домашно");
+	moi_izjava2 = tr("потекло кои се во моја сопственост________");
     moi_direktor = "Перо Перов";
     moi_fakturiral = "Ацо Ацевски";
 
@@ -288,18 +288,18 @@ sterna::sterna(QWidget *parent, Qt::WindowFlags flags)
 
 
 #ifdef _uniparts
-	moi_firma_info1 = trUtf8("УНИ ПАРТС ДС- ДООЕЛ Скопје");
-	moi_firma_info2 = trUtf8("ул.Качанички пат бб ");
-	moi_firma_info3 = trUtf8("1000 Скопје ");
-	moi_firma_tel = trUtf8("тел/факс: +389 2 2600-232");
-	moi_firma_email = trUtf8(" e-mail : mail@uniparts.mk");
+	moi_firma_info1 = tr("УНИ ПАРТС ДС- ДООЕЛ Скопје");
+	moi_firma_info2 = tr("ул.Качанички пат бб ");
+	moi_firma_info3 = tr("1000 Скопје ");
+	moi_firma_tel = tr("тел/факс: +389 2 2600-232");
+	moi_firma_email = tr(" e-mail : mail@uniparts.mk");
 	moi_firma_web = ("http://www.uniparts.mk");
-	moi_firma_banka1 = trUtf8("Стопанска Банка: 200001401370244");
-	moi_firma_banka2 = trUtf8("");
-	moi_firma_edb = trUtf8("ЕДБ. MK4030006609571");
+	moi_firma_banka1 = tr("Стопанска Банка: 200001401370244");
+	moi_firma_banka2 = tr("");
+	moi_firma_edb = tr("ЕДБ. MK4030006609571");
 	moi_logo = ":/sterna/Resources/uniparts.png";
-	moi_izjava1 = trUtf8("Изјавувам дека продавам артикли од домашно");
-	moi_izjava2 = trUtf8("потекло кои се во моја сопственост________");
+	moi_izjava1 = tr("Изјавувам дека продавам артикли од домашно");
+	moi_izjava2 = tr("потекло кои се во моја сопственост________");
 	moi_direktor = "";
 	moi_fakturiral = "";
 
@@ -899,8 +899,8 @@ void sterna::createDockWindows()
     dock->setWidget(m_left);
 	addDockWidget(Qt::LeftDockWidgetArea, dock);
 	connect(m_left, SIGNAL(updatePrinterStatus(QWidget*)), this, SLOT(updatePrinterStat(QWidget*)));
-	QDesktopWidget *desk = new QDesktopWidget();
-	QRect screenRect = desk->screenGeometry();
+    QScreen *desk = QGuiApplication::primaryScreen();
+    QRect screenRect = desk->geometry();  // Get screen geometry
 	int  mLeftW = m_left->width();
 	QRect rMain = QRect(0, 0, screenRect.width() - mLeftW, screenRect.height() - 100);
 	Singleton *s = Singleton::Instance();
@@ -1686,7 +1686,7 @@ void sterna::on_actionPrinter_triggered()
 	if (qobject_cast<QAnalitikaArtikli*>(qApp->focusWidget()))
     {
         m_selectedPrint = SV_ANA;
-        filePrintPreview(QPrinter::Landscape);
+        filePrintPreview(Qt::LandscapeOrientation);
     }
     if (qobject_cast<QAnalitikaKomintenti*>(qApp->focusWidget()))
     {
@@ -1715,7 +1715,7 @@ void sterna::on_actionPreview_triggered()
 		if (m_mykalkulacija->getModel())
 		{
 				m_selectedPrint = SV_KALKULACIJA;
-				filePreview(QPrinter::Landscape);
+                filePreview(Qt::LandscapeOrientation);
 		}
 	}
 
@@ -1895,7 +1895,7 @@ void sterna::on_actionPreview_triggered()
     if (qobject_cast<QAnalitikaArtikli*>(qApp->focusWidget()))
     {
         m_selectedPrint = SV_ANA;
-        filePreview(QPrinter::Landscape);
+        filePreview(Qt::LandscapeOrientation);
     }
 
     if (qobject_cast<QAnalitikaKomintenti*>(qApp->focusWidget()))
@@ -2030,8 +2030,8 @@ void sterna::on_actionDnevnoFiskalnoZatvaranje_triggered()
 	int stop = 0;
 	//call fiscal printer
 	QMessageBox msgBox;
-	msgBox.setText(trUtf8("Печати ДНЕВНО ФИСКАЛНО ЗАТВАРАЊЕ !!!"));
-	msgBox.setInformativeText(trUtf8("Одбери OK за да потврдиш."));
+	msgBox.setText(tr("Печати ДНЕВНО ФИСКАЛНО ЗАТВАРАЊЕ !!!"));
+	msgBox.setInformativeText(tr("Одбери OK за да потврдиш."));
 	msgBox.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
 	msgBox.setDefaultButton(QMessageBox::Ok);
 	int ret = msgBox.exec();
@@ -2040,7 +2040,7 @@ void sterna::on_actionDnevnoFiskalnoZatvaranje_triggered()
 		CHelperClass chlp(this);
 		chlp.printFiscalDnevnoFiskalnoZatvoranje();
 		QString info5 = chlp.checkFiscal();
-		msgBox.setText(trUtf8("ДНЕВНО ФИСКАЛНО ЗАТВАРАЊЕ\nЕ ОТПЕЧАТЕНО  !!!"));
+		msgBox.setText(tr("ДНЕВНО ФИСКАЛНО ЗАТВАРАЊЕ\nЕ ОТПЕЧАТЕНО  !!!"));
 		msgBox.setInformativeText(info5);
 		msgBox.setStandardButtons(QMessageBox::Ok);
 		msgBox.setDefaultButton(QMessageBox::Ok);
@@ -2054,8 +2054,8 @@ void sterna::on_actionKontrolenIzvestaj_triggered()
 	int stop = 0;
 	//call fiscal printer
 	QMessageBox msgBox;
-	msgBox.setText(trUtf8("Печати КОНТРОЛЕН ИЗВЕШТАЈ !!!"));
-	msgBox.setInformativeText(trUtf8("Одбери OK за да потврдиш."));
+	msgBox.setText(tr("Печати КОНТРОЛЕН ИЗВЕШТАЈ !!!"));
+	msgBox.setInformativeText(tr("Одбери OK за да потврдиш."));
 	msgBox.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
 	msgBox.setDefaultButton(QMessageBox::Ok);
 	int ret = msgBox.exec();
@@ -2064,7 +2064,7 @@ void sterna::on_actionKontrolenIzvestaj_triggered()
 		CHelperClass chlp(this);
 		chlp.printFiscalDnevnoFiskalnoZatvoranje();
 		QString info5 = chlp.checkFiscal();
-		msgBox.setText(trUtf8("КОНТРОЛЕН ИЗВЕШТАЈ\nЕ ОТПЕЧАТЕН  !!!"));
+		msgBox.setText(tr("КОНТРОЛЕН ИЗВЕШТАЈ\nЕ ОТПЕЧАТЕН  !!!"));
 		msgBox.setInformativeText(info5);
 		msgBox.setStandardButtons(QMessageBox::Ok);
 		msgBox.setDefaultButton(QMessageBox::Ok);
@@ -2077,8 +2077,8 @@ void sterna::on_actionPodesuvanjeDatumCas_triggered()
 	int stop = 0;
 	//call fiscal printer
 	QMessageBox msgBox;
-	msgBox.setText(trUtf8("Подесување на ДАТУМ и Час !!!"));
-	msgBox.setInformativeText(trUtf8("Одбери OK за да потврдиш."));
+	msgBox.setText(tr("Подесување на ДАТУМ и Час !!!"));
+	msgBox.setInformativeText(tr("Одбери OK за да потврдиш."));
 	msgBox.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
 	msgBox.setDefaultButton(QMessageBox::Ok);
 	int ret = msgBox.exec();
@@ -2087,7 +2087,7 @@ void sterna::on_actionPodesuvanjeDatumCas_triggered()
 		CHelperClass chlp(this);
 		chlp.printFiscalPodesuvanjeDatumCas();
 		QString info5 = chlp.checkFiscal();
-		msgBox.setText(trUtf8("ДАТУМ и Час\nЕ подесен  !!!"));
+		msgBox.setText(tr("ДАТУМ и Час\nЕ подесен  !!!"));
 		msgBox.setInformativeText(info5);
 		msgBox.setStandardButtons(QMessageBox::Ok);
 		msgBox.setDefaultButton(QMessageBox::Ok);
@@ -2101,8 +2101,8 @@ void sterna::on_actionDetalenIzvestajPoPeriod_triggered()
 	int stop = 0;
 	//call fiscal printer
 	QMessageBox msgBox;
-	msgBox.setText(trUtf8("Печати ДЕТАЛЕН ИЗВЕШТАЈ ПО ПЕРИОД !!!"));
-	msgBox.setInformativeText(trUtf8("Одбери OK за да потврдиш."));
+	msgBox.setText(tr("Печати ДЕТАЛЕН ИЗВЕШТАЈ ПО ПЕРИОД !!!"));
+	msgBox.setInformativeText(tr("Одбери OK за да потврдиш."));
 	msgBox.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
 	msgBox.setDefaultButton(QMessageBox::Ok);
 	int ret = msgBox.exec();
@@ -2118,7 +2118,7 @@ void sterna::on_actionDetalenIzvestajPoPeriod_triggered()
 
 //			chlp.printDetalenIzvestajPoPeriod(date1, date2);
 //			QString info5 = chlp.checkFiscal();
-//			msgBox.setText(trUtf8("ДЕТАЛЕН ИЗВЕШТАЈ ПО ПЕРИОД\nЕ ОТПЕЧАТЕН  !!!"));
+//			msgBox.setText(tr("ДЕТАЛЕН ИЗВЕШТАЈ ПО ПЕРИОД\nЕ ОТПЕЧАТЕН  !!!"));
 //			msgBox.setInformativeText(info5);
 //			msgBox.setStandardButtons(QMessageBox::Ok);
 //			msgBox.setDefaultButton(QMessageBox::Ok);
@@ -2400,7 +2400,7 @@ void sterna::closeMyWidget()
 
 void sterna::connectToDatabase()
 {
-	// create database 
+    // create database
 //    QSqlDatabase db = QSqlDatabase::addDatabase("QODBC");
 //    db.setDatabaseName("sterna");
 //    db.setPassword("zEn");
@@ -2450,23 +2450,25 @@ void sterna::filePrintPreview(int orient)
     QPrinter printer(QPrinter::HighResolution);
     if (orient)
     {
-        printer.setOrientation(QPrinter::Landscape);
-        m_pageWidth = printer.pageRect().height();  //4961
-        m_pageHeight = printer.pageRect().width(); //7016
-        m_pageHeightScale = (float)printer.pageRect().height() / 4961.0f;
-        m_pageWidthScale = (float)printer.pageRect().width() /7016.0f;
+        printer.setPageOrientation(QPageLayout::Landscape);
+        m_pageWidth = printer.pageRect(QPrinter::DevicePixel).height();  //4961
+        m_pageHeight = printer.pageRect(QPrinter::DevicePixel).width(); //7016
+        m_pageHeightScale = (float)printer.pageRect(QPrinter::DevicePixel).height() / 4961.0f;
+        m_pageWidthScale = (float)printer.pageRect(QPrinter::DevicePixel).width() /7016.0f;
     }
     else
     {
-        printer.setOrientation(QPrinter::Portrait);
-        m_pageWidth = printer.pageRect().width();  //4961
-        m_pageHeight = printer.pageRect().height(); //7016
-        m_pageWidthScale = (float)printer.pageRect().width() / 4961.0f;
-        m_pageHeightScale = (float)printer.pageRect().height() /7016.0f;
+        printer.setPageOrientation(QPageLayout::Landscape);
+        m_pageWidth = printer.pageRect(QPrinter::Point).width();  //4961
+        m_pageHeight = printer.pageRect(QPrinter::Point).height(); //7016
+        m_pageWidthScale = (float)printer.pageRect(QPrinter::Point).width() / 4961.0f;
+        m_pageHeightScale = (float)printer.pageRect(QPrinter::Point).height() /7016.0f;
     }
 
-    printer.setPageMargins(m_aleft,m_atop,m_aright,m_abottom,QPrinter::Millimeter);
-    printPreview(&printer);
+    QPageLayout layout = printer.pageLayout();
+    layout.setMargins(QMarginsF(m_aleft, m_atop, m_aright, m_abottom));  // ✅ Set margins using QPageLayout
+    layout.setUnits(QPageLayout::Millimeter);  // ✅ Explicitly set to millimeters
+    printer.setPageLayout(layout);
 }
 
 void sterna::filePreview(int orient)
@@ -2478,22 +2480,26 @@ void sterna::filePreview(int orient)
     QPrinter printer(QPrinter::HighResolution);
     if (orient)
     {
-        printer.setOrientation(QPrinter::Landscape);
-        m_pageWidth = printer.pageRect().height();  //4961
-        m_pageHeight = printer.pageRect().width(); //7016
-        m_pageHeightScale = (float)printer.pageRect().height() / 4961.0f;
-        m_pageWidthScale = (float)printer.pageRect().width() /7016.0f;
+        printer.setPageOrientation(QPageLayout::Landscape);
+        m_pageWidth = printer.pageRect(QPrinter::Point).height();
+        m_pageHeight = printer.pageRect(QPrinter::Point).width();
+        m_pageHeightScale = static_cast<float>(m_pageWidth) / 4961.0f;
+        m_pageWidthScale = static_cast<float>(m_pageHeight) / 7016.0f;
     }
     else
     {
-        printer.setOrientation(QPrinter::Portrait);
-        m_pageWidth = printer.pageRect().width();  //4961
-        m_pageHeight = printer.pageRect().height(); //7016
-        m_pageWidthScale = (float)printer.pageRect().width() / 4961.0f;
-        m_pageHeightScale = (float)printer.pageRect().height() /7016.0f;
+        printer.setPageOrientation(QPageLayout::Portrait);
+        m_pageWidth = printer.pageRect(QPrinter::Point).width();
+        m_pageHeight = printer.pageRect(QPrinter::Point).height();
+        m_pageWidthScale = static_cast<float>(m_pageWidth) / 4961.0f;
+        m_pageHeightScale = static_cast<float>(m_pageHeight) / 7016.0f;
     }
 
-    printer.setPageMargins(m_aleft,m_atop,m_aright,m_abottom,QPrinter::Millimeter);
+    QPageLayout layout = printer.pageLayout();
+    layout.setMargins(QMarginsF(m_aleft, m_atop, m_aright, m_abottom));
+    layout.setUnits(QPageLayout::Millimeter);
+    printer.setPageLayout(layout);
+
     QPrintPreviewDialog preview(&printer, this);
     preview.setWindowFlags(Qt::Window);
     connect(&preview, SIGNAL(paintRequested(QPrinter *)), SLOT(printPreview(QPrinter *)));
@@ -2549,10 +2555,10 @@ void sterna::drawHeader(QPainter& painter)
     QPainterPath path;
     f.setPointSize(18);
     painter.setFont(f);
-    painter.drawText(relX(30), relY(100), trUtf8("Фактура бр:"));
+    painter.drawText(relX(30), relY(100), tr("Фактура бр:"));
     f.setPointSize(8);
     painter.setFont(f);
-    painter.drawText(relX(20), relY(110), trUtf8("Врз основа на Ваше барање број _____________ од ____________________ Ви се испорачани долунаведените материјали:"));
+    painter.drawText(relX(20), relY(110), tr("Врз основа на Ваше барање број _____________ од ____________________ Ви се испорачани долунаведените материјали:"));
     QBrush b;
     painter.fillRect(relX(20), relY(120), relX(170), relY(5), QColor(0, 200, 5));
     path.addRect(relX(20), relY(120), relX(170), relY(5));
@@ -2594,20 +2600,20 @@ void sterna::drawHeader(QPainter& painter)
 
     f.setPointSize(8);
     painter.setFont(f);
-    painter.drawText(relX(22), relY(124), trUtf8("Рб."));
-    painter.drawText(relX(32), relY(124), trUtf8("ОПИС"));
-    painter.drawText(relX(87), relY(124), trUtf8("Едм"));
-    painter.drawText(relX(102), relY(124), trUtf8("Кол."));
-    painter.drawText(relX(117), relY(124), trUtf8("Цена"));
-    painter.drawText(relX(132), relY(124), trUtf8("ДДВ"));
-    painter.drawText(relX(162), relY(124), trUtf8("Износ со ДДВ"));
+    painter.drawText(relX(22), relY(124), tr("Рб."));
+    painter.drawText(relX(32), relY(124), tr("ОПИС"));
+    painter.drawText(relX(87), relY(124), tr("Едм"));
+    painter.drawText(relX(102), relY(124), tr("Кол."));
+    painter.drawText(relX(117), relY(124), tr("Цена"));
+    painter.drawText(relX(132), relY(124), tr("ДДВ"));
+    painter.drawText(relX(162), relY(124), tr("Износ со ДДВ"));
     painter.drawRoundedRect(relX(100), relY(45), relX(90), relY(45), relX(3), relY(3), Qt::AbsoluteSize );
     path.moveTo(relX(20),relY(260));
     path.lineTo(relX(70),relY(260));
     path.moveTo(relX(140),relY(260));
     path.lineTo(relX(190),relY(260));
-    painter.drawText(relX(25), relY(265), trUtf8("Фактурирал"));
-    painter.drawText(relX(145), relY(265), trUtf8("Директор"));
+    painter.drawText(relX(25), relY(265), tr("Фактурирал"));
+    painter.drawText(relX(145), relY(265), tr("Директор"));
     painter.drawPath(path);
     painter.drawRoundedRect(relX(20), relY(117), relX(170), relY(106), relX(3), relY(3), Qt::AbsoluteSize );
 
@@ -2659,11 +2665,11 @@ void sterna::drawFakturaVkupno(QPrinter *printer, QPainter& painter)
 		f.setPointSize(18);
 		painter.setFont(f);
 #ifdef _alea
-		painter.drawText(relX(100), relY(50), relX(100), relY(60), Qt::AlignRight, trUtf8("Фактура-Испратница"));
+		painter.drawText(relX(100), relY(50), relX(100), relY(60), Qt::AlignRight, tr("Фактура-Испратница"));
 #endif
 
 #ifndef _alea
-		painter.drawText(relX(100), relY(50), relX(100), relY(60), Qt::AlignRight, trUtf8("Фактура"));
+		painter.drawText(relX(100), relY(50), relX(100), relY(60), Qt::AlignRight, tr("Фактура"));
 #endif
 
 		f.setPointSize(8);
@@ -2674,17 +2680,17 @@ void sterna::drawFakturaVkupno(QPrinter *printer, QPainter& painter)
 		painter.drawText(relX(150), relY(45), relX(50), relY(50), Qt::AlignRight, moi_firma_web);
 		QString textNumberS = "0000"+modelFakturaInfo.at(4);
 		textNumberS = textNumberS.right(4);
-		painter.drawText(relX(160), relY(60), relX(40), relY(65), Qt::AlignRight, trUtf8("Сериски Број: ") + moi_god + "-" + textNumberS);
-		painter.drawText(relX(160), relY(65), relX(40), relY(70), Qt::AlignRight, trUtf8("Датум: ") + modelFakturaInfo.at(3));
+		painter.drawText(relX(160), relY(60), relX(40), relY(65), Qt::AlignRight, tr("Сериски Број: ") + moi_god + "-" + textNumberS);
+		painter.drawText(relX(160), relY(65), relX(40), relY(70), Qt::AlignRight, tr("Датум: ") + modelFakturaInfo.at(3));
 		int rok = modelFakturaInfo.at(5).toInt();
 		QString separ = modelFakturaInfo.at(3).mid(4,1);
 		QDateTime dateTimeTemp = QDateTime::fromString(modelFakturaInfo.at(3),"yyyy" + separ + "MM" + separ + "dd");
 		dateTimeTemp = dateTimeTemp.addDays(rok);
-		painter.drawText(relX(160), relY(70), relX(40), relY(75), Qt::AlignRight, trUtf8("Валута: ") + dateTimeTemp.toString("yyyy" + separ + "MM" + separ + "dd"));
+		painter.drawText(relX(160), relY(70), relX(40), relY(75), Qt::AlignRight, tr("Валута: ") + dateTimeTemp.toString("yyyy" + separ + "MM" + separ + "dd"));
 		pen.setWidth(2);
 		painter.setPen(pen);
 		painter.drawRoundedRect(relX(10), relY(55), relX(80), relY(30), relX(3), relY(3), Qt::AbsoluteSize );
-		painter.drawText(relX(15), relY(60), trUtf8("До:"));
+		painter.drawText(relX(15), relY(60), tr("До:"));
 
 		painter.drawText(relX(15), relY(65), modelFakturaInfo.at(0));
 		painter.drawText(relX(15), relY(70), modelFakturaInfo.at(1));
@@ -2726,23 +2732,23 @@ void sterna::drawFakturaVkupno(QPrinter *printer, QPainter& painter)
 		path.moveTo(relX(175),relY(90));
 		path.lineTo(relX(175),relY(235));
 
-		painter.drawText(relX(11), relY(94), trUtf8("Рб."));
-		painter.drawText(relX(17), relY(94), trUtf8("Опис на артикал - услуга"));
-		painter.drawText(relX(62), relY(94), trUtf8("Кол."));
-		painter.drawText(relX(82), relY(94), trUtf8("Едм."));
-		painter.drawText(relX(90), relY(94), trUtf8("Цена"));
-		painter.drawText(relX(108), relY(94), trUtf8("Раб.%"));
-		painter.drawText(relX(118), relY(94), trUtf8("ДДВ%"));
-		painter.drawText(relX(129), relY(94), trUtf8("Вкупен Износ"));
-		painter.drawText(relX(154), relY(94), trUtf8("ДДВ Износ"));
-		painter.drawText(relX(177), relY(94), trUtf8("Вк.Износ со ДДВ"));
+		painter.drawText(relX(11), relY(94), tr("Рб."));
+		painter.drawText(relX(17), relY(94), tr("Опис на артикал - услуга"));
+		painter.drawText(relX(62), relY(94), tr("Кол."));
+		painter.drawText(relX(82), relY(94), tr("Едм."));
+		painter.drawText(relX(90), relY(94), tr("Цена"));
+		painter.drawText(relX(108), relY(94), tr("Раб.%"));
+		painter.drawText(relX(118), relY(94), tr("ДДВ%"));
+		painter.drawText(relX(129), relY(94), tr("Вкупен Износ"));
+		painter.drawText(relX(154), relY(94), tr("ДДВ Износ"));
+		painter.drawText(relX(177), relY(94), tr("Вк.Износ со ДДВ"));
 
 		path.moveTo(relX(10),relY(275));
 		path.lineTo(relX(60),relY(275));
 		path.moveTo(relX(140),relY(275));
 		path.lineTo(relX(190),relY(275));
-		painter.drawText(relX(11), relY(280), trUtf8("Фактурирал"));
-		painter.drawText(relX(145), relY(280), trUtf8("Примил"));
+		painter.drawText(relX(11), relY(280), tr("Фактурирал"));
+		painter.drawText(relX(145), relY(280), tr("Примил"));
 		path.moveTo(relX(10),relY(249));
 		path.lineTo(relX(200),relY(249));
 		painter.drawPath(path);
@@ -2813,37 +2819,37 @@ void sterna::drawFakturaVkupno(QPrinter *printer, QPainter& painter)
 			printer->newPage();
 	}
 	CHelperClass hlp(this);
-	painter.drawText(relX(130), relY(235), relX(40), relY(10), Qt::AlignRight, trUtf8("Вкупен Износ"));
-	painter.drawText(relX(170), relY(235), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(sumaDDV - ddv), 'f', 2) + trUtf8("  ден."));
+	painter.drawText(relX(130), relY(235), relX(40), relY(10), Qt::AlignRight, tr("Вкупен Износ"));
+	painter.drawText(relX(170), relY(235), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(sumaDDV - ddv), 'f', 2) + tr("  ден."));
 
-	painter.drawText(relX(130), relY(240), relX(40), relY(10), Qt::AlignRight, trUtf8("Вкупен ДДВ"));
-	painter.drawText(relX(170), relY(240), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(ddv), 'f', 2) + trUtf8("  ден."));
+	painter.drawText(relX(130), relY(240), relX(40), relY(10), Qt::AlignRight, tr("Вкупен ДДВ"));
+	painter.drawText(relX(170), relY(240), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(ddv), 'f', 2) + tr("  ден."));
 
-	painter.drawText(relX(90), relY(245), relX(80), relY(10), Qt::AlignRight, trUtf8("Вкупно за наплата денари со пресметан ДДВ"));
-	painter.drawText(relX(170), relY(245), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(sumaDDV), 'f', 2) + trUtf8("  ден."));
+	painter.drawText(relX(90), relY(245), relX(80), relY(10), Qt::AlignRight, tr("Вкупно за наплата денари со пресметан ДДВ"));
+	painter.drawText(relX(170), relY(245), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(sumaDDV), 'f', 2) + tr("  ден."));
 
 	painter.drawRoundedRect(relX(10), relY(236), relX(140), relY(9), relX(1), relY(1), Qt::AbsoluteSize );
 
-	painter.drawText(relX(12), relY(236), relX(40), relY(10), Qt::AlignLeft, trUtf8("Основица за ДДВ(5%)"));
-	painter.drawText(relX(46), relY(236), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(OsnovicaDDV5), 'f', 2) + trUtf8("  ден."));
+	painter.drawText(relX(12), relY(236), relX(40), relY(10), Qt::AlignLeft, tr("Основица за ДДВ(5%)"));
+	painter.drawText(relX(46), relY(236), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(OsnovicaDDV5), 'f', 2) + tr("  ден."));
 
-	painter.drawText(relX(12), relY(241), relX(40), relY(10), Qt::AlignLeft, trUtf8("Основица за ДДВ(18%)"));
-	painter.drawText(relX(46), relY(241), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(OsnovicaDDV18), 'f', 2) + trUtf8("  ден."));
+	painter.drawText(relX(12), relY(241), relX(40), relY(10), Qt::AlignLeft, tr("Основица за ДДВ(18%)"));
+	painter.drawText(relX(46), relY(241), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(OsnovicaDDV18), 'f', 2) + tr("  ден."));
 
-	painter.drawText(relX(80), relY(236), relX(40), relY(10), Qt::AlignLeft, trUtf8("Вкупен ДДВ  (5%)"));
-	painter.drawText(relX(110), relY(236), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(DDV5), 'f', 2) + trUtf8("  ден."));
+	painter.drawText(relX(80), relY(236), relX(40), relY(10), Qt::AlignLeft, tr("Вкупен ДДВ  (5%)"));
+	painter.drawText(relX(110), relY(236), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(DDV5), 'f', 2) + tr("  ден."));
 
-	painter.drawText(relX(80), relY(241), relX(40), relY(10), Qt::AlignLeft, trUtf8("Вкупен ДДВ (18%)"));
-	painter.drawText(relX(110), relY(241), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(DDV18), 'f', 2) + trUtf8("  ден."));
+	painter.drawText(relX(80), relY(241), relX(40), relY(10), Qt::AlignLeft, tr("Вкупен ДДВ (18%)"));
+	painter.drawText(relX(110), relY(241), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(DDV18), 'f', 2) + tr("  ден."));
 
 
-	// 	painter.drawText(relX(15), relY(280), trUtf8("Фактурирал"));
+	// 	painter.drawText(relX(15), relY(280), tr("Фактурирал"));
 
 	f.setPointSize(7);
 	painter.setFont(f);
 	int p = int(sumaDDV + 0.5f);
 	QString t = convertIntToText(p);
-	QString t1 = trUtf8("Рок на плаќање ")+ modelFakturaInfo.at(5)+trUtf8(" дена од денот на фактурирањето.Во спротивно пресметуваме законска камата.");
+	QString t1 = tr("Рок на плаќање ")+ modelFakturaInfo.at(5)+tr(" дена од денот на фактурирањето.Во спротивно пресметуваме законска камата.");
 	painter.drawText(relX(10), relY(249), relX(120), relY(6), Qt::AlignLeft, t);
 	painter.drawText(relX(10), relY(258), relX(130), relY(6), Qt::AlignLeft, t1);
 #ifdef _demo
@@ -2885,11 +2891,11 @@ void sterna::drawFaktura(QPrinter *printer, QPainter& painter)
 	f.setPointSize(18);
 	painter.setFont(f);
 	#ifdef _alea
-        painter.drawText(relX(100), relY(50), relX(100), relY(60), Qt::AlignRight, trUtf8("Испратница-Фактура"));
+        painter.drawText(relX(100), relY(50), relX(100), relY(60), Qt::AlignRight, tr("Испратница-Фактура"));
     #endif
 
     #ifndef _alea
-        painter.drawText(relX(100), relY(50), relX(100), relY(60), Qt::AlignRight, trUtf8("Испратница-Фактура"));
+        painter.drawText(relX(100), relY(50), relX(100), relY(60), Qt::AlignRight, tr("Испратница-Фактура"));
     #endif
 
 	f.setPointSize(8);
@@ -2900,19 +2906,19 @@ void sterna::drawFaktura(QPrinter *printer, QPainter& painter)
 	textNumberS = textNumberS.right(4);
 	f.setBold(true);
 	painter.setFont(f);
-    painter.drawText(relX(160), relY(60), relX(40), relY(65), Qt::AlignRight, trUtf8("Сериски Број: ") + moi_god + "-" + textNumberS);
+    painter.drawText(relX(160), relY(60), relX(40), relY(65), Qt::AlignRight, tr("Сериски Број: ") + moi_god + "-" + textNumberS);
 	f.setBold(false);
 	painter.setFont(f);
-	painter.drawText(relX(160), relY(65), relX(40), relY(70), Qt::AlignRight, trUtf8("Датум: ") + modelFakturaInfo.at(3));
+	painter.drawText(relX(160), relY(65), relX(40), relY(70), Qt::AlignRight, tr("Датум: ") + modelFakturaInfo.at(3));
 	int rok = modelFakturaInfo.at(5).toInt();
 	QString separ = modelFakturaInfo.at(3).mid(4,1);
 	QDateTime dateTimeTemp = QDateTime::fromString(modelFakturaInfo.at(3),"yyyy" + separ + "MM" + separ + "dd");
 	dateTimeTemp = dateTimeTemp.addDays(rok);
-    painter.drawText(relX(160), relY(70), relX(40), relY(75), Qt::AlignRight, trUtf8("Валута: ") + dateTimeTemp.toString("yyyy" + separ + "MM" + separ + "dd"));
+    painter.drawText(relX(160), relY(70), relX(40), relY(75), Qt::AlignRight, tr("Валута: ") + dateTimeTemp.toString("yyyy" + separ + "MM" + separ + "dd"));
 	pen.setWidth(2);
 	painter.setPen(pen);
 	painter.drawRoundedRect(relX(10), relY(55), relX(80), relY(30), relX(3), relY(3), Qt::AbsoluteSize );
-	painter.drawText(relX(15), relY(60), trUtf8("До:"));
+	painter.drawText(relX(15), relY(60), tr("До:"));
 
 	f.setBold(true);
 	painter.setFont(f);
@@ -2959,19 +2965,19 @@ void sterna::drawFaktura(QPrinter *printer, QPainter& painter)
 	
 	f.setPointSize(8);
 	painter.setFont(f);
-	painter.drawText(relX(11), relY(94), trUtf8("Рб."));
-	painter.drawText(relX(16), relY(94), trUtf8("Опис на артикал - услуга"));
-	painter.drawText(relX(81), relY(94), trUtf8("Едм."));
-	painter.drawText(relX(93), relY(94), trUtf8("Кол."));
-	painter.drawText(relX(106), relY(93), trUtf8("Цена"));
-	painter.drawText(relX(106), relY(96), trUtf8("без ДДВ"));
-	painter.drawText(relX(121), relY(94), trUtf8("Раб.%"));
-	painter.drawText(relX(131), relY(94), trUtf8("ДДВ%"));
-	painter.drawText(relX(141), relY(93), trUtf8("Вк.Износ"));
-	painter.drawText(relX(141), relY(96), trUtf8("без ДДВ"));
-	painter.drawText(relX(161), relY(94), trUtf8("ДДВ Износ"));
-	painter.drawText(relX(181), relY(93), trUtf8("Вк.Вредност"));
-	painter.drawText(relX(181), relY(96), trUtf8("со ДДВ"));
+	painter.drawText(relX(11), relY(94), tr("Рб."));
+	painter.drawText(relX(16), relY(94), tr("Опис на артикал - услуга"));
+	painter.drawText(relX(81), relY(94), tr("Едм."));
+	painter.drawText(relX(93), relY(94), tr("Кол."));
+	painter.drawText(relX(106), relY(93), tr("Цена"));
+	painter.drawText(relX(106), relY(96), tr("без ДДВ"));
+	painter.drawText(relX(121), relY(94), tr("Раб.%"));
+	painter.drawText(relX(131), relY(94), tr("ДДВ%"));
+	painter.drawText(relX(141), relY(93), tr("Вк.Износ"));
+	painter.drawText(relX(141), relY(96), tr("без ДДВ"));
+	painter.drawText(relX(161), relY(94), tr("ДДВ Износ"));
+	painter.drawText(relX(181), relY(93), tr("Вк.Вредност"));
+	painter.drawText(relX(181), relY(96), tr("со ДДВ"));
 	f.setPointSize(8);
 	painter.setFont(f);
 
@@ -2985,12 +2991,12 @@ void sterna::drawFaktura(QPrinter *printer, QPainter& painter)
 	path.lineTo(relX(198),relY(275));
 
 
-	painter.drawText(relX(11), relY(280), trUtf8("Примил"));
-	painter.drawText(relX(60), relY(280), trUtf8("Предал"));
-	painter.drawText(relX(110), relY(280), trUtf8("Фактурирал"));
-	painter.drawText(relX(155), relY(280), trUtf8("Директор"));
+	painter.drawText(relX(11), relY(280), tr("Примил"));
+	painter.drawText(relX(60), relY(280), tr("Предал"));
+	painter.drawText(relX(110), relY(280), tr("Фактурирал"));
+	painter.drawText(relX(155), relY(280), tr("Директор"));
 
-	painter.drawText(relX(155), relY(265), trUtf8("МП"));
+	painter.drawText(relX(155), relY(265), tr("МП"));
 
 	path.moveTo(relX(10),relY(249));
 	path.lineTo(relX(200),relY(249));
@@ -3016,7 +3022,7 @@ void sterna::drawFaktura(QPrinter *printer, QPainter& painter)
 				{
 				case 0: painter.drawText(relX(11), relY(100 + 6 * (row - pagefrom)), relX(4), relY(9), Qt::AlignLeft, QString::number(row + 1, 10));break;
 				case 1: 
-					painter.drawText(relX(16), relY(97 + 6 * (row - pagefrom)), relX(64), relY(9), Qt::AlignLeft, trUtf8("Шифра: ") + modelFaktura2->item(row, col )->text());
+					painter.drawText(relX(16), relY(97 + 6 * (row - pagefrom)), relX(64), relY(9), Qt::AlignLeft, tr("Шифра: ") + modelFaktura2->item(row, col )->text());
 					painter.drawText(relX(16), relY(100 + 6 * (row - pagefrom)), relX(64), relY(9), Qt::AlignLeft, modelFaktura2->item(row, col + 1)->text());
 					break;
 				case 2: painter.drawText(relX(81), relY(100 + 6 * (row - pagefrom)), relX(11), relY(9), Qt::AlignLeft, modelFaktura2->item(row, 4)->text());break;
@@ -3063,45 +3069,45 @@ void sterna::drawFaktura(QPrinter *printer, QPainter& painter)
 		printer->newPage();
 	}
 	CHelperClass hlp(this);
-	painter.drawText(relX(130), relY(235), relX(40), relY(10), Qt::AlignRight, trUtf8("Вкупен Износ"));
-	painter.drawText(relX(170), relY(235), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(sumaDDV - ddv), 'f', 2) + trUtf8("  ден."));
+	painter.drawText(relX(130), relY(235), relX(40), relY(10), Qt::AlignRight, tr("Вкупен Износ"));
+	painter.drawText(relX(170), relY(235), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(sumaDDV - ddv), 'f', 2) + tr("  ден."));
 
-	painter.drawText(relX(130), relY(240), relX(40), relY(10), Qt::AlignRight, trUtf8("Вкупен ДДВ"));
-	painter.drawText(relX(170), relY(240), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(ddv), 'f', 2) + trUtf8("  ден."));
+	painter.drawText(relX(130), relY(240), relX(40), relY(10), Qt::AlignRight, tr("Вкупен ДДВ"));
+	painter.drawText(relX(170), relY(240), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(ddv), 'f', 2) + tr("  ден."));
 
 	f.setBold(true);
 	painter.setFont(f);
-	painter.drawText(relX(90), relY(245), relX(80), relY(10), Qt::AlignRight, trUtf8("Вкупно за наплата денари со пресметан ДДВ"));
-	painter.drawText(relX(170), relY(245), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(sumaDDV), 'f', 2) + trUtf8("  ден."));
+	painter.drawText(relX(90), relY(245), relX(80), relY(10), Qt::AlignRight, tr("Вкупно за наплата денари со пресметан ДДВ"));
+	painter.drawText(relX(170), relY(245), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(sumaDDV), 'f', 2) + tr("  ден."));
 	f.setBold(false);
 	painter.setFont(f);
     painter.drawRoundedRect(relX(10), relY(236), relX(140), relY(9), relX(1), relY(1), Qt::AbsoluteSize );
 
-    painter.drawText(relX(12), relY(236), relX(40), relY(10), Qt::AlignLeft, trUtf8("Основица за ДДВ(5%)"));
-    painter.drawText(relX(46), relY(236), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(OsnovicaDDV5), 'f', 2) + trUtf8("  ден."));
+    painter.drawText(relX(12), relY(236), relX(40), relY(10), Qt::AlignLeft, tr("Основица за ДДВ(5%)"));
+    painter.drawText(relX(46), relY(236), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(OsnovicaDDV5), 'f', 2) + tr("  ден."));
 
-    painter.drawText(relX(12), relY(241), relX(40), relY(10), Qt::AlignLeft, trUtf8("Основица за ДДВ(18%)"));
-    painter.drawText(relX(46), relY(241), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(OsnovicaDDV18), 'f', 2) + trUtf8("  ден."));
+    painter.drawText(relX(12), relY(241), relX(40), relY(10), Qt::AlignLeft, tr("Основица за ДДВ(18%)"));
+    painter.drawText(relX(46), relY(241), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(OsnovicaDDV18), 'f', 2) + tr("  ден."));
 
-    painter.drawText(relX(80), relY(236), relX(40), relY(10), Qt::AlignLeft, trUtf8("Вкупен ДДВ  (5%)"));
-    painter.drawText(relX(110), relY(236), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(DDV5), 'f', 2) + trUtf8("  ден."));
+    painter.drawText(relX(80), relY(236), relX(40), relY(10), Qt::AlignLeft, tr("Вкупен ДДВ  (5%)"));
+    painter.drawText(relX(110), relY(236), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(DDV5), 'f', 2) + tr("  ден."));
 
-    painter.drawText(relX(80), relY(241), relX(40), relY(10), Qt::AlignLeft, trUtf8("Вкупен ДДВ (18%)"));
-    painter.drawText(relX(110), relY(241), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(DDV18), 'f', 2) + trUtf8("  ден."));
+    painter.drawText(relX(80), relY(241), relX(40), relY(10), Qt::AlignLeft, tr("Вкупен ДДВ (18%)"));
+    painter.drawText(relX(110), relY(241), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(DDV18), 'f', 2) + tr("  ден."));
 
     
-    // 	painter.drawText(relX(15), relY(280), trUtf8("Фактурирал"));
+    // 	painter.drawText(relX(15), relY(280), tr("Фактурирал"));
 
 	f.setPointSize(7);
 	painter.setFont(f);
 	int p = int(sumaDDV + 0.5f);
 	QString t = convertIntToText(p);
-    QString t1 = trUtf8("Рок на плаќање ")+ modelFakturaInfo.at(5)+trUtf8(" дена од денот на фактурирањето.Во спротивно пресметуваме законска камата.");
+    QString t1 = tr("Рок на плаќање ")+ modelFakturaInfo.at(5)+tr(" дена од денот на фактурирањето.Во спротивно пресметуваме законска камата.");
 	painter.drawText(relX(10), relY(249), relX(120), relY(6), Qt::AlignLeft, t);
 	painter.drawText(relX(10), relY(258), relX(130), relY(6), Qt::AlignLeft, t1);
-	QString t2 = trUtf8("Рекламации се примаат во рок од 3 дена од приемот на стоката со уреден записник.");
+	QString t2 = tr("Рекламации се примаат во рок од 3 дена од приемот на стоката со уреден записник.");
 	painter.drawText(relX(10), relY(261), relX(130), relY(6), Qt::AlignLeft, t2);
-	QString t3 = trUtf8("Во случај на спор надлежен е Стопански суд.");
+	QString t3 = tr("Во случај на спор надлежен е Стопански суд.");
 	painter.drawText(relX(10), relY(264), relX(130), relY(6), Qt::AlignLeft, t3);
 
 #ifdef _demo
@@ -3142,11 +3148,11 @@ void sterna::drawProFakturaMaster(QPrinter *printer, QPainter& painter)
 		f.setPointSize(18);
 		painter.setFont(f);
 #ifdef _alea
-		painter.drawText(relX(100), relY(50), relX(100), relY(60), Qt::AlignRight, trUtf8("Испратница-Фактура"));
+		painter.drawText(relX(100), relY(50), relX(100), relY(60), Qt::AlignRight, tr("Испратница-Фактура"));
 #endif
 
 #ifndef _alea
-		painter.drawText(relX(100), relY(50), relX(100), relY(60), Qt::AlignRight, trUtf8("Про-Фактура"));
+		painter.drawText(relX(100), relY(50), relX(100), relY(60), Qt::AlignRight, tr("Про-Фактура"));
 #endif
 
 		f.setPointSize(8);
@@ -3160,19 +3166,19 @@ void sterna::drawProFakturaMaster(QPrinter *printer, QPainter& painter)
 		textNumberS = textNumberS.right(4);
 		f.setBold(true);
 		painter.setFont(f);
-		painter.drawText(relX(160), relY(60), relX(40), relY(65), Qt::AlignRight, trUtf8("Сериски Број: ") + moi_god + "-" + textNumberS + moi_prefix_prodavnica);
+		painter.drawText(relX(160), relY(60), relX(40), relY(65), Qt::AlignRight, tr("Сериски Број: ") + moi_god + "-" + textNumberS + moi_prefix_prodavnica);
 		f.setBold(false);
 		painter.setFont(f);
-		painter.drawText(relX(160), relY(65), relX(40), relY(70), Qt::AlignRight, trUtf8("Датум: ") + modelFakturaInfo.at(3));
+		painter.drawText(relX(160), relY(65), relX(40), relY(70), Qt::AlignRight, tr("Датум: ") + modelFakturaInfo.at(3));
 		int rok = modelFakturaInfo.at(5).toInt();
 		QString separ = modelFakturaInfo.at(3).mid(4,1);
 		QDateTime dateTimeTemp = QDateTime::fromString(modelFakturaInfo.at(3),"yyyy" + separ + "MM" + separ + "dd");
 		dateTimeTemp = dateTimeTemp.addDays(rok);
-		painter.drawText(relX(160), relY(70), relX(40), relY(75), Qt::AlignRight, trUtf8("Валута: ") + dateTimeTemp.toString("yyyy" + separ + "MM" + separ + "dd"));
+		painter.drawText(relX(160), relY(70), relX(40), relY(75), Qt::AlignRight, tr("Валута: ") + dateTimeTemp.toString("yyyy" + separ + "MM" + separ + "dd"));
 		pen.setWidth(2);
 		painter.setPen(pen);
 		painter.drawRoundedRect(relX(10), relY(55), relX(80), relY(30), relX(3), relY(3), Qt::AbsoluteSize );
-		painter.drawText(relX(15), relY(60), trUtf8("До:"));
+		painter.drawText(relX(15), relY(60), tr("До:"));
 
 		f.setBold(true);
 		painter.setFont(f);
@@ -3219,19 +3225,19 @@ void sterna::drawProFakturaMaster(QPrinter *printer, QPainter& painter)
 
 		f.setPointSize(8);
 		painter.setFont(f);
-		painter.drawText(relX(11), relY(94), trUtf8("Рб."));
-		painter.drawText(relX(16), relY(94), trUtf8("Опис на артикал - услуга"));
-		painter.drawText(relX(81), relY(94), trUtf8("Едм."));
-		painter.drawText(relX(93), relY(94), trUtf8("Кол."));
-		painter.drawText(relX(106), relY(93), trUtf8("Цена"));
-		painter.drawText(relX(106), relY(96), trUtf8("без ДДВ"));
-		painter.drawText(relX(121), relY(94), trUtf8("Раб.%"));
-		painter.drawText(relX(131), relY(94), trUtf8("ДДВ%"));
-		painter.drawText(relX(141), relY(93), trUtf8("Вк.Износ"));
-		painter.drawText(relX(141), relY(96), trUtf8("без ДДВ"));
-		painter.drawText(relX(161), relY(94), trUtf8("ДДВ Износ"));
-		painter.drawText(relX(181), relY(93), trUtf8("Вк.Вредност"));
-		painter.drawText(relX(181), relY(96), trUtf8("со ДДВ"));
+		painter.drawText(relX(11), relY(94), tr("Рб."));
+		painter.drawText(relX(16), relY(94), tr("Опис на артикал - услуга"));
+		painter.drawText(relX(81), relY(94), tr("Едм."));
+		painter.drawText(relX(93), relY(94), tr("Кол."));
+		painter.drawText(relX(106), relY(93), tr("Цена"));
+		painter.drawText(relX(106), relY(96), tr("без ДДВ"));
+		painter.drawText(relX(121), relY(94), tr("Раб.%"));
+		painter.drawText(relX(131), relY(94), tr("ДДВ%"));
+		painter.drawText(relX(141), relY(93), tr("Вк.Износ"));
+		painter.drawText(relX(141), relY(96), tr("без ДДВ"));
+		painter.drawText(relX(161), relY(94), tr("ДДВ Износ"));
+		painter.drawText(relX(181), relY(93), tr("Вк.Вредност"));
+		painter.drawText(relX(181), relY(96), tr("со ДДВ"));
 		f.setPointSize(8);
 		painter.setFont(f);
 
@@ -3245,19 +3251,19 @@ void sterna::drawProFakturaMaster(QPrinter *printer, QPainter& painter)
 		path.lineTo(relX(198),relY(275));
 
 
-		painter.drawText(relX(11), relY(278), trUtf8("Примил и согласен сум"));
-		painter.drawText(relX(11), relY(280), trUtf8("со условите од оваа фактура"));
+		painter.drawText(relX(11), relY(278), tr("Примил и согласен сум"));
+		painter.drawText(relX(11), relY(280), tr("со условите од оваа фактура"));
 
-		painter.drawText(relX(60), relY(278), trUtf8("Предал"));
-		painter.drawText(relX(110), relY(278), trUtf8("Фактурирал"));
-		painter.drawText(relX(155), relY(278), trUtf8(""));
+		painter.drawText(relX(60), relY(278), tr("Предал"));
+		painter.drawText(relX(110), relY(278), tr("Фактурирал"));
+		painter.drawText(relX(155), relY(278), tr(""));
 		painter.drawText(relX(110), relY(282), moi_fakturiral);
 		painter.drawText(relX(155), relY(282), moi_direktor);
 
 
-		painter.drawText(relX(140), relY(265), trUtf8("МП"));
-		painter.drawText(relX(155), relY(265), trUtf8("Овластено лице"));
-		painter.drawText(relX(155), relY(268), trUtf8("за потпис на фактура"));
+		painter.drawText(relX(140), relY(265), tr("МП"));
+		painter.drawText(relX(155), relY(265), tr("Овластено лице"));
+		painter.drawText(relX(155), relY(268), tr("за потпис на фактура"));
 
 		path.moveTo(relX(10),relY(249));
 		path.lineTo(relX(200),relY(249));
@@ -3284,7 +3290,7 @@ void sterna::drawProFakturaMaster(QPrinter *printer, QPainter& painter)
 					case 0: painter.drawText(relX(11), relY(100 + 6 * (row - pagefrom)), relX(4), relY(9), Qt::AlignLeft, QString::number(row + 1, 10));break;
 					case 1: 
 #ifndef _alea
-						painter.drawText(relX(16), relY(97 + 6 * (row - pagefrom)), relX(64), relY(9), Qt::AlignLeft, trUtf8("Шифра: ") + modelFaktura2->item(row, col )->text());
+						painter.drawText(relX(16), relY(97 + 6 * (row - pagefrom)), relX(64), relY(9), Qt::AlignLeft, tr("Шифра: ") + modelFaktura2->item(row, col )->text());
 #endif
 						painter.drawText(relX(16), relY(100 + 6 * (row - pagefrom)), relX(64), relY(9), Qt::AlignLeft, modelFaktura2->item(row, col + 1)->text());
 						break;
@@ -3332,45 +3338,45 @@ void sterna::drawProFakturaMaster(QPrinter *printer, QPainter& painter)
 			printer->newPage();
 	}
 	CHelperClass hlp(this);
-	painter.drawText(relX(130), relY(235), relX(40), relY(10), Qt::AlignRight, trUtf8("Вкупен Износ"));
-	painter.drawText(relX(170), relY(235), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(sumaDDV - ddv), 'f', 2) + trUtf8("  ден."));
+	painter.drawText(relX(130), relY(235), relX(40), relY(10), Qt::AlignRight, tr("Вкупен Износ"));
+	painter.drawText(relX(170), relY(235), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(sumaDDV - ddv), 'f', 2) + tr("  ден."));
 
-	painter.drawText(relX(130), relY(240), relX(40), relY(10), Qt::AlignRight, trUtf8("Вкупен ДДВ"));
-	painter.drawText(relX(170), relY(240), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(ddv), 'f', 2) + trUtf8("  ден."));
+	painter.drawText(relX(130), relY(240), relX(40), relY(10), Qt::AlignRight, tr("Вкупен ДДВ"));
+	painter.drawText(relX(170), relY(240), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(ddv), 'f', 2) + tr("  ден."));
 
 	f.setBold(true);
 	painter.setFont(f);
-	painter.drawText(relX(90), relY(245), relX(80), relY(10), Qt::AlignRight, trUtf8("Вкупно за наплата денари со пресметан ДДВ"));
-	painter.drawText(relX(170), relY(245), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(sumaDDV), 'f', 2) + trUtf8("  ден."));
+	painter.drawText(relX(90), relY(245), relX(80), relY(10), Qt::AlignRight, tr("Вкупно за наплата денари со пресметан ДДВ"));
+	painter.drawText(relX(170), relY(245), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(sumaDDV), 'f', 2) + tr("  ден."));
 	f.setBold(false);
 	painter.setFont(f);
 	painter.drawRoundedRect(relX(10), relY(236), relX(140), relY(9), relX(1), relY(1), Qt::AbsoluteSize );
 
-	painter.drawText(relX(12), relY(236), relX(40), relY(10), Qt::AlignLeft, trUtf8("Основица за ДДВ(5%)"));
-	painter.drawText(relX(46), relY(236), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(OsnovicaDDV5), 'f', 2) + trUtf8("  ден."));
+	painter.drawText(relX(12), relY(236), relX(40), relY(10), Qt::AlignLeft, tr("Основица за ДДВ(5%)"));
+	painter.drawText(relX(46), relY(236), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(OsnovicaDDV5), 'f', 2) + tr("  ден."));
 
-	painter.drawText(relX(12), relY(241), relX(40), relY(10), Qt::AlignLeft, trUtf8("Основица за ДДВ(18%)"));
-	painter.drawText(relX(46), relY(241), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(OsnovicaDDV18), 'f', 2) + trUtf8("  ден."));
+	painter.drawText(relX(12), relY(241), relX(40), relY(10), Qt::AlignLeft, tr("Основица за ДДВ(18%)"));
+	painter.drawText(relX(46), relY(241), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(OsnovicaDDV18), 'f', 2) + tr("  ден."));
 
-	painter.drawText(relX(80), relY(236), relX(40), relY(10), Qt::AlignLeft, trUtf8("Вкупен ДДВ  (5%)"));
-	painter.drawText(relX(110), relY(236), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(DDV5), 'f', 2) + trUtf8("  ден."));
+	painter.drawText(relX(80), relY(236), relX(40), relY(10), Qt::AlignLeft, tr("Вкупен ДДВ  (5%)"));
+	painter.drawText(relX(110), relY(236), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(DDV5), 'f', 2) + tr("  ден."));
 
-	painter.drawText(relX(80), relY(241), relX(40), relY(10), Qt::AlignLeft, trUtf8("Вкупен ДДВ (18%)"));
-	painter.drawText(relX(110), relY(241), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(DDV18), 'f', 2) + trUtf8("  ден."));
+	painter.drawText(relX(80), relY(241), relX(40), relY(10), Qt::AlignLeft, tr("Вкупен ДДВ (18%)"));
+	painter.drawText(relX(110), relY(241), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(DDV18), 'f', 2) + tr("  ден."));
 
 
-	// 	painter.drawText(relX(15), relY(280), trUtf8("Фактурирал"));
+	// 	painter.drawText(relX(15), relY(280), tr("Фактурирал"));
 
 	f.setPointSize(7);
 	painter.setFont(f);
 	int p = int(sumaDDV + 0.5f);
 	QString t = convertIntToText(p);
-	QString t1 = trUtf8("Рок на плаќање ")+ modelFakturaInfo.at(5)+trUtf8(" дена од денот на фактурирањето.Во спротивно пресметуваме законска камата.");
+	QString t1 = tr("Рок на плаќање ")+ modelFakturaInfo.at(5)+tr(" дена од денот на фактурирањето.Во спротивно пресметуваме законска камата.");
 	painter.drawText(relX(10), relY(249), relX(120), relY(6), Qt::AlignLeft, t);
 	painter.drawText(relX(10), relY(258), relX(130), relY(6), Qt::AlignLeft, t1);
-	QString t2 = trUtf8("Рекламации се примаат во рок од 3 дена од приемот на стоката со уреден записник.");
+	QString t2 = tr("Рекламации се примаат во рок од 3 дена од приемот на стоката со уреден записник.");
 	painter.drawText(relX(10), relY(261), relX(130), relY(6), Qt::AlignLeft, t2);
-	QString t3 = trUtf8("Во случај на спор надлежен е Стопански суд.");
+	QString t3 = tr("Во случај на спор надлежен е Стопански суд.");
 	painter.drawText(relX(10), relY(264), relX(130), relY(6), Qt::AlignLeft, t3);
 
 #ifdef _demo
@@ -3412,11 +3418,11 @@ void sterna::drawFakturaMaster(QPrinter *printer, QPainter& painter)
 		f.setPointSize(18);
 		painter.setFont(f);
 #ifdef _alea
-		painter.drawText(relX(100), relY(50), relX(100), relY(60), Qt::AlignRight, trUtf8("Фактура-Испратница"));
+		painter.drawText(relX(100), relY(50), relX(100), relY(60), Qt::AlignRight, tr("Фактура-Испратница"));
 #endif
 
 #ifndef _alea
-		painter.drawText(relX(100), relY(50), relX(100), relY(60), Qt::AlignRight, trUtf8("Фактура"));
+		painter.drawText(relX(100), relY(50), relX(100), relY(60), Qt::AlignRight, tr("Фактура"));
 #endif
 
 		f.setPointSize(8);
@@ -3430,19 +3436,19 @@ void sterna::drawFakturaMaster(QPrinter *printer, QPainter& painter)
 		textNumberS = textNumberS.right(4);
 		f.setBold(true);
 		painter.setFont(f);
-		painter.drawText(relX(140), relY(60), relX(60), relY(65), Qt::AlignRight, trUtf8("Сериски Број: ") + moi_god + "-" + textNumberS + moi_prefix_prodavnica);
+		painter.drawText(relX(140), relY(60), relX(60), relY(65), Qt::AlignRight, tr("Сериски Број: ") + moi_god + "-" + textNumberS + moi_prefix_prodavnica);
 		f.setBold(false);
 		painter.setFont(f);
-		painter.drawText(relX(160), relY(65), relX(40), relY(70), Qt::AlignRight, trUtf8("Датум: ") + modelFakturaInfo.at(3));
+		painter.drawText(relX(160), relY(65), relX(40), relY(70), Qt::AlignRight, tr("Датум: ") + modelFakturaInfo.at(3));
 		int rok = modelFakturaInfo.at(5).toInt();
 		QString separ = modelFakturaInfo.at(3).mid(4,1);
 		QDateTime dateTimeTemp = QDateTime::fromString(modelFakturaInfo.at(3),"yyyy" + separ + "MM" + separ + "dd");
 		dateTimeTemp = dateTimeTemp.addDays(rok);
-		painter.drawText(relX(160), relY(70), relX(40), relY(75), Qt::AlignRight, trUtf8("Валута: ") + dateTimeTemp.toString("yyyy" + separ + "MM" + separ + "dd"));
+		painter.drawText(relX(160), relY(70), relX(40), relY(75), Qt::AlignRight, tr("Валута: ") + dateTimeTemp.toString("yyyy" + separ + "MM" + separ + "dd"));
 		pen.setWidth(2);
 		painter.setPen(pen);
 		painter.drawRoundedRect(relX(10), relY(55), relX(80), relY(30), relX(3), relY(3), Qt::AbsoluteSize );
-		painter.drawText(relX(15), relY(60), trUtf8("До:"));
+		painter.drawText(relX(15), relY(60), tr("До:"));
 
 		f.setBold(true);
 		painter.setFont(f);
@@ -3489,19 +3495,19 @@ void sterna::drawFakturaMaster(QPrinter *printer, QPainter& painter)
 
 		f.setPointSize(8);
 		painter.setFont(f);
-		painter.drawText(relX(11), relY(94), trUtf8("Рб."));
-		painter.drawText(relX(16), relY(94), trUtf8("Опис на артикал - услуга"));
-		painter.drawText(relX(81), relY(94), trUtf8("Едм."));
-		painter.drawText(relX(93), relY(94), trUtf8("Кол."));
-		painter.drawText(relX(106), relY(93), trUtf8("Цена"));
-		painter.drawText(relX(106), relY(96), trUtf8("без ДДВ"));
-		painter.drawText(relX(121), relY(94), trUtf8("Раб.%"));
-		painter.drawText(relX(131), relY(94), trUtf8("ДДВ%"));
-		painter.drawText(relX(141), relY(93), trUtf8("Вк.Износ"));
-		painter.drawText(relX(141), relY(96), trUtf8("без ДДВ"));
-		painter.drawText(relX(161), relY(94), trUtf8("ДДВ Износ"));
-		painter.drawText(relX(181), relY(93), trUtf8("Вк.Вредност"));
-		painter.drawText(relX(181), relY(96), trUtf8("со ДДВ"));
+		painter.drawText(relX(11), relY(94), tr("Рб."));
+		painter.drawText(relX(16), relY(94), tr("Опис на артикал - услуга"));
+		painter.drawText(relX(81), relY(94), tr("Едм."));
+		painter.drawText(relX(93), relY(94), tr("Кол."));
+		painter.drawText(relX(106), relY(93), tr("Цена"));
+		painter.drawText(relX(106), relY(96), tr("без ДДВ"));
+		painter.drawText(relX(121), relY(94), tr("Раб.%"));
+		painter.drawText(relX(131), relY(94), tr("ДДВ%"));
+		painter.drawText(relX(141), relY(93), tr("Вк.Износ"));
+		painter.drawText(relX(141), relY(96), tr("без ДДВ"));
+		painter.drawText(relX(161), relY(94), tr("ДДВ Износ"));
+		painter.drawText(relX(181), relY(93), tr("Вк.Вредност"));
+		painter.drawText(relX(181), relY(96), tr("со ДДВ"));
 		f.setPointSize(8);
 		painter.setFont(f);
 
@@ -3515,19 +3521,19 @@ void sterna::drawFakturaMaster(QPrinter *printer, QPainter& painter)
 		path.lineTo(relX(198),relY(275));
 
 
-		painter.drawText(relX(11), relY(278), trUtf8("Примил и согласен сум"));
-		painter.drawText(relX(11), relY(280), trUtf8("со условите од оваа фактура"));
+		painter.drawText(relX(11), relY(278), tr("Примил и согласен сум"));
+		painter.drawText(relX(11), relY(280), tr("со условите од оваа фактура"));
 
-		painter.drawText(relX(60), relY(278), trUtf8("Предал"));
-		painter.drawText(relX(110), relY(278), trUtf8("Фактурирал"));
-		painter.drawText(relX(155), relY(278), trUtf8(""));
+		painter.drawText(relX(60), relY(278), tr("Предал"));
+		painter.drawText(relX(110), relY(278), tr("Фактурирал"));
+		painter.drawText(relX(155), relY(278), tr(""));
 		painter.drawText(relX(110), relY(282), moi_fakturiral);
 		painter.drawText(relX(155), relY(282), moi_direktor);
 
 
-		painter.drawText(relX(140), relY(265), trUtf8("МП"));
-		painter.drawText(relX(155), relY(265), trUtf8("Овластено лице"));
-		painter.drawText(relX(155), relY(268), trUtf8("за потпис на фактура"));
+		painter.drawText(relX(140), relY(265), tr("МП"));
+		painter.drawText(relX(155), relY(265), tr("Овластено лице"));
+		painter.drawText(relX(155), relY(268), tr("за потпис на фактура"));
 
 		path.moveTo(relX(10),relY(249));
 		path.lineTo(relX(200),relY(249));
@@ -3555,7 +3561,7 @@ void sterna::drawFakturaMaster(QPrinter *printer, QPainter& painter)
 					case 0: painter.drawText(relX(11), relY(100 + 6 * (row - pagefrom)), relX(4), relY(9), Qt::AlignLeft, QString::number(row + 1, 10));break;
 					case 1: 
 #ifndef _alea
-						painter.drawText(relX(16), relY(97 + 6 * (row - pagefrom)), relX(64), relY(9), Qt::AlignLeft, trUtf8("Шифра: ") + modelFaktura2->item(row, col )->text());
+						painter.drawText(relX(16), relY(97 + 6 * (row - pagefrom)), relX(64), relY(9), Qt::AlignLeft, tr("Шифра: ") + modelFaktura2->item(row, col )->text());
 #endif
 						painter.drawText(relX(16), relY(100 + 6 * (row - pagefrom)), relX(64), relY(9), Qt::AlignLeft, modelFaktura2->item(row, col + 1)->text());
 						break;
@@ -3603,48 +3609,48 @@ void sterna::drawFakturaMaster(QPrinter *printer, QPainter& painter)
 			printer->newPage();
 	}
 	CHelperClass hlp(this);
-	painter.drawText(relX(130), relY(235), relX(40), relY(10), Qt::AlignRight, trUtf8("Вкупен Износ"));
-	painter.drawText(relX(170), relY(235), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(sumaDDV - ddv), 'f', 2) + trUtf8("  ден."));
+	painter.drawText(relX(130), relY(235), relX(40), relY(10), Qt::AlignRight, tr("Вкупен Износ"));
+	painter.drawText(relX(170), relY(235), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(sumaDDV - ddv), 'f', 2) + tr("  ден."));
 
-	painter.drawText(relX(130), relY(238), relX(40), relY(10), Qt::AlignRight, trUtf8("Вкупен Рабат"));
-	painter.drawText(relX(170), relY(238), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded((-1)* RabatIznos), 'f', 2) + trUtf8("  ден."));
+	painter.drawText(relX(130), relY(238), relX(40), relY(10), Qt::AlignRight, tr("Вкупен Рабат"));
+	painter.drawText(relX(170), relY(238), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded((-1)* RabatIznos), 'f', 2) + tr("  ден."));
 
-	painter.drawText(relX(130), relY(241), relX(40), relY(10), Qt::AlignRight, trUtf8("Вкупен ДДВ"));
-	painter.drawText(relX(170), relY(241), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(ddv), 'f', 2) + trUtf8("  ден."));
+	painter.drawText(relX(130), relY(241), relX(40), relY(10), Qt::AlignRight, tr("Вкупен ДДВ"));
+	painter.drawText(relX(170), relY(241), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(ddv), 'f', 2) + tr("  ден."));
 
 	f.setBold(true);
 	painter.setFont(f);
-	painter.drawText(relX(90), relY(245), relX(80), relY(10), Qt::AlignRight, trUtf8("Вкупно за наплата денари со пресметан ДДВ"));
-	painter.drawText(relX(170), relY(245), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(floor(sumaDDV+.5f)), 'f', 2) + trUtf8("  ден."));
+	painter.drawText(relX(90), relY(245), relX(80), relY(10), Qt::AlignRight, tr("Вкупно за наплата денари со пресметан ДДВ"));
+	painter.drawText(relX(170), relY(245), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(floor(sumaDDV+.5f)), 'f', 2) + tr("  ден."));
 	f.setBold(false);
 	painter.setFont(f);
 	painter.drawRoundedRect(relX(10), relY(236), relX(140), relY(9), relX(1), relY(1), Qt::AbsoluteSize );
 
-	painter.drawText(relX(12), relY(236), relX(40), relY(10), Qt::AlignLeft, trUtf8("Основица за ДДВ(5%)"));
-	painter.drawText(relX(46), relY(236), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(OsnovicaDDV5), 'f', 2) + trUtf8("  ден."));
+	painter.drawText(relX(12), relY(236), relX(40), relY(10), Qt::AlignLeft, tr("Основица за ДДВ(5%)"));
+	painter.drawText(relX(46), relY(236), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(OsnovicaDDV5), 'f', 2) + tr("  ден."));
 
-	painter.drawText(relX(12), relY(241), relX(40), relY(10), Qt::AlignLeft, trUtf8("Основица за ДДВ(18%)"));
-	painter.drawText(relX(46), relY(241), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(OsnovicaDDV18), 'f', 2) + trUtf8("  ден."));
+	painter.drawText(relX(12), relY(241), relX(40), relY(10), Qt::AlignLeft, tr("Основица за ДДВ(18%)"));
+	painter.drawText(relX(46), relY(241), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(OsnovicaDDV18), 'f', 2) + tr("  ден."));
 
-	painter.drawText(relX(80), relY(236), relX(40), relY(10), Qt::AlignLeft, trUtf8("Вкупен ДДВ  (5%)"));
-	painter.drawText(relX(110), relY(236), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(DDV5), 'f', 2) + trUtf8("  ден."));
+	painter.drawText(relX(80), relY(236), relX(40), relY(10), Qt::AlignLeft, tr("Вкупен ДДВ  (5%)"));
+	painter.drawText(relX(110), relY(236), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(DDV5), 'f', 2) + tr("  ден."));
 
-	painter.drawText(relX(80), relY(241), relX(40), relY(10), Qt::AlignLeft, trUtf8("Вкупен ДДВ (18%)"));
-	painter.drawText(relX(110), relY(241), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(DDV18), 'f', 2) + trUtf8("  ден."));
+	painter.drawText(relX(80), relY(241), relX(40), relY(10), Qt::AlignLeft, tr("Вкупен ДДВ (18%)"));
+	painter.drawText(relX(110), relY(241), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(DDV18), 'f', 2) + tr("  ден."));
 
 
-	// 	painter.drawText(relX(15), relY(280), trUtf8("Фактурирал"));
+	// 	painter.drawText(relX(15), relY(280), tr("Фактурирал"));
 
 	f.setPointSize(7);
 	painter.setFont(f);
 	int p = int(sumaDDV + 0.5f);
 	QString t = convertIntToText(p);
-	QString t1 = trUtf8("Рок на плаќање ")+ modelFakturaInfo.at(5)+trUtf8(" дена од денот на фактурирањето.Во спротивно пресметуваме законска камата.");
+	QString t1 = tr("Рок на плаќање ")+ modelFakturaInfo.at(5)+tr(" дена од денот на фактурирањето.Во спротивно пресметуваме законска камата.");
 	painter.drawText(relX(10), relY(249), relX(120), relY(6), Qt::AlignLeft, t);
 	painter.drawText(relX(10), relY(258), relX(130), relY(6), Qt::AlignLeft, t1);
-	QString t2 = trUtf8("Рекламации се примаат во рок од 3 дена од приемот на стоката со уреден записник.");
+	QString t2 = tr("Рекламации се примаат во рок од 3 дена од приемот на стоката со уреден записник.");
 	painter.drawText(relX(10), relY(261), relX(130), relY(6), Qt::AlignLeft, t2);
-	QString t3 = trUtf8("Во случај на спор надлежен е Стопански суд.");
+	QString t3 = tr("Во случај на спор надлежен е Стопански суд.");
 	painter.drawText(relX(10), relY(264), relX(130), relY(6), Qt::AlignLeft, t3);
 
 #ifdef _demo
@@ -3678,7 +3684,7 @@ void sterna::drawFakturaALL(QPrinter *printer, QPainter& painter)
 
 		f.setPointSize(18);
 		painter.setFont(f);
-		painter.drawText(relX(10), relY(10), relX(190), relY(20), Qt::AlignCenter, trUtf8("Листа на Испратници-Фактури"));
+		painter.drawText(relX(10), relY(10), relX(190), relY(20), Qt::AlignCenter, tr("Листа на Испратници-Фактури"));
 
 		f.setPointSize(8);
 
@@ -3719,21 +3725,21 @@ void sterna::drawFakturaALL(QPrinter *printer, QPainter& painter)
 		path.moveTo(relX(174),relY(50));
 		path.lineTo(relX(174),relY(275));
 
-		painter.drawText(relX(12), relY(54), trUtf8("Ф."));
-		painter.drawText(relX(17), relY(54), trUtf8("Датум"));
-		painter.drawText(relX(33), relY(54), trUtf8("Коминтент"));
-		painter.drawText(relX(84), relY(54), trUtf8("Износ"));
-		painter.drawText(relX(107), relY(54), trUtf8("ДДВ"));
-		painter.drawText(relX(130), relY(54), trUtf8("Вкупно"));
-		painter.drawText(relX(153), relY(54), trUtf8("Платено"));
-		painter.drawText(relX(176), relY(54), trUtf8("Останато за плак."));
+		painter.drawText(relX(12), relY(54), tr("Ф."));
+		painter.drawText(relX(17), relY(54), tr("Датум"));
+		painter.drawText(relX(33), relY(54), tr("Коминтент"));
+		painter.drawText(relX(84), relY(54), tr("Износ"));
+		painter.drawText(relX(107), relY(54), tr("ДДВ"));
+		painter.drawText(relX(130), relY(54), tr("Вкупно"));
+		painter.drawText(relX(153), relY(54), tr("Платено"));
+		painter.drawText(relX(176), relY(54), tr("Останато за плак."));
 
 // 		path.moveTo(relX(10),relY(275));
 // 		path.lineTo(relX(60),relY(275));
 // 		path.moveTo(relX(140),relY(275));
 // 		path.lineTo(relX(190),relY(275));
-// 		painter.drawText(relX(11), relY(280), trUtf8("Фактурирал"));
-// 		painter.drawText(relX(145), relY(280), trUtf8("Примил"));
+// 		painter.drawText(relX(11), relY(280), tr("Фактурирал"));
+// 		painter.drawText(relX(145), relY(280), tr("Примил"));
 // 		path.moveTo(relX(10),relY(249));
 // 		path.lineTo(relX(200),relY(249));
 		painter.drawPath(path);
@@ -3772,37 +3778,37 @@ void sterna::drawFakturaALL(QPrinter *printer, QPainter& painter)
 			printer->newPage();
 	}
 	CHelperClass hlp(this);
-// 	painter.drawText(relX(130), relY(235), relX(40), relY(10), Qt::AlignRight, trUtf8("Вкупен Износ"));
-// 	painter.drawText(relX(170), relY(235), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(sumaDDV - ddv), 'f', 2) + trUtf8("  ден."));
+// 	painter.drawText(relX(130), relY(235), relX(40), relY(10), Qt::AlignRight, tr("Вкупен Износ"));
+// 	painter.drawText(relX(170), relY(235), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(sumaDDV - ddv), 'f', 2) + tr("  ден."));
 // 
-// 	painter.drawText(relX(130), relY(240), relX(40), relY(10), Qt::AlignRight, trUtf8("Вкупен ДДВ"));
-// 	painter.drawText(relX(170), relY(240), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(ddv), 'f', 2) + trUtf8("  ден."));
+// 	painter.drawText(relX(130), relY(240), relX(40), relY(10), Qt::AlignRight, tr("Вкупен ДДВ"));
+// 	painter.drawText(relX(170), relY(240), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(ddv), 'f', 2) + tr("  ден."));
 // 
-// 	painter.drawText(relX(90), relY(245), relX(80), relY(10), Qt::AlignRight, trUtf8("Вкупно за наплата денари со пресметан ДДВ"));
-// 	painter.drawText(relX(170), relY(245), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(sumaDDV), 'f', 2) + trUtf8("  ден."));
+// 	painter.drawText(relX(90), relY(245), relX(80), relY(10), Qt::AlignRight, tr("Вкупно за наплата денари со пресметан ДДВ"));
+// 	painter.drawText(relX(170), relY(245), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(sumaDDV), 'f', 2) + tr("  ден."));
 // 
 // 	painter.drawRoundedRect(relX(10), relY(236), relX(140), relY(9), relX(1), relY(1), Qt::AbsoluteSize );
 // 
-// 	painter.drawText(relX(12), relY(236), relX(40), relY(10), Qt::AlignLeft, trUtf8("Основица за ДДВ(5%)"));
-// 	painter.drawText(relX(46), relY(236), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(OsnovicaDDV5), 'f', 2) + trUtf8("  ден."));
+// 	painter.drawText(relX(12), relY(236), relX(40), relY(10), Qt::AlignLeft, tr("Основица за ДДВ(5%)"));
+// 	painter.drawText(relX(46), relY(236), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(OsnovicaDDV5), 'f', 2) + tr("  ден."));
 // 
-// 	painter.drawText(relX(12), relY(241), relX(40), relY(10), Qt::AlignLeft, trUtf8("Основица за ДДВ(18%)"));
-// 	painter.drawText(relX(46), relY(241), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(OsnovicaDDV18), 'f', 2) + trUtf8("  ден."));
+// 	painter.drawText(relX(12), relY(241), relX(40), relY(10), Qt::AlignLeft, tr("Основица за ДДВ(18%)"));
+// 	painter.drawText(relX(46), relY(241), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(OsnovicaDDV18), 'f', 2) + tr("  ден."));
 // 
-// 	painter.drawText(relX(80), relY(236), relX(40), relY(10), Qt::AlignLeft, trUtf8("Вкупен ДДВ  (5%)"));
-// 	painter.drawText(relX(110), relY(236), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(DDV5), 'f', 2) + trUtf8("  ден."));
+// 	painter.drawText(relX(80), relY(236), relX(40), relY(10), Qt::AlignLeft, tr("Вкупен ДДВ  (5%)"));
+// 	painter.drawText(relX(110), relY(236), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(DDV5), 'f', 2) + tr("  ден."));
 // 
-// 	painter.drawText(relX(80), relY(241), relX(40), relY(10), Qt::AlignLeft, trUtf8("Вкупен ДДВ (18%)"));
-// 	painter.drawText(relX(110), relY(241), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(DDV18), 'f', 2) + trUtf8("  ден."));
+// 	painter.drawText(relX(80), relY(241), relX(40), relY(10), Qt::AlignLeft, tr("Вкупен ДДВ (18%)"));
+// 	painter.drawText(relX(110), relY(241), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(DDV18), 'f', 2) + tr("  ден."));
 
 
-	// 	painter.drawText(relX(15), relY(280), trUtf8("Фактурирал"));
+	// 	painter.drawText(relX(15), relY(280), tr("Фактурирал"));
 
 // 	f.setPointSize(7);
 // 	painter.setFont(f);
 // 	int p = int(sumaDDV + 0.5f);
 // 	QString t = convertIntToText(p);
-// 	QString t1 = trUtf8("Рок на плаќање ")+ modelFakturaInfo.at(5)+trUtf8(" дена од денот на фактурирањето.Во спротивно пресметуваме законска камата.");
+// 	QString t1 = tr("Рок на плаќање ")+ modelFakturaInfo.at(5)+tr(" дена од денот на фактурирањето.Во спротивно пресметуваме законска камата.");
 // 	painter.drawText(relX(10), relY(249), relX(120), relY(6), Qt::AlignLeft, t);
 // 	painter.drawText(relX(10), relY(258), relX(130), relY(6), Qt::AlignLeft, t1);
 #ifdef _demo
@@ -3836,7 +3842,7 @@ void sterna::drawProFakturaMaster_all(QPrinter *printer, QPainter& painter)
 
 		f.setPointSize(18);
 		painter.setFont(f);
-		painter.drawText(relX(10), relY(10), relX(190), relY(20), Qt::AlignCenter, trUtf8("Листа на Про-Фактури"));
+		painter.drawText(relX(10), relY(10), relX(190), relY(20), Qt::AlignCenter, tr("Листа на Про-Фактури"));
 
 		f.setPointSize(8);
 
@@ -3877,14 +3883,14 @@ void sterna::drawProFakturaMaster_all(QPrinter *printer, QPainter& painter)
 		path.moveTo(relX(174),relY(50));
 		path.lineTo(relX(174),relY(275));
 
-		painter.drawText(relX(12), relY(54), trUtf8("Ф."));
-		painter.drawText(relX(17), relY(54), trUtf8("Датум"));
-		painter.drawText(relX(33), relY(54), trUtf8("Коминтент"));
-		painter.drawText(relX(84), relY(54), trUtf8("Износ"));
-		painter.drawText(relX(107), relY(54), trUtf8("ДДВ"));
-		painter.drawText(relX(130), relY(54), trUtf8("Вкупно"));
-		painter.drawText(relX(153), relY(54), trUtf8("Платено"));
-		painter.drawText(relX(176), relY(54), trUtf8("Останато за плак."));
+		painter.drawText(relX(12), relY(54), tr("Ф."));
+		painter.drawText(relX(17), relY(54), tr("Датум"));
+		painter.drawText(relX(33), relY(54), tr("Коминтент"));
+		painter.drawText(relX(84), relY(54), tr("Износ"));
+		painter.drawText(relX(107), relY(54), tr("ДДВ"));
+		painter.drawText(relX(130), relY(54), tr("Вкупно"));
+		painter.drawText(relX(153), relY(54), tr("Платено"));
+		painter.drawText(relX(176), relY(54), tr("Останато за плак."));
 
 		painter.drawPath(path);
 
@@ -3953,7 +3959,7 @@ void sterna::drawFakturaMaster_all(QPrinter *printer, QPainter& painter)
 
 		f.setPointSize(18);
 		painter.setFont(f);
-		painter.drawText(relX(10), relY(10), relX(190), relY(20), Qt::AlignCenter, trUtf8("Листа на Фактури"));
+		painter.drawText(relX(10), relY(10), relX(190), relY(20), Qt::AlignCenter, tr("Листа на Фактури"));
 
 		f.setPointSize(8);
 
@@ -3994,14 +4000,14 @@ void sterna::drawFakturaMaster_all(QPrinter *printer, QPainter& painter)
 		path.moveTo(relX(174),relY(50));
 		path.lineTo(relX(174),relY(275));
 
-		painter.drawText(relX(12), relY(54), trUtf8("Ф."));
-		painter.drawText(relX(17), relY(54), trUtf8("Датум"));
-		painter.drawText(relX(33), relY(54), trUtf8("Коминтент"));
-		painter.drawText(relX(84), relY(54), trUtf8("Износ"));
-		painter.drawText(relX(107), relY(54), trUtf8("ДДВ"));
-		painter.drawText(relX(130), relY(54), trUtf8("Вкупно"));
-		painter.drawText(relX(153), relY(54), trUtf8("Платено"));
-		painter.drawText(relX(176), relY(54), trUtf8("Останато за плак."));
+		painter.drawText(relX(12), relY(54), tr("Ф."));
+		painter.drawText(relX(17), relY(54), tr("Датум"));
+		painter.drawText(relX(33), relY(54), tr("Коминтент"));
+		painter.drawText(relX(84), relY(54), tr("Износ"));
+		painter.drawText(relX(107), relY(54), tr("ДДВ"));
+		painter.drawText(relX(130), relY(54), tr("Вкупно"));
+		painter.drawText(relX(153), relY(54), tr("Платено"));
+		painter.drawText(relX(176), relY(54), tr("Останато за плак."));
 
 		painter.drawPath(path);
 
@@ -4079,11 +4085,11 @@ void sterna::drawVleznaFaktura(QPrinter *printer, QPainter& painter)
 		f.setPointSize(18);
 		painter.setFont(f);
 #ifdef _alea
-		painter.drawText(relX(100), relY(50), relX(100), relY(60), Qt::AlignRight, trUtf8("Влезна Фактура-Приемница"));
+		painter.drawText(relX(100), relY(50), relX(100), relY(60), Qt::AlignRight, tr("Влезна Фактура-Приемница"));
 #endif
 
 #ifndef _alea
-		painter.drawText(relX(100), relY(50), relX(100), relY(60), Qt::AlignRight, trUtf8("Фактура"));
+		painter.drawText(relX(100), relY(50), relX(100), relY(60), Qt::AlignRight, tr("Фактура"));
 #endif
 
 		f.setPointSize(8);
@@ -4094,13 +4100,13 @@ void sterna::drawVleznaFaktura(QPrinter *printer, QPainter& painter)
 		painter.drawText(relX(150), relY(45), relX(50), relY(50), Qt::AlignRight, moi_firma_web);
 		QString textNumberS = "0000"+modelFakturaInfo.at(0);
 		textNumberS = textNumberS.right(4);
-		painter.drawText(relX(160), relY(60), relX(40), relY(65), Qt::AlignRight, trUtf8("Сериски Број: ") + moi_god + "-" + textNumberS);
-		painter.drawText(relX(160), relY(65), relX(40), relY(70), Qt::AlignRight, trUtf8("Датум: ") + modelFakturaInfo.at(1));
-		painter.drawText(relX(160), relY(70), relX(40), relY(75), Qt::AlignRight, trUtf8("Валута: ") + modelFakturaInfo.at(1));
+		painter.drawText(relX(160), relY(60), relX(40), relY(65), Qt::AlignRight, tr("Сериски Број: ") + moi_god + "-" + textNumberS);
+		painter.drawText(relX(160), relY(65), relX(40), relY(70), Qt::AlignRight, tr("Датум: ") + modelFakturaInfo.at(1));
+		painter.drawText(relX(160), relY(70), relX(40), relY(75), Qt::AlignRight, tr("Валута: ") + modelFakturaInfo.at(1));
 		pen.setWidth(2);
 		painter.setPen(pen);
 		painter.drawRoundedRect(relX(10), relY(55), relX(80), relY(30), relX(3), relY(3), Qt::AbsoluteSize );
-		painter.drawText(relX(15), relY(60), trUtf8("До:"));
+		painter.drawText(relX(15), relY(60), tr("До:"));
 
 		painter.drawText(relX(15), relY(65), modelFakturaInfo.at(2));
 // 		painter.drawText(relX(15), relY(70), modelFakturaInfo.at(1));
@@ -4142,23 +4148,23 @@ void sterna::drawVleznaFaktura(QPrinter *printer, QPainter& painter)
 		path.moveTo(relX(175),relY(90));
 		path.lineTo(relX(175),relY(235));
 
-		painter.drawText(relX(11), relY(94), trUtf8("Рб."));
-		painter.drawText(relX(17), relY(94), trUtf8("Опис на артикал - услуга"));
-		painter.drawText(relX(62), relY(94), trUtf8("Кол."));
-		painter.drawText(relX(82), relY(94), trUtf8("Едм."));
-		painter.drawText(relX(90), relY(94), trUtf8("Цена"));
-		painter.drawText(relX(108), relY(94), trUtf8("Раб.%"));
-		painter.drawText(relX(118), relY(94), trUtf8("ДДВ%"));
-		painter.drawText(relX(129), relY(94), trUtf8("Вкупен Износ"));
-		painter.drawText(relX(154), relY(94), trUtf8("ДДВ Износ"));
-		painter.drawText(relX(177), relY(94), trUtf8("Вк.Износ со ДДВ"));
+		painter.drawText(relX(11), relY(94), tr("Рб."));
+		painter.drawText(relX(17), relY(94), tr("Опис на артикал - услуга"));
+		painter.drawText(relX(62), relY(94), tr("Кол."));
+		painter.drawText(relX(82), relY(94), tr("Едм."));
+		painter.drawText(relX(90), relY(94), tr("Цена"));
+		painter.drawText(relX(108), relY(94), tr("Раб.%"));
+		painter.drawText(relX(118), relY(94), tr("ДДВ%"));
+		painter.drawText(relX(129), relY(94), tr("Вкупен Износ"));
+		painter.drawText(relX(154), relY(94), tr("ДДВ Износ"));
+		painter.drawText(relX(177), relY(94), tr("Вк.Износ со ДДВ"));
 
 		path.moveTo(relX(10),relY(275));
 		path.lineTo(relX(60),relY(275));
 		path.moveTo(relX(140),relY(275));
 		path.lineTo(relX(190),relY(275));
-		painter.drawText(relX(11), relY(280), trUtf8("Фактурирал"));
-		painter.drawText(relX(145), relY(280), trUtf8("Примил"));
+		painter.drawText(relX(11), relY(280), tr("Фактурирал"));
+		painter.drawText(relX(145), relY(280), tr("Примил"));
 		path.moveTo(relX(10),relY(249));
 		path.lineTo(relX(200),relY(249));
 		painter.drawPath(path);
@@ -4229,37 +4235,37 @@ void sterna::drawVleznaFaktura(QPrinter *printer, QPainter& painter)
 			printer->newPage();
 	}
 	CHelperClass hlp(this);
-	painter.drawText(relX(130), relY(235), relX(40), relY(10), Qt::AlignRight, trUtf8("Вкупен Износ"));
-	painter.drawText(relX(170), relY(235), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(sumaDDV - ddv), 'f', 2) + trUtf8("  ден."));
+	painter.drawText(relX(130), relY(235), relX(40), relY(10), Qt::AlignRight, tr("Вкупен Износ"));
+	painter.drawText(relX(170), relY(235), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(sumaDDV - ddv), 'f', 2) + tr("  ден."));
 
-	painter.drawText(relX(130), relY(240), relX(40), relY(10), Qt::AlignRight, trUtf8("Вкупен ДДВ"));
-	painter.drawText(relX(170), relY(240), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(ddv), 'f', 2) + trUtf8("  ден."));
+	painter.drawText(relX(130), relY(240), relX(40), relY(10), Qt::AlignRight, tr("Вкупен ДДВ"));
+	painter.drawText(relX(170), relY(240), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(ddv), 'f', 2) + tr("  ден."));
 
-	painter.drawText(relX(90), relY(245), relX(80), relY(10), Qt::AlignRight, trUtf8("Вкупно за наплата денари со пресметан ДДВ"));
-	painter.drawText(relX(170), relY(245), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(sumaDDV), 'f', 2) + trUtf8("  ден."));
+	painter.drawText(relX(90), relY(245), relX(80), relY(10), Qt::AlignRight, tr("Вкупно за наплата денари со пресметан ДДВ"));
+	painter.drawText(relX(170), relY(245), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(sumaDDV), 'f', 2) + tr("  ден."));
 
 	painter.drawRoundedRect(relX(10), relY(236), relX(140), relY(9), relX(1), relY(1), Qt::AbsoluteSize );
 
-	painter.drawText(relX(12), relY(236), relX(40), relY(10), Qt::AlignLeft, trUtf8("Основица за ДДВ(5%)"));
-	painter.drawText(relX(46), relY(236), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(OsnovicaDDV5), 'f', 2) + trUtf8("  ден."));
+	painter.drawText(relX(12), relY(236), relX(40), relY(10), Qt::AlignLeft, tr("Основица за ДДВ(5%)"));
+	painter.drawText(relX(46), relY(236), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(OsnovicaDDV5), 'f', 2) + tr("  ден."));
 
-	painter.drawText(relX(12), relY(241), relX(40), relY(10), Qt::AlignLeft, trUtf8("Основица за ДДВ(18%)"));
-	painter.drawText(relX(46), relY(241), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(OsnovicaDDV18), 'f', 2) + trUtf8("  ден."));
+	painter.drawText(relX(12), relY(241), relX(40), relY(10), Qt::AlignLeft, tr("Основица за ДДВ(18%)"));
+	painter.drawText(relX(46), relY(241), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(OsnovicaDDV18), 'f', 2) + tr("  ден."));
 
-	painter.drawText(relX(80), relY(236), relX(40), relY(10), Qt::AlignLeft, trUtf8("Вкупен ДДВ  (5%)"));
-	painter.drawText(relX(110), relY(236), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(DDV5), 'f', 2) + trUtf8("  ден."));
+	painter.drawText(relX(80), relY(236), relX(40), relY(10), Qt::AlignLeft, tr("Вкупен ДДВ  (5%)"));
+	painter.drawText(relX(110), relY(236), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(DDV5), 'f', 2) + tr("  ден."));
 
-	painter.drawText(relX(80), relY(241), relX(40), relY(10), Qt::AlignLeft, trUtf8("Вкупен ДДВ (18%)"));
-	painter.drawText(relX(110), relY(241), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(DDV18), 'f', 2) + trUtf8("  ден."));
+	painter.drawText(relX(80), relY(241), relX(40), relY(10), Qt::AlignLeft, tr("Вкупен ДДВ (18%)"));
+	painter.drawText(relX(110), relY(241), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(DDV18), 'f', 2) + tr("  ден."));
 
 
-	// 	painter.drawText(relX(15), relY(280), trUtf8("Фактурирал"));
+	// 	painter.drawText(relX(15), relY(280), tr("Фактурирал"));
 
 	f.setPointSize(7);
 	painter.setFont(f);
 	int p = int(sumaDDV + 0.5f);
 	QString t = convertIntToText(p);
-//	QString t1 = trUtf8("Рок на плаќање ")+ modelFakturaInfo.at(5)+trUtf8(" дена од денот на фактурирањето.Во спротивно пресметуваме законска камата.");
+//	QString t1 = tr("Рок на плаќање ")+ modelFakturaInfo.at(5)+tr(" дена од денот на фактурирањето.Во спротивно пресметуваме законска камата.");
 	painter.drawText(relX(10), relY(249), relX(120), relY(6), Qt::AlignLeft, t);
 //	painter.drawText(relX(10), relY(258), relX(130), relY(6), Qt::AlignLeft, t1);
 #ifdef _demo
@@ -4289,7 +4295,7 @@ void sterna::drawFinAnalitikaKomintenti(QPrinter *printer, QPainter& painter)
 
 		f.setPointSize(12);
 		painter.setFont(f);
-		painter.drawText(relX(0), relY(20), relX(210), relY(30), Qt::AlignCenter, trUtf8("Финансова Аналитика \nпо коминтент: ") + m_finanalitikaKomintenti->getModelInfo());
+		painter.drawText(relX(0), relY(20), relX(210), relY(30), Qt::AlignCenter, tr("Финансова Аналитика \nпо коминтент: ") + m_finanalitikaKomintenti->getModelInfo());
 		f.setPointSize(8);
 
 
@@ -4314,30 +4320,30 @@ void sterna::drawFinAnalitikaKomintenti(QPrinter *printer, QPainter& painter)
 
 		f.setPointSize(8);
 		painter.setFont(f);
-		painter.drawText(relX(22), relY(44), trUtf8("Рб."));
-		painter.drawText(relX(32), relY(44), trUtf8("Вид док."));
-		painter.drawText(relX(92), relY(44), trUtf8("Датум"));
+		painter.drawText(relX(22), relY(44), tr("Рб."));
+		painter.drawText(relX(32), relY(44), tr("Вид док."));
+		painter.drawText(relX(92), relY(44), tr("Датум"));
 		f.setPointSize(6);
 		painter.setFont(f);
-		painter.drawText(relX(129), relY(42), trUtf8("Должи по фактура"));
-		painter.drawText(relX(129), relY(44), trUtf8("Одлив по извод"));
+		painter.drawText(relX(129), relY(42), tr("Должи по фактура"));
+		painter.drawText(relX(129), relY(44), tr("Одлив по извод"));
 		f.setPointSize(8);
 		painter.setFont(f);
 
 		f.setPointSize(6);
 		painter.setFont(f);
-		painter.drawText(relX(153), relY(42), trUtf8("Побарува по фактура"));
-		painter.drawText(relX(153), relY(44), trUtf8("Прилив по извод"));
+		painter.drawText(relX(153), relY(42), tr("Побарува по фактура"));
+		painter.drawText(relX(153), relY(44), tr("Прилив по извод"));
 		f.setPointSize(8);
 		painter.setFont(f);
 
-		painter.drawText(relX(180), relY(44), trUtf8("Салдо"));
+		painter.drawText(relX(180), relY(44), tr("Салдо"));
 		path.moveTo(relX(20),relY(275));
 		path.lineTo(relX(70),relY(275));
 		path.moveTo(relX(140),relY(275));
 		path.lineTo(relX(190),relY(275));
-		painter.drawText(relX(25), relY(280), trUtf8("Предал"));
-		painter.drawText(relX(145), relY(280), trUtf8("Примил"));
+		painter.drawText(relX(25), relY(280), tr("Предал"));
+		painter.drawText(relX(145), relY(280), tr("Примил"));
 
 
 		painter.drawPath(path);
@@ -4400,7 +4406,7 @@ void sterna::drawSmetka(QPrinter *printer, QPainter& painter)
 
 		f.setPointSize(18);
 		painter.setFont(f);
-		painter.drawText(relX(160), relY(50), relX(40), relY(60), Qt::AlignRight, trUtf8("Сметка"));
+		painter.drawText(relX(160), relY(50), relX(40), relY(60), Qt::AlignRight, tr("Сметка"));
 		f.setPointSize(8);
 		QStringList modelFakturaInfo = m_mykasa->getIspratnicaInfo();
 
@@ -4410,13 +4416,13 @@ void sterna::drawSmetka(QPrinter *printer, QPainter& painter)
 		painter.drawText(relX(150), relY(45), relX(50), relY(50), Qt::AlignRight, moi_firma_web);
 		QString textNumberS = "0000"+modelFakturaInfo.at(4);
 		textNumberS = textNumberS.right(4);
-		painter.drawText(relX(160), relY(60), relX(40), relY(65), Qt::AlignRight, trUtf8("Сериски Број: ") + moi_god + "-" + textNumberS);
-		painter.drawText(relX(160), relY(65), relX(40), relY(70), Qt::AlignRight, trUtf8("Датум: ") + modelFakturaInfo.at(3));
-		painter.drawText(relX(160), relY(70), relX(40), relY(75), Qt::AlignRight, trUtf8("Валута: ") + modelFakturaInfo.at(3));
+		painter.drawText(relX(160), relY(60), relX(40), relY(65), Qt::AlignRight, tr("Сериски Број: ") + moi_god + "-" + textNumberS);
+		painter.drawText(relX(160), relY(65), relX(40), relY(70), Qt::AlignRight, tr("Датум: ") + modelFakturaInfo.at(3));
+		painter.drawText(relX(160), relY(70), relX(40), relY(75), Qt::AlignRight, tr("Валута: ") + modelFakturaInfo.at(3));
 		pen.setWidth(2);
 		painter.setPen(pen);
 		painter.drawRoundedRect(relX(10), relY(55), relX(80), relY(30), relX(3), relY(3), Qt::AbsoluteSize );
-		painter.drawText(relX(15), relY(60), trUtf8("До:"));
+		painter.drawText(relX(15), relY(60), tr("До:"));
 
 		painter.drawText(relX(15), relY(65), modelFakturaInfo.at(0));
 		painter.drawText(relX(15), relY(70), modelFakturaInfo.at(1));
@@ -4458,23 +4464,23 @@ void sterna::drawSmetka(QPrinter *printer, QPainter& painter)
 		path.moveTo(relX(175),relY(90));
 		path.lineTo(relX(175),relY(235));
 
-		painter.drawText(relX(11), relY(94), trUtf8("Рб."));
-		painter.drawText(relX(17), relY(94), trUtf8("Опис на артикал - услуга"));
-		painter.drawText(relX(62), relY(94), trUtf8("Кол."));
-		painter.drawText(relX(82), relY(94), trUtf8("Едм."));
-		painter.drawText(relX(90), relY(94), trUtf8("Цена"));
-		painter.drawText(relX(108), relY(94), trUtf8("Раб.%"));
-		painter.drawText(relX(118), relY(94), trUtf8("ДДВ%"));
-		painter.drawText(relX(129), relY(94), trUtf8("Вкупен Износ"));
-		painter.drawText(relX(154), relY(94), trUtf8("ДДВ Износ"));
-		painter.drawText(relX(177), relY(94), trUtf8("Вк.Износ со ДДВ"));
+		painter.drawText(relX(11), relY(94), tr("Рб."));
+		painter.drawText(relX(17), relY(94), tr("Опис на артикал - услуга"));
+		painter.drawText(relX(62), relY(94), tr("Кол."));
+		painter.drawText(relX(82), relY(94), tr("Едм."));
+		painter.drawText(relX(90), relY(94), tr("Цена"));
+		painter.drawText(relX(108), relY(94), tr("Раб.%"));
+		painter.drawText(relX(118), relY(94), tr("ДДВ%"));
+		painter.drawText(relX(129), relY(94), tr("Вкупен Износ"));
+		painter.drawText(relX(154), relY(94), tr("ДДВ Износ"));
+		painter.drawText(relX(177), relY(94), tr("Вк.Износ со ДДВ"));
 
 		path.moveTo(relX(10),relY(275));
 		path.lineTo(relX(60),relY(275));
 		path.moveTo(relX(140),relY(275));
 		path.lineTo(relX(190),relY(275));
-		painter.drawText(relX(11), relY(280), trUtf8("Фактурирал"));
-		painter.drawText(relX(145), relY(280), trUtf8("Примил"));
+		painter.drawText(relX(11), relY(280), tr("Фактурирал"));
+		painter.drawText(relX(145), relY(280), tr("Примил"));
 		path.moveTo(relX(10),relY(249));
 		path.lineTo(relX(200),relY(249));
 		painter.drawPath(path);
@@ -4525,16 +4531,16 @@ void sterna::drawSmetka(QPrinter *printer, QPainter& painter)
 			printer->newPage();
 	}
 	CHelperClass hlp(this);
-	painter.drawText(relX(130), relY(235), relX(40), relY(10), Qt::AlignRight, trUtf8("Вкупен Износ"));
-	painter.drawText(relX(170), relY(235), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(sumaDDV - ddv), 'f', 2) + trUtf8("  ден."));
+	painter.drawText(relX(130), relY(235), relX(40), relY(10), Qt::AlignRight, tr("Вкупен Износ"));
+	painter.drawText(relX(170), relY(235), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(sumaDDV - ddv), 'f', 2) + tr("  ден."));
 
-	painter.drawText(relX(130), relY(240), relX(40), relY(10), Qt::AlignRight, trUtf8("Вкупен ДДВ"));
-	painter.drawText(relX(170), relY(240), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(ddv), 'f', 2) + trUtf8("  ден."));
+	painter.drawText(relX(130), relY(240), relX(40), relY(10), Qt::AlignRight, tr("Вкупен ДДВ"));
+	painter.drawText(relX(170), relY(240), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(ddv), 'f', 2) + tr("  ден."));
 
-	painter.drawText(relX(90), relY(245), relX(80), relY(10), Qt::AlignRight, trUtf8("Вкупно за наплата денари со пресметан ДДВ"));
-	painter.drawText(relX(170), relY(245), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(sumaDDV), 'f', 2) + trUtf8("  ден."));
+	painter.drawText(relX(90), relY(245), relX(80), relY(10), Qt::AlignRight, tr("Вкупно за наплата денари со пресметан ДДВ"));
+	painter.drawText(relX(170), relY(245), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(sumaDDV), 'f', 2) + tr("  ден."));
 
-	// 	painter.drawText(relX(15), relY(280), trUtf8("Фактурирал"));
+	// 	painter.drawText(relX(15), relY(280), tr("Фактурирал"));
 
 	f.setPointSize(7);
 	painter.setFont(f);
@@ -4542,7 +4548,7 @@ void sterna::drawSmetka(QPrinter *printer, QPainter& painter)
 	QString t = convertIntToText(p);
 	painter.drawText(relX(10), relY(249), relX(120), relY(6), Qt::AlignLeft, t);
 	painter.drawText(relX(10), relY(258), relX(120), relY(6), Qt::AlignLeft,
-		trUtf8("Рок на плаќање 8 дена од денот на фактурирањето.Во спротивно пресметуваме законска камата."));
+		tr("Рок на плаќање 8 дена од денот на фактурирањето.Во спротивно пресметуваме законска камата."));
 
 }
 void sterna::drawProFaktura(QPainter& painter)
@@ -4562,17 +4568,17 @@ void sterna::drawProFaktura(QPainter& painter)
 
 	f.setPointSize(18);
 	painter.setFont(f);
-	painter.drawText(relX(160), relY(50), relX(40), relY(60), Qt::AlignRight, trUtf8("Профактура"));
+	painter.drawText(relX(160), relY(50), relX(40), relY(60), Qt::AlignRight, tr("Профактура"));
 	f.setPointSize(8);
 	painter.setFont(f);
 	painter.drawText(relX(160), relY(35), relX(40), relY(40), Qt::AlignRight, moi_firma_tel);
 	painter.drawText(relX(160), relY(40), relX(40), relY(45), Qt::AlignRight, moi_firma_email);
 	painter.drawText(relX(150), relY(45), relX(50), relY(50), Qt::AlignRight, moi_firma_web);
-	painter.drawText(relX(160), relY(60), relX(40), relY(65), Qt::AlignRight, trUtf8("Сериски Број 2011-034"));
-	painter.drawText(relX(160), relY(65), relX(40), relY(70), Qt::AlignRight, trUtf8("Датум: 21-ное-2011"));
-	painter.drawText(relX(160), relY(70), relX(40), relY(75), Qt::AlignRight, trUtf8("Валута: 21-ное-2011"));
+	painter.drawText(relX(160), relY(60), relX(40), relY(65), Qt::AlignRight, tr("Сериски Број 2011-034"));
+	painter.drawText(relX(160), relY(65), relX(40), relY(70), Qt::AlignRight, tr("Датум: 21-ное-2011"));
+	painter.drawText(relX(160), relY(70), relX(40), relY(75), Qt::AlignRight, tr("Валута: 21-ное-2011"));
 	painter.drawRoundedRect(relX(20), relY(55), relX(80), relY(30), relX(3), relY(3), Qt::AbsoluteSize );
-	painter.drawText(relX(25), relY(60), trUtf8("До:"));
+	painter.drawText(relX(25), relY(60), tr("До:"));
 
 	painter.drawText(relX(20), relY(35), relX(60), relY(40), Qt::AlignLeft, moi_firma_banka1);
 	painter.drawText(relX(20), relY(40), relX(60), relY(45), Qt::AlignLeft, moi_firma_banka2);
@@ -4602,30 +4608,30 @@ void sterna::drawProFaktura(QPainter& painter)
 
 	f.setPointSize(8);
 	painter.setFont(f);
-	painter.drawText(relX(22), relY(94), trUtf8("Рб."));
-	painter.drawText(relX(32), relY(94), trUtf8("Опис на артикал - услуга"));
-	painter.drawText(relX(115), relY(94), trUtf8("Кол."));
-	painter.drawText(relX(130), relY(94), trUtf8("Цена"));
-	painter.drawText(relX(150), relY(94), trUtf8("Износ"));
-	painter.drawText(relX(165), relY(94), trUtf8("ДДВ"));
-	painter.drawText(relX(180), relY(94), trUtf8("Вкупно"));
+	painter.drawText(relX(22), relY(94), tr("Рб."));
+	painter.drawText(relX(32), relY(94), tr("Опис на артикал - услуга"));
+	painter.drawText(relX(115), relY(94), tr("Кол."));
+	painter.drawText(relX(130), relY(94), tr("Цена"));
+	painter.drawText(relX(150), relY(94), tr("Износ"));
+	painter.drawText(relX(165), relY(94), tr("ДДВ"));
+	painter.drawText(relX(180), relY(94), tr("Вкупно"));
 	path.moveTo(relX(20),relY(275));
 	path.lineTo(relX(70),relY(275));
 	path.moveTo(relX(140),relY(275));
 	path.lineTo(relX(190),relY(275));
-	painter.drawText(relX(25), relY(280), trUtf8("Фактурирал"));
-	painter.drawText(relX(145), relY(280), trUtf8("Директор"));
+	painter.drawText(relX(25), relY(280), tr("Фактурирал"));
+	painter.drawText(relX(145), relY(280), tr("Директор"));
 
-	painter.drawText(relX(130), relY(232), relX(40), relY(10), Qt::AlignRight, trUtf8("Вкупна цена"));
-	painter.drawText(relX(130), relY(238), relX(40), relY(10), Qt::AlignRight, trUtf8("ДДВ"));
-	painter.drawText(relX(130), relY(243), relX(40), relY(10), Qt::AlignRight, trUtf8("Вкупно за наплата денари"));
+	painter.drawText(relX(130), relY(232), relX(40), relY(10), Qt::AlignRight, tr("Вкупна цена"));
+	painter.drawText(relX(130), relY(238), relX(40), relY(10), Qt::AlignRight, tr("ДДВ"));
+	painter.drawText(relX(130), relY(243), relX(40), relY(10), Qt::AlignRight, tr("Вкупно за наплата денари"));
 	path.moveTo(relX(20),relY(248));
 	path.lineTo(relX(200),relY(248));
-	painter.drawText(relX(25), relY(280), trUtf8("Фактурирал"));
+	painter.drawText(relX(25), relY(280), tr("Фактурирал"));
 	f.setPointSize(6);
 	painter.setFont(f);
 	painter.drawText(relX(20), relY(248), relX(100), relY(6), Qt::AlignLeft, 
-		trUtf8("Со зборови:"));
+		tr("Со зборови:"));
 
 
 	painter.drawPath(path);
@@ -4644,28 +4650,28 @@ void sterna::drawKalkulacija(QPrinter *printer, QPainter& painter)
 
 		f.setPointSize(10);
 		painter.setFont(f);
-		painter.drawText(relX(10), relY(15), relX(270), relY(5), Qt::AlignCenter, trUtf8("МАТЕРИЈАЛНА ЕВИДЕНЦИЈА ВО ТРГОВИЈА НА ГОЛЕМО"));
+		painter.drawText(relX(10), relY(15), relX(270), relY(5), Qt::AlignCenter, tr("МАТЕРИЈАЛНА ЕВИДЕНЦИЈА ВО ТРГОВИЈА НА ГОЛЕМО"));
 		f.setPointSize(8);
 
 		painter.setFont(f);
-		painter.drawText(relX(10), relY(15), relX(277), relY(5), Qt::AlignLeft, trUtf8("Трговец"));
+		painter.drawText(relX(10), relY(15), relX(277), relY(5), Qt::AlignLeft, tr("Трговец"));
 		painter.drawText(relX(25), relY(15), relX(100), relY(5), Qt::AlignLeft, moi_firma_info1);
 		path.moveTo(relX(25),relY(18));
 		path.lineTo(relX(80),relY(18));
 
-		painter.drawText(relX(10), relY(20), relX(277), relY(5), Qt::AlignLeft, trUtf8("Адреса"));
+		painter.drawText(relX(10), relY(20), relX(277), relY(5), Qt::AlignLeft, tr("Адреса"));
 		painter.drawText(relX(25), relY(20), relX(100), relY(5), Qt::AlignLeft, moi_firma_info2);
 
 		path.moveTo(relX(25),relY(23));
 		path.lineTo(relX(80),relY(23));
 
-		painter.drawText(relX(10), relY(25), relX(277), relY(5), Qt::AlignLeft, trUtf8("Место"));
+		painter.drawText(relX(10), relY(25), relX(277), relY(5), Qt::AlignLeft, tr("Место"));
 		painter.drawText(relX(25), relY(25), relX(100), relY(5), Qt::AlignLeft, moi_firma_info3);
 
 		path.moveTo(relX(25),relY(28));
 		path.lineTo(relX(80),relY(28));
 
-		painter.drawText(relX(10), relY(30), relX(277), relY(5), Qt::AlignLeft, trUtf8("Едб"));
+		painter.drawText(relX(10), relY(30), relX(277), relY(5), Qt::AlignLeft, tr("Едб"));
 		painter.drawText(relX(25), relY(30), relX(100), relY(5), Qt::AlignLeft, moi_firma_edb);
 
 		path.moveTo(relX(25),relY(33));
@@ -4674,20 +4680,20 @@ void sterna::drawKalkulacija(QPrinter *printer, QPainter& painter)
 		////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 		painter.setFont(f);
-		painter.drawText(relX(220), relY(15), relX(67), relY(5), Qt::AlignLeft, trUtf8("____________________________"));
-		painter.drawText(relX(220), relY(20), relX(67), relY(5), Qt::AlignLeft, trUtf8("Продажна Цена"));
-		painter.drawText(relX(220), relY(25), relX(67), relY(5), Qt::AlignLeft, trUtf8("____________________________"));
-		painter.drawText(relX(220), relY(30), relX(67), relY(5), Qt::AlignLeft, trUtf8("Едм:   "));
+		painter.drawText(relX(220), relY(15), relX(67), relY(5), Qt::AlignLeft, tr("____________________________"));
+		painter.drawText(relX(220), relY(20), relX(67), relY(5), Qt::AlignLeft, tr("Продажна Цена"));
+		painter.drawText(relX(220), relY(25), relX(67), relY(5), Qt::AlignLeft, tr("____________________________"));
+		painter.drawText(relX(220), relY(30), relX(67), relY(5), Qt::AlignLeft, tr("Едм:   "));
 
 
 		////////////////////////////////////////////////////////////////////////////////////////////////////////
 		QString m_proizvod = "";//m_mykalkulacija->getKalkulacijaInfo();
-		painter.drawText(relX(90), relY(25), relX(160), relY(5), Qt::AlignLeft, trUtf8("Назив на производот:" ));
+		painter.drawText(relX(90), relY(25), relX(160), relY(5), Qt::AlignLeft, tr("Назив на производот:" ));
 		painter.drawText(relX(130), relY(25), relX(100), relY(5), Qt::AlignLeft, m_proizvod);
 		path.moveTo(relX(130),relY(28));
 		path.lineTo(relX(200),relY(28));
 
-		painter.drawText(relX(90), relY(30), relX(60), relY(5), Qt::AlignLeft, trUtf8("Магацин-стовариште"));
+		painter.drawText(relX(90), relY(30), relX(60), relY(5), Qt::AlignLeft, tr("Магацин-стовариште"));
 		path.moveTo(relX(130),relY(33));
 		path.lineTo(relX(200),relY(33));
 
@@ -4701,62 +4707,62 @@ void sterna::drawKalkulacija(QPrinter *printer, QPainter& painter)
 		path.moveTo(relX(10),relY(60));
 		path.lineTo(relX(287),relY(60));
 
-		painter.drawText(relX(12), relY(50), trUtf8("Рб."));
-		painter.drawText(relX(12), relY(58), trUtf8("1"));
+		painter.drawText(relX(12), relY(50), tr("Рб."));
+		painter.drawText(relX(12), relY(58), tr("1"));
 
 		//reden broj.
 		path.moveTo(relX(20),relY(40));
 		path.lineTo(relX(20),relY(180));
-		painter.drawText(relX(22), relY(50), trUtf8("Дат.книжење"));
-		painter.drawText(relX(22), relY(58), trUtf8("2"));
+		painter.drawText(relX(22), relY(50), tr("Дат.книжење"));
+		painter.drawText(relX(22), relY(58), tr("2"));
 
 		//datum na knizenje
 		path.moveTo(relX(45),relY(40));
 		path.lineTo(relX(45),relY(180));
-		painter.drawText(relX(47), relY(43), trUtf8("Книговодствен документ"));
-		painter.drawText(relX(47), relY(50), trUtf8("Бр. документ"));
-		painter.drawText(relX(47), relY(58), trUtf8("3"));
+		painter.drawText(relX(47), relY(43), tr("Книговодствен документ"));
+		painter.drawText(relX(47), relY(50), tr("Бр. документ"));
+		painter.drawText(relX(47), relY(58), tr("3"));
 
 		//broj na dokument
 		path.moveTo(relX(70),relY(45));
 		path.lineTo(relX(70),relY(180));
-		painter.drawText(relX(72), relY(50), trUtf8("Дат. на док."));
-		painter.drawText(relX(72), relY(58), trUtf8("4"));
+		painter.drawText(relX(72), relY(50), tr("Дат. на док."));
+		painter.drawText(relX(72), relY(58), tr("4"));
 
 
 		//naziv na dokument
 		path.moveTo(relX(95),relY(45));
 		path.lineTo(relX(95),relY(180));
-		painter.drawText(relX(97), relY(50), trUtf8("Назив Док."));
-		painter.drawText(relX(97), relY(58), trUtf8("5"));
+		painter.drawText(relX(97), relY(50), tr("Назив Док."));
+		painter.drawText(relX(97), relY(58), tr("5"));
 
 		//vlez
 		path.moveTo(relX(170),relY(40));
 		path.lineTo(relX(170),relY(180));
-		painter.drawText(relX(172), relY(43), trUtf8("Количина"));
-		painter.drawText(relX(172), relY(50), trUtf8("Влез"));
-		painter.drawText(relX(172), relY(58), trUtf8("6"));
+		painter.drawText(relX(172), relY(43), tr("Количина"));
+		painter.drawText(relX(172), relY(50), tr("Влез"));
+		painter.drawText(relX(172), relY(58), tr("6"));
 
 		//izlez
 		path.moveTo(relX(209),relY(45));
 		path.lineTo(relX(209),relY(180));
-		painter.drawText(relX(211), relY(50), trUtf8("Излез"));
-		painter.drawText(relX(211), relY(58), trUtf8("7"));
+		painter.drawText(relX(211), relY(50), tr("Излез"));
+		painter.drawText(relX(211), relY(58), tr("7"));
 
 		//sostojba
 		path.moveTo(relX(248),relY(45));
 		path.lineTo(relX(248),relY(180));
-		painter.drawText(relX(250), relY(50), trUtf8("Состојба"));
-		painter.drawText(relX(250), relY(58), trUtf8("8"));
+		painter.drawText(relX(250), relY(50), tr("Состојба"));
+		painter.drawText(relX(250), relY(58), tr("8"));
 
 		f.setPointSize(8);
 		painter.setFont(f);
 
 
 
-		painter.drawText(relX(10), relY(190), trUtf8("Образец МЕТГ"));
-		painter.drawText(relX(145), relY(190), trUtf8("(М.П.)"));
-		painter.drawText(relX(237), relY(195), trUtf8("Потпис на овластено лице"));
+		painter.drawText(relX(10), relY(190), tr("Образец МЕТГ"));
+		painter.drawText(relX(145), relY(190), tr("(М.П.)"));
+		painter.drawText(relX(237), relY(195), tr("Потпис на овластено лице"));
 		path.moveTo(relX(237),relY(190));
 		path.lineTo(relX(287),relY(190));
 
@@ -4831,11 +4837,11 @@ void sterna::drawIspratnica(QPrinter *printer, QPainter& painter)
 		f.setPointSize(18);
 		painter.setFont(f);
 #ifdef _alea
-		painter.drawText(relX(100), relY(50), relX(100), relY(60), Qt::AlignRight, trUtf8("Испратница"));
+		painter.drawText(relX(100), relY(50), relX(100), relY(60), Qt::AlignRight, tr("Испратница"));
 #endif
 
 #ifndef _alea
-		painter.drawText(relX(100), relY(50), relX(100), relY(60), Qt::AlignRight, trUtf8("Испратница"));
+		painter.drawText(relX(100), relY(50), relX(100), relY(60), Qt::AlignRight, tr("Испратница"));
 #endif
 
 		f.setPointSize(8);
@@ -4849,19 +4855,19 @@ void sterna::drawIspratnica(QPrinter *printer, QPainter& painter)
 		textNumberS = textNumberS.right(4);
 		f.setBold(true);
 		painter.setFont(f);
-		painter.drawText(relX(140), relY(60), relX(60), relY(65), Qt::AlignRight, trUtf8("Сериски Број: ") + moi_god + "-" + textNumberS + moi_prefix_prodavnica);
+		painter.drawText(relX(140), relY(60), relX(60), relY(65), Qt::AlignRight, tr("Сериски Број: ") + moi_god + "-" + textNumberS + moi_prefix_prodavnica);
 		f.setBold(false);
 		painter.setFont(f);
-		painter.drawText(relX(160), relY(65), relX(40), relY(70), Qt::AlignRight, trUtf8("Датум: ") + modelFakturaInfo.at(3));
+		painter.drawText(relX(160), relY(65), relX(40), relY(70), Qt::AlignRight, tr("Датум: ") + modelFakturaInfo.at(3));
 		int rok = modelFakturaInfo.at(5).toInt();
 		QString separ = modelFakturaInfo.at(3).mid(4,1);
 		QDateTime dateTimeTemp = QDateTime::fromString(modelFakturaInfo.at(3),"yyyy" + separ + "MM" + separ + "dd");
 		dateTimeTemp = dateTimeTemp.addDays(rok);
-		painter.drawText(relX(160), relY(70), relX(40), relY(75), Qt::AlignRight, trUtf8("Валута: ") + dateTimeTemp.toString("yyyy" + separ + "MM" + separ + "dd"));
+		painter.drawText(relX(160), relY(70), relX(40), relY(75), Qt::AlignRight, tr("Валута: ") + dateTimeTemp.toString("yyyy" + separ + "MM" + separ + "dd"));
 		pen.setWidth(2);
 		painter.setPen(pen);
 		painter.drawRoundedRect(relX(10), relY(55), relX(80), relY(30), relX(3), relY(3), Qt::AbsoluteSize );
-		painter.drawText(relX(15), relY(60), trUtf8("До:"));
+		painter.drawText(relX(15), relY(60), tr("До:"));
 
 		f.setBold(true);
 		painter.setFont(f);
@@ -4908,19 +4914,19 @@ void sterna::drawIspratnica(QPrinter *printer, QPainter& painter)
 
 		f.setPointSize(8);
 		painter.setFont(f);
-		painter.drawText(relX(11), relY(94), trUtf8("Рб."));
-		painter.drawText(relX(16), relY(94), trUtf8("Опис на артикал - услуга"));
-		painter.drawText(relX(81), relY(94), trUtf8("Едм."));
-		painter.drawText(relX(93), relY(94), trUtf8("Кол."));
-		painter.drawText(relX(106), relY(93), trUtf8("Цена"));
-		painter.drawText(relX(106), relY(96), trUtf8("без ДДВ"));
-		painter.drawText(relX(121), relY(94), trUtf8("Раб.%"));
-		painter.drawText(relX(131), relY(94), trUtf8("ДДВ%"));
-		painter.drawText(relX(141), relY(93), trUtf8("Вк.Износ"));
-		painter.drawText(relX(141), relY(96), trUtf8("без ДДВ"));
-		painter.drawText(relX(161), relY(94), trUtf8("ДДВ Износ"));
-		painter.drawText(relX(181), relY(93), trUtf8("Вк.Вредност"));
-		painter.drawText(relX(181), relY(96), trUtf8("со ДДВ"));
+		painter.drawText(relX(11), relY(94), tr("Рб."));
+		painter.drawText(relX(16), relY(94), tr("Опис на артикал - услуга"));
+		painter.drawText(relX(81), relY(94), tr("Едм."));
+		painter.drawText(relX(93), relY(94), tr("Кол."));
+		painter.drawText(relX(106), relY(93), tr("Цена"));
+		painter.drawText(relX(106), relY(96), tr("без ДДВ"));
+		painter.drawText(relX(121), relY(94), tr("Раб.%"));
+		painter.drawText(relX(131), relY(94), tr("ДДВ%"));
+		painter.drawText(relX(141), relY(93), tr("Вк.Износ"));
+		painter.drawText(relX(141), relY(96), tr("без ДДВ"));
+		painter.drawText(relX(161), relY(94), tr("ДДВ Износ"));
+		painter.drawText(relX(181), relY(93), tr("Вк.Вредност"));
+		painter.drawText(relX(181), relY(96), tr("со ДДВ"));
 		f.setPointSize(8);
 		painter.setFont(f);
 
@@ -4930,10 +4936,10 @@ void sterna::drawIspratnica(QPrinter *printer, QPainter& painter)
 		path.lineTo(relX(198),relY(275));
 
 
-		painter.drawText(relX(11), relY(280), trUtf8("Примил"));
-		painter.drawText(relX(155), relY(280), trUtf8("Предал"));
+		painter.drawText(relX(11), relY(280), tr("Примил"));
+		painter.drawText(relX(155), relY(280), tr("Предал"));
 
-		painter.drawText(relX(100), relY(265), trUtf8("МП"));
+		painter.drawText(relX(100), relY(265), tr("МП"));
 
 		path.moveTo(relX(10),relY(249));
 		path.lineTo(relX(200),relY(249));
@@ -4961,7 +4967,7 @@ void sterna::drawIspratnica(QPrinter *printer, QPainter& painter)
 					case 0: painter.drawText(relX(11), relY(100 + 6 * (row - pagefrom)), relX(4), relY(9), Qt::AlignLeft, QString::number(row + 1, 10));break;
 					case 1: 
 #ifndef _alea
-						painter.drawText(relX(16), relY(97 + 6 * (row - pagefrom)), relX(64), relY(9), Qt::AlignLeft, trUtf8("Шифра: ") + modelFaktura2->item(row, col )->text());
+						painter.drawText(relX(16), relY(97 + 6 * (row - pagefrom)), relX(64), relY(9), Qt::AlignLeft, tr("Шифра: ") + modelFaktura2->item(row, col )->text());
 #endif
 
 						painter.drawText(relX(16), relY(100 + 6 * (row - pagefrom)), relX(64), relY(9), Qt::AlignLeft, modelFaktura2->item(row, col + 1)->text());
@@ -5011,48 +5017,48 @@ void sterna::drawIspratnica(QPrinter *printer, QPainter& painter)
 			printer->newPage();
 	}
 	CHelperClass hlp(this);
-// 	painter.drawText(relX(130), relY(235), relX(40), relY(10), Qt::AlignRight, trUtf8("Вкупен Износ"));
-// 	painter.drawText(relX(170), relY(235), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(sumaDDV - ddv), 'f', 2) + trUtf8("  ден."));
+// 	painter.drawText(relX(130), relY(235), relX(40), relY(10), Qt::AlignRight, tr("Вкупен Износ"));
+// 	painter.drawText(relX(170), relY(235), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(sumaDDV - ddv), 'f', 2) + tr("  ден."));
 // 
-// 	painter.drawText(relX(130), relY(238), relX(40), relY(10), Qt::AlignRight, trUtf8("Вкупен Рабат"));
-// 	painter.drawText(relX(170), relY(238), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded((-1)* RabatIznos), 'f', 2) + trUtf8("  ден."));
+// 	painter.drawText(relX(130), relY(238), relX(40), relY(10), Qt::AlignRight, tr("Вкупен Рабат"));
+// 	painter.drawText(relX(170), relY(238), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded((-1)* RabatIznos), 'f', 2) + tr("  ден."));
 // 
-// 	painter.drawText(relX(130), relY(241), relX(40), relY(10), Qt::AlignRight, trUtf8("Вкупен ДДВ"));
-// 	painter.drawText(relX(170), relY(241), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(ddv), 'f', 2) + trUtf8("  ден."));
+// 	painter.drawText(relX(130), relY(241), relX(40), relY(10), Qt::AlignRight, tr("Вкупен ДДВ"));
+// 	painter.drawText(relX(170), relY(241), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(ddv), 'f', 2) + tr("  ден."));
 
 	f.setBold(true);
 	painter.setFont(f);
-	painter.drawText(relX(90), relY(245), relX(80), relY(10), Qt::AlignRight, trUtf8("Вкупно за наплата денари со пресметан ДДВ"));
-	painter.drawText(relX(170), relY(245), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(floor(sumaDDV+.5f)), 'f', 2) + trUtf8("  ден."));
+	painter.drawText(relX(90), relY(245), relX(80), relY(10), Qt::AlignRight, tr("Вкупно за наплата денари со пресметан ДДВ"));
+	painter.drawText(relX(170), relY(245), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(floor(sumaDDV+.5f)), 'f', 2) + tr("  ден."));
 	f.setBold(false);
 	painter.setFont(f);
 // 	painter.drawRoundedRect(relX(10), relY(236), relX(140), relY(9), relX(1), relY(1), Qt::AbsoluteSize );
 // 
-// 	painter.drawText(relX(12), relY(236), relX(40), relY(10), Qt::AlignLeft, trUtf8("Основица за ДДВ(5%)"));
-// 	painter.drawText(relX(46), relY(236), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(OsnovicaDDV5), 'f', 2) + trUtf8("  ден."));
+// 	painter.drawText(relX(12), relY(236), relX(40), relY(10), Qt::AlignLeft, tr("Основица за ДДВ(5%)"));
+// 	painter.drawText(relX(46), relY(236), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(OsnovicaDDV5), 'f', 2) + tr("  ден."));
 // 
-// 	painter.drawText(relX(12), relY(241), relX(40), relY(10), Qt::AlignLeft, trUtf8("Основица за ДДВ(18%)"));
-// 	painter.drawText(relX(46), relY(241), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(OsnovicaDDV18), 'f', 2) + trUtf8("  ден."));
+// 	painter.drawText(relX(12), relY(241), relX(40), relY(10), Qt::AlignLeft, tr("Основица за ДДВ(18%)"));
+// 	painter.drawText(relX(46), relY(241), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(OsnovicaDDV18), 'f', 2) + tr("  ден."));
 // 
-// 	painter.drawText(relX(80), relY(236), relX(40), relY(10), Qt::AlignLeft, trUtf8("Вкупен ДДВ  (5%)"));
-// 	painter.drawText(relX(110), relY(236), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(DDV5), 'f', 2) + trUtf8("  ден."));
+// 	painter.drawText(relX(80), relY(236), relX(40), relY(10), Qt::AlignLeft, tr("Вкупен ДДВ  (5%)"));
+// 	painter.drawText(relX(110), relY(236), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(DDV5), 'f', 2) + tr("  ден."));
 // 
-// 	painter.drawText(relX(80), relY(241), relX(40), relY(10), Qt::AlignLeft, trUtf8("Вкупен ДДВ (18%)"));
-// 	painter.drawText(relX(110), relY(241), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(DDV18), 'f', 2) + trUtf8("  ден."));
+// 	painter.drawText(relX(80), relY(241), relX(40), relY(10), Qt::AlignLeft, tr("Вкупен ДДВ (18%)"));
+// 	painter.drawText(relX(110), relY(241), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(DDV18), 'f', 2) + tr("  ден."));
 
 
-	// 	painter.drawText(relX(15), relY(280), trUtf8("Фактурирал"));
+	// 	painter.drawText(relX(15), relY(280), tr("Фактурирал"));
 
 	f.setPointSize(7);
 	painter.setFont(f);
 	int p = int(sumaDDV + 0.5f);
 	QString t = convertIntToText(p);
-// 	QString t1 = trUtf8("Рок на плаќање ")+ modelFakturaInfo.at(5)+trUtf8(" дена од денот на фактурирањето.Во спротивно пресметуваме законска камата.");
+// 	QString t1 = tr("Рок на плаќање ")+ modelFakturaInfo.at(5)+tr(" дена од денот на фактурирањето.Во спротивно пресметуваме законска камата.");
 	painter.drawText(relX(50), relY(249), relX(120), relY(6), Qt::AlignRight, t);
 //	painter.drawText(relX(10), relY(258), relX(130), relY(6), Qt::AlignLeft, t1);
-// 	QString t2 = trUtf8("Рекламации се примаат во рок од 3 дена од приемот на стоката со уреден записник.");
+// 	QString t2 = tr("Рекламации се примаат во рок од 3 дена од приемот на стоката со уреден записник.");
 // 	painter.drawText(relX(10), relY(261), relX(130), relY(6), Qt::AlignLeft, t2);
-// 	QString t3 = trUtf8("Во случај на спор надлежен е Стопански суд.");
+// 	QString t3 = tr("Во случај на спор надлежен е Стопански суд.");
 // 	painter.drawText(relX(10), relY(264), relX(130), relY(6), Qt::AlignLeft, t3);
 
 #ifdef _demo
@@ -5086,7 +5092,7 @@ void sterna::drawIspratnicaALL(QPrinter *printer, QPainter& painter)
 
 		f.setPointSize(18);
 		painter.setFont(f);
-		painter.drawText(relX(10), relY(10), relX(190), relY(20), Qt::AlignCenter, trUtf8("Листа на Испратници"));
+		painter.drawText(relX(10), relY(10), relX(190), relY(20), Qt::AlignCenter, tr("Листа на Испратници"));
 
 		f.setPointSize(8);
 
@@ -5127,14 +5133,14 @@ void sterna::drawIspratnicaALL(QPrinter *printer, QPainter& painter)
 		path.moveTo(relX(174),relY(50));
 		path.lineTo(relX(174),relY(275));
 
-		painter.drawText(relX(12), relY(54), trUtf8("Ф."));
-		painter.drawText(relX(17), relY(54), trUtf8("Датум"));
-		painter.drawText(relX(33), relY(54), trUtf8("Коминтент"));
-		painter.drawText(relX(84), relY(54), trUtf8("Износ"));
-		painter.drawText(relX(107), relY(54), trUtf8("ДДВ"));
-		painter.drawText(relX(130), relY(54), trUtf8("Вкупно"));
-		painter.drawText(relX(153), relY(54), trUtf8("Платено"));
-		painter.drawText(relX(176), relY(54), trUtf8("Останато за плак."));
+		painter.drawText(relX(12), relY(54), tr("Ф."));
+		painter.drawText(relX(17), relY(54), tr("Датум"));
+		painter.drawText(relX(33), relY(54), tr("Коминтент"));
+		painter.drawText(relX(84), relY(54), tr("Износ"));
+		painter.drawText(relX(107), relY(54), tr("ДДВ"));
+		painter.drawText(relX(130), relY(54), tr("Вкупно"));
+		painter.drawText(relX(153), relY(54), tr("Платено"));
+		painter.drawText(relX(176), relY(54), tr("Останато за плак."));
 
 		painter.drawPath(path);
 
@@ -5205,7 +5211,7 @@ void sterna::drawPriemnica(QPrinter *printer, QPainter& painter)
 
 	f.setPointSize(18);
 	painter.setFont(f);
-	painter.drawText(relX(160), relY(50), relX(40), relY(60), Qt::AlignRight, trUtf8("Приемница"));
+	painter.drawText(relX(160), relY(50), relX(40), relY(60), Qt::AlignRight, tr("Приемница"));
 	f.setPointSize(8);
 	painter.setFont(f);
 	painter.drawText(relX(160), relY(35), relX(40), relY(40), Qt::AlignRight, moi_firma_tel);
@@ -5215,13 +5221,13 @@ void sterna::drawPriemnica(QPrinter *printer, QPainter& painter)
 	QString textNumberS = "0000"+modelPriemnicaInfo.at(3);
 	textNumberS = textNumberS.right(4);
 
-	painter.drawText(relX(160), relY(60), relX(40), relY(65), Qt::AlignRight, trUtf8("Сериски Број: ") + moi_god + "-" + textNumberS);
-	painter.drawText(relX(160), relY(65), relX(40), relY(70), Qt::AlignRight, trUtf8("Датум: ") + modelPriemnicaInfo.at(4));
-	painter.drawText(relX(160), relY(70), relX(40), relY(75), Qt::AlignRight, trUtf8("Валута: ") + modelPriemnicaInfo.at(4));
+	painter.drawText(relX(160), relY(60), relX(40), relY(65), Qt::AlignRight, tr("Сериски Број: ") + moi_god + "-" + textNumberS);
+	painter.drawText(relX(160), relY(65), relX(40), relY(70), Qt::AlignRight, tr("Датум: ") + modelPriemnicaInfo.at(4));
+	painter.drawText(relX(160), relY(70), relX(40), relY(75), Qt::AlignRight, tr("Валута: ") + modelPriemnicaInfo.at(4));
 	pen.setWidth(2);
 	painter.setPen(pen);
 	painter.drawRoundedRect(relX(20), relY(55), relX(80), relY(30), relX(3), relY(3), Qt::AbsoluteSize );
-	painter.drawText(relX(25), relY(60), trUtf8("До:"));
+	painter.drawText(relX(25), relY(60), tr("До:"));
 
 	painter.drawText(relX(20), relY(35), relX(60), relY(40), Qt::AlignLeft, moi_firma_banka1);
 	painter.drawText(relX(20), relY(40), relX(60), relY(45), Qt::AlignLeft, moi_firma_banka2);
@@ -5249,19 +5255,19 @@ void sterna::drawPriemnica(QPrinter *printer, QPainter& painter)
 
 	f.setPointSize(8);
 	painter.setFont(f);
-	painter.drawText(relX(22), relY(94), trUtf8("Рб."));
-	painter.drawText(relX(32), relY(94), trUtf8("Опис на артикли"));
+	painter.drawText(relX(22), relY(94), tr("Рб."));
+	painter.drawText(relX(32), relY(94), tr("Опис на артикли"));
 
-	painter.drawText(relX(130), relY(94), trUtf8("Кол."));
-	painter.drawText(relX(150), relY(94), trUtf8("Едм."));
-	painter.drawText(relX(165), relY(94), trUtf8("Цена"));
-	painter.drawText(relX(182), relY(94), trUtf8("Износ"));
+	painter.drawText(relX(130), relY(94), tr("Кол."));
+	painter.drawText(relX(150), relY(94), tr("Едм."));
+	painter.drawText(relX(165), relY(94), tr("Цена"));
+	painter.drawText(relX(182), relY(94), tr("Износ"));
 	path.moveTo(relX(20),relY(275));
 	path.lineTo(relX(70),relY(275));
 	path.moveTo(relX(140),relY(275));
 	path.lineTo(relX(190),relY(275));
-	painter.drawText(relX(25), relY(280), trUtf8("Предал"));
-	painter.drawText(relX(145), relY(280), trUtf8("Примил"));
+	painter.drawText(relX(25), relY(280), tr("Предал"));
+	painter.drawText(relX(145), relY(280), tr("Примил"));
 
 
 	painter.drawPath(path);
@@ -5318,7 +5324,7 @@ void sterna::drawLagerLista(QPrinter *printer,QPainter& painter)
 
 		f.setPointSize(18);
 		painter.setFont(f);
-		painter.drawText(relX(0), relY(20), relX(210), relY(30), Qt::AlignCenter, trUtf8("Лагер Листа"));
+		painter.drawText(relX(0), relY(20), relX(210), relY(30), Qt::AlignCenter, tr("Лагер Листа"));
 		f.setPointSize(8);
 
 
@@ -5343,19 +5349,19 @@ void sterna::drawLagerLista(QPrinter *printer,QPainter& painter)
 
 		f.setPointSize(8);
 		painter.setFont(f);
-		painter.drawText(relX(22), relY(44), trUtf8("Рб."));
-		painter.drawText(relX(42), relY(44), trUtf8("Опис на артикли"));
+		painter.drawText(relX(22), relY(44), tr("Рб."));
+		painter.drawText(relX(42), relY(44), tr("Опис на артикли"));
 
-		painter.drawText(relX(105), relY(44), trUtf8("Ед.мера"));
-		painter.drawText(relX(130), relY(44), trUtf8("Влез"));
-		painter.drawText(relX(155), relY(44), trUtf8("Излез"));
-		painter.drawText(relX(180), relY(44), trUtf8("Салдо"));
+		painter.drawText(relX(105), relY(44), tr("Ед.мера"));
+		painter.drawText(relX(130), relY(44), tr("Влез"));
+		painter.drawText(relX(155), relY(44), tr("Излез"));
+		painter.drawText(relX(180), relY(44), tr("Салдо"));
 		path.moveTo(relX(20),relY(275));
 		path.lineTo(relX(70),relY(275));
 		path.moveTo(relX(140),relY(275));
 		path.lineTo(relX(190),relY(275));
-		painter.drawText(relX(25), relY(280), trUtf8("Предал"));
-		painter.drawText(relX(145), relY(280), trUtf8("Примил"));
+		painter.drawText(relX(25), relY(280), tr("Предал"));
+		painter.drawText(relX(145), relY(280), tr("Примил"));
 
 
 		painter.drawPath(path);
@@ -5416,7 +5422,7 @@ void sterna::draw_PeriodicenIzvestaj(QPrinter *printer,QPainter& painter)
 
 		f.setPointSize(14);
 		painter.setFont(f);
-		painter.drawText(relX(0), relY(20), relX(210), relY(30), Qt::AlignCenter, trUtf8("Извештај за период -") + m_periodicen->getDateRange());
+		painter.drawText(relX(0), relY(20), relX(210), relY(30), Qt::AlignCenter, tr("Извештај за период -") + m_periodicen->getDateRange());
 		f.setPointSize(8);
 
 
@@ -5441,19 +5447,19 @@ void sterna::draw_PeriodicenIzvestaj(QPrinter *printer,QPainter& painter)
 
 		f.setPointSize(8);
 		painter.setFont(f);
-		painter.drawText(relX(22), relY(44), trUtf8("Рб."));
-		painter.drawText(relX(42), relY(44), trUtf8("Опис на артикли"));
+		painter.drawText(relX(22), relY(44), tr("Рб."));
+		painter.drawText(relX(42), relY(44), tr("Опис на артикли"));
 
-		painter.drawText(relX(105), relY(44), trUtf8("Ед.мера"));
-		painter.drawText(relX(130), relY(44), trUtf8("Влез"));
-		painter.drawText(relX(155), relY(44), trUtf8("Излез"));
-		painter.drawText(relX(180), relY(44), trUtf8("Салдо"));
+		painter.drawText(relX(105), relY(44), tr("Ед.мера"));
+		painter.drawText(relX(130), relY(44), tr("Влез"));
+		painter.drawText(relX(155), relY(44), tr("Излез"));
+		painter.drawText(relX(180), relY(44), tr("Салдо"));
 		path.moveTo(relX(20),relY(275));
 		path.lineTo(relX(70),relY(275));
 		path.moveTo(relX(140),relY(275));
 		path.lineTo(relX(190),relY(275));
-		painter.drawText(relX(25), relY(280), trUtf8("Предал"));
-		painter.drawText(relX(145), relY(280), trUtf8("Примил"));
+		painter.drawText(relX(25), relY(280), tr("Предал"));
+		painter.drawText(relX(145), relY(280), tr("Примил"));
 
 
 		painter.drawPath(path);
@@ -5511,7 +5517,7 @@ void sterna::drawArtikliLista(QPrinter *printer, QPainter& painter)
 	f.setPointSize(20);
 	painter.setFont(f);
 	painter.drawText(relX(0), relY(12), relX(210), relY(9), Qt::AlignCenter, 
-		trUtf8("Листа на артикли"));
+		tr("Листа на артикли"));
 
     QPixmap image1(moi_logo);
     painter.drawPixmap(relX(90), relY(20), relX(30), relX(20), image1);
@@ -5540,20 +5546,20 @@ void sterna::drawArtikliLista(QPrinter *printer, QPainter& painter)
 
 	f.setPointSize(8);
 	painter.setFont(f);
-	painter.drawText(relX(22), relY(44), trUtf8("Рб."));
-	painter.drawText(relX(32), relY(44), trUtf8("Опис на артикал - услуга"));
-	painter.drawText(relX(115), relY(44), trUtf8("Кол."));
-	painter.drawText(relX(130), relY(44), trUtf8("Цена"));
-	painter.drawText(relX(150), relY(44), trUtf8("Износ"));
-	painter.drawText(relX(165), relY(44), trUtf8("ДДВ"));
-	painter.drawText(relX(180), relY(44), trUtf8("Вкупно"));
+	painter.drawText(relX(22), relY(44), tr("Рб."));
+	painter.drawText(relX(32), relY(44), tr("Опис на артикал - услуга"));
+	painter.drawText(relX(115), relY(44), tr("Кол."));
+	painter.drawText(relX(130), relY(44), tr("Цена"));
+	painter.drawText(relX(150), relY(44), tr("Износ"));
+	painter.drawText(relX(165), relY(44), tr("ДДВ"));
+	painter.drawText(relX(180), relY(44), tr("Вкупно"));
 
 	path.moveTo(relX(20),relY(275));
 	path.lineTo(relX(70),relY(275));
 	path.moveTo(relX(140),relY(275));
 	path.lineTo(relX(190),relY(275));
-	painter.drawText(relX(25), relY(280), trUtf8("Изработил"));
-	painter.drawText(relX(145), relY(280), trUtf8("Директор"));
+	painter.drawText(relX(25), relY(280), tr("Изработил"));
+	painter.drawText(relX(145), relY(280), tr("Директор"));
 
 	painter.drawPath(path);
 
@@ -5573,10 +5579,10 @@ void sterna::drawArtikliLista(QPrinter *printer, QPainter& painter)
 				{
 				case 0: painter.drawText(relX(21), relY(50 + 6 * (row - pagefrom)), relX(8), relY(9), Qt::AlignLeft, QString::number(row + 1, 10));break;
 					case 1: painter.drawText(relX(31), relY(50 + 6 * (row - pagefrom)), relX(78), relY(9), Qt::AlignLeft, modelArtikli->item(row, col + 1)->text());break;
-					case 2: painter.drawText(relX(111), relY(50 + 6 * (row - pagefrom)), relX(13), relY(9), Qt::AlignLeft, trUtf8("ул.Народен Фронт "));break;
-					case 3: painter.drawText(relX(126), relY(50 + 6 * (row - pagefrom)), relX(18), relY(9), Qt::AlignRight, trUtf8("CCCC"));break;
-					case 4: painter.drawText(relX(146), relY(50 + 6 * (row - pagefrom)), relX(13), relY(9), Qt::AlignRight, trUtf8("BBBB"));break;
-					case 5: painter.drawText(relX(161), relY(50 + 6 * (row - pagefrom)), relX(13), relY(9), Qt::AlignRight, trUtf8("AAAA"));break;
+					case 2: painter.drawText(relX(111), relY(50 + 6 * (row - pagefrom)), relX(13), relY(9), Qt::AlignLeft, tr("ул.Народен Фронт "));break;
+					case 3: painter.drawText(relX(126), relY(50 + 6 * (row - pagefrom)), relX(18), relY(9), Qt::AlignRight, tr("CCCC"));break;
+					case 4: painter.drawText(relX(146), relY(50 + 6 * (row - pagefrom)), relX(13), relY(9), Qt::AlignRight, tr("BBBB"));break;
+					case 5: painter.drawText(relX(161), relY(50 + 6 * (row - pagefrom)), relX(13), relY(9), Qt::AlignRight, tr("AAAA"));break;
 				}
 			}
 		}
@@ -5596,28 +5602,28 @@ void sterna::drawAnalitikaArtikli(QPrinter *printer,QPainter& painter)
 
         f.setPointSize(10);
         painter.setFont(f);
-        painter.drawText(relX(10), relY(15), relX(270), relY(5), Qt::AlignCenter, trUtf8("МАТЕРИЈАЛНА ЕВИДЕНЦИЈА ВО ТРГОВИЈА НА ГОЛЕМО"));
+        painter.drawText(relX(10), relY(15), relX(270), relY(5), Qt::AlignCenter, tr("МАТЕРИЈАЛНА ЕВИДЕНЦИЈА ВО ТРГОВИЈА НА ГОЛЕМО"));
         f.setPointSize(8);
 
         painter.setFont(f);
-        painter.drawText(relX(10), relY(15), relX(277), relY(5), Qt::AlignLeft, trUtf8("Трговец"));
+        painter.drawText(relX(10), relY(15), relX(277), relY(5), Qt::AlignLeft, tr("Трговец"));
         painter.drawText(relX(25), relY(15), relX(100), relY(5), Qt::AlignLeft, moi_firma_info1);
         path.moveTo(relX(25),relY(18));
         path.lineTo(relX(80),relY(18));
 
-        painter.drawText(relX(10), relY(20), relX(277), relY(5), Qt::AlignLeft, trUtf8("Адреса"));
+        painter.drawText(relX(10), relY(20), relX(277), relY(5), Qt::AlignLeft, tr("Адреса"));
         painter.drawText(relX(25), relY(20), relX(100), relY(5), Qt::AlignLeft, moi_firma_info2);
 
         path.moveTo(relX(25),relY(23));
         path.lineTo(relX(80),relY(23));
 
-        painter.drawText(relX(10), relY(25), relX(277), relY(5), Qt::AlignLeft, trUtf8("Место"));
+        painter.drawText(relX(10), relY(25), relX(277), relY(5), Qt::AlignLeft, tr("Место"));
         painter.drawText(relX(25), relY(25), relX(100), relY(5), Qt::AlignLeft, moi_firma_info3);
 
         path.moveTo(relX(25),relY(28));
         path.lineTo(relX(80),relY(28));
 
-        painter.drawText(relX(10), relY(30), relX(277), relY(5), Qt::AlignLeft, trUtf8("Едб"));
+        painter.drawText(relX(10), relY(30), relX(277), relY(5), Qt::AlignLeft, tr("Едб"));
         painter.drawText(relX(25), relY(30), relX(100), relY(5), Qt::AlignLeft, moi_firma_edb);
 
         path.moveTo(relX(25),relY(33));
@@ -5626,20 +5632,20 @@ void sterna::drawAnalitikaArtikli(QPrinter *printer,QPainter& painter)
         ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         painter.setFont(f);
-        painter.drawText(relX(220), relY(15), relX(67), relY(5), Qt::AlignLeft, trUtf8("____________________________"));
-        painter.drawText(relX(220), relY(20), relX(67), relY(5), Qt::AlignLeft, trUtf8("Продажна Цена"));
-        painter.drawText(relX(220), relY(25), relX(67), relY(5), Qt::AlignLeft, trUtf8("____________________________"));
-        painter.drawText(relX(220), relY(30), relX(67), relY(5), Qt::AlignLeft, trUtf8("Едм:   ") +  m_analitikaArtikli->getModelInfo2());
+        painter.drawText(relX(220), relY(15), relX(67), relY(5), Qt::AlignLeft, tr("____________________________"));
+        painter.drawText(relX(220), relY(20), relX(67), relY(5), Qt::AlignLeft, tr("Продажна Цена"));
+        painter.drawText(relX(220), relY(25), relX(67), relY(5), Qt::AlignLeft, tr("____________________________"));
+        painter.drawText(relX(220), relY(30), relX(67), relY(5), Qt::AlignLeft, tr("Едм:   ") +  m_analitikaArtikli->getModelInfo2());
 
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////
         QString m_proizvod = m_analitikaArtikli->getModelInfo();
-        painter.drawText(relX(90), relY(25), relX(160), relY(5), Qt::AlignLeft, trUtf8("Назив на производот:" ));
+        painter.drawText(relX(90), relY(25), relX(160), relY(5), Qt::AlignLeft, tr("Назив на производот:" ));
         painter.drawText(relX(130), relY(25), relX(100), relY(5), Qt::AlignLeft, m_proizvod);
         path.moveTo(relX(130),relY(28));
         path.lineTo(relX(200),relY(28));
 
-        painter.drawText(relX(90), relY(30), relX(60), relY(5), Qt::AlignLeft, trUtf8("Магацин-стовариште"));
+        painter.drawText(relX(90), relY(30), relX(60), relY(5), Qt::AlignLeft, tr("Магацин-стовариште"));
         path.moveTo(relX(130),relY(33));
         path.lineTo(relX(200),relY(33));
 
@@ -5653,62 +5659,62 @@ void sterna::drawAnalitikaArtikli(QPrinter *printer,QPainter& painter)
         path.moveTo(relX(10),relY(60));
         path.lineTo(relX(287),relY(60));
 
-        painter.drawText(relX(12), relY(50), trUtf8("Рб."));
-        painter.drawText(relX(12), relY(58), trUtf8("1"));
+        painter.drawText(relX(12), relY(50), tr("Рб."));
+        painter.drawText(relX(12), relY(58), tr("1"));
 
         //reden broj.
         path.moveTo(relX(20),relY(40));
         path.lineTo(relX(20),relY(180));
-        painter.drawText(relX(22), relY(50), trUtf8("Дат.книжење"));
-        painter.drawText(relX(22), relY(58), trUtf8("2"));
+        painter.drawText(relX(22), relY(50), tr("Дат.книжење"));
+        painter.drawText(relX(22), relY(58), tr("2"));
 
         //datum na knizenje
         path.moveTo(relX(45),relY(40));
         path.lineTo(relX(45),relY(180));
-        painter.drawText(relX(47), relY(43), trUtf8("Книговодствен документ"));
-        painter.drawText(relX(47), relY(50), trUtf8("Бр. документ"));
-        painter.drawText(relX(47), relY(58), trUtf8("3"));
+        painter.drawText(relX(47), relY(43), tr("Книговодствен документ"));
+        painter.drawText(relX(47), relY(50), tr("Бр. документ"));
+        painter.drawText(relX(47), relY(58), tr("3"));
 
         //broj na dokument
         path.moveTo(relX(70),relY(45));
         path.lineTo(relX(70),relY(180));
-        painter.drawText(relX(72), relY(50), trUtf8("Дат. на док."));
-        painter.drawText(relX(72), relY(58), trUtf8("4"));
+        painter.drawText(relX(72), relY(50), tr("Дат. на док."));
+        painter.drawText(relX(72), relY(58), tr("4"));
 
 
         //naziv na dokument
         path.moveTo(relX(95),relY(45));
         path.lineTo(relX(95),relY(180));
-        painter.drawText(relX(97), relY(50), trUtf8("Назив Док."));
-        painter.drawText(relX(97), relY(58), trUtf8("5"));
+        painter.drawText(relX(97), relY(50), tr("Назив Док."));
+        painter.drawText(relX(97), relY(58), tr("5"));
 
         //vlez
         path.moveTo(relX(170),relY(40));
         path.lineTo(relX(170),relY(180));
-        painter.drawText(relX(172), relY(43), trUtf8("Количина"));
-        painter.drawText(relX(172), relY(50), trUtf8("Влез"));
-        painter.drawText(relX(172), relY(58), trUtf8("6"));
+        painter.drawText(relX(172), relY(43), tr("Количина"));
+        painter.drawText(relX(172), relY(50), tr("Влез"));
+        painter.drawText(relX(172), relY(58), tr("6"));
 
         //izlez
         path.moveTo(relX(209),relY(45));
         path.lineTo(relX(209),relY(180));
-        painter.drawText(relX(211), relY(50), trUtf8("Излез"));
-        painter.drawText(relX(211), relY(58), trUtf8("7"));
+        painter.drawText(relX(211), relY(50), tr("Излез"));
+        painter.drawText(relX(211), relY(58), tr("7"));
 
         //sostojba
         path.moveTo(relX(248),relY(45));
         path.lineTo(relX(248),relY(180));
-        painter.drawText(relX(250), relY(50), trUtf8("Состојба"));
-        painter.drawText(relX(250), relY(58), trUtf8("8"));
+        painter.drawText(relX(250), relY(50), tr("Состојба"));
+        painter.drawText(relX(250), relY(58), tr("8"));
 
         f.setPointSize(8);
         painter.setFont(f);
 
 
 
-        painter.drawText(relX(10), relY(190), trUtf8("Образец МЕТГ"));
-        painter.drawText(relX(145), relY(190), trUtf8("(М.П.)"));
-        painter.drawText(relX(237), relY(195), trUtf8("Потпис на овластено лице"));
+        painter.drawText(relX(10), relY(190), tr("Образец МЕТГ"));
+        painter.drawText(relX(145), relY(190), tr("(М.П.)"));
+        painter.drawText(relX(237), relY(195), tr("Потпис на овластено лице"));
         path.moveTo(relX(237),relY(190));
         path.lineTo(relX(287),relY(190));
 
@@ -5768,7 +5774,7 @@ void sterna::drawAnalitikaKomintenti(QPrinter *printer,QPainter& painter)
 
         f.setPointSize(12);
         painter.setFont(f);
-        painter.drawText(relX(0), relY(20), relX(210), relY(30), Qt::AlignCenter, trUtf8("Аналитика по Коминтент:") + m_analitikaKomintenti->getModelInfo());
+        painter.drawText(relX(0), relY(20), relX(210), relY(30), Qt::AlignCenter, tr("Аналитика по Коминтент:") + m_analitikaKomintenti->getModelInfo());
         f.setPointSize(8);
 
 
@@ -5793,18 +5799,18 @@ void sterna::drawAnalitikaKomintenti(QPrinter *printer,QPainter& painter)
 
         f.setPointSize(8);
         painter.setFont(f);
-        painter.drawText(relX(22), relY(44), trUtf8("Рб."));
-        painter.drawText(relX(32), relY(44), trUtf8("Вид док."));
-        painter.drawText(relX(62), relY(44), trUtf8("Артикал"));
-        painter.drawText(relX(130), relY(44), trUtf8("Датум"));
-        painter.drawText(relX(155), relY(44), trUtf8("Количина"));
-        painter.drawText(relX(180), relY(44), trUtf8("Цена"));
+        painter.drawText(relX(22), relY(44), tr("Рб."));
+        painter.drawText(relX(32), relY(44), tr("Вид док."));
+        painter.drawText(relX(62), relY(44), tr("Артикал"));
+        painter.drawText(relX(130), relY(44), tr("Датум"));
+        painter.drawText(relX(155), relY(44), tr("Количина"));
+        painter.drawText(relX(180), relY(44), tr("Цена"));
         path.moveTo(relX(20),relY(275));
         path.lineTo(relX(70),relY(275));
         path.moveTo(relX(140),relY(275));
         path.lineTo(relX(190),relY(275));
-        painter.drawText(relX(25), relY(280), trUtf8("Предал"));
-        painter.drawText(relX(145), relY(280), trUtf8("Примил"));
+        painter.drawText(relX(25), relY(280), tr("Предал"));
+        painter.drawText(relX(145), relY(280), tr("Примил"));
 
 
         painter.drawPath(path);
@@ -5857,7 +5863,7 @@ void sterna::drawKomintentiLista(QPainter& painter)
 	f.setPointSize(20);
 	painter.setFont(f);
 	painter.drawText(relX(0), relY(12), relX(210), relY(9), Qt::AlignCenter, 
-		trUtf8("Листа на коминтенти"));
+		tr("Листа на коминтенти"));
 
     QPixmap image1(moi_logo);
     painter.drawPixmap(relX(90), relY(20), relX(30), relX(20), image1);
@@ -5886,26 +5892,26 @@ void sterna::drawKomintentiLista(QPainter& painter)
 
 	f.setPointSize(8);
 	painter.setFont(f);
-	painter.drawText(relX(22), relY(44), trUtf8("Рб."));
-	painter.drawText(relX(32), relY(44), trUtf8("Опис на артикал - услуга"));
-	painter.drawText(relX(115), relY(44), trUtf8("Кол."));
-	painter.drawText(relX(130), relY(44), trUtf8("Цена"));
-	painter.drawText(relX(150), relY(44), trUtf8("Износ"));
-	painter.drawText(relX(165), relY(44), trUtf8("ДДВ"));
-	painter.drawText(relX(180), relY(44), trUtf8("Вкупно"));
+	painter.drawText(relX(22), relY(44), tr("Рб."));
+	painter.drawText(relX(32), relY(44), tr("Опис на артикал - услуга"));
+	painter.drawText(relX(115), relY(44), tr("Кол."));
+	painter.drawText(relX(130), relY(44), tr("Цена"));
+	painter.drawText(relX(150), relY(44), tr("Износ"));
+	painter.drawText(relX(165), relY(44), tr("ДДВ"));
+	painter.drawText(relX(180), relY(44), tr("Вкупно"));
 
 	path.moveTo(relX(20),relY(275));
 	path.lineTo(relX(70),relY(275));
 	path.moveTo(relX(140),relY(275));
 	path.lineTo(relX(190),relY(275));
-	painter.drawText(relX(25), relY(280), trUtf8("Изработил"));
-	painter.drawText(relX(145), relY(280), trUtf8("Директор"));
+	painter.drawText(relX(25), relY(280), tr("Изработил"));
+	painter.drawText(relX(145), relY(280), tr("Директор"));
 
 	painter.drawPath(path);
 }
 QString sterna::convertIntToText(int& num)
 {
-	QString t = trUtf8("Со зборови: ");
+	QString t = tr("Со зборови: ");
 	int m = 0;
 	int i = 0;
 	int s = 0;
@@ -5918,37 +5924,37 @@ QString sterna::convertIntToText(int& num)
 	s = num;
 	if (m == 1)
 	{
-		QString temp = trUtf8("еденмилион");
+		QString temp = tr("еденмилион");
 		t += temp;
 	}
 	if (m == 2)
 	{
-		QString temp = trUtf8("двамилиона");
+		QString temp = tr("двамилиона");
 		t += convertSToText(m) + temp;
 	}
 	if (m > 2)
 	{
-		QString temp = (m == 1) ? trUtf8("милион") : trUtf8("милиони");
+		QString temp = (m == 1) ? tr("милион") : tr("милиони");
 		t += convertSToText(m) + temp;
 	}
 
 	if (i == 1)
 	{
-		t += trUtf8("еднаилјада");
+		t += tr("еднаилјада");
 	}
 	if (i == 2)
 	{
-		t += trUtf8("двеилјади");
+		t += tr("двеилјади");
 	}
 	if (i > 2)
 	{
-		t += convertSToText(i) + trUtf8("илјади");
+		t += convertSToText(i) + tr("илјади");
 	}
 
-	t += (m || i) && e ? trUtf8("и") : "";
+	t += (m || i) && e ? tr("и") : "";
 	if (s)
 	{
-		t += convertSToText(s) + trUtf8("денари");
+		t += convertSToText(s) + tr("денари");
 	}
 	return t;
 
@@ -5983,52 +5989,52 @@ QString sterna::convertSToText(int& num)
 	switch (s)
 	{
 	case 0: ss += (""); break; 
-	case 1: ss += trUtf8("сто");; break; 
-	case 2: ss += trUtf8("двеста"); break; 
-	case 3: ss += trUtf8("триста"); break; 
-	case 4: ss += trUtf8("четрсто"); break; 
-	case 5: ss += trUtf8("петсто"); break; 
-	case 6: ss += trUtf8("шесто"); break; 
-	case 7: ss += trUtf8("седумсто"); break; 
-	case 8: ss += trUtf8("осумсто"); break; 
-	case 9: ss += trUtf8("деветсто"); break; 
+	case 1: ss += tr("сто");; break; 
+	case 2: ss += tr("двеста"); break; 
+	case 3: ss += tr("триста"); break; 
+	case 4: ss += tr("четрсто"); break; 
+	case 5: ss += tr("петсто"); break; 
+	case 6: ss += tr("шесто"); break; 
+	case 7: ss += tr("седумсто"); break; 
+	case 8: ss += tr("осумсто"); break; 
+	case 9: ss += tr("деветсто"); break; 
 	}
 	switch (d)
 	{
 	case 0: ss += (""); break; 
-	case 2: ss += trUtf8("дваесет");; break; 
-	case 3: ss += trUtf8("триесет");; break; 
-	case 4: ss += trUtf8("четириесет");; break; 
-	case 5: ss += trUtf8("педесет");; break; 
-	case 6: ss += trUtf8("шеесет");; break; 
-	case 7: ss += trUtf8("седумдесет");; break; 
-	case 8: ss += trUtf8("осумдесет");; break; 
-	case 9: ss += trUtf8("деведесет");; break; 
+	case 2: ss += tr("дваесет");; break; 
+	case 3: ss += tr("триесет");; break; 
+	case 4: ss += tr("четириесет");; break; 
+	case 5: ss += tr("педесет");; break; 
+	case 6: ss += tr("шеесет");; break; 
+	case 7: ss += tr("седумдесет");; break; 
+	case 8: ss += tr("осумдесет");; break; 
+	case 9: ss += tr("деведесет");; break; 
 	}
-	ss += (s || d) && e ? trUtf8("и") : "";
+	ss += (s || d) && e ? tr("и") : "";
 	switch (e)
 	{
 	case 0: ss += (""); break; 
-	case 1: ss += trUtf8("еден"); break; 
-	case 2: ss += trUtf8("два"); break; 
-	case 3: ss += trUtf8("три"); break; 
-	case 4: ss += trUtf8("четири"); break; 
-	case 5: ss += trUtf8("пет"); break; 
-	case 6: ss += trUtf8("шест"); break; 
-	case 7: ss += trUtf8("седум"); break; 
-	case 8: ss += trUtf8("осум"); break; 
-	case 9: ss += trUtf8("девет"); break; 
-	case 10: ss += trUtf8("десет"); break; 
-	case 11: ss += trUtf8("единаесет"); break; 
-	case 12: ss += trUtf8("дванаесет"); break; 
-	case 13: ss += trUtf8("тринаесет"); break; 
-	case 14: ss += trUtf8("четиринаесет"); break; 
-	case 15: ss += trUtf8("петнаесет"); break; 
-	case 16: ss += trUtf8("шеснаесет"); break; 
-	case 17: ss += trUtf8("седумнаесет"); break; 
-	case 18: ss += trUtf8("осумнаесет"); break; 
-	case 19: ss += trUtf8("деветнаесет"); break; 
-	case 20: ss += trUtf8("дваесет"); break; 
+	case 1: ss += tr("еден"); break; 
+	case 2: ss += tr("два"); break; 
+	case 3: ss += tr("три"); break; 
+	case 4: ss += tr("четири"); break; 
+	case 5: ss += tr("пет"); break; 
+	case 6: ss += tr("шест"); break; 
+	case 7: ss += tr("седум"); break; 
+	case 8: ss += tr("осум"); break; 
+	case 9: ss += tr("девет"); break; 
+	case 10: ss += tr("десет"); break; 
+	case 11: ss += tr("единаесет"); break; 
+	case 12: ss += tr("дванаесет"); break; 
+	case 13: ss += tr("тринаесет"); break; 
+	case 14: ss += tr("четиринаесет"); break; 
+	case 15: ss += tr("петнаесет"); break; 
+	case 16: ss += tr("шеснаесет"); break; 
+	case 17: ss += tr("седумнаесет"); break; 
+	case 18: ss += tr("осумнаесет"); break; 
+	case 19: ss += tr("деветнаесет"); break; 
+	case 20: ss += tr("дваесет"); break; 
 	}
 	return ss;
 }
@@ -6069,11 +6075,11 @@ void sterna::drawIzvod(QPrinter *printer, QPainter& painter)
 		f.setPointSize(7);
 		painter.setFont(f);		
 
-		painter.drawText(relX(10), relY(30 + rr * pOffset), relX(5), relY(7), Qt::AlignCenter, trUtf8("Рб."));
-		painter.drawText(relX(15), relY(30 + rr * pOffset), relX(45), relY(7), Qt::AlignCenter, trUtf8("Отпадни материјали"));
-		painter.drawText(relX(60), relY(30 + rr * pOffset), relX(15), relY(7), Qt::AlignCenter, trUtf8("Вк.кгр"));
-		painter.drawText(relX(75), relY(30 + rr * pOffset), relX(15), relY(7), Qt::AlignCenter, trUtf8("Цена."));
-		painter.drawText(relX(90), relY(30 + rr * pOffset), relX(20), relY(7), Qt::AlignCenter, trUtf8("ВКУПНО."));
+		painter.drawText(relX(10), relY(30 + rr * pOffset), relX(5), relY(7), Qt::AlignCenter, tr("Рб."));
+		painter.drawText(relX(15), relY(30 + rr * pOffset), relX(45), relY(7), Qt::AlignCenter, tr("Отпадни материјали"));
+		painter.drawText(relX(60), relY(30 + rr * pOffset), relX(15), relY(7), Qt::AlignCenter, tr("Вк.кгр"));
+		painter.drawText(relX(75), relY(30 + rr * pOffset), relX(15), relY(7), Qt::AlignCenter, tr("Цена."));
+		painter.drawText(relX(90), relY(30 + rr * pOffset), relX(20), relY(7), Qt::AlignCenter, tr("ВКУПНО."));
 
 		f.setPointSize(7);
 		painter.setFont(f);		
@@ -6109,46 +6115,46 @@ void sterna::drawIzvod(QPrinter *printer, QPainter& painter)
 		painter.drawText(relX(10), relY(148 * i + 14), moi_firma_banka1);
 		painter.drawText(relX(10), relY(148 * i + 18), moi_firma_edb);
 
-		QString kantarnaIzjavaText = trUtf8("КАНТАРНО-КАСА ИСПЛАТИ Бр. ")/* + modelIzjavaInfo.at(3) +"/" + (modelIzjavaInfo.at(4)).left(4)*/;
+		QString kantarnaIzjavaText = tr("КАНТАРНО-КАСА ИСПЛАТИ Бр. ")/* + modelIzjavaInfo.at(3) +"/" + (modelIzjavaInfo.at(4)).left(4)*/;
 		painter.drawText(relX(10), relY(148 * i + 26), kantarnaIzjavaText);
 
 		f.setPointSize(12);
 		painter.setFont(f);
-		QString izjavaText = trUtf8("ИЗЈАВА Број ")/*+ modelIzjavaInfo.at(3) + "/" + (modelIzjavaInfo.at(4)).left(4)*/;
+		QString izjavaText = tr("ИЗЈАВА Број ")/*+ modelIzjavaInfo.at(3) + "/" + (modelIzjavaInfo.at(4)).left(4)*/;
 		painter.drawText(relX(125), relY(148 * i + 25), izjavaText);
 		f.setPointSize(8);
 		painter.setFont(f);
 
-		painter.drawText(relX(115), relY(148 * i + 35), trUtf8("Јас долупотпишаниот_____________________________"));
+		painter.drawText(relX(115), relY(148 * i + 35), tr("Јас долупотпишаниот_____________________________"));
 
-		painter.drawText(relX(115), relY(148 * i + 41), trUtf8("ЕМБГ_________________________со место на живеење"));
+		painter.drawText(relX(115), relY(148 * i + 41), tr("ЕМБГ_________________________со место на живеење"));
 
-		painter.drawText(relX(115), relY(148 * i + 47), trUtf8("во град(с)______________________________________"));
+		painter.drawText(relX(115), relY(148 * i + 47), tr("во град(с)______________________________________"));
 
-		painter.drawText(relX(115), relY(148 * i + 53), trUtf8("лична карта_____________________________________"));
+		painter.drawText(relX(115), relY(148 * i + 53), tr("лична карта_____________________________________"));
 
-		painter.drawText(relX(115), relY(148 * i + 59), trUtf8("трансaкциска.сметка______________________________"));
+		painter.drawText(relX(115), relY(148 * i + 59), tr("трансaкциска.сметка______________________________"));
 
-		painter.drawText(relX(115), relY(148 * i + 65), trUtf8("банка депонент__________________________________"));
+		painter.drawText(relX(115), relY(148 * i + 65), tr("банка депонент__________________________________"));
 
-		painter.drawText(relX(115), relY(148 * i + 71), trUtf8("телефон________________________________________"));
+		painter.drawText(relX(115), relY(148 * i + 71), tr("телефон________________________________________"));
 
-		painter.drawText(relX(115), relY(148 * i + 77), trUtf8("мобилен________________________________________"));
+		painter.drawText(relX(115), relY(148 * i + 77), tr("мобилен________________________________________"));
 
 		painter.drawText(relX(115), relY(148 * i + 83), moi_izjava1);
 		painter.drawText(relX(115), relY(148 * i + 89), moi_izjava2);
 
-		painter.drawText(relX(115), relY(148 * i + 95), trUtf8("_______________________________________________"));
-		painter.drawText(relX(115), relY(148 * i + 105), trUtf8("На ") + moi_firma_info1);
+		painter.drawText(relX(115), relY(148 * i + 95), tr("_______________________________________________"));
+		painter.drawText(relX(115), relY(148 * i + 105), tr("На ") + moi_firma_info1);
 
 		painter.drawText(relX(115), relY(148 * i + 110), moi_firma_banka1);
 		painter.drawText(relX(115), relY(148 * i + 115), moi_firma_edb);
 
-		painter.drawText(relX(115), relY(148 * i + 123), trUtf8("________________"));
-		painter.drawText(relX(115), relY(148 * i + 126), trUtf8("Дата"));
+		painter.drawText(relX(115), relY(148 * i + 123), tr("________________"));
+		painter.drawText(relX(115), relY(148 * i + 126), tr("Дата"));
 
-		painter.drawText(relX(115), relY(148 * i + 135), trUtf8("________________________________"));
-		painter.drawText(relX(115), relY(148 * i + 138), trUtf8("Изјавувач"));
+		painter.drawText(relX(115), relY(148 * i + 135), tr("________________________________"));
+		painter.drawText(relX(115), relY(148 * i + 138), tr("Изјавувач"));
 
 		float vkupno = 0.f;
 // 		if (modelIzjava2)
@@ -6163,9 +6169,9 @@ void sterna::drawIzvod(QPrinter *printer, QPainter& painter)
 // 				painter.drawText(relX(90), relY(148 * i + 38 + row * 5), relX(19), relY(5), Qt::AlignRight, loc.toString( iznos, 'f', 2));
 // 			}
 // 		}
-		painter.drawText(relX(16), relY(148 * i + 123), relX(35), relY(5), Qt::AlignRight, trUtf8("ЗБИР:"));
-		painter.drawText(relX(16), relY(148 * i + 128), relX(35), relY(5), Qt::AlignRight, trUtf8("Персонален Данок 6.5%:"));
-		painter.drawText(relX(16), relY(148 * i + 133), relX(35), relY(5), Qt::AlignRight, trUtf8("Вкупно:"));
+		painter.drawText(relX(16), relY(148 * i + 123), relX(35), relY(5), Qt::AlignRight, tr("ЗБИР:"));
+		painter.drawText(relX(16), relY(148 * i + 128), relX(35), relY(5), Qt::AlignRight, tr("Персонален Данок 6.5%:"));
+		painter.drawText(relX(16), relY(148 * i + 133), relX(35), relY(5), Qt::AlignRight, tr("Вкупно:"));
 
 		painter.drawText(relX(90), relY(148 * i + 123), relX(19), relY(5), Qt::AlignRight, loc.toString( vkupno, 'f', 2));
 		painter.drawText(relX(90), relY(148 * i + 128), relX(19), relY(5), Qt::AlignRight, loc.toString( vkupno * 0.065, 'f', 2));
@@ -6211,11 +6217,11 @@ void sterna::drawIzjava(QPrinter *printer, QPainter& painter)
 		f.setPointSize(7);
 		painter.setFont(f);		
 
-		painter.drawText(relX(10), relY(30 + rr * pOffset), relX(5), relY(7), Qt::AlignCenter, trUtf8("Рб."));
-		painter.drawText(relX(15), relY(30 + rr * pOffset), relX(45), relY(7), Qt::AlignCenter, trUtf8("Отпадни материјали"));
-		painter.drawText(relX(60), relY(30 + rr * pOffset), relX(15), relY(7), Qt::AlignCenter, trUtf8("Вк.кгр"));
-		painter.drawText(relX(75), relY(30 + rr * pOffset), relX(15), relY(7), Qt::AlignCenter, trUtf8("Цена."));
-		painter.drawText(relX(90), relY(30 + rr * pOffset), relX(20), relY(7), Qt::AlignCenter, trUtf8("ВКУПНО."));
+		painter.drawText(relX(10), relY(30 + rr * pOffset), relX(5), relY(7), Qt::AlignCenter, tr("Рб."));
+		painter.drawText(relX(15), relY(30 + rr * pOffset), relX(45), relY(7), Qt::AlignCenter, tr("Отпадни материјали"));
+		painter.drawText(relX(60), relY(30 + rr * pOffset), relX(15), relY(7), Qt::AlignCenter, tr("Вк.кгр"));
+		painter.drawText(relX(75), relY(30 + rr * pOffset), relX(15), relY(7), Qt::AlignCenter, tr("Цена."));
+		painter.drawText(relX(90), relY(30 + rr * pOffset), relX(20), relY(7), Qt::AlignCenter, tr("ВКУПНО."));
 
 		f.setPointSize(7);
 		painter.setFont(f);		
@@ -6251,55 +6257,55 @@ void sterna::drawIzjava(QPrinter *printer, QPainter& painter)
 		painter.drawText(relX(10), relY(148 * i + 14), moi_firma_banka1);
 		painter.drawText(relX(10), relY(148 * i + 18), moi_firma_edb);
 
-		QString kantarnaIzjavaText = trUtf8("КАНТАРНО-КАСА ИСПЛАТИ Бр. ") + modelIzjavaInfo.at(3) +"/" + (modelIzjavaInfo.at(4)).left(4);
+		QString kantarnaIzjavaText = tr("КАНТАРНО-КАСА ИСПЛАТИ Бр. ") + modelIzjavaInfo.at(3) +"/" + (modelIzjavaInfo.at(4)).left(4);
 		painter.drawText(relX(10), relY(148 * i + 26), kantarnaIzjavaText);
 
 		f.setPointSize(12);
 		painter.setFont(f);
-		QString izjavaText = trUtf8("ИЗЈАВА Број ")+ modelIzjavaInfo.at(3) + "/" + (modelIzjavaInfo.at(4)).left(4);
+		QString izjavaText = tr("ИЗЈАВА Број ")+ modelIzjavaInfo.at(3) + "/" + (modelIzjavaInfo.at(4)).left(4);
 		painter.drawText(relX(125), relY(148 * i + 25), izjavaText);
 		f.setPointSize(8);
 		painter.setFont(f);
 
-		painter.drawText(relX(115), relY(148 * i + 35), trUtf8("Јас долупотпишаниот_____________________________"));
+		painter.drawText(relX(115), relY(148 * i + 35), tr("Јас долупотпишаниот_____________________________"));
 		painter.drawText(relX(155), relY(148 * i + 32), relX(50), relY(5), Qt::AlignLeft, modelIzjavaInfo.at(0));
 
-		painter.drawText(relX(115), relY(148 * i + 41), trUtf8("ЕМБГ_________________________со место на живеење"));
+		painter.drawText(relX(115), relY(148 * i + 41), tr("ЕМБГ_________________________со место на живеење"));
 		painter.drawText(relX(125), relY(148 * i + 38), relX(50), relY(5), Qt::AlignLeft, modelIzjavaInfo.at(5));
 
-		painter.drawText(relX(115), relY(148 * i + 47), trUtf8("во град(с)______________________________________"));
+		painter.drawText(relX(115), relY(148 * i + 47), tr("во град(с)______________________________________"));
 		painter.drawText(relX(135), relY(148 * i + 44), relX(50), relY(5), Qt::AlignLeft, modelIzjavaInfo.at(2));
 
-		painter.drawText(relX(115), relY(148 * i + 53), trUtf8("лична карта_____________________________________"));
+		painter.drawText(relX(115), relY(148 * i + 53), tr("лична карта_____________________________________"));
 		painter.drawText(relX(135), relY(148 * i + 50), relX(50), relY(5), Qt::AlignLeft, modelIzjavaInfo.at(6));
 
-		painter.drawText(relX(115), relY(148 * i + 59), trUtf8("трансaкциска.сметка______________________________"));
+		painter.drawText(relX(115), relY(148 * i + 59), tr("трансaкциска.сметка______________________________"));
 		painter.drawText(relX(150), relY(148 * i + 56), relX(50), relY(5), Qt::AlignLeft, modelIzjavaInfo.at(8));
 		
-		painter.drawText(relX(115), relY(148 * i + 65), trUtf8("банка депонент__________________________________"));
+		painter.drawText(relX(115), relY(148 * i + 65), tr("банка депонент__________________________________"));
 		painter.drawText(relX(145), relY(148 * i + 62), relX(50), relY(5), Qt::AlignLeft, modelIzjavaInfo.at(7));
 		
-		painter.drawText(relX(115), relY(148 * i + 71), trUtf8("телефон________________________________________"));
+		painter.drawText(relX(115), relY(148 * i + 71), tr("телефон________________________________________"));
 		painter.drawText(relX(135), relY(148 * i + 68), relX(50), relY(5), Qt::AlignLeft, modelIzjavaInfo.at(9));
 		
-		painter.drawText(relX(115), relY(148 * i + 77), trUtf8("мобилен________________________________________"));
+		painter.drawText(relX(115), relY(148 * i + 77), tr("мобилен________________________________________"));
 		painter.drawText(relX(135), relY(148 * i + 74), relX(50), relY(5), Qt::AlignLeft, modelIzjavaInfo.at(10));
 
 		painter.drawText(relX(115), relY(148 * i + 83), moi_izjava1);
 		painter.drawText(relX(115), relY(148 * i + 89), moi_izjava2);
 		
-		painter.drawText(relX(115), relY(148 * i + 95), trUtf8("_______________________________________________"));
-		painter.drawText(relX(115), relY(148 * i + 105), trUtf8("На ") + moi_firma_info1);
+		painter.drawText(relX(115), relY(148 * i + 95), tr("_______________________________________________"));
+		painter.drawText(relX(115), relY(148 * i + 105), tr("На ") + moi_firma_info1);
 		
 		painter.drawText(relX(115), relY(148 * i + 110), moi_firma_banka1);
 		painter.drawText(relX(115), relY(148 * i + 115), moi_firma_edb);
 
-		painter.drawText(relX(115), relY(148 * i + 123), trUtf8("________________"));
+		painter.drawText(relX(115), relY(148 * i + 123), tr("________________"));
 		painter.drawText(relX(115), relY(148 * i + 120), relX(50), relY(5), Qt::AlignLeft, modelIzjavaInfo.at(4));
-		painter.drawText(relX(115), relY(148 * i + 126), trUtf8("Дата"));
+		painter.drawText(relX(115), relY(148 * i + 126), tr("Дата"));
 
-		painter.drawText(relX(115), relY(148 * i + 135), trUtf8("________________________________"));
-		painter.drawText(relX(115), relY(148 * i + 138), trUtf8("Изјавувач"));
+		painter.drawText(relX(115), relY(148 * i + 135), tr("________________________________"));
+		painter.drawText(relX(115), relY(148 * i + 138), tr("Изјавувач"));
 
 		float vkupno = 0.f;
 		if (modelIzjava2)
@@ -6314,9 +6320,9 @@ void sterna::drawIzjava(QPrinter *printer, QPainter& painter)
 				painter.drawText(relX(90), relY(148 * i + 38 + row * 5), relX(19), relY(5), Qt::AlignRight, loc.toString( iznos, 'f', 2));
 			}
 		}
-		painter.drawText(relX(16), relY(148 * i + 123), relX(35), relY(5), Qt::AlignRight, trUtf8("ЗБИР:"));
-		painter.drawText(relX(16), relY(148 * i + 128), relX(35), relY(5), Qt::AlignRight, trUtf8("Персонален Данок 6.5%:"));
-		painter.drawText(relX(16), relY(148 * i + 133), relX(35), relY(5), Qt::AlignRight, trUtf8("Вкупно:"));
+		painter.drawText(relX(16), relY(148 * i + 123), relX(35), relY(5), Qt::AlignRight, tr("ЗБИР:"));
+		painter.drawText(relX(16), relY(148 * i + 128), relX(35), relY(5), Qt::AlignRight, tr("Персонален Данок 6.5%:"));
+		painter.drawText(relX(16), relY(148 * i + 133), relX(35), relY(5), Qt::AlignRight, tr("Вкупно:"));
 
 		painter.drawText(relX(90), relY(148 * i + 123), relX(19), relY(5), Qt::AlignRight, loc.toString( vkupno, 'f', 2));
 		painter.drawText(relX(90), relY(148 * i + 128), relX(19), relY(5), Qt::AlignRight, loc.toString( vkupno * 0.065, 'f', 2));
@@ -6346,7 +6352,7 @@ void sterna::drawDnevenIzvestaj(QPrinter *printer,QPainter& painter)
 
 		f.setPointSize(10);
 		painter.setFont(f);
-		painter.drawText(relX(0), relY(20), relX(210), relY(20), Qt::AlignCenter, trUtf8("Отпад примен од други лица"));
+		painter.drawText(relX(0), relY(20), relX(210), relY(20), Qt::AlignCenter, tr("Отпад примен од други лица"));
 		QString temp = m_dnevenpromet->getDatum();
 		painter.drawText(relX(0), relY(22), relX(210), relY(25), Qt::AlignCenter, temp);
 
@@ -6393,36 +6399,36 @@ void sterna::drawDnevenIzvestaj(QPrinter *printer,QPainter& painter)
         }
 		f.setPointSize(8);
 		painter.setFont(f);
-		painter.drawText(relX(22), relY(44), trUtf8("Рб."));
-		painter.drawText(relX(32), relY(44), trUtf8("Шифра"));
+		painter.drawText(relX(22), relY(44), tr("Рб."));
+		painter.drawText(relX(32), relY(44), tr("Шифра"));
 
-		painter.drawText(relX(54), relY(44), trUtf8("Вид на отпад"));
-		painter.drawText(relX(100), relY(44), trUtf8("Потекло на примениот отпад"));
+		painter.drawText(relX(54), relY(44), tr("Вид на отпад"));
+		painter.drawText(relX(100), relY(44), tr("Потекло на примениот отпад"));
 		
-        painter.drawText(relX(143), relY(44), trUtf8("Количина"));
-        painter.drawText(relX(143), relY(47), trUtf8("на примен"));
-        painter.drawText(relX(143), relY(50), trUtf8("отпад"));
-        painter.drawText(relX(143), relY(55), trUtf8("t"));
-        painter.drawText(relX(153), relY(55), trUtf8("m3"));
+        painter.drawText(relX(143), relY(44), tr("Количина"));
+        painter.drawText(relX(143), relY(47), tr("на примен"));
+        painter.drawText(relX(143), relY(50), tr("отпад"));
+        painter.drawText(relX(143), relY(55), tr("t"));
+        painter.drawText(relX(153), relY(55), tr("m3"));
 
-        painter.drawText(relX(163), relY(44), trUtf8("Количина"));
-        painter.drawText(relX(163), relY(47), trUtf8("на отпад"));
-        painter.drawText(relX(163), relY(50), trUtf8("од увоз"));
-        painter.drawText(relX(163), relY(55), trUtf8("t"));
-        painter.drawText(relX(173), relY(55), trUtf8("m3"));
+        painter.drawText(relX(163), relY(44), tr("Количина"));
+        painter.drawText(relX(163), relY(47), tr("на отпад"));
+        painter.drawText(relX(163), relY(50), tr("од увоз"));
+        painter.drawText(relX(163), relY(55), tr("t"));
+        painter.drawText(relX(173), relY(55), tr("m3"));
 
-        painter.drawText(relX(185), relY(44), trUtf8("Понатамо-"));
-        painter.drawText(relX(185), relY(47), trUtf8("шно по-"));
-        painter.drawText(relX(185), relY(50), trUtf8("стапување"));
+        painter.drawText(relX(185), relY(44), tr("Понатамо-"));
+        painter.drawText(relX(185), relY(47), tr("шно по-"));
+        painter.drawText(relX(185), relY(50), tr("стапување"));
 
         
 
-		painter.drawText(relX(25), relY(270), trUtf8("Датум _______________"));
-        painter.drawText(relX(25), relY(280), trUtf8("Место________________"));
+		painter.drawText(relX(25), relY(270), tr("Датум _______________"));
+        painter.drawText(relX(25), relY(280), tr("Место________________"));
 
-        painter.drawText(relX(95), relY(270), trUtf8("МП"));
-        painter.drawText(relX(145), relY(270), trUtf8("Одговорно лице"));
-        painter.drawText(relX(145), relY(280), trUtf8("_____________________"));
+        painter.drawText(relX(95), relY(270), tr("МП"));
+        painter.drawText(relX(145), relY(270), tr("Одговорно лице"));
+        painter.drawText(relX(145), relY(280), tr("_____________________"));
 
 		painter.drawPath(path);
         QStandardItemModel * modelIspratnica2 = m_dnevenpromet->getModel();
@@ -6460,7 +6466,7 @@ void sterna::drawDnevenIzvestaj(QPrinter *printer,QPainter& painter)
 					case 4: 
                         kolTon = modelIspratnica2->item(row, 3)->text().toFloat() / 1000;
                         painter.drawText(relX(131), relY(60 + 6 * (row - pagefrom)), relX(20), relY(9), Qt::AlignRight, QString::number(kolTon,'f', 3));break;
-                    case 5: painter.drawText(relX(183), relY(60 + 6 * (row - pagefrom)), relX(15), relY(9), Qt::AlignLeft, trUtf8("транспорт"));break;
+                    case 5: painter.drawText(relX(183), relY(60 + 6 * (row - pagefrom)), relX(15), relY(9), Qt::AlignLeft, tr("транспорт"));break;
 
                     }
 				}
@@ -6503,11 +6509,11 @@ void sterna::drawPovratnica(QPrinter *printer, QPainter& painter)
 		f.setPointSize(18);
 		painter.setFont(f);
 #ifdef _alea
-		painter.drawText(relX(100), relY(50), relX(100), relY(60), Qt::AlignRight, trUtf8("Повратницa"));
+		painter.drawText(relX(100), relY(50), relX(100), relY(60), Qt::AlignRight, tr("Повратницa"));
 #endif
 
 #ifndef _alea
-		painter.drawText(relX(100), relY(50), relX(100), relY(60), Qt::AlignRight, trUtf8("Повратницa"));
+		painter.drawText(relX(100), relY(50), relX(100), relY(60), Qt::AlignRight, tr("Повратницa"));
 #endif
 
 		f.setPointSize(8);
@@ -6518,19 +6524,19 @@ void sterna::drawPovratnica(QPrinter *printer, QPainter& painter)
 		textNumberS = textNumberS.right(4);
 		f.setBold(true);
 		painter.setFont(f);
-		painter.drawText(relX(160), relY(60), relX(40), relY(65), Qt::AlignRight, trUtf8("Сериски Број: ") + moi_god + "-" + textNumberS + moi_prefix_prodavnica);
+		painter.drawText(relX(160), relY(60), relX(40), relY(65), Qt::AlignRight, tr("Сериски Број: ") + moi_god + "-" + textNumberS + moi_prefix_prodavnica);
 		f.setBold(false);
 		painter.setFont(f);
-		painter.drawText(relX(160), relY(65), relX(40), relY(70), Qt::AlignRight, trUtf8("Датум: ") + modelFakturaInfo.at(3));
+		painter.drawText(relX(160), relY(65), relX(40), relY(70), Qt::AlignRight, tr("Датум: ") + modelFakturaInfo.at(3));
 		int rok = modelFakturaInfo.at(5).toInt();
 		QString separ = modelFakturaInfo.at(3).mid(4,1);
 		QDateTime dateTimeTemp = QDateTime::fromString(modelFakturaInfo.at(3),"yyyy" + separ + "MM" + separ + "dd");
 		dateTimeTemp = dateTimeTemp.addDays(rok);
-		painter.drawText(relX(160), relY(70), relX(40), relY(75), Qt::AlignRight, trUtf8("Валута: ") + dateTimeTemp.toString("yyyy" + separ + "MM" + separ + "dd"));
+		painter.drawText(relX(160), relY(70), relX(40), relY(75), Qt::AlignRight, tr("Валута: ") + dateTimeTemp.toString("yyyy" + separ + "MM" + separ + "dd"));
 		pen.setWidth(2);
 		painter.setPen(pen);
 		painter.drawRoundedRect(relX(10), relY(55), relX(80), relY(30), relX(3), relY(3), Qt::AbsoluteSize );
-		painter.drawText(relX(15), relY(60), trUtf8("До:"));
+		painter.drawText(relX(15), relY(60), tr("До:"));
 
 		f.setBold(true);
 		painter.setFont(f);
@@ -6577,19 +6583,19 @@ void sterna::drawPovratnica(QPrinter *printer, QPainter& painter)
 
 		f.setPointSize(8);
 		painter.setFont(f);
-		painter.drawText(relX(11), relY(94), trUtf8("Рб."));
-		painter.drawText(relX(16), relY(94), trUtf8("Опис на артикал - услуга"));
-		painter.drawText(relX(81), relY(94), trUtf8("Едм."));
-		painter.drawText(relX(93), relY(94), trUtf8("Кол."));
-		painter.drawText(relX(106), relY(93), trUtf8("Цена"));
-		painter.drawText(relX(106), relY(96), trUtf8("без ДДВ"));
-		painter.drawText(relX(121), relY(94), trUtf8("Раб.%"));
-		painter.drawText(relX(131), relY(94), trUtf8("ДДВ%"));
-		painter.drawText(relX(141), relY(93), trUtf8("Вк.Износ"));
-		painter.drawText(relX(141), relY(96), trUtf8("без ДДВ"));
-		painter.drawText(relX(161), relY(94), trUtf8("ДДВ Износ"));
-		painter.drawText(relX(181), relY(93), trUtf8("Вк.Вредност"));
-		painter.drawText(relX(181), relY(96), trUtf8("со ДДВ"));
+		painter.drawText(relX(11), relY(94), tr("Рб."));
+		painter.drawText(relX(16), relY(94), tr("Опис на артикал - услуга"));
+		painter.drawText(relX(81), relY(94), tr("Едм."));
+		painter.drawText(relX(93), relY(94), tr("Кол."));
+		painter.drawText(relX(106), relY(93), tr("Цена"));
+		painter.drawText(relX(106), relY(96), tr("без ДДВ"));
+		painter.drawText(relX(121), relY(94), tr("Раб.%"));
+		painter.drawText(relX(131), relY(94), tr("ДДВ%"));
+		painter.drawText(relX(141), relY(93), tr("Вк.Износ"));
+		painter.drawText(relX(141), relY(96), tr("без ДДВ"));
+		painter.drawText(relX(161), relY(94), tr("ДДВ Износ"));
+		painter.drawText(relX(181), relY(93), tr("Вк.Вредност"));
+		painter.drawText(relX(181), relY(96), tr("со ДДВ"));
 		f.setPointSize(8);
 		painter.setFont(f);
 
@@ -6603,19 +6609,19 @@ void sterna::drawPovratnica(QPrinter *printer, QPainter& painter)
 		path.lineTo(relX(198),relY(275));
 
 
-		painter.drawText(relX(11), relY(278), trUtf8("Примил и согласен сум"));
-		painter.drawText(relX(11), relY(280), trUtf8("со условите од оваа фактура"));
+		painter.drawText(relX(11), relY(278), tr("Примил и согласен сум"));
+		painter.drawText(relX(11), relY(280), tr("со условите од оваа фактура"));
 
-		painter.drawText(relX(60), relY(278), trUtf8("Предал"));
-		painter.drawText(relX(110), relY(278), trUtf8("Фактурирал"));
-		painter.drawText(relX(155), relY(278), trUtf8(""));
+		painter.drawText(relX(60), relY(278), tr("Предал"));
+		painter.drawText(relX(110), relY(278), tr("Фактурирал"));
+		painter.drawText(relX(155), relY(278), tr(""));
 		painter.drawText(relX(110), relY(282), moi_fakturiral);
 		painter.drawText(relX(155), relY(282), moi_direktor);
 
 
-		painter.drawText(relX(140), relY(265), trUtf8("МП"));
-		painter.drawText(relX(155), relY(265), trUtf8("Овластено лице"));
-		painter.drawText(relX(155), relY(268), trUtf8("за потпис на фактура"));
+		painter.drawText(relX(140), relY(265), tr("МП"));
+		painter.drawText(relX(155), relY(265), tr("Овластено лице"));
+		painter.drawText(relX(155), relY(268), tr("за потпис на фактура"));
 
 		path.moveTo(relX(10),relY(249));
 		path.lineTo(relX(200),relY(249));
@@ -6642,7 +6648,7 @@ void sterna::drawPovratnica(QPrinter *printer, QPainter& painter)
 					case 0: painter.drawText(relX(11), relY(100 + 6 * (row - pagefrom)), relX(4), relY(9), Qt::AlignLeft, QString::number(row + 1, 10));break;
 					case 1: 
 					#ifndef _alea
-						painter.drawText(relX(16), relY(97 + 6 * (row - pagefrom)), relX(64), relY(9), Qt::AlignLeft, trUtf8("Шифра: ") + modelFaktura2->item(row, col )->text());
+						painter.drawText(relX(16), relY(97 + 6 * (row - pagefrom)), relX(64), relY(9), Qt::AlignLeft, tr("Шифра: ") + modelFaktura2->item(row, col )->text());
 					#endif
 		
 						painter.drawText(relX(16), relY(100 + 6 * (row - pagefrom)), relX(64), relY(9), Qt::AlignLeft, modelFaktura2->item(row, col + 1)->text());
@@ -6691,45 +6697,45 @@ void sterna::drawPovratnica(QPrinter *printer, QPainter& painter)
 			printer->newPage();
 	}
 	CHelperClass hlp(this);
-	painter.drawText(relX(130), relY(235), relX(40), relY(10), Qt::AlignRight, trUtf8("Вкупен Износ"));
-	painter.drawText(relX(170), relY(235), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(sumaDDV - ddv), 'f', 2) + trUtf8("  ден."));
+	painter.drawText(relX(130), relY(235), relX(40), relY(10), Qt::AlignRight, tr("Вкупен Износ"));
+	painter.drawText(relX(170), relY(235), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(sumaDDV - ddv), 'f', 2) + tr("  ден."));
 
-	painter.drawText(relX(130), relY(240), relX(40), relY(10), Qt::AlignRight, trUtf8("Вкупен ДДВ"));
-	painter.drawText(relX(170), relY(240), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(ddv), 'f', 2) + trUtf8("  ден."));
+	painter.drawText(relX(130), relY(240), relX(40), relY(10), Qt::AlignRight, tr("Вкупен ДДВ"));
+	painter.drawText(relX(170), relY(240), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(ddv), 'f', 2) + tr("  ден."));
 
 	f.setBold(true);
 	painter.setFont(f);
-	painter.drawText(relX(90), relY(245), relX(80), relY(10), Qt::AlignRight, trUtf8("Вкупно за наплата денари со пресметан ДДВ"));
-	painter.drawText(relX(170), relY(245), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(sumaDDV), 'f', 2) + trUtf8("  ден."));
+	painter.drawText(relX(90), relY(245), relX(80), relY(10), Qt::AlignRight, tr("Вкупно за наплата денари со пресметан ДДВ"));
+	painter.drawText(relX(170), relY(245), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(sumaDDV), 'f', 2) + tr("  ден."));
 	f.setBold(false);
 	painter.setFont(f);
 	painter.drawRoundedRect(relX(10), relY(236), relX(140), relY(9), relX(1), relY(1), Qt::AbsoluteSize );
 
-	painter.drawText(relX(12), relY(236), relX(40), relY(10), Qt::AlignLeft, trUtf8("Основица за ДДВ(5%)"));
-	painter.drawText(relX(46), relY(236), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(OsnovicaDDV5), 'f', 2) + trUtf8("  ден."));
+	painter.drawText(relX(12), relY(236), relX(40), relY(10), Qt::AlignLeft, tr("Основица за ДДВ(5%)"));
+	painter.drawText(relX(46), relY(236), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(OsnovicaDDV5), 'f', 2) + tr("  ден."));
 
-	painter.drawText(relX(12), relY(241), relX(40), relY(10), Qt::AlignLeft, trUtf8("Основица за ДДВ(18%)"));
-	painter.drawText(relX(46), relY(241), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(OsnovicaDDV18), 'f', 2) + trUtf8("  ден."));
+	painter.drawText(relX(12), relY(241), relX(40), relY(10), Qt::AlignLeft, tr("Основица за ДДВ(18%)"));
+	painter.drawText(relX(46), relY(241), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(OsnovicaDDV18), 'f', 2) + tr("  ден."));
 
-	painter.drawText(relX(80), relY(236), relX(40), relY(10), Qt::AlignLeft, trUtf8("Вкупен ДДВ  (5%)"));
-	painter.drawText(relX(110), relY(236), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(DDV5), 'f', 2) + trUtf8("  ден."));
+	painter.drawText(relX(80), relY(236), relX(40), relY(10), Qt::AlignLeft, tr("Вкупен ДДВ  (5%)"));
+	painter.drawText(relX(110), relY(236), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(DDV5), 'f', 2) + tr("  ден."));
 
-	painter.drawText(relX(80), relY(241), relX(40), relY(10), Qt::AlignLeft, trUtf8("Вкупен ДДВ (18%)"));
-	painter.drawText(relX(110), relY(241), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(DDV18), 'f', 2) + trUtf8("  ден."));
+	painter.drawText(relX(80), relY(241), relX(40), relY(10), Qt::AlignLeft, tr("Вкупен ДДВ (18%)"));
+	painter.drawText(relX(110), relY(241), relX(30), relY(10), Qt::AlignRight, loc.toString( hlp.rouded(DDV18), 'f', 2) + tr("  ден."));
 
 
-	// 	painter.drawText(relX(15), relY(280), trUtf8("Фактурирал"));
+	// 	painter.drawText(relX(15), relY(280), tr("Фактурирал"));
 
 	f.setPointSize(7);
 	painter.setFont(f);
 	int p = int(sumaDDV + 0.5f);
 	QString t = convertIntToText(p);
-	QString t1 = trUtf8("Рок на плаќање ")+ modelFakturaInfo.at(5)+trUtf8(" дена од денот на фактурирањето.Во спротивно пресметуваме законска камата.");
+	QString t1 = tr("Рок на плаќање ")+ modelFakturaInfo.at(5)+tr(" дена од денот на фактурирањето.Во спротивно пресметуваме законска камата.");
 	painter.drawText(relX(10), relY(249), relX(120), relY(6), Qt::AlignLeft, t);
 	painter.drawText(relX(10), relY(258), relX(130), relY(6), Qt::AlignLeft, t1);
-	QString t2 = trUtf8("Рекламации се примаат во рок од 3 дена од приемот на стоката со уреден записник.");
+	QString t2 = tr("Рекламации се примаат во рок од 3 дена од приемот на стоката со уреден записник.");
 	painter.drawText(relX(10), relY(261), relX(130), relY(6), Qt::AlignLeft, t2);
-	QString t3 = trUtf8("Во случај на спор надлежен е Стопански суд.");
+	QString t3 = tr("Во случај на спор надлежен е Стопански суд.");
 	painter.drawText(relX(10), relY(264), relX(130), relY(6), Qt::AlignLeft, t3);
 
 #ifdef _demo
@@ -6746,7 +6752,7 @@ void sterna::drawDemo(QPainter& painter)
 	QFont m_font;
 	m_font.setPointSize(20);
 	painter.setFont(m_font);
-	painter.drawText(500, 500, QString(trUtf8("ДЕМО ВЕРЗИЈА - АПЛИКАЦИЈА СТЕРНА - (c) HardwareSoftwareGroup - ДЕМО ВЕРЗИЈА ")));
+	painter.drawText(500, 500, QString(tr("ДЕМО ВЕРЗИЈА - АПЛИКАЦИЈА СТЕРНА - (c) HardwareSoftwareGroup - ДЕМО ВЕРЗИЈА ")));
 	painter.restore();
 	painter.setPen( Qt::black );
 }

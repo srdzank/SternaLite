@@ -1,0 +1,662 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{8266BB14-A994-3F9A-A5C4-4FD2BB24BA3B}</ProjectGuid>
+    <RootNamespace>sterna_lite</RootNamespace>
+    <Keyword>QtVS_v304</Keyword>
+    <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformMinVersion>10.0.22621.0</WindowsTargetPlatformMinVersion>
+    <QtMsBuild Condition="'$(QtMsBuild)'=='' OR !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <PlatformToolset>v143</PlatformToolset>
+    <OutputDirectory>release\</OutputDirectory>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <CharacterSet>NotSet</CharacterSet>
+    <ConfigurationType>Application</ConfigurationType>
+    <IntermediateDirectory>release\</IntermediateDirectory>
+    <PrimaryOutput>sterna_lite</PrimaryOutput>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <PlatformToolset>v143</PlatformToolset>
+    <OutputDirectory>debug\</OutputDirectory>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <CharacterSet>NotSet</CharacterSet>
+    <ConfigurationType>Application</ConfigurationType>
+    <IntermediateDirectory>debug\</IntermediateDirectory>
+    <PrimaryOutput>sterna_lite</PrimaryOutput>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Import Project="$(QtMsBuild)\qt_defaults.props" Condition="Exists('$(QtMsBuild)\qt_defaults.props')" />
+  <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <QtInstall>6.8.2_msvc2022_64</QtInstall>
+    <QtModules>core;gui;widgets;printsupport;sql</QtModules>
+  </PropertyGroup>
+  <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <QtInstall>6.8.2_msvc2022_64</QtInstall>
+    <QtModules>core;gui;widgets;printsupport;sql</QtModules>
+  </PropertyGroup>
+  <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') OR !Exists('$(QtMsBuild)\Qt.props')">
+    <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
+  </Target>
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+    <Import Project="$(QtMsBuild)\Qt.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+    <Import Project="$(QtMsBuild)\Qt.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">sterna_lite</TargetName>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</IgnoreImportLibrary>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">sterna_lite</TargetName>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</IgnoreImportLibrary>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>GeneratedFiles\$(ConfigurationName);GeneratedFiles;.;release;/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -permissive- -Zc:__cplusplus -Zc:externConstexpr -utf-8 -w34100 -w34189 -w44456 -w44457 -w44458 %(AdditionalOptions)</AdditionalOptions>
+      <AssemblerListingLocation>release\</AssemblerListingLocation>
+      <BrowseInformation>false</BrowseInformation>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <DisableSpecificWarnings>4577;4467;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <ObjectFileName>release\</ObjectFileName>
+      <Optimization>MaxSpeed</Optimization>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;QT_DEPRECATED_WARNINGS;NDEBUG;QT_NO_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <ProgramDataBaseFileName></ProgramDataBaseFileName>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>$(QTDIR)\lib\Qt6EntryPoint.lib;shell32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>"/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" %(AdditionalOptions)</AdditionalOptions>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <LinkIncremental>false</LinkIncremental>
+      <OptimizeReferences>true</OptimizeReferences>
+      <OutputFile>$(OutDir)\sterna_lite.exe</OutputFile>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SubSystem>Windows</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Link>
+    <Midl>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;QT_DEPRECATED_WARNINGS;NDEBUG;QT_NO_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <QtMoc>
+      <CompilerFlavor>msvc</CompilerFlavor>
+      <Include>./$(Configuration)/moc_predefs.h</Include>
+      <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
+      <DynamicSource>output</DynamicSource>
+      <QtMocDir>$(Configuration)</QtMocDir>
+      <QtMocFileName>moc_%(Filename).cpp</QtMocFileName>
+    </QtMoc>
+    <QtRcc>
+      <InitFuncName>sterna</InitFuncName>
+      <Compression>default</Compression>
+      <NoZstd>true</NoZstd>
+      <ExecutionDescription>Rcc'ing %(Identity)...</ExecutionDescription>
+      <QtRccDir>$(Configuration)</QtRccDir>
+      <QtRccFileName>qrc_%(Filename).cpp</QtRccFileName>
+    </QtRcc>
+    <QtUic>
+      <ExecutionDescription>Uic'ing %(Identity)...</ExecutionDescription>
+      <QtUicDir>$(ProjectDir)</QtUicDir>
+      <QtUicFileName>ui_%(Filename).h</QtUicFileName>
+    </QtUic>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>GeneratedFiles\$(ConfigurationName);GeneratedFiles;.;debug;/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -permissive- -Zc:__cplusplus -Zc:externConstexpr -utf-8 -w34100 -w34189 -w44456 -w44457 -w44458 %(AdditionalOptions)</AdditionalOptions>
+      <AssemblerListingLocation>debug\</AssemblerListingLocation>
+      <BrowseInformation>false</BrowseInformation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4577;4467;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <ObjectFileName>debug\</ObjectFileName>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;QT_DEPRECATED_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>$(QTDIR)\lib\Qt6EntryPointd.lib;shell32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>"/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" %(AdditionalOptions)</AdditionalOptions>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <OutputFile>$(OutDir)\sterna_lite.exe</OutputFile>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SubSystem>Windows</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Link>
+    <Midl>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;QT_DEPRECATED_WARNINGS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <QtMoc>
+      <CompilerFlavor>msvc</CompilerFlavor>
+      <Include>./$(Configuration)/moc_predefs.h</Include>
+      <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
+      <DynamicSource>output</DynamicSource>
+      <QtMocDir>$(Configuration)</QtMocDir>
+      <QtMocFileName>moc_%(Filename).cpp</QtMocFileName>
+    </QtMoc>
+    <QtRcc>
+      <InitFuncName>sterna</InitFuncName>
+      <Compression>default</Compression>
+      <NoZstd>true</NoZstd>
+      <ExecutionDescription>Rcc'ing %(Identity)...</ExecutionDescription>
+      <QtRccDir>$(Configuration)</QtRccDir>
+      <QtRccFileName>qrc_%(Filename).cpp</QtRccFileName>
+    </QtRcc>
+    <QtUic>
+      <ExecutionDescription>Uic'ing %(Identity)...</ExecutionDescription>
+      <QtUicDir>$(ProjectDir)</QtUicDir>
+      <QtUicFileName>ui_%(Filename).h</QtUicFileName>
+    </QtUic>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="chelperclass.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="qAnalitikaArtikli.cpp" />
+    <ClCompile Include="qAnalitikaArtikliwidget.cpp" />
+    <ClCompile Include="qAnalitikaKomintenti.cpp" />
+    <ClCompile Include="qAnalitikaKomintentiwidget.cpp" />
+    <ClCompile Include="qEmployekorekcija.cpp" />
+    <ClCompile Include="qEmployelista.cpp" />
+    <ClCompile Include="qEmployevnes.cpp" />
+    <ClCompile Include="qFinAnalitikaKomintenti.cpp" />
+    <ClCompile Include="qFinAnalitikaKomintentiwidget.cpp" />
+    <ClCompile Include="qPriem.cpp" />
+    <ClCompile Include="qPriemwidget.cpp" />
+    <ClCompile Include="qartiklikorekcija.cpp" />
+    <ClCompile Include="qartiklivnes.cpp" />
+    <ClCompile Include="qbanki.cpp" />
+    <ClCompile Include="qbankikorekcija.cpp" />
+    <ClCompile Include="qbankilista.cpp" />
+    <ClCompile Include="qbankivnes.cpp" />
+    <ClCompile Include="qddv.cpp" />
+    <ClCompile Include="qddvkorekcija.cpp" />
+    <ClCompile Include="qddvlista.cpp" />
+    <ClCompile Include="qddvvnes.cpp" />
+    <ClCompile Include="qdnevenpromet.cpp" />
+    <ClCompile Include="qdnevenprometwidget.cpp" />
+    <ClCompile Include="qfakturikorekcija.cpp" />
+    <ClCompile Include="qfakturilista.cpp" />
+    <ClCompile Include="qfakturivlezni.cpp" />
+    <ClCompile Include="qfakturivnes.cpp" />
+    <ClCompile Include="qfiscalform.cpp" />
+    <ClCompile Include="qizjavakorekcija.cpp" />
+    <ClCompile Include="qizjavalista.cpp" />
+    <ClCompile Include="qizjavavnes.cpp" />
+    <ClCompile Include="qizleznifaktmasterkorekcija.cpp" />
+    <ClCompile Include="qizleznifaktmasterlista.cpp" />
+    <ClCompile Include="qizleznifaktmastervnes.cpp" />
+    <ClCompile Include="qizleznifakturikorekcija.cpp" />
+    <ClCompile Include="qizleznifakturilista.cpp" />
+    <ClCompile Include="qizleznifakturivnes.cpp" />
+    <ClCompile Include="qizlezniispratnicikorekcija.cpp" />
+    <ClCompile Include="qizlezniispratnicilista.cpp" />
+    <ClCompile Include="qizlezniispratnicivnes.cpp" />
+    <ClCompile Include="qizleznipopismasterkorekcija.cpp" />
+    <ClCompile Include="qizleznipopismasterlista.cpp" />
+    <ClCompile Include="qizleznipopismastervnes.cpp" />
+    <ClCompile Include="qizleznipovratnicamasterkorekcija.cpp" />
+    <ClCompile Include="qizleznipovratnicamasterlista.cpp" />
+    <ClCompile Include="qizleznipovratnicamastervnes.cpp" />
+    <ClCompile Include="qizleznismetkikorekcija.cpp" />
+    <ClCompile Include="qizleznismetkilista.cpp" />
+    <ClCompile Include="qizleznismetkivnes.cpp" />
+    <ClCompile Include="qizvestai.cpp" />
+    <ClCompile Include="qizvestaiwidget.cpp" />
+    <ClCompile Include="qizvod.cpp" />
+    <ClCompile Include="qizvodkorekcija.cpp" />
+    <ClCompile Include="qizvodlista.cpp" />
+    <ClCompile Include="qizvodvnes.cpp" />
+    <ClCompile Include="qkalkulacijakorekcija.cpp" />
+    <ClCompile Include="qkalkulacijalagerlista.cpp" />
+    <ClCompile Include="qkalkulacijalista.cpp" />
+    <ClCompile Include="qkalkulacijavnes.cpp" />
+    <ClCompile Include="qkarticawidget.cpp" />
+    <ClCompile Include="qkartici.cpp" />
+    <ClCompile Include="qkasakorekcija.cpp" />
+    <ClCompile Include="qkasalista.cpp" />
+    <ClCompile Include="qkasavnes.cpp" />
+    <ClCompile Include="qkomintentianalitika.cpp" />
+    <ClCompile Include="qkomintentianalitikawidget.cpp" />
+    <ClCompile Include="qkomintentikorekcija.cpp" />
+    <ClCompile Include="qkomintentilista.cpp" />
+    <ClCompile Include="qkomintentivnes.cpp" />
+    <ClCompile Include="qlager.cpp" />
+    <ClCompile Include="qlagerwidget.cpp" />
+    <ClCompile Include="qleft.cpp" />
+    <ClCompile Include="qmyEmploye.cpp" />
+    <ClCompile Include="qmyartikli.cpp" />
+    <ClCompile Include="qmyartiklilista.cpp" />
+    <ClCompile Include="qmybaseformwidget.cpp" />
+    <ClCompile Include="qmybasewidget.cpp" />
+    <ClCompile Include="qmyfaktmaster.cpp" />
+    <ClCompile Include="qmyfakturi.cpp" />
+    <ClCompile Include="qmyispratnici.cpp" />
+    <ClCompile Include="qmyizjava.cpp" />
+    <ClCompile Include="qmykalkulacija.cpp" />
+    <ClCompile Include="qmykasa.cpp" />
+    <ClCompile Include="qmykomintenti.cpp" />
+    <ClCompile Include="qmyodobrenie.cpp" />
+    <ClCompile Include="qmypopismaster.cpp" />
+    <ClCompile Include="qmyporackismetki.cpp" />
+    <ClCompile Include="qmypovratnica.cpp" />
+    <ClCompile Include="qmypovratnicamaster.cpp" />
+    <ClCompile Include="qmypriemnica.cpp" />
+    <ClCompile Include="qmyprofakturimaster.cpp" />
+    <ClCompile Include="qmysmetki.cpp" />
+    <ClCompile Include="qodobreniekorekcija.cpp" />
+    <ClCompile Include="qodobrenielista.cpp" />
+    <ClCompile Include="qodobrenievnes.cpp" />
+    <ClCompile Include="qperiodicenizvestaj.cpp" />
+    <ClCompile Include="qperiodicenizvestajwidget.cpp" />
+    <ClCompile Include="qporackismetkikorekcija.cpp" />
+    <ClCompile Include="qporackismetkilista.cpp" />
+    <ClCompile Include="qporackismetkivnes.cpp" />
+    <ClCompile Include="qpovratnicakorekcija.cpp" />
+    <ClCompile Include="qpovratnicalista.cpp" />
+    <ClCompile Include="qpovratnicavnes.cpp" />
+    <ClCompile Include="qpriemnicakorekcija.cpp" />
+    <ClCompile Include="qpriemnicalista.cpp" />
+    <ClCompile Include="qpriemnicavnes.cpp" />
+    <ClCompile Include="qprofakturakorekcija.cpp" />
+    <ClCompile Include="qprofakturalista.cpp" />
+    <ClCompile Include="qprofakturavnes.cpp" />
+    <ClCompile Include="qprofakturi.cpp" />
+    <ClCompile Include="qprofakturimasterkorekcija.cpp" />
+    <ClCompile Include="qprofakturimasterlista.cpp" />
+    <ClCompile Include="qprofakturimastervnes.cpp" />
+    <ClCompile Include="qpromenaceni.cpp" />
+    <ClCompile Include="qpromenaceniwidget.cpp" />
+    <ClCompile Include="qsearchform.cpp" />
+    <ClCompile Include="qsearchformfaktura.cpp" />
+    <ClCompile Include="qstablewidgetdelegate.cpp" />
+    <ClCompile Include="quserform.cpp" />
+    <ClCompile Include="sterna.cpp" />
+    <ClCompile Include="xx.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="chelperclass.h" />
+    <QtMoc Include="qAnalitikaArtikli.h" />
+    <QtMoc Include="qAnalitikaArtikliwidget.h" />
+    <QtMoc Include="qAnalitikaKomintenti.h" />
+    <QtMoc Include="qAnalitikaKomintentiwidget.h" />
+    <QtMoc Include="qEmployekorekcija.h" />
+    <QtMoc Include="qEmployelista.h" />
+    <QtMoc Include="qEmployevnes.h" />
+    <QtMoc Include="qFinAnalitikaKomintenti.h" />
+    <QtMoc Include="qFinAnalitikaKomintentiwidget.h" />
+    <QtMoc Include="qPriem.h" />
+    <QtMoc Include="qPriemwidget.h" />
+    <QtMoc Include="qartiklikorekcija.h" />
+    <QtMoc Include="qartiklivnes.h" />
+    <QtMoc Include="qbanki.h" />
+    <QtMoc Include="qbankikorekcija.h" />
+    <QtMoc Include="qbankilista.h" />
+    <QtMoc Include="qbankivnes.h" />
+    <QtMoc Include="qddv.h" />
+    <QtMoc Include="qddvkorekcija.h" />
+    <QtMoc Include="qddvlista.h" />
+    <QtMoc Include="qddvvnes.h" />
+    <QtMoc Include="qdnevenpromet.h" />
+    <QtMoc Include="qdnevenprometwidget.h" />
+    <QtMoc Include="qfakturikorekcija.h" />
+    <QtMoc Include="qfakturilista.h" />
+    <QtMoc Include="qfakturivlezni.h" />
+    <QtMoc Include="qfakturivnes.h" />
+    <QtMoc Include="qfiscalform.h" />
+    <QtMoc Include="qizjavakorekcija.h" />
+    <QtMoc Include="qizjavalista.h" />
+    <QtMoc Include="qizjavavnes.h" />
+    <QtMoc Include="qizleznifaktmasterkorekcija.h" />
+    <QtMoc Include="qizleznifaktmasterlista.h" />
+    <QtMoc Include="qizleznifaktmastervnes.h" />
+    <QtMoc Include="qizleznifakturikorekcija.h" />
+    <QtMoc Include="qizleznifakturilista.h" />
+    <QtMoc Include="qizleznifakturivnes.h" />
+    <QtMoc Include="qizlezniispratnicikorekcija.h" />
+    <QtMoc Include="qizlezniispratnicilista.h" />
+    <QtMoc Include="qizlezniispratnicivnes.h" />
+    <QtMoc Include="qizleznipopismasterkorekcija.h" />
+    <QtMoc Include="qizleznipopismasterlista.h" />
+    <QtMoc Include="qizleznipopismastervnes.h" />
+    <QtMoc Include="qizleznipovratnicamasterkorekcija.h" />
+    <QtMoc Include="qizleznipovratnicamasterlista.h" />
+    <QtMoc Include="qizleznipovratnicamastervnes.h" />
+    <QtMoc Include="qizleznismetkikorekcija.h" />
+    <QtMoc Include="qizleznismetkilista.h" />
+    <QtMoc Include="qizleznismetkivnes.h" />
+    <QtMoc Include="qizvestai.h" />
+    <QtMoc Include="qizvestaiwidget.h" />
+    <QtMoc Include="qizvod.h" />
+    <QtMoc Include="qizvodkorekcija.h" />
+    <QtMoc Include="qizvodlista.h" />
+    <QtMoc Include="qizvodvnes.h" />
+    <QtMoc Include="qkalkulacijakorekcija.h" />
+    <QtMoc Include="qkalkulacijalagerlista.h" />
+    <QtMoc Include="qkalkulacijalista.h" />
+    <QtMoc Include="qkalkulacijavnes.h" />
+    <QtMoc Include="qkarticawidget.h" />
+    <QtMoc Include="qkartici.h" />
+    <QtMoc Include="qkasakorekcija.h" />
+    <QtMoc Include="qkasalista.h" />
+    <QtMoc Include="qkasavnes.h" />
+    <QtMoc Include="qkomintentianalitika.h" />
+    <QtMoc Include="qkomintentianalitikawidget.h" />
+    <QtMoc Include="qkomintentikorekcija.h" />
+    <QtMoc Include="qkomintentilista.h" />
+    <QtMoc Include="qkomintentivnes.h" />
+    <QtMoc Include="qlager.h" />
+    <QtMoc Include="qlagerwidget.h" />
+    <QtMoc Include="qleft.h" />
+    <QtMoc Include="qmyEmploye.h" />
+    <QtMoc Include="qmyartikli.h" />
+    <QtMoc Include="qmyartiklilista.h" />
+    <QtMoc Include="qmybaseformwidget.h" />
+    <QtMoc Include="qmybasewidget.h" />
+    <QtMoc Include="qmyfaktmaster.h" />
+    <QtMoc Include="qmyfakturi.h" />
+    <QtMoc Include="qmyispratnici.h" />
+    <QtMoc Include="qmyizjava.h" />
+    <QtMoc Include="qmykalkulacija.h" />
+    <QtMoc Include="qmykasa.h" />
+    <QtMoc Include="qmykomintenti.h" />
+    <QtMoc Include="qmyodobrenie.h" />
+    <QtMoc Include="qmypopismaster.h" />
+    <QtMoc Include="qmyporackismetki.h" />
+    <QtMoc Include="qmypovratnica.h" />
+    <QtMoc Include="qmypovratnicamaster.h" />
+    <QtMoc Include="qmypriemnica.h" />
+    <QtMoc Include="qmyprofakturimaster.h" />
+    <QtMoc Include="qmysmetki.h" />
+    <QtMoc Include="qodobreniekorekcija.h" />
+    <QtMoc Include="qodobrenielista.h" />
+    <QtMoc Include="qodobrenievnes.h" />
+    <QtMoc Include="qperiodicenizvestaj.h" />
+    <QtMoc Include="qperiodicenizvestajwidget.h" />
+    <QtMoc Include="qporackismetkikorekcija.h" />
+    <QtMoc Include="qporackismetkilista.h" />
+    <QtMoc Include="qporackismetkivnes.h" />
+    <QtMoc Include="qpovratnicakorekcija.h" />
+    <QtMoc Include="qpovratnicalista.h" />
+    <QtMoc Include="qpovratnicavnes.h" />
+    <QtMoc Include="qpriemnicakorekcija.h" />
+    <QtMoc Include="qpriemnicalista.h" />
+    <QtMoc Include="qpriemnicavnes.h" />
+    <QtMoc Include="qprofakturakorekcija.h" />
+    <QtMoc Include="qprofakturalista.h" />
+    <QtMoc Include="qprofakturavnes.h" />
+    <QtMoc Include="qprofakturi.h" />
+    <QtMoc Include="qprofakturimasterkorekcija.h" />
+    <QtMoc Include="qprofakturimasterlista.h" />
+    <QtMoc Include="qprofakturimastervnes.h" />
+    <QtMoc Include="qpromenaceni.h" />
+    <QtMoc Include="qpromenaceniwidget.h" />
+    <QtMoc Include="qsearchform.h" />
+    <QtMoc Include="qsearchformfaktura.h" />
+    <QtMoc Include="qstablewidgetdelegate.h" />
+    <QtMoc Include="quserform.h" />
+    <ClInclude Include="resource1.h" />
+    <QtMoc Include="sterna.h" />
+    <ClInclude Include="xx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="debug\moc_predefs.h.cbt">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\mkspecs\features\data\dummy.cpp;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">cl -Bx"$(QTDIR)\bin\qmake.exe" -nologo -Zc:wchar_t -FS -Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -permissive- -Zc:__cplusplus -Zc:externConstexpr -Zi -MDd -std:c++17 -utf-8 -W3 -w34100 -w34189 -w44456 -w44457 -w44458 -wd4577 -wd4467 -E $(QTDIR)\mkspecs\features\data\dummy.cpp 2&gt;NUL &gt;$(IntDir)\moc_predefs.h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Generate moc_predefs.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)\moc_predefs.h;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="release\moc_predefs.h.cbt">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(QTDIR)\mkspecs\features\data\dummy.cpp;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">cl -Bx"$(QTDIR)\bin\qmake.exe" -nologo -Zc:wchar_t -FS -Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -permissive- -Zc:__cplusplus -Zc:externConstexpr -O2 -MD -std:c++17 -utf-8 -W3 -w34100 -w34189 -w44456 -w44457 -w44458 -wd4577 -wd4467 -E $(QTDIR)\mkspecs\features\data\dummy.cpp 2&gt;NUL &gt;$(IntDir)\moc_predefs.h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Generate moc_predefs.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)\moc_predefs.h;%(Outputs)</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="qAnalitikaArtikli.ui" />
+    <QtUic Include="qAnalitikaArtikliwidget.ui" />
+    <QtUic Include="qAnalitikaKomintenti.ui" />
+    <QtUic Include="qAnalitikaKomintentiwidget.ui" />
+    <QtUic Include="qEmployeivnes.ui" />
+    <QtUic Include="qEmployekorekcija.ui" />
+    <QtUic Include="qEmployelista.ui" />
+    <QtUic Include="qFinAnalitikaKomintenti.ui" />
+    <QtUic Include="qFinAnalitikaKomintentiwidget.ui" />
+    <QtUic Include="qPriemwidget.ui" />
+    <QtUic Include="qartiklikorekcija.ui" />
+    <QtUic Include="qartiklivnes.ui" />
+    <QtUic Include="qbanki.ui" />
+    <QtUic Include="qbankikorekcija.ui" />
+    <QtUic Include="qbankilista.ui" />
+    <QtUic Include="qbankivnes.ui" />
+    <QtUic Include="qddv.ui" />
+    <QtUic Include="qddvkorekcija.ui" />
+    <QtUic Include="qddvlista.ui" />
+    <QtUic Include="qddvvnes.ui" />
+    <QtUic Include="qdnevenpromet.ui" />
+    <QtUic Include="qdnevenprometwidget.ui" />
+    <QtUic Include="qfakturikorekcija.ui" />
+    <QtUic Include="qfakturilista.ui" />
+    <QtUic Include="qfakturivlezni.ui" />
+    <QtUic Include="qfakturivnes.ui" />
+    <QtUic Include="qfiscalform.ui" />
+    <QtUic Include="qizjavakorekcija.ui" />
+    <QtUic Include="qizjavalista.ui" />
+    <QtUic Include="qizjavavnes.ui" />
+    <QtUic Include="qizleznifaktmasterkorekcija.ui" />
+    <QtUic Include="qizleznifaktmasterlista.ui" />
+    <QtUic Include="qizleznifaktmastervnes.ui" />
+    <QtUic Include="qizleznifakturikorekcija.ui" />
+    <QtUic Include="qizleznifakturilista.ui" />
+    <QtUic Include="qizleznifakturivnes.ui" />
+    <QtUic Include="qizlezniispratnicikorekcija.ui" />
+    <QtUic Include="qizlezniispratnicilista.ui" />
+    <QtUic Include="qizlezniispratnicivnes.ui" />
+    <QtUic Include="qizleznipopismasterkorekcija.ui" />
+    <QtUic Include="qizleznipopismasterlista.ui" />
+    <QtUic Include="qizleznipopismastervnes.ui" />
+    <QtUic Include="qizleznipovratnicamasterkorekcija.ui" />
+    <QtUic Include="qizleznipovratnicamasterlista.ui" />
+    <QtUic Include="qizleznipovratnicamastervnes.ui" />
+    <QtUic Include="qizleznismetkiivnes.ui" />
+    <QtUic Include="qizleznismetkikorekcija.ui" />
+    <QtUic Include="qizleznismetkilista.ui" />
+    <QtUic Include="qizvestai.ui" />
+    <QtUic Include="qizvestaiwidget.ui" />
+    <QtUic Include="qizvod.ui" />
+    <QtUic Include="qizvodkorekcija.ui" />
+    <QtUic Include="qizvodlista.ui" />
+    <QtUic Include="qizvodvnes.ui" />
+    <QtUic Include="qkalkulacijakorekcija.ui" />
+    <QtUic Include="qkalkulacijalagerlista.ui" />
+    <QtUic Include="qkalkulacijalista.ui" />
+    <QtUic Include="qkalkulacijavnes.ui" />
+    <QtUic Include="qkarticawidget.ui" />
+    <QtUic Include="qkartici.ui" />
+    <QtUic Include="qkasakorekcija.ui" />
+    <QtUic Include="qkasalista.ui" />
+    <QtUic Include="qkasavnes.ui" />
+    <QtUic Include="qkomintentianalitika.ui" />
+    <QtUic Include="qkomintentianalitikawidget.ui" />
+    <QtUic Include="qkomintentikorekcija.ui" />
+    <QtUic Include="qkomintentilista.ui" />
+    <QtUic Include="qkomintentivnes.ui" />
+    <QtUic Include="qlager.ui" />
+    <QtUic Include="qlagerwidget.ui" />
+    <QtUic Include="qleft.ui" />
+    <QtUic Include="qmyEmploye.ui" />
+    <QtUic Include="qmyartikli.ui" />
+    <QtUic Include="qmyartiklilista.ui" />
+    <QtUic Include="qmybaseformwidget.ui" />
+    <QtUic Include="qmybasewidget.ui" />
+    <QtUic Include="qmyfaktmaster.ui" />
+    <QtUic Include="qmyfakturi.ui" />
+    <QtUic Include="qmyispratnici.ui" />
+    <QtUic Include="qmyizjava.ui" />
+    <QtUic Include="qmykalkulacija.ui" />
+    <QtUic Include="qmykasa.ui" />
+    <QtUic Include="qmykomintenti.ui" />
+    <QtUic Include="qmyodobrenie.ui" />
+    <QtUic Include="qmypopismaster.ui" />
+    <QtUic Include="qmyporackismetki.ui" />
+    <QtUic Include="qmypovratnica.ui" />
+    <QtUic Include="qmypovratnicamaster.ui" />
+    <QtUic Include="qmypriemnica.ui" />
+    <QtUic Include="qmyprofakturimaster.ui" />
+    <QtUic Include="qmysmetki.ui" />
+    <QtUic Include="qodobreniekorekcija.ui" />
+    <QtUic Include="qodobrenielista.ui" />
+    <QtUic Include="qodobrenievnes.ui" />
+    <QtUic Include="qperiodicenizvestaj.ui" />
+    <QtUic Include="qperiodicenizvestajwidget.ui" />
+    <QtUic Include="qporackismetkiivnes.ui" />
+    <QtUic Include="qporackismetkikorekcija.ui" />
+    <QtUic Include="qporackismetkilista.ui" />
+    <QtUic Include="qpovratnicakorekcija.ui" />
+    <QtUic Include="qpovratnicalista.ui" />
+    <QtUic Include="qpovratnicavnes.ui" />
+    <QtUic Include="qpriemnicakorekcija.ui" />
+    <QtUic Include="qpriemnicalista.ui" />
+    <QtUic Include="qpriemnicavnes.ui" />
+    <QtUic Include="qprofakturakorekcija.ui" />
+    <QtUic Include="qprofakturalista.ui" />
+    <QtUic Include="qprofakturavnes.ui" />
+    <QtUic Include="qprofakturi.ui" />
+    <QtUic Include="qprofakturimasterkorekcija.ui" />
+    <QtUic Include="qprofakturimasterlista.ui" />
+    <QtUic Include="qprofakturimastervnes.ui" />
+    <QtUic Include="qpromenaceni.ui" />
+    <QtUic Include="qpromenaceniwidget.ui" />
+    <QtUic Include="qsearchform.ui" />
+    <QtUic Include="qsearchformfaktura.ui" />
+    <QtUic Include="quserform.ui" />
+    <QtUic Include="sterna.ui" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button-Add-icon.png" />
+    <None Include="Resources\Button-Delete-icon.png" />
+    <None Include="Resources\LeftAlign.png" />
+    <None Include="Resources\Pastel_Icons-folder_open_ico-32x32.png" />
+    <None Include="Resources\Preview-icon.png" />
+    <None Include="Resources\Printer-icon.png" />
+    <None Include="Resources\TopAlign.png" />
+    <None Include="Resources\add-file-32x32.png" />
+    <None Include="Resources\alea.png" />
+    <None Include="Resources\arrow-down-icon.png" />
+    <None Include="Resources\arrow-left-icon.png" />
+    <None Include="Resources\arrow-right-icon.png" />
+    <None Include="Resources\arrow-up-icon.png" />
+    <None Include="Resources\background-icon.png" />
+    <None Include="Resources\bank.png" />
+    <None Include="Resources\bitmap1.bmp" />
+    <None Include="Resources\bringtofront.png" />
+    <None Include="Resources\close-32x32.png" />
+    <None Include="Resources\color.png" />
+    <None Include="Resources\ddv.png" />
+    <None Include="Resources\delete-file-32x32.png" />
+    <None Include="Resources\doralek.png" />
+    <None Include="Resources\error.png" />
+    <None Include="Resources\filenew.PNG" />
+    <None Include="Resources\fileopen.png" />
+    <None Include="Resources\filesave.png" />
+    <None Include="Resources\fs-view-icon.png" />
+    <None Include="Resources\grid1.png" />
+    <None Include="Resources\image-add-icon.png" />
+    <None Include="Resources\image-remove-icon.png" />
+    <None Include="Resources\image1.png" />
+    <None Include="Resources\image2.png" />
+    <None Include="Resources\image3.png" />
+    <None Include="Resources\image4.png" />
+    <None Include="Resources\image5.png" />
+    <None Include="Resources\image6.png" />
+    <None Include="Resources\image7.png" />
+    <None Include="Resources\imageItalic.PNG" />
+    <None Include="Resources\imagesCA93H0U6.bmp" />
+    <None Include="Resources\imagesCADR5ZAI.png" />
+    <None Include="Resources\imageunderlined.PNG" />
+    <None Include="Resources\information.png" />
+    <None Include="Resources\invoice.png" />
+    <None Include="Resources\isimple_system_lnx-Icons-32X32-copy_png-32x32.png" />
+    <None Include="Resources\isimple_system_lnx-Icons-32X32-file_new_png-32x32.png" />
+    <None Include="Resources\isimple_system_lnx-Icons-32X32-paste_png-32x32.png" />
+    <None Include="Resources\isimple_system_lnx-Icons-32X32-save_as_png-32x32.png" />
+    <None Include="Resources\jurukov1.png" />
+    <None Include="Resources\k-color-chooser-icon.png" />
+    <None Include="Resources\k-color-edit-icon.png" />
+    <None Include="Resources\kasa1.png" />
+    <None Include="Resources\key_f2.png" />
+    <None Include="Resources\key_f3.png" />
+    <None Include="Resources\key_f6.png" />
+    <None Include="Resources\key_f9.png" />
+    <None Include="Resources\lager.png" />
+    <None Include="Resources\microsoft_logo.png" />
+    <None Include="Resources\ok.png" />
+    <None Include="Resources\pro_invoice.png" />
+    <None Include="Resources\reports.png" />
+    <None Include="Resources\scissors.png" />
+    <None Include="Resources\sendtoback.png" />
+    <None Include="Resources\shapeRectangle_icon.png" />
+    <QtRcc Include="sterna.qrc" />
+    <None Include="Resources\stop.png" />
+    <None Include="Resources\zoom-in-icon.png" />
+    <None Include="Resources\zoom-out-icon.png" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <Import Project="$(QtMsBuild)\qt.targets" Condition="Exists('$(QtMsBuild)\qt.targets')" />
+  <ImportGroup Label="ExtensionTargets" />
+</Project>

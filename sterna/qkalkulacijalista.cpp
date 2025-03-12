@@ -1,7 +1,7 @@
 #include "qKalkulacijalista.h"
 #include <QSqlQuery>
 #include <QSqlRecord>
-#include <QDesktopWidget>
+#include <QScreen>
 #include <QClipboard>
 #include "xx.h"
 
@@ -78,18 +78,18 @@ void QKalkulacijaLista::lista(const QString& nameSearch, QDateTime date1, QDateT
 	}
 	QSqlQuery query(temp);
 	model = new QStandardItemModel(r,c);
-	model->setHeaderData( 0, Qt::Horizontal, trUtf8("Id.\n"));
-	model->setHeaderData( 1, Qt::Horizontal, trUtf8("Прием.\nбр."));
-	model->setHeaderData( 2, Qt::Horizontal, trUtf8("Датум\n"));
-	model->setHeaderData( 3, Qt::Horizontal, trUtf8("Коминтенти\n"));
-	model->setHeaderData( 4, Qt::Horizontal, trUtf8("Вкупна набавна\nвредност со ДДВ"));
-	model->setHeaderData( 5, Qt::Horizontal, trUtf8("Платено\n"));
-	model->setHeaderData( 6, Qt::Horizontal, trUtf8("Останато\nза плаќање"));
-	model->setHeaderData( 7, Qt::Horizontal, trUtf8("Документ\nброј"));
-	model->setHeaderData( 8, Qt::Horizontal, trUtf8("Документ\nТип"));
-	model->setHeaderData( 9, Qt::Horizontal, trUtf8("Датум\nДокумент"));
-	model->setHeaderData( 12, Qt::Horizontal, trUtf8("Валута\n"));
-	model->setHeaderData( 13, Qt::Horizontal, trUtf8("Забелешка\n"));
+	model->setHeaderData( 0, Qt::Horizontal, tr("Id.\n"));
+	model->setHeaderData( 1, Qt::Horizontal, tr("Прием.\nбр."));
+	model->setHeaderData( 2, Qt::Horizontal, tr("Датум\n"));
+	model->setHeaderData( 3, Qt::Horizontal, tr("Коминтенти\n"));
+	model->setHeaderData( 4, Qt::Horizontal, tr("Вкупна набавна\nвредност со ДДВ"));
+	model->setHeaderData( 5, Qt::Horizontal, tr("Платено\n"));
+	model->setHeaderData( 6, Qt::Horizontal, tr("Останато\nза плаќање"));
+	model->setHeaderData( 7, Qt::Horizontal, tr("Документ\nброј"));
+	model->setHeaderData( 8, Qt::Horizontal, tr("Документ\nТип"));
+	model->setHeaderData( 9, Qt::Horizontal, tr("Датум\nДокумент"));
+	model->setHeaderData( 12, Qt::Horizontal, tr("Валута\n"));
+	model->setHeaderData( 13, Qt::Horizontal, tr("Забелешка\n"));
 	ui.tableView->setModel(model);
 	header = new QHeaderView(Qt::Horizontal, this);
     header->setSectionsClickable(true);
@@ -186,9 +186,9 @@ void QKalkulacijaLista::lista(const QString& nameSearch, QDateTime date1, QDateT
 		}
 		row++;
 	} 
-	QString info = trUtf8(" Вкупен набавен износ со ДДВ: ") + loc.toString((mVkupno),'f',2) + trUtf8(" ден.") + "  "+
-				   trUtf8(" Платено : ") + loc.toString((mVPlateno),'f',2) + trUtf8(" ден.") + " " +
-		           trUtf8(" Останато за плаќање : ") + loc.toString((mVOstanato),'f',2) + trUtf8(" ден.") ;
+	QString info = tr(" Вкупен набавен износ со ДДВ: ") + loc.toString((mVkupno),'f',2) + tr(" ден.") + "  "+
+				   tr(" Платено : ") + loc.toString((mVPlateno),'f',2) + tr(" ден.") + " " +
+		           tr(" Останато за плаќање : ") + loc.toString((mVOstanato),'f',2) + tr(" ден.") ;
 
 	ui.label_11->setText(info);
 
@@ -207,10 +207,10 @@ void QKalkulacijaLista::selectionChanged(QModelIndex modelX, QModelIndex modelY)
 	QLocale loc;
 	int i = modelX.row();
 	m_selectedText = model->item(i, 1) ? model->item(i, 1)->text():"";
-	ui.label->setText(trUtf8("Приемница бр: ") + model->item(i, 1)->text() + trUtf8(" - Шифра: ") + model->item(i, 11)->text() + 
-		trUtf8(" - Коминтент: ") + model->item(i, 3)->text());
-	ui.label_2->setText(trUtf8("Број на документот : ") + model->item(i, 7)->text() + trUtf8(" - Тип : ") + model->item(i, 8)->text() + 
-		trUtf8(" - Датум на документот: ") + model->item(i, 9)->text().left(10));
+	ui.label->setText(tr("Приемница бр: ") + model->item(i, 1)->text() + tr(" - Шифра: ") + model->item(i, 11)->text() + 
+		tr(" - Коминтент: ") + model->item(i, 3)->text());
+	ui.label_2->setText(tr("Број на документот : ") + model->item(i, 7)->text() + tr(" - Тип : ") + model->item(i, 8)->text() + 
+		tr(" - Датум на документот: ") + model->item(i, 9)->text().left(10));
 
 	lista_detail(m_selectedText);
 }
@@ -239,23 +239,23 @@ void QKalkulacijaLista::lista_detail(const QString& nameSearch)
 	temp += " order by magacin.id ";
 	QSqlQuery query(temp);
 	model2 = new QStandardItemModel(r,c);
-	model2->setHeaderData( 0, Qt::Horizontal, trUtf8("Ид.\n"));
-	model2->setHeaderData( 1, Qt::Horizontal, trUtf8("Шифра\n"));
-	model2->setHeaderData( 2, Qt::Horizontal, trUtf8("Артикал\n"));
-	model2->setHeaderData( 3, Qt::Horizontal, trUtf8("Ед.\nме."));
-	model2->setHeaderData( 4, Qt::Horizontal, trUtf8("Количина\n"));
-	model2->setHeaderData( 5, Qt::Horizontal, trUtf8("Набавна цена\nбез ДДВ"));
-	model2->setHeaderData( 6, Qt::Horizontal, trUtf8("Пренесен\nДДВ (%)"));
-	model2->setHeaderData( 7, Qt::Horizontal, trUtf8("Вредност\n на ДДВ"));
-	model2->setHeaderData( 8, Qt::Horizontal, trUtf8("Набавна цена\nсо ДДВ"));
-	model2->setHeaderData( 9, Qt::Horizontal, trUtf8("Рабат\n(%)"));
-	model2->setHeaderData( 10, Qt::Horizontal, trUtf8("Вкупен Набавен\nизнос со ДДВ"));
-	model2->setHeaderData( 11, Qt::Horizontal, trUtf8("Maржа\n(%)"));
-	model2->setHeaderData( 12, Qt::Horizontal, trUtf8("Маржа\n(ден.)"));
-	model2->setHeaderData( 13, Qt::Horizontal, trUtf8("Продажна цена\nбез ДДВ"));
-	model2->setHeaderData( 14, Qt::Horizontal, trUtf8("Пресметан\nДДВ"));
-	model2->setHeaderData( 15, Qt::Horizontal, trUtf8("Продaжна цена\nсо ДДВ"));
-	model2->setHeaderData( 16, Qt::Horizontal, trUtf8("Вкупен продажен\nизнос со ДДВ"));
+	model2->setHeaderData( 0, Qt::Horizontal, tr("Ид.\n"));
+	model2->setHeaderData( 1, Qt::Horizontal, tr("Шифра\n"));
+	model2->setHeaderData( 2, Qt::Horizontal, tr("Артикал\n"));
+	model2->setHeaderData( 3, Qt::Horizontal, tr("Ед.\nме."));
+	model2->setHeaderData( 4, Qt::Horizontal, tr("Количина\n"));
+	model2->setHeaderData( 5, Qt::Horizontal, tr("Набавна цена\nбез ДДВ"));
+	model2->setHeaderData( 6, Qt::Horizontal, tr("Пренесен\nДДВ (%)"));
+	model2->setHeaderData( 7, Qt::Horizontal, tr("Вредност\n на ДДВ"));
+	model2->setHeaderData( 8, Qt::Horizontal, tr("Набавна цена\nсо ДДВ"));
+	model2->setHeaderData( 9, Qt::Horizontal, tr("Рабат\n(%)"));
+	model2->setHeaderData( 10, Qt::Horizontal, tr("Вкупен Набавен\nизнос со ДДВ"));
+	model2->setHeaderData( 11, Qt::Horizontal, tr("Maржа\n(%)"));
+	model2->setHeaderData( 12, Qt::Horizontal, tr("Маржа\n(ден.)"));
+	model2->setHeaderData( 13, Qt::Horizontal, tr("Продажна цена\nбез ДДВ"));
+	model2->setHeaderData( 14, Qt::Horizontal, tr("Пресметан\nДДВ"));
+	model2->setHeaderData( 15, Qt::Horizontal, tr("Продaжна цена\nсо ДДВ"));
+	model2->setHeaderData( 16, Qt::Horizontal, tr("Вкупен продажен\nизнос со ДДВ"));
 	ui.tableView_2->setModel(model2);
 	header2 = new QHeaderView(Qt::Horizontal, this);
     header2->setSectionsClickable(true);
@@ -554,7 +554,7 @@ void QKalkulacijaLista::setInitText(QString text, const QDateTime &date1, const 
 {
 	ui.tableView->setFocus();
 	ui.tableView->setSelectionMode(QAbstractItemView::MultiSelection); 
-	ui.label_4->setText(trUtf8("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:600; color:#0000ff;\">Приемница-Калкулација - Листа</span></p></body></html>"));
+	ui.label_4->setText(tr("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:600; color:#0000ff;\">Приемница-Калкулација - Листа</span></p></body></html>"));
 	ui.tableView->setFocus();
 	connect(ui.tableView, SIGNAL(clicked(QModelIndex)), this, SLOT(calcSelectedItems()));
 	lista(text + "%", date1, date2);
@@ -582,7 +582,7 @@ void QKalkulacijaLista::calcSelectedItems()
 		int stop = 0;
 	}
 
-	QString info = trUtf8("       Вкупен Неплатен Износ во селектираните фактури е : ") + loc.toString(mIznos,'f',2) + trUtf8(" ден.");
+	QString info = tr("       Вкупен Неплатен Износ во селектираните фактури е : ") + loc.toString(mIznos,'f',2) + tr(" ден.");
 	ui.label_13->setText(info);
 }
 

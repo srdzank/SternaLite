@@ -2,7 +2,7 @@
 #include <QSqlQuery>
 #include <QSqlRecord>
 #include "chelperclass.h"
-#include <QDesktopWidget>
+#include <QScreen>
 #include <QSqlError>
 #include <QMessageBox>
 #include "xx.h"
@@ -103,12 +103,12 @@ void QIzvodLista::lista(const QString& nameSearch)
 
 	QSqlQuery query(temp);
     model = new QStandardItemModel(r,c);
-    model->setHeaderData( 0, Qt::Horizontal, trUtf8("Жиро сметка"));    
-    model->setHeaderData( 1, Qt::Horizontal, trUtf8("Извод бр."));
-    model->setHeaderData( 2, Qt::Horizontal, trUtf8("Датум"));
-	model->setHeaderData( 3, Qt::Horizontal, trUtf8("Прилив"));
-	model->setHeaderData( 4, Qt::Horizontal, trUtf8("Одлив"));
-	model->setHeaderData( 5, Qt::Horizontal, trUtf8("Извод-референца"));
+    model->setHeaderData( 0, Qt::Horizontal, tr("Жиро сметка"));    
+    model->setHeaderData( 1, Qt::Horizontal, tr("Извод бр."));
+    model->setHeaderData( 2, Qt::Horizontal, tr("Датум"));
+	model->setHeaderData( 3, Qt::Horizontal, tr("Прилив"));
+	model->setHeaderData( 4, Qt::Horizontal, tr("Одлив"));
+	model->setHeaderData( 5, Qt::Horizontal, tr("Извод-референца"));
 
     ui.tableView->setModel(model);
     header = new QHeaderView(Qt::Horizontal, this);
@@ -253,12 +253,12 @@ void QIzvodLista::listaBanki(const QString& nameSearch)
 		" order by BankID desc";
 	QSqlQuery query(temp);
 	model2 = new QStandardItemModel(r,c);
-	model2->setHeaderData( 0, Qt::Horizontal, trUtf8("Ид."));
-	model2->setHeaderData( 1, Qt::Horizontal, trUtf8("Назив"));
-	model2->setHeaderData( 2, Qt::Horizontal, trUtf8("Жиро сметка"));
-    model2->setHeaderData( 3, Qt::Horizontal, trUtf8("Прилив"));
-    model2->setHeaderData( 4, Qt::Horizontal, trUtf8("Одлив"));
-    model2->setHeaderData( 5, Qt::Horizontal, trUtf8("Салдо"));
+	model2->setHeaderData( 0, Qt::Horizontal, tr("Ид."));
+	model2->setHeaderData( 1, Qt::Horizontal, tr("Назив"));
+	model2->setHeaderData( 2, Qt::Horizontal, tr("Жиро сметка"));
+    model2->setHeaderData( 3, Qt::Horizontal, tr("Прилив"));
+    model2->setHeaderData( 4, Qt::Horizontal, tr("Одлив"));
+    model2->setHeaderData( 5, Qt::Horizontal, tr("Салдо"));
 
     ui.tableView_2->setModel(model2);
 	header2 = new QHeaderView(Qt::Horizontal, this);
@@ -328,13 +328,13 @@ void QIzvodLista::listaDetail(const QString& nameSearch, const QString& nameSear
 	
     QSqlQuery query(temp);
     model3 = new QStandardItemModel(r,c);
-    model3->setHeaderData( 0, Qt::Horizontal, trUtf8("Извод Бр."));    
-    model3->setHeaderData( 1, Qt::Horizontal, trUtf8("Ком.Ид"));
-    model3->setHeaderData( 2, Qt::Horizontal, trUtf8("Назив"));
-	model3->setHeaderData( 3, Qt::Horizontal, trUtf8("Прилив"));
-	model3->setHeaderData( 4, Qt::Horizontal, trUtf8("Одлив"));
-	model3->setHeaderData( 5, Qt::Horizontal, trUtf8("Банка Ид"));
-	model3->setHeaderData( 6, Qt::Horizontal, trUtf8("МК"));
+    model3->setHeaderData( 0, Qt::Horizontal, tr("Извод Бр."));    
+    model3->setHeaderData( 1, Qt::Horizontal, tr("Ком.Ид"));
+    model3->setHeaderData( 2, Qt::Horizontal, tr("Назив"));
+	model3->setHeaderData( 3, Qt::Horizontal, tr("Прилив"));
+	model3->setHeaderData( 4, Qt::Horizontal, tr("Одлив"));
+	model3->setHeaderData( 5, Qt::Horizontal, tr("Банка Ид"));
+	model3->setHeaderData( 6, Qt::Horizontal, tr("МК"));
 
     ui.tableView_3->setModel(model3);
     header3 = new QHeaderView(Qt::Horizontal, this);
@@ -411,9 +411,9 @@ void QIzvodLista::listaDetailPlakanje(const QString& nameSearch, const QString& 
 
 	QSqlQuery query(temp);
 	model4 = new QStandardItemModel(r,c);
-	model4->setHeaderData( 0, Qt::Horizontal, trUtf8("Документ Бр."));    
-	model4->setHeaderData( 1, Qt::Horizontal, trUtf8("Тип Документ"));
-	model4->setHeaderData( 2, Qt::Horizontal, trUtf8("Платен Износ"));
+	model4->setHeaderData( 0, Qt::Horizontal, tr("Документ Бр."));    
+	model4->setHeaderData( 1, Qt::Horizontal, tr("Тип Документ"));
+	model4->setHeaderData( 2, Qt::Horizontal, tr("Платен Износ"));
 
 	ui.tableView_4->setModel(model4);
 	header4 = new QHeaderView(Qt::Horizontal, this);
@@ -444,19 +444,19 @@ void QIzvodLista::listaDetailPlakanje(const QString& nameSearch, const QString& 
 				temp = loc.toString(temp.toFloat(), 'f', 2);
 				if (temp.toFloat() == 40)
 				{
-					temp = trUtf8("ИЗЛЕЗНА ФАКТУРА");
+					temp = tr("ИЗЛЕЗНА ФАКТУРА");
 				}
 				else if (temp.toFloat() == 20)
 				{
-					temp = trUtf8("ВЛЕЗНА ФАКТУРА");
+					temp = tr("ВЛЕЗНА ФАКТУРА");
 				}
 				else if (temp.toFloat() == 21)
 				{
-					temp = trUtf8("ИЗЈАВА");
+					temp = tr("ИЗЈАВА");
 				}
 				else if (temp.toFloat() == 25)
 				{
-					temp = trUtf8("ПОВРАТНИЦА");
+					temp = tr("ПОВРАТНИЦА");
 				}
 
 				item = new QStandardItem(temp);
@@ -511,7 +511,7 @@ void QIzvodLista::deleteStavka(const QString& nameSearch, const QString& nameSea
     }
     QMessageBox msgbox;
     msgbox.setWindowTitle("Warning"); //this is ignore on mac
-    msgbox.setText(trUtf8("Селектираниот извод од \nлистата на изводи ке биде избришан!!!")); //set message box text
+    msgbox.setText(tr("Селектираниот извод од \nлистата на изводи ке биде избришан!!!")); //set message box text
     msgbox.addButton(QMessageBox::Ok); //add ok button
     msgbox.addButton(QMessageBox::Cancel); //add cancel button
     int status = msgbox.exec(); //display message box
@@ -531,7 +531,7 @@ void QIzvodLista::deleteStavka(const QString& nameSearch, const QString& nameSea
         if (err.isValid ())
         {
             QMessageBox msgBox;
-            msgBox.setText(trUtf8("Ставката НЕ Е избришана."));
+            msgBox.setText(tr("Ставката НЕ Е избришана."));
             msgBox.setStandardButtons(QMessageBox::Ok);
             msgBox.setDefaultButton(QMessageBox::Ok);
             msgBox.exec();
@@ -540,7 +540,7 @@ void QIzvodLista::deleteStavka(const QString& nameSearch, const QString& nameSea
         else
         {
             QMessageBox msgBox;
-            msgBox.setText(trUtf8("Ставката е успешно избришана."));
+            msgBox.setText(tr("Ставката е успешно избришана."));
             msgBox.setStandardButtons(QMessageBox::Ok);
             msgBox.setDefaultButton(QMessageBox::Ok);
             msgBox.exec();

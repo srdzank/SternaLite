@@ -1,7 +1,7 @@
 #include "qEmployelista.h"
 #include <QSqlQuery>
 #include <QSqlRecord>
-#include <QDesktopWidget>
+#include <QScreen>
 
 
 QEmployeLista::QEmployeLista(QWidget *parent)
@@ -10,8 +10,8 @@ QEmployeLista::QEmployeLista(QWidget *parent)
 	,m_selectedText_name("")
 {
 	ui.setupUi(this);
-	QDesktopWidget desk;
-	QRect deskRect = desk.screenGeometry();
+    QScreen *screen = QGuiApplication::primaryScreen();
+    QRect deskRect = screen->geometry();
 	ui.layoutWidget->setFixedWidth(deskRect.width() - 250);
 	ui.layoutWidget->setFixedHeight(deskRect.height()-200);
 
@@ -47,16 +47,16 @@ void QEmployeLista::lista(const QString& nameSearch)
 
     QSqlQuery query(temp);
     model = new QStandardItemModel(r,c);
-    model->setHeaderData( 0, Qt::Horizontal, trUtf8("Id"));
-    model->setHeaderData( 1, Qt::Horizontal, trUtf8("Корисничко Име"));
-    model->setHeaderData( 2, Qt::Horizontal, trUtf8("Лозинка"));
-    model->setHeaderData( 3, Qt::Horizontal, trUtf8("Име"));
-    model->setHeaderData( 4, Qt::Horizontal, trUtf8("Презиме"));
-    model->setHeaderData( 5, Qt::Horizontal, trUtf8("Адреса"));
-    model->setHeaderData( 6, Qt::Horizontal, trUtf8("Град"));
-    model->setHeaderData( 7, Qt::Horizontal, trUtf8("Тел"));
-    model->setHeaderData( 8, Qt::Horizontal, trUtf8("Улога"));
-    model->setHeaderData( 9, Qt::Horizontal, trUtf8("Кириснички број"));
+    model->setHeaderData( 0, Qt::Horizontal, tr("Id"));
+    model->setHeaderData( 1, Qt::Horizontal, tr("Корисничко Име"));
+    model->setHeaderData( 2, Qt::Horizontal, tr("Лозинка"));
+    model->setHeaderData( 3, Qt::Horizontal, tr("Име"));
+    model->setHeaderData( 4, Qt::Horizontal, tr("Презиме"));
+    model->setHeaderData( 5, Qt::Horizontal, tr("Адреса"));
+    model->setHeaderData( 6, Qt::Horizontal, tr("Град"));
+    model->setHeaderData( 7, Qt::Horizontal, tr("Тел"));
+    model->setHeaderData( 8, Qt::Horizontal, tr("Улога"));
+    model->setHeaderData( 9, Qt::Horizontal, tr("Кириснички број"));
     ui.tableView->setModel(model);
     
     header = new QHeaderView(Qt::Horizontal, this);

@@ -3,7 +3,7 @@
 #include <QSqlRecord>
 #include <QSqlError>
 
-#include <QDesktopWidget>
+#include <QScreen>
 #include <QClipboard>
 #include "xx.h"
 
@@ -82,17 +82,17 @@ void QMyArtikliLista::lista(const QString& nameSearch)
 
     QSqlQuery query(temp);
     model = new QStandardItemModel(r,c);
-    model->setHeaderData( 0, Qt::Horizontal, trUtf8("Id."));
-    model->setHeaderData( 1, Qt::Horizontal, trUtf8("Шифра"));
-    model->setHeaderData( 2, Qt::Horizontal, trUtf8("Артикал"));
-    model->setHeaderData( 3, Qt::Horizontal, trUtf8("Едм"));
-    model->setHeaderData( 4, Qt::Horizontal, trUtf8("Реф"));
-    model->setHeaderData( 5, Qt::Horizontal, trUtf8("Катал. број"));
-    model->setHeaderData( 6, Qt::Horizontal, trUtf8(""));
-    model->setHeaderData( 7, Qt::Horizontal, trUtf8(""));
-    model->setHeaderData( 8, Qt::Horizontal, trUtf8(""));
-    model->setHeaderData( 9, Qt::Horizontal, trUtf8(""));
-    model->setHeaderData( 10, Qt::Horizontal, trUtf8("ДДВ"));
+    model->setHeaderData( 0, Qt::Horizontal, tr("Id."));
+    model->setHeaderData( 1, Qt::Horizontal, tr("Шифра"));
+    model->setHeaderData( 2, Qt::Horizontal, tr("Артикал"));
+    model->setHeaderData( 3, Qt::Horizontal, tr("Едм"));
+    model->setHeaderData( 4, Qt::Horizontal, tr("Реф"));
+    model->setHeaderData( 5, Qt::Horizontal, tr("Катал. број"));
+    model->setHeaderData( 6, Qt::Horizontal, tr(""));
+    model->setHeaderData( 7, Qt::Horizontal, tr(""));
+    model->setHeaderData( 8, Qt::Horizontal, tr(""));
+    model->setHeaderData( 9, Qt::Horizontal, tr(""));
+    model->setHeaderData( 10, Qt::Horizontal, tr("ДДВ"));
 
     ui.tableView->setModel(model);
     header = new QHeaderView(Qt::Horizontal, this);
@@ -225,7 +225,7 @@ void QMyArtikliLista::on_pushButton_3_clicked()
 	if (chlp->isSifraArtikalExistsInSTore(m_selectedText))
 	{
 		QMessageBox msgBox;
-		msgBox.setText(trUtf8("Артикалот е употребен и\nнеможе да се избрише!"));
+		msgBox.setText(tr("Артикалот е употребен и\nнеможе да се избрише!"));
 		msgBox.setStandardButtons(QMessageBox::Ok);
 		msgBox.setDefaultButton(QMessageBox::Ok);
 		msgBox.exec();
@@ -234,8 +234,8 @@ void QMyArtikliLista::on_pushButton_3_clicked()
 	}	
 
 	QMessageBox msgBox;
-	msgBox.setText(trUtf8("Warning"));
-	msgBox.setInformativeText(trUtf8("Артикалот ке биде ИЗБРИШАН.!!!"));
+	msgBox.setText(tr("Warning"));
+	msgBox.setInformativeText(tr("Артикалот ке биде ИЗБРИШАН.!!!"));
 	msgBox.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
 	msgBox.setDefaultButton(QMessageBox::Ok);	int ret = msgBox.exec();
 	if (ret == QMessageBox::Ok )
@@ -246,7 +246,7 @@ void QMyArtikliLista::on_pushButton_3_clicked()
 		if(query.exec())
 		{
 			QMessageBox msgBox;
-			msgBox.setText(trUtf8("Артикалот e ИЗБРИШАН."));
+			msgBox.setText(tr("Артикалот e ИЗБРИШАН."));
 			msgBox.setStandardButtons(QMessageBox::Ok);
 			msgBox.setDefaultButton(QMessageBox::Ok);
 			msgBox.exec();
@@ -255,7 +255,7 @@ void QMyArtikliLista::on_pushButton_3_clicked()
 		else
 		{
 			QMessageBox msgBox;
-			msgBox.setText(trUtf8("Артикалот НЕ Е ИЗБРИШАН."));
+			msgBox.setText(tr("Артикалот НЕ Е ИЗБРИШАН."));
 			msgBox.setStandardButtons(QMessageBox::Ok);
 			msgBox.setDefaultButton(QMessageBox::Ok);
 		}

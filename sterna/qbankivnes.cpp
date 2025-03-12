@@ -1,7 +1,7 @@
 #include "qbankivnes.h"
 #include <QSqlQuery>
 #include <QMessageBox>
-#include <QDesktopWidget>
+#include <QScreen>
 #include "xx.h"
 
 
@@ -25,7 +25,7 @@ QBankiVnes::~QBankiVnes()
 void QBankiVnes::on_pushButton_clicked()
 {
 	QMessageBox msgBox;
-	msgBox.setText(trUtf8("Записот ке биде внесен!"));
+	msgBox.setText(tr("Записот ке биде внесен!"));
 	msgBox.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
 	msgBox.setDefaultButton(QMessageBox::Ok);
 	int ret = msgBox.exec();

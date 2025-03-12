@@ -2,7 +2,7 @@
 #include <QSqlQuery>
 #include <QSqlRecord>
 #include <QSqlError>
-#include <QDesktopWidget>
+#include <QScreen>
 #include "chelperclass.h"
 
 QAnalitikaKomintentiWidget::QAnalitikaKomintentiWidget(QWidget *parent)
@@ -11,9 +11,9 @@ QAnalitikaKomintentiWidget::QAnalitikaKomintentiWidget(QWidget *parent)
     ,m_selectedTextName("")
 {
 	ui.setupUi(this);
-	QDesktopWidget desk;
-	QRect deskRect = desk.screenGeometry();
-	ui.layoutWidget->setFixedWidth(deskRect.width() - 250);
+    QScreen *screen = QGuiApplication::primaryScreen();
+    QRect deskRect = screen->geometry();
+    ui.layoutWidget->setFixedWidth(deskRect.width() - 250);
 	ui.layoutWidget->setFixedHeight(deskRect.height()-200);
 	ui.tableView->setSelectionMode(QAbstractItemView::SingleSelection);
     ui.tableView->setSelectionBehavior(QAbstractItemView::SelectRows);
@@ -58,9 +58,9 @@ void QAnalitikaKomintentiWidget::lista(const QString& nameSearch)
     QSqlQuery query(temp);
     QSqlError err = query.lastError();
     model = new QStandardItemModel(r, c);
-    model->setHeaderData( 0, Qt::Horizontal, trUtf8("Ид."));
-    model->setHeaderData( 1, Qt::Horizontal, trUtf8("Шифра"));
-    model->setHeaderData( 2, Qt::Horizontal, trUtf8("Коминтент"));
+    model->setHeaderData( 0, Qt::Horizontal, tr("Ид."));
+    model->setHeaderData( 1, Qt::Horizontal, tr("Шифра"));
+    model->setHeaderData( 2, Qt::Horizontal, tr("Коминтент"));
     ui.tableView->setModel(model);
     header = new QHeaderView(Qt::Horizontal, this);
     header->setSectionsClickable(true);
@@ -124,15 +124,15 @@ void QAnalitikaKomintentiWidget::lista_detail(const QString& nameSearch)
 	QSqlQuery query(temp);
 
 	model2 = new QStandardItemModel(r,c);
-	model2->setHeaderData( 0, Qt::Horizontal, trUtf8("Док.Ид."));
-	model2->setHeaderData( 1, Qt::Horizontal, trUtf8("Вид на документ"));
-	model2->setHeaderData( 2, Qt::Horizontal, trUtf8("Датум"));
-	model2->setHeaderData( 3, Qt::Horizontal, trUtf8("Артикал"));
-	model2->setHeaderData( 4, Qt::Horizontal, trUtf8("Кол."));
-	model2->setHeaderData( 5, Qt::Horizontal, trUtf8("Цена со ДДВ"));
-	model2->setHeaderData( 6, Qt::Horizontal, trUtf8("Рабат"));
-	model2->setHeaderData( 7, Qt::Horizontal, trUtf8("Износ"));
-    model2->setHeaderData( 8, Qt::Horizontal, trUtf8("Салдо"));
+	model2->setHeaderData( 0, Qt::Horizontal, tr("Док.Ид."));
+	model2->setHeaderData( 1, Qt::Horizontal, tr("Вид на документ"));
+	model2->setHeaderData( 2, Qt::Horizontal, tr("Датум"));
+	model2->setHeaderData( 3, Qt::Horizontal, tr("Артикал"));
+	model2->setHeaderData( 4, Qt::Horizontal, tr("Кол."));
+	model2->setHeaderData( 5, Qt::Horizontal, tr("Цена со ДДВ"));
+	model2->setHeaderData( 6, Qt::Horizontal, tr("Рабат"));
+	model2->setHeaderData( 7, Qt::Horizontal, tr("Износ"));
+    model2->setHeaderData( 8, Qt::Horizontal, tr("Салдо"));
     ui.tableView_2->setModel(model2);
 	header2 = new QHeaderView(Qt::Horizontal, this);
     header2->setSectionsClickable(true);
@@ -161,27 +161,27 @@ void QAnalitikaKomintentiWidget::lista_detail(const QString& nameSearch)
 			{
 				if (temp == "20")
 				{
-					temp = trUtf8("ПРИЕМНИЦА");
+					temp = tr("ПРИЕМНИЦА");
                     znak = -1;
 				}
 				else if(temp == "21")
 				{
-					temp = trUtf8("ИЗЈАВА");
+					temp = tr("ИЗЈАВА");
                     znak = -1;
 				}
 				else if(temp == "25")
 				{
-					temp = trUtf8("ПОВРАТНИЦА");
+					temp = tr("ПОВРАТНИЦА");
 					znak = -1;
 				}
 				else if(temp == "40")
                 {
-                    temp = trUtf8("ИСПРАТНИЦА");
+                    temp = tr("ИСПРАТНИЦА");
                     znak = 1;
                 }
                 else if(temp == "45")
                 {
-                    temp = trUtf8("СМЕТКА");
+                    temp = tr("СМЕТКА");
                     znak = 1;
                 }
 

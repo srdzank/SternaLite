@@ -5,7 +5,7 @@
 #include <QSqlRecord>
 #include <QSqlError>
 #include "chelperclass.h"
-#include <QDesktopWidget>
+#include <QScreen>
 #include "xx.h"
 
 QIzvodKorekcija::QIzvodKorekcija(QWidget *parent)
@@ -61,13 +61,13 @@ QIzvodKorekcija::QIzvodKorekcija(QWidget *parent)
 
 
     model = new QStandardItemModel(0,5);
-    model->setHeaderData( 0, Qt::Horizontal, trUtf8("Датум"));
-    model->setHeaderData( 1, Qt::Horizontal, trUtf8("Коминтент Ид."));
-    model->setHeaderData( 2, Qt::Horizontal, trUtf8("Коминтент Назив"));
-    model->setHeaderData( 3, Qt::Horizontal, trUtf8("Прилив"));
-    model->setHeaderData( 4, Qt::Horizontal, trUtf8("Одлив"));
-	model->setHeaderData( 5, Qt::Horizontal, trUtf8(""));
-	model->setHeaderData( 6, Qt::Horizontal, trUtf8("key"));
+    model->setHeaderData( 0, Qt::Horizontal, tr("Датум"));
+    model->setHeaderData( 1, Qt::Horizontal, tr("Коминтент Ид."));
+    model->setHeaderData( 2, Qt::Horizontal, tr("Коминтент Назив"));
+    model->setHeaderData( 3, Qt::Horizontal, tr("Прилив"));
+    model->setHeaderData( 4, Qt::Horizontal, tr("Одлив"));
+    model->setHeaderData( 5, Qt::Horizontal, tr(""));
+    model->setHeaderData( 6, Qt::Horizontal, tr("key"));
 
 	ui.tableView->setModel(model);
 	header = new QHeaderView(Qt::Horizontal, this);
@@ -76,11 +76,11 @@ QIzvodKorekcija::QIzvodKorekcija(QWidget *parent)
 	header->show();
 
 	model2 = new QStandardItemModel(0,5);
-	model2->setHeaderData( 0, Qt::Horizontal, trUtf8("Коминтент Ид."));
-	model2->setHeaderData( 1, Qt::Horizontal, trUtf8("Коминтент Назив"));
-	model2->setHeaderData( 2, Qt::Horizontal, trUtf8("Тип Фактура"));
-	model2->setHeaderData( 3, Qt::Horizontal, trUtf8("Фактура Бр."));
-	model2->setHeaderData( 4, Qt::Horizontal, trUtf8("Платено"));
+    model2->setHeaderData( 0, Qt::Horizontal, tr("Коминтент Ид."));
+    model2->setHeaderData( 1, Qt::Horizontal, tr("Коминтент Назив"));
+    model2->setHeaderData( 2, Qt::Horizontal, tr("Тип Фактура"));
+    model2->setHeaderData( 3, Qt::Horizontal, tr("Фактура Бр."));
+    model2->setHeaderData( 4, Qt::Horizontal, tr("Платено"));
 
 	ui.tableView_2->setModel(model2);
 	header2 = new QHeaderView(Qt::Horizontal, this);
@@ -138,12 +138,12 @@ void QIzvodKorekcija::init(QStringList info)
 
 	QSqlQuery query1(temp);
 	model = new QStandardItemModel(r,c);
-	model->setHeaderData( 0, Qt::Horizontal, trUtf8("Извод Бр."));    
-	model->setHeaderData( 1, Qt::Horizontal, trUtf8("Ком.Ид"));
-	model->setHeaderData( 2, Qt::Horizontal, trUtf8("Назив"));
-	model->setHeaderData( 3, Qt::Horizontal, trUtf8("Прилив"));
-	model->setHeaderData( 4, Qt::Horizontal, trUtf8("Одлив"));
-	model->setHeaderData( 5, Qt::Horizontal, trUtf8("Key"));
+    model->setHeaderData( 0, Qt::Horizontal, tr("Извод Бр."));
+    model->setHeaderData( 1, Qt::Horizontal, tr("Ком.Ид"));
+    model->setHeaderData( 2, Qt::Horizontal, tr("Назив"));
+    model->setHeaderData( 3, Qt::Horizontal, tr("Прилив"));
+    model->setHeaderData( 4, Qt::Horizontal, tr("Одлив"));
+    model->setHeaderData( 5, Qt::Horizontal, tr("Key"));
 
 	ui.tableView->setModel(model);
 	header = new QHeaderView(Qt::Horizontal, this);
@@ -243,12 +243,12 @@ void QIzvodKorekcija::insertRowTable2(std::vector<sostavInfo> &rowData)
 	model2->clear();
 
 	model2 = new QStandardItemModel(0,6);
-	model2->setHeaderData( 0, Qt::Horizontal, trUtf8("Коминтент Ид."));
-	model2->setHeaderData( 1, Qt::Horizontal, trUtf8("Коминтент Назив"));
-	model2->setHeaderData( 2, Qt::Horizontal, trUtf8("Фактура Бр."));
-	model2->setHeaderData( 3, Qt::Horizontal, trUtf8("Датум."));
-	model2->setHeaderData( 4, Qt::Horizontal, trUtf8("Неплатен Износ"));
-	model2->setHeaderData( 5, Qt::Horizontal, trUtf8("Платено"));
+    model2->setHeaderData( 0, Qt::Horizontal, tr("Коминтент Ид."));
+    model2->setHeaderData( 1, Qt::Horizontal, tr("Коминтент Назив"));
+    model2->setHeaderData( 2, Qt::Horizontal, tr("Фактура Бр."));
+    model2->setHeaderData( 3, Qt::Horizontal, tr("Датум."));
+    model2->setHeaderData( 4, Qt::Horizontal, tr("Неплатен Износ"));
+    model2->setHeaderData( 5, Qt::Horizontal, tr("Платено"));
 
 	ui.tableView_2->setModel(model2);
 	header2 = new QHeaderView(Qt::Horizontal, this);
@@ -653,7 +653,7 @@ void QIzvodKorekcija::on_pushButton_4_clicked()
 	if (!chlp->isIzvodExists(m_ZiroSmetka, ui.lineEdit_8->text()))
 	{
 		QMessageBox msgBox;
-		msgBox.setText(trUtf8("Извод со тој број не постои!"));
+        msgBox.setText(tr("Извод со тој број не постои!"));
 		msgBox.setStandardButtons(QMessageBox::Ok);
 		msgBox.setDefaultButton(QMessageBox::Ok);
 		msgBox.exec();
@@ -668,7 +668,7 @@ void QIzvodKorekcija::on_pushButton_4_clicked()
 	if ((user_id != 9999)&&(user_id != m_user_id))
 	{
 		QMessageBox msgBox;
-		msgBox.setText(trUtf8("Немате привилегија да ја направите измената!"));
+        msgBox.setText(tr("Немате привилегија да ја направите измената!"));
 		msgBox.setStandardButtons(QMessageBox::Ok);
 		msgBox.setDefaultButton(QMessageBox::Ok);
 		msgBox.exec();
@@ -771,7 +771,7 @@ void QIzvodKorekcija::on_pushButton_4_clicked()
 		if (err.isValid ())
 		{
 			QMessageBox msgBox;
-			msgBox.setText(trUtf8("Изводот НЕ Е корегиран."));
+            msgBox.setText(tr("Изводот НЕ Е корегиран."));
 			msgBox.setStandardButtons(QMessageBox::Ok);
 			msgBox.setDefaultButton(QMessageBox::Ok);
 			msgBox.exec();
@@ -779,7 +779,7 @@ void QIzvodKorekcija::on_pushButton_4_clicked()
 		else
 		{
 			QMessageBox msgBox;
-			msgBox.setText(trUtf8("Изводот е успешно корегиран."));
+            msgBox.setText(tr("Изводот е успешно корегиран."));
 			msgBox.setStandardButtons(QMessageBox::Ok);
 			msgBox.setDefaultButton(QMessageBox::Ok);
 			msgBox.exec();
@@ -789,7 +789,7 @@ void QIzvodKorekcija::on_pushButton_4_clicked()
 	catch (...)
 	{
 		QMessageBox msgBox;
-		msgBox.setText(trUtf8("Изводот не е внесен !!!."));
+        msgBox.setText(tr("Изводот не е внесен !!!."));
 		msgBox.setStandardButtons(QMessageBox::Ok);
 		msgBox.setDefaultButton(QMessageBox::Ok);
 		msgBox.exec();
@@ -926,7 +926,7 @@ void QIzvodKorekcija::on_pRadioButton8_Pressed()
 	if (!chlp.isIzvodExists(m_ZiroSmetka, ui.lineEdit_8->text()))
 	{
 		QMessageBox msgBox;
-		msgBox.setText(trUtf8("Извод со тој број не постои!"));
+        msgBox.setText(tr("Извод со тој број не постои!"));
 		msgBox.setStandardButtons(QMessageBox::Ok);
 		msgBox.setDefaultButton(QMessageBox::Ok);
 		msgBox.exec();

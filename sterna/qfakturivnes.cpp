@@ -7,7 +7,7 @@
 #include "chelperclass.h"
 #include <QLocale>
 #include "sterna.h"
-#include <QDesktopWidget>
+#include <QScreen>
 
 
 
@@ -21,8 +21,8 @@ QFakturiVlezniVnes::QFakturiVlezniVnes(QWidget *parent)
     , editorOpen(0)
 {
     ui.setupUi(this);
-	QDesktopWidget desk;
-	QRect deskRect = desk.screenGeometry();
+    QScreen *desk = QGuiApplication::primaryScreen();
+    QRect deskRect = desk->geometry();  // Get screen geometry
 	ui.layoutWidget->setFixedWidth(deskRect.width() - 250);
 	ui.layoutWidget->setFixedHeight(deskRect.height()-200);
     ui.lineEdit->setFocus();
@@ -57,14 +57,14 @@ QFakturiVlezniVnes::QFakturiVlezniVnes(QWidget *parent)
 
 
 	model = new QStandardItemModel(0,8);
-	model->setHeaderData( 0, Qt::Horizontal, trUtf8("Ид."));
-	model->setHeaderData( 1, Qt::Horizontal, trUtf8("Шифра"));
-	model->setHeaderData( 2, Qt::Horizontal, trUtf8("Артикал"));
-	model->setHeaderData( 3, Qt::Horizontal, trUtf8("Едм."));
-	model->setHeaderData( 4, Qt::Horizontal, trUtf8("ДДВ (%)"));
-	model->setHeaderData( 5, Qt::Horizontal, trUtf8("Количина"));
-	model->setHeaderData( 6, Qt::Horizontal, trUtf8("Цена"));
-	model->setHeaderData( 7, Qt::Horizontal, trUtf8("Рабат"));
+	model->setHeaderData( 0, Qt::Horizontal, tr("Ид."));
+	model->setHeaderData( 1, Qt::Horizontal, tr("Шифра"));
+	model->setHeaderData( 2, Qt::Horizontal, tr("Артикал"));
+	model->setHeaderData( 3, Qt::Horizontal, tr("Едм."));
+	model->setHeaderData( 4, Qt::Horizontal, tr("ДДВ (%)"));
+	model->setHeaderData( 5, Qt::Horizontal, tr("Количина"));
+	model->setHeaderData( 6, Qt::Horizontal, tr("Цена"));
+	model->setHeaderData( 7, Qt::Horizontal, tr("Рабат"));
 
     ui.tableView->setModel(model);
     header = new QHeaderView(Qt::Horizontal, this);
@@ -164,7 +164,7 @@ void QFakturiVlezniVnes::on_pushButton_3_clicked()
 	if (!hclass.isArtikliExists(ui.lineEdit_2->text()))
 	{
 		QMessageBox msgBox;
-		msgBox.setText(trUtf8("Податокот за артикал е невалиден\nОдбери артикал од листата на артикли!"));
+		msgBox.setText(tr("Податокот за артикал е невалиден\nОдбери артикал од листата на артикли!"));
 		msgBox.setStandardButtons(QMessageBox::Ok);
 		msgBox.setDefaultButton(QMessageBox::Ok);
 		msgBox.exec();
@@ -315,7 +315,7 @@ void QFakturiVlezniVnes::on_pushButton_4_clicked()
 	if (!validateKomintent())
 	{
 		QMessageBox msgBox;
-		msgBox.setText(trUtf8("Податокот за коминтент е невалиден\nОдбери коминтент од листата на коминтенти!"));
+		msgBox.setText(tr("Податокот за коминтент е невалиден\nОдбери коминтент од листата на коминтенти!"));
 		msgBox.setStandardButtons(QMessageBox::Ok);
 		msgBox.setDefaultButton(QMessageBox::Ok);
 		msgBox.exec();
@@ -398,7 +398,7 @@ void QFakturiVlezniVnes::on_pushButton_4_clicked()
         }
 
         QMessageBox msgBox;
-        msgBox.setText(trUtf8("Фактурата е успешно внесена."));
+        msgBox.setText(tr("Фактурата е успешно внесена."));
         msgBox.setStandardButtons(QMessageBox::Ok);
         msgBox.setDefaultButton(QMessageBox::Ok);
         msgBox.exec();
@@ -421,7 +421,7 @@ void QFakturiVlezniVnes::on_pushButton_4_clicked()
         query.exec();
 
         QMessageBox msgBox;
-        msgBox.setText(trUtf8("Фактурата не е внесена !!!."));
+        msgBox.setText(tr("Фактурата не е внесена !!!."));
         msgBox.setStandardButtons(QMessageBox::Ok);
         msgBox.setDefaultButton(QMessageBox::Ok);
         msgBox.exec();
@@ -518,7 +518,7 @@ void QFakturiVlezniVnes::on_plineEdit4_Pressed()
     {
 
         QMessageBox msgBox;
-        msgBox.setText(trUtf8("Внеси количина."));
+        msgBox.setText(tr("Внеси количина."));
         msgBox.setStandardButtons(QMessageBox::Ok);
         msgBox.setDefaultButton(QMessageBox::Ok);
         msgBox.exec();

@@ -39,9 +39,9 @@ void QProFakturiLista::lista(const QString& nameSearch)
 	int c = 3;
 	model = new QStandardItemModel(r,c);
 
-	model->setHeaderData( 0, Qt::Horizontal, trUtf8("Id."));
-	model->setHeaderData( 1, Qt::Horizontal, trUtf8("Испратница бр."));
-	model->setHeaderData( 2, Qt::Horizontal, trUtf8("Датум"));
+	model->setHeaderData( 0, Qt::Horizontal, tr("Id."));
+	model->setHeaderData( 1, Qt::Horizontal, tr("Испратница бр."));
+	model->setHeaderData( 2, Qt::Horizontal, tr("Датум"));
 
 	ui.tableView->setModel(model);
 	header = new QHeaderView(Qt::Horizontal, this);
@@ -101,10 +101,10 @@ void QProFakturiLista::lista_detail(const QString& nameSearch)
 	int c = 5;
 	model2 = new QStandardItemModel(r,c);
 
-	model2->setHeaderData( 0, Qt::Horizontal, trUtf8("Шифра"));
-	model2->setHeaderData( 1, Qt::Horizontal, trUtf8("Артикал"));
-	model2->setHeaderData( 2, Qt::Horizontal, trUtf8("Едм"));
-	model2->setHeaderData( 3, Qt::Horizontal, trUtf8("Влезна количина"));
+	model2->setHeaderData( 0, Qt::Horizontal, tr("Шифра"));
+	model2->setHeaderData( 1, Qt::Horizontal, tr("Артикал"));
+	model2->setHeaderData( 2, Qt::Horizontal, tr("Едм"));
+	model2->setHeaderData( 3, Qt::Horizontal, tr("Влезна количина"));
 
 	ui.tableView_2->setModel(model2);
 	header2 = new QHeaderView(Qt::Horizontal, this);

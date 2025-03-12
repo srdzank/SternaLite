@@ -1,7 +1,7 @@
 #include "qkomintentivnes.h"
 #include <QSqlQuery>
 #include <QMessageBox>
-#include <QDesktopWidget>
+#include <QScreen>
 #include "xx.h"
 
 QKomintentiVnes::QKomintentiVnes(QWidget *parent)
@@ -57,7 +57,7 @@ void QKomintentiVnes::on_pushButton_clicked()
 	if (ui.lineEdit_14->text().isEmpty())
 	{
 		QMessageBox msgBox;
-		msgBox.setText(trUtf8("Внеси шифра на коминтентот!!!"));
+		msgBox.setText(tr("Внеси шифра на коминтентот!!!"));
 		msgBox.setStandardButtons(QMessageBox::Ok);
 		msgBox.setDefaultButton(QMessageBox::Ok);
 		msgBox.exec();
@@ -68,7 +68,7 @@ void QKomintentiVnes::on_pushButton_clicked()
 	if (chlp->isSifraKomintentExists(ui.lineEdit_14->text()))
 	{
 		QMessageBox msgBox;
-		msgBox.setText(trUtf8("Постои коминтент со таа шифра!\nВнеси друга шифра"));
+		msgBox.setText(tr("Постои коминтент со таа шифра!\nВнеси друга шифра"));
 		msgBox.setStandardButtons(QMessageBox::Ok);
 		msgBox.setDefaultButton(QMessageBox::Ok);
 		msgBox.exec();
@@ -79,7 +79,7 @@ void QKomintentiVnes::on_pushButton_clicked()
 	if (ui.lineEdit->text().isEmpty())
 	{
 		QMessageBox msgBox;
-		msgBox.setText(trUtf8("Внеси назив на коминтентот!!!"));
+		msgBox.setText(tr("Внеси назив на коминтентот!!!"));
 		msgBox.setStandardButtons(QMessageBox::Ok);
 		msgBox.setDefaultButton(QMessageBox::Ok);
 		msgBox.exec();
@@ -89,8 +89,8 @@ void QKomintentiVnes::on_pushButton_clicked()
 
 
 	QMessageBox msgBox;
-	msgBox.setText(trUtf8("Записот ке биде внесен"));
-	msgBox.setInformativeText(trUtf8("Дали сакате да ги сочувате промените"));
+	msgBox.setText(tr("Записот ке биде внесен"));
+	msgBox.setInformativeText(tr("Дали сакате да ги сочувате промените"));
 	msgBox.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
 	msgBox.setDefaultButton(QMessageBox::Ok);
 	int ret = msgBox.exec();

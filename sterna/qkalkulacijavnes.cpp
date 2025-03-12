@@ -5,7 +5,7 @@
 #include <QSqlRecord>
 #include <QSqlError>
 #include "chelperclass.h"
-#include <QDesktopWidget>
+#include <QScreen>
 #include "xx.h"
 
 
@@ -105,23 +105,23 @@ QKalkulacijaVnes::QKalkulacijaVnes(QWidget *parent)
 	connect(ui.tableView->horizontalHeader(),SIGNAL(sectionClicked(int)), ui.tableView, SLOT(sortByColumn(int)));
 
 	model = new QStandardItemModel(0, 17);
-	model->setHeaderData( 0, Qt::Horizontal, trUtf8("Ид.\n"));
-	model->setHeaderData( 1, Qt::Horizontal, trUtf8("Шифра\n"));
-	model->setHeaderData( 2, Qt::Horizontal, trUtf8("Артикал\n"));
-	model->setHeaderData( 3, Qt::Horizontal, trUtf8("Ед.\nме."));
-	model->setHeaderData( 4, Qt::Horizontal, trUtf8("Количина\n"));
-	model->setHeaderData( 5, Qt::Horizontal, trUtf8("Набавна цена\nбез ДДВ"));
-	model->setHeaderData( 6, Qt::Horizontal, trUtf8("Пренесен\nДДВ (%)"));
-	model->setHeaderData( 7, Qt::Horizontal, trUtf8("Вредност\n на ДДВ"));
-	model->setHeaderData( 8, Qt::Horizontal, trUtf8("Набавна цена\nсо ДДВ"));
-	model->setHeaderData( 9, Qt::Horizontal, trUtf8("Рабат\n(%)"));
-	model->setHeaderData( 10, Qt::Horizontal, trUtf8("Вкупен Набавен\nизнос со ДДВ"));
-	model->setHeaderData( 11, Qt::Horizontal, trUtf8("Maржа\n(%)"));
-	model->setHeaderData( 12, Qt::Horizontal, trUtf8("Маржа\n(ден.)"));
-	model->setHeaderData( 13, Qt::Horizontal, trUtf8("Продажна цена\nбез ДДВ"));
-	model->setHeaderData( 14, Qt::Horizontal, trUtf8("Пресметан\nДДВ"));
-	model->setHeaderData( 15, Qt::Horizontal, trUtf8("Продaжна цена\nсо ДДВ"));
-	model->setHeaderData( 16, Qt::Horizontal, trUtf8("Вкупен продажен\nизнос со ДДВ"));
+	model->setHeaderData( 0, Qt::Horizontal, tr("Ид.\n"));
+	model->setHeaderData( 1, Qt::Horizontal, tr("Шифра\n"));
+	model->setHeaderData( 2, Qt::Horizontal, tr("Артикал\n"));
+	model->setHeaderData( 3, Qt::Horizontal, tr("Ед.\nме."));
+	model->setHeaderData( 4, Qt::Horizontal, tr("Количина\n"));
+	model->setHeaderData( 5, Qt::Horizontal, tr("Набавна цена\nбез ДДВ"));
+	model->setHeaderData( 6, Qt::Horizontal, tr("Пренесен\nДДВ (%)"));
+	model->setHeaderData( 7, Qt::Horizontal, tr("Вредност\n на ДДВ"));
+	model->setHeaderData( 8, Qt::Horizontal, tr("Набавна цена\nсо ДДВ"));
+	model->setHeaderData( 9, Qt::Horizontal, tr("Рабат\n(%)"));
+	model->setHeaderData( 10, Qt::Horizontal, tr("Вкупен Набавен\nизнос со ДДВ"));
+	model->setHeaderData( 11, Qt::Horizontal, tr("Maржа\n(%)"));
+	model->setHeaderData( 12, Qt::Horizontal, tr("Маржа\n(ден.)"));
+	model->setHeaderData( 13, Qt::Horizontal, tr("Продажна цена\nбез ДДВ"));
+	model->setHeaderData( 14, Qt::Horizontal, tr("Пресметан\nДДВ"));
+	model->setHeaderData( 15, Qt::Horizontal, tr("Продaжна цена\nсо ДДВ"));
+	model->setHeaderData( 16, Qt::Horizontal, tr("Вкупен продажен\nизнос со ДДВ"));
 
 	ui.tableView->setModel(model);
 	header = new QHeaderView(Qt::Horizontal, this);
@@ -360,7 +360,7 @@ void QKalkulacijaVnes::on_pushButton_3_clicked()
 	if (!hclass.isArtikliExists(ui.lineEdit_2->text()))
 	{
 		QMessageBox msgBox;
-		msgBox.setText(trUtf8("Податокот за артикал е невалиден\nОдбери артикал од листата на артикли!"));
+		msgBox.setText(tr("Податокот за артикал е невалиден\nОдбери артикал од листата на артикли!"));
 		msgBox.setStandardButtons(QMessageBox::Ok);
 		msgBox.setDefaultButton(QMessageBox::Ok);
 		msgBox.exec();
@@ -569,8 +569,8 @@ void QKalkulacijaVnes::selectionChanged(QModelIndex modelX,QModelIndex modelY)
 void QKalkulacijaVnes::on_pushButton_6_clicked()
 {
 	QMessageBox msgBox;
-	msgBox.setText(trUtf8("Ставката ке биде ИЗБРИШАНА"));
-	msgBox.setInformativeText(trUtf8("Одбери OK за да потврдиш."));
+	msgBox.setText(tr("Ставката ке биде ИЗБРИШАНА"));
+	msgBox.setInformativeText(tr("Одбери OK за да потврдиш."));
 	msgBox.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
 	msgBox.setDefaultButton(QMessageBox::Ok);
 	int ret = msgBox.exec();
@@ -617,7 +617,7 @@ void QKalkulacijaVnes::on_pushButton_4_clicked()
 	if (!validateKomintent())
 	{
 		QMessageBox msgBox;
-		msgBox.setText(trUtf8("Податокот за коминтент е невалиден\nОдбери коминтент од листата на коминтенти!"));
+		msgBox.setText(tr("Податокот за коминтент е невалиден\nОдбери коминтент од листата на коминтенти!"));
 		msgBox.setStandardButtons(QMessageBox::Ok);
 		msgBox.setDefaultButton(QMessageBox::Ok);
 		msgBox.exec();
@@ -627,8 +627,8 @@ void QKalkulacijaVnes::on_pushButton_4_clicked()
 	}
 
 	QMessageBox msgBox;
-	msgBox.setText(trUtf8("ПРИЕМНИЦАТА ке биде ВНЕСЕНА"));
-	msgBox.setInformativeText(trUtf8("Одбери OK за да потврдиш."));
+	msgBox.setText(tr("ПРИЕМНИЦАТА ке биде ВНЕСЕНА"));
+	msgBox.setInformativeText(tr("Одбери OK за да потврдиш."));
 	msgBox.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
 	msgBox.setDefaultButton(QMessageBox::Ok);
 	int ret = msgBox.exec();
@@ -693,7 +693,7 @@ void QKalkulacijaVnes::on_pushButton_4_clicked()
 			QString mArtikalProdCenaSoDDV = model->item(i, 15)->text();
 			QString mArtikalMarza = model->item(i, 11)->text();
 
-            int mMagacinTip = model->item(i, 6)->text() == trUtf8("Артикли") ? 0 : 1;
+            int mMagacinTip = model->item(i, 6)->text() == tr("Артикли") ? 0 : 1;
 
 			query.clear();
 			query.prepare(
@@ -721,7 +721,7 @@ void QKalkulacijaVnes::on_pushButton_4_clicked()
 		{
 			db.commit();
 			QMessageBox msgBox;
-			msgBox.setText(trUtf8("Приемница - Калкулацијата е успешно внесена."));
+			msgBox.setText(tr("Приемница - Калкулацијата е успешно внесена."));
 			msgBox.setStandardButtons(QMessageBox::Ok);
 			msgBox.setDefaultButton(QMessageBox::Ok);
 			msgBox.exec();
@@ -731,7 +731,7 @@ void QKalkulacijaVnes::on_pushButton_4_clicked()
 		{
 			db.rollback();
 			QMessageBox msgBox;
-			msgBox.setText(trUtf8("Приемница - Калкулацијата НЕ Е внесена !!!."));
+			msgBox.setText(tr("Приемница - Калкулацијата НЕ Е внесена !!!."));
 			msgBox.setStandardButtons(QMessageBox::Ok);
 			msgBox.setDefaultButton(QMessageBox::Ok);
 			msgBox.exec();
@@ -1233,17 +1233,17 @@ void QKalkulacijaVnes::setPriemnicaID(QString text, QString textName)
 	temp += QString::number(id, 10);
 	QSqlQuery query(temp);
 /*	model = new QStandardItemModel(r,c);*/
-	model->setHeaderData( 0, Qt::Horizontal, trUtf8("Ид."));
-	model->setHeaderData( 1, Qt::Horizontal, trUtf8("Шифра"));
-	model->setHeaderData( 2, Qt::Horizontal, trUtf8("Артикал"));
-	model->setHeaderData( 3, Qt::Horizontal, trUtf8("Едм."));
-	model->setHeaderData( 4, Qt::Horizontal, trUtf8("Количина"));
-	model->setHeaderData( 5, Qt::Horizontal, trUtf8("Е.Цена.Вал."));
-	model->setHeaderData( 6, Qt::Horizontal, trUtf8("Е.Цена.Ден."));
-	model->setHeaderData( 7, Qt::Horizontal, trUtf8("Е.Трошоци"));
-	model->setHeaderData( 8, Qt::Horizontal, trUtf8("Е.Наб.Цена"));
-	model->setHeaderData( 9, Qt::Horizontal, trUtf8("Вк.Износ."));
-	model->setHeaderData( 10, Qt::Horizontal, trUtf8("Приемн. бр."));
+	model->setHeaderData( 0, Qt::Horizontal, tr("Ид."));
+	model->setHeaderData( 1, Qt::Horizontal, tr("Шифра"));
+	model->setHeaderData( 2, Qt::Horizontal, tr("Артикал"));
+	model->setHeaderData( 3, Qt::Horizontal, tr("Едм."));
+	model->setHeaderData( 4, Qt::Horizontal, tr("Количина"));
+	model->setHeaderData( 5, Qt::Horizontal, tr("Е.Цена.Вал."));
+	model->setHeaderData( 6, Qt::Horizontal, tr("Е.Цена.Ден."));
+	model->setHeaderData( 7, Qt::Horizontal, tr("Е.Трошоци"));
+	model->setHeaderData( 8, Qt::Horizontal, tr("Е.Наб.Цена"));
+	model->setHeaderData( 9, Qt::Horizontal, tr("Вк.Износ."));
+	model->setHeaderData( 10, Qt::Horizontal, tr("Приемн. бр."));
 
 
 	ui.tableView->setModel(model);

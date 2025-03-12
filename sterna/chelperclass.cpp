@@ -3,13 +3,13 @@
 #include "QSqlRecord"
 #include "QVariant"
 #include <QLocale>
-#include <QRegExp>
+#include <QRegularExpression>
 #include <QDate>
 #include <QDateTime>
 #include "qt_windows.h"
 #include "qwindowdefs_win.h"
 #include <shellapi.h>
-#include <QTextCodec>
+#include <QStringConverter>
 
 
 
@@ -209,31 +209,31 @@ void CHelperClass::fakturaStatus(QStandardItem *item,  const QString& tip)
 	{
 		QIcon ic1(":/sterna/Resources/ok.png");
 		item->setIcon(ic1);
-		item->setToolTip(trUtf8("Платена "));
+        item->setToolTip(tr("Платена "));
 	}
 	else if ((m_plateno > 0) && ((vk_iznos - m_plateno) >= 0.1))
 	{
 		QIcon ic1(":/sterna/Resources/information.png");
 		item->setIcon(ic1);
-		item->setToolTip(trUtf8("Делумно платена "));
+        item->setToolTip(tr("Делумно платена "));
 	}
     else if ((m_plateno == 0) && (vk_iznos > 0))
     {
         QIcon ic1(":/sterna/Resources/stop.png");
         item->setIcon(ic1);
-        item->setToolTip(trUtf8("Неплатена "));
+        item->setToolTip(tr("Неплатена "));
     }
     else if (vk_iznos <= 0)
     {
         QIcon ic1(":/sterna/Resources/error.png");
         item->setIcon(ic1);
-        item->setToolTip(trUtf8("Невалидна "));
+        item->setToolTip(tr("Невалидна "));
     }
     else if (m_plateno > vk_iznos )
     {
         QIcon ic1(":/sterna/Resources/error.png");
         item->setIcon(ic1);
-        item->setToolTip(trUtf8("Невалидна "));
+        item->setToolTip(tr("Невалидна "));
     }
 
 }
@@ -826,13 +826,13 @@ void CHelperClass::createListaKomintenti(const QString &tip)
     while (query.next()) 
     {
         dok_id = query.value(0).toString();
-        QString temp = trUtf8("      Назив : ")+query.value(0).toString()+"<br>"+
-                       trUtf8("     Адреса : ")+query.value(1).toString()+"<br>"+
-                       trUtf8("        Тел : ")+query.value(2).toString()+"<br>"+
-                       trUtf8("    Мобилен : ")+query.value(3).toString()+"<br>"+
-                       trUtf8("Жиро сметка : ")+query.value(4).toString()+"<br>"+
-                       trUtf8("        ЕДБ : ")+query.value(5).toString()+"<br>"+
-                       trUtf8("       Град : ")+query.value(6).toString();
+        QString temp = tr("      Назив : ")+query.value(0).toString()+"<br>"+
+                       tr("     Адреса : ")+query.value(1).toString()+"<br>"+
+                       tr("        Тел : ")+query.value(2).toString()+"<br>"+
+                       tr("    Мобилен : ")+query.value(3).toString()+"<br>"+
+                       tr("Жиро сметка : ")+query.value(4).toString()+"<br>"+
+                       tr("        ЕДБ : ")+query.value(5).toString()+"<br>"+
+                       tr("       Град : ")+query.value(6).toString();
 
         m_mapKomintentDetailInfo.insert(dok_id, temp);
     }
@@ -1312,8 +1312,8 @@ long CHelperClass::printFiscal(QStringList itemArt)
 	QFile file("PF500.IN");
 	if( !file.open( QIODevice::WriteOnly) )
 		return -1;
-	QTextStream stream( &file);
-	stream.setCodec("Windows-1251");
+    QTextStream stream(&file);
+    stream.setEncoding(QStringConverter::System);
 
 	// 	'Otvoranje na fiskalna smetka
 	QLocale loc;
@@ -1408,82 +1408,82 @@ void CHelperClass::convertIme(const QTextStream &stream, QString utfIme)
 	QString::iterator it;
 	for (it = utfIme.begin(); it != utfIme.end(); it++)
 	{
-//		if(QString(*it) == (QString)trUtf8("З")){imeE += "З";}
-//		else if(QString(*it) == (QString)trUtf8("з")){stream << trUtf8("з");}
-//		else if(QString(*it) == (QString)trUtf8("Џ")){stream << trUtf8("Џ");}
-//		else if(QString(*it) == (QString)trUtf8("џ")){stream << trUtf8("џ");}
-//		else if(QString(*it) == (QString)trUtf8("Ц")){stream << trUtf8("Ц");}
-//		else if(QString(*it) == (QString)trUtf8("ц")){stream << trUtf8("ц");}
-//		else if(QString(*it) == (QString)trUtf8("В")){stream << trUtf8("В");}
-//		else if(QString(*it) == (QString)trUtf8("Б")){stream << trUtf8("Б");}
-//		else if(QString(*it) == (QString)trUtf8("б")){stream << trUtf8("б");}
-//		else if(QString(*it) == (QString)trUtf8("Н")){stream << trUtf8("Н");}
-//		else if(QString(*it) == (QString)trUtf8("н")){stream << trUtf8("н");}
-//		else if(QString(*it) == (QString)trUtf8("М")){stream << trUtf8("М");}
-//		else if(QString(*it) == (QString)trUtf8("м")){stream << trUtf8("м");}
-//		else if(QString(*it) == (QString)trUtf8("А")){stream << trUtf8("А");}
-//		else if(QString(*it) == (QString)trUtf8("а")){stream << trUtf8("а");}
-//		else if(QString(*it) == (QString)trUtf8("С")){stream << trUtf8("С");}
-//		else if(QString(*it) == (QString)trUtf8("с")){stream << trUtf8("с");}
-//		else if(QString(*it) == (QString)trUtf8("Д")){stream << trUtf8("Д");}
-//		else if(QString(*it) == (QString)trUtf8("д")){stream << trUtf8("д");}
-//		else if(QString(*it) == (QString)trUtf8("Ф")){stream << trUtf8("Ф");}
-//		else if(QString(*it) == (QString)trUtf8("ф")){stream << trUtf8("ф");}
-//		else if(QString(*it) == (QString)trUtf8("Г")){stream << trUtf8("Г");}
-//		else if(QString(*it) == (QString)trUtf8("г")){stream << trUtf8("г");}
-//		else if(QString(*it) == (QString)trUtf8("Х")){stream << trUtf8("Х");}
-//		else if(QString(*it) == (QString)trUtf8("х")){stream << trUtf8("х");}
-//		else if(QString(*it) == (QString)trUtf8("Ј")){stream << trUtf8("Ј");}
-//		else if(QString(*it) == (QString)trUtf8("ј")){stream << trUtf8("ј");}
-//		else if(QString(*it) == (QString)trUtf8("К")){stream << trUtf8("К");}
-//		else if(QString(*it) == (QString)trUtf8("к")){stream << trUtf8("к");}
-//		else if(QString(*it) == (QString)trUtf8("Л")){stream << trUtf8("Л");}
-//		else if(QString(*it) == (QString)trUtf8("л")){stream << trUtf8("л");}
-//		else if(QString(*it) == (QString)trUtf8("Ч")){stream << trUtf8("Ч");}
-//		else if(QString(*it) == (QString)trUtf8("ч")){stream << trUtf8("ч");}
-//		else if(QString(*it) == (QString)trUtf8("Ќ")){stream << trUtf8("Ќ");}
-//		else if(QString(*it) == (QString)trUtf8("ќ")){stream << trUtf8("ќ");}
-//		else if(QString(*it) == (QString)trUtf8("Љ")){stream << trUtf8("Љ");}
-//		else if(QString(*it) == (QString)trUtf8("љ")){stream << trUtf8("љ");}
-//		else if(QString(*it) == (QString)trUtf8("Њ")){stream << trUtf8("Њ");}
-//		else if(QString(*it) == (QString)trUtf8("њ")){stream << trUtf8("њ");}
-//		else if(QString(*it) == (QString)trUtf8("Е")){stream << trUtf8("Е");}
-//		else if(QString(*it) == (QString)trUtf8("е")){stream << trUtf8("е");}
-//		else if(QString(*it) == (QString)trUtf8("Р")){stream << trUtf8("Р");}
-//		else if(QString(*it) == (QString)trUtf8("р")){stream << trUtf8("р");}
-//		else if(QString(*it) == (QString)trUtf8("Т")){stream << trUtf8("Т");}
-//		else if(QString(*it) == (QString)trUtf8("т")){stream << trUtf8("т");}
-//		else if(QString(*it) == (QString)trUtf8("Ѕ")){stream << trUtf8("Ѕ");}
-//		else if(QString(*it) == (QString)trUtf8("ѕ")){stream << trUtf8("ѕ");}
-//		else if(QString(*it) == (QString)trUtf8("У")){stream << trUtf8("У");}
-//		else if(QString(*it) == (QString)trUtf8("у")){stream << trUtf8("у");}
-//		else if(QString(*it) == (QString)trUtf8("И")){stream << trUtf8("И");}
-//		else if(QString(*it) == (QString)trUtf8("и")){stream << trUtf8("и");}
-//		else if(QString(*it) == (QString)trUtf8("О")){stream << trUtf8("О");}
-//		else if(QString(*it) == (QString)trUtf8("о")){stream << trUtf8("о");}
-//		else if(QString(*it) == (QString)trUtf8("П")){stream << trUtf8("П");}
-//		else if(QString(*it) == (QString)trUtf8("п")){stream << trUtf8("п");}
-//		else if(QString(*it) == (QString)trUtf8("Ш")){stream << trUtf8("Ш");}
-//		else if(QString(*it) == (QString)trUtf8("ш")){stream << trUtf8("ш");}
-//		else if(QString(*it) == (QString)trUtf8("Ѓ")){stream << trUtf8("Ѓ");}
-//		else if(QString(*it) == (QString)trUtf8("ѓ")){stream << trUtf8("ѓ");}
-//		else if(QString(*it) == (QString)trUtf8("Ж")){stream << trUtf8("Ж");}
-//		else if(QString(*it) == (QString)trUtf8("ж")){stream << trUtf8("ж");}
-//		else if(QString(*it) == (QString)trUtf8(" ")){stream << trUtf8(" ");}
-//		else if(QString(*it) == (QString)trUtf8(",")){stream << trUtf8(",");}
-//		else if(QString(*it) == (QString)trUtf8("1")){stream << trUtf8("1");}
-//		else if(QString(*it) == (QString)trUtf8("2")){stream << trUtf8("2");}
-//		else if(QString(*it) == (QString)trUtf8("3")){stream << trUtf8("3");}
-//		else if(QString(*it) == (QString)trUtf8("4")){stream << trUtf8("4");}
-//		else if(QString(*it) == (QString)trUtf8("5")){stream << trUtf8("5");}
-//		else if(QString(*it) == (QString)trUtf8("6")){stream << trUtf8("6");}
-//		else if(QString(*it) == (QString)trUtf8("7")){stream << trUtf8("7");}
-//		else if(QString(*it) == (QString)trUtf8("8")){stream << trUtf8("8");}
-//		else if(QString(*it) == (QString)trUtf8("9")){stream << trUtf8("9");}
-//		else if(QString(*it) == (QString)trUtf8("0")){stream << trUtf8("0");}
-//		else if(QString(*it) == (QString)trUtf8("*")){stream << trUtf8("*");}
-//		else if(QString(*it) == (QString)trUtf8("(")){stream << trUtf8("(");}
-//		else if(QString(*it) == (QString)trUtf8(")")){stream << trUtf8(")");}
+//		if(QString(*it) == (QString)tr("З")){imeE += "З";}
+//		else if(QString(*it) == (QString)tr("з")){stream << tr("з");}
+//		else if(QString(*it) == (QString)tr("Џ")){stream << tr("Џ");}
+//		else if(QString(*it) == (QString)tr("џ")){stream << tr("џ");}
+//		else if(QString(*it) == (QString)tr("Ц")){stream << tr("Ц");}
+//		else if(QString(*it) == (QString)tr("ц")){stream << tr("ц");}
+//		else if(QString(*it) == (QString)tr("В")){stream << tr("В");}
+//		else if(QString(*it) == (QString)tr("Б")){stream << tr("Б");}
+//		else if(QString(*it) == (QString)tr("б")){stream << tr("б");}
+//		else if(QString(*it) == (QString)tr("Н")){stream << tr("Н");}
+//		else if(QString(*it) == (QString)tr("н")){stream << tr("н");}
+//		else if(QString(*it) == (QString)tr("М")){stream << tr("М");}
+//		else if(QString(*it) == (QString)tr("м")){stream << tr("м");}
+//		else if(QString(*it) == (QString)tr("А")){stream << tr("А");}
+//		else if(QString(*it) == (QString)tr("а")){stream << tr("а");}
+//		else if(QString(*it) == (QString)tr("С")){stream << tr("С");}
+//		else if(QString(*it) == (QString)tr("с")){stream << tr("с");}
+//		else if(QString(*it) == (QString)tr("Д")){stream << tr("Д");}
+//		else if(QString(*it) == (QString)tr("д")){stream << tr("д");}
+//		else if(QString(*it) == (QString)tr("Ф")){stream << tr("Ф");}
+//		else if(QString(*it) == (QString)tr("ф")){stream << tr("ф");}
+//		else if(QString(*it) == (QString)tr("Г")){stream << tr("Г");}
+//		else if(QString(*it) == (QString)tr("г")){stream << tr("г");}
+//		else if(QString(*it) == (QString)tr("Х")){stream << tr("Х");}
+//		else if(QString(*it) == (QString)tr("х")){stream << tr("х");}
+//		else if(QString(*it) == (QString)tr("Ј")){stream << tr("Ј");}
+//		else if(QString(*it) == (QString)tr("ј")){stream << tr("ј");}
+//		else if(QString(*it) == (QString)tr("К")){stream << tr("К");}
+//		else if(QString(*it) == (QString)tr("к")){stream << tr("к");}
+//		else if(QString(*it) == (QString)tr("Л")){stream << tr("Л");}
+//		else if(QString(*it) == (QString)tr("л")){stream << tr("л");}
+//		else if(QString(*it) == (QString)tr("Ч")){stream << tr("Ч");}
+//		else if(QString(*it) == (QString)tr("ч")){stream << tr("ч");}
+//		else if(QString(*it) == (QString)tr("Ќ")){stream << tr("Ќ");}
+//		else if(QString(*it) == (QString)tr("ќ")){stream << tr("ќ");}
+//		else if(QString(*it) == (QString)tr("Љ")){stream << tr("Љ");}
+//		else if(QString(*it) == (QString)tr("љ")){stream << tr("љ");}
+//		else if(QString(*it) == (QString)tr("Њ")){stream << tr("Њ");}
+//		else if(QString(*it) == (QString)tr("њ")){stream << tr("њ");}
+//		else if(QString(*it) == (QString)tr("Е")){stream << tr("Е");}
+//		else if(QString(*it) == (QString)tr("е")){stream << tr("е");}
+//		else if(QString(*it) == (QString)tr("Р")){stream << tr("Р");}
+//		else if(QString(*it) == (QString)tr("р")){stream << tr("р");}
+//		else if(QString(*it) == (QString)tr("Т")){stream << tr("Т");}
+//		else if(QString(*it) == (QString)tr("т")){stream << tr("т");}
+//		else if(QString(*it) == (QString)tr("Ѕ")){stream << tr("Ѕ");}
+//		else if(QString(*it) == (QString)tr("ѕ")){stream << tr("ѕ");}
+//		else if(QString(*it) == (QString)tr("У")){stream << tr("У");}
+//		else if(QString(*it) == (QString)tr("у")){stream << tr("у");}
+//		else if(QString(*it) == (QString)tr("И")){stream << tr("И");}
+//		else if(QString(*it) == (QString)tr("и")){stream << tr("и");}
+//		else if(QString(*it) == (QString)tr("О")){stream << tr("О");}
+//		else if(QString(*it) == (QString)tr("о")){stream << tr("о");}
+//		else if(QString(*it) == (QString)tr("П")){stream << tr("П");}
+//		else if(QString(*it) == (QString)tr("п")){stream << tr("п");}
+//		else if(QString(*it) == (QString)tr("Ш")){stream << tr("Ш");}
+//		else if(QString(*it) == (QString)tr("ш")){stream << tr("ш");}
+//		else if(QString(*it) == (QString)tr("Ѓ")){stream << tr("Ѓ");}
+//		else if(QString(*it) == (QString)tr("ѓ")){stream << tr("ѓ");}
+//		else if(QString(*it) == (QString)tr("Ж")){stream << tr("Ж");}
+//		else if(QString(*it) == (QString)tr("ж")){stream << tr("ж");}
+//		else if(QString(*it) == (QString)tr(" ")){stream << tr(" ");}
+//		else if(QString(*it) == (QString)tr(",")){stream << tr(",");}
+//		else if(QString(*it) == (QString)tr("1")){stream << tr("1");}
+//		else if(QString(*it) == (QString)tr("2")){stream << tr("2");}
+//		else if(QString(*it) == (QString)tr("3")){stream << tr("3");}
+//		else if(QString(*it) == (QString)tr("4")){stream << tr("4");}
+//		else if(QString(*it) == (QString)tr("5")){stream << tr("5");}
+//		else if(QString(*it) == (QString)tr("6")){stream << tr("6");}
+//		else if(QString(*it) == (QString)tr("7")){stream << tr("7");}
+//		else if(QString(*it) == (QString)tr("8")){stream << tr("8");}
+//		else if(QString(*it) == (QString)tr("9")){stream << tr("9");}
+//		else if(QString(*it) == (QString)tr("0")){stream << tr("0");}
+//		else if(QString(*it) == (QString)tr("*")){stream << tr("*");}
+//		else if(QString(*it) == (QString)tr("(")){stream << tr("(");}
+//		else if(QString(*it) == (QString)tr(")")){stream << tr(")");}
 	}
 }
 
@@ -1525,8 +1525,9 @@ long CHelperClass::printFiscalStorno(QStringList itemArt)
 	QFile file("PF500.IN");
 	if( !file.open( QIODevice::WriteOnly) )
 		return -1;
-	QTextStream stream( &file);
-	stream.setCodec("Windows-1251");
+    QTextStream stream(&file);
+    stream.setEncoding(QStringConverter::Encoding::Latin1);  // Closest alternative
+
 
 	// 	'Otvoranje na fiskalna smetka
 	QLocale loc;
@@ -1599,9 +1600,9 @@ void CHelperClass::printFiscalPodesuvanjeDatumCas()
 	QFile file("PF500.IN");
 	if( !file.open( QIODevice::WriteOnly) )
 		return;
-	QTextStream stream( &file);
-	stream.setCodec("Windows-1251");
-	QDateTime dateCurr = QDateTime::currentDateTime();
+    QTextStream stream(&file);
+    stream.setEncoding(QStringConverter::Encoding::Latin1);  // Closest alternative
+    QDateTime dateCurr = QDateTime::currentDateTime();
 	QLocale loc;
 
 	stream << QChar(0x2d) << QChar(0x3d);
@@ -1628,9 +1629,9 @@ void CHelperClass::printFiscalDnevnoFiskalnoZatvoranje()
 	QFile file("PF500.IN");
 	if( !file.open( QIODevice::WriteOnly) )
 		return;
-	QTextStream stream( &file);
-	stream.setCodec("Windows-1251");
-	QDateTime dateCurr = QDateTime::currentDateTime();
+    QTextStream stream(&file);
+    stream.setEncoding(QStringConverter::Encoding::Latin1);  // Closest to Windows-1251
+    QDateTime dateCurr = QDateTime::currentDateTime();
 	QLocale loc;
 
 	stream << QChar(0x2a) << QChar(0x45) << QChar(0x5a) << QChar(0x09);
@@ -1656,9 +1657,9 @@ void CHelperClass::SluzbenIzlezNaPari(const QString &iznosPari)
 	QFile file("PF500.IN");
 	if( !file.open( QIODevice::WriteOnly) )
 		return;
-	QTextStream stream( &file);
-	stream.setCodec("Windows-1251");
-	QDateTime dateCurr = QDateTime::currentDateTime();
+    QTextStream stream(&file);
+    stream.setEncoding(QStringConverter::Encoding::Latin1);  // Closest to Windows-1251
+    QDateTime dateCurr = QDateTime::currentDateTime();
 	QLocale loc;
 
 	stream << QChar(0x29) << QChar(0x46) << QChar(0x31) << QChar(0x09);
@@ -1686,9 +1687,9 @@ void CHelperClass::SluzbenVlezNaPari(const QString &iznosPari)
 	QFile file("PF500.IN");
 	if( !file.open( QIODevice::WriteOnly) )
 		return;
-	QTextStream stream( &file);
-	stream.setCodec("Windows-1251");
-	QDateTime dateCurr = QDateTime::currentDateTime();
+    QTextStream stream(&file);
+    stream.setEncoding(QStringConverter::Encoding::Latin1);  // Closest to Windows-1251
+    QDateTime dateCurr = QDateTime::currentDateTime();
 	QLocale loc;
 
 	stream << QChar(0x28) << QChar(0x46) << QChar(0x30) << QChar(0x09);
@@ -1716,9 +1717,9 @@ void CHelperClass::printKontrolenIzvestajProsiren()
 	QFile file("PF500.IN");
 	if( !file.open( QIODevice::WriteOnly) )
 		return;
-	QTextStream stream( &file);
-	stream.setCodec("Windows-1251");
-	QDateTime dateCurr = QDateTime::currentDateTime();
+    QTextStream stream(&file);
+    stream.setEncoding(QStringConverter::Encoding::Latin1);  // Closest to Windows-1251
+    QDateTime dateCurr = QDateTime::currentDateTime();
 	QLocale loc;
 	
 	stream << QChar(0x27) << QChar(0x45) << QChar(0x58) << QChar(0x09);
@@ -1743,8 +1744,9 @@ void CHelperClass::printDetalenIzvestajPoPeriod(const QString &date1, const QStr
 	QFile file("PF500.IN");
 	if( !file.open( QIODevice::WriteOnly) )
 		return;
-	QTextStream stream( &file);
-	stream.setCodec("Windows-1251");
+    QTextStream stream(&file);
+    stream.setEncoding(QStringConverter::Encoding::Latin1);  // Closest to Windows-1251
+
 	QDateTime dateCurr = QDateTime::currentDateTime();
 	QLocale loc;
 

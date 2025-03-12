@@ -1,16 +1,19 @@
 #pragma once
 
 #include <string>
-using namespace std;
 
 class Log {
 public:
-	static Log* Inst(char* filename);
-	void Logging(string message);
-	void Initialize();
-	~Log();
+    static Log* Inst(const std::string& filename); // Fix parameter type
+    void Logging(const std::string& message);
+    void Initialize();
+    ~Log();
+
 protected:
-	Log(); // constructor
+    Log(); // Default constructor
+    Log(const std::string& filename); // ✅ Add constructor with filename
+
 private:
-	static Log* pInstance;
+    static Log* pInstance;
+    std::string logFile;
 };

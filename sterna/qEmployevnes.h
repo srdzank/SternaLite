@@ -6,7 +6,7 @@
 #include <QCryptographicHash>
 #include <QSqlQuery>
 #include <QMessageBox>
-#include <QDesktopWidget>
+#include <QScreen>
 #include "chelperclass.h"
 
 

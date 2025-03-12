@@ -7,7 +7,7 @@
 #include "chelperclass.h"
 #include <QLocale>
 #include "sterna.h"
-#include <QDesktopWidget>
+#include <QScreen>
 #include "xx.h"
 
 
@@ -62,22 +62,22 @@ QIzleznifaktmasterVnes::QIzleznifaktmasterVnes(QWidget *parent)
 
 	model = new QStandardItemModel(0,16);
 
-	model->setHeaderData( 0, Qt::Horizontal, trUtf8("Ид."));
-	model->setHeaderData( 1, Qt::Horizontal, trUtf8("Шифра"));
-	model->setHeaderData( 2, Qt::Horizontal, trUtf8("Артикал"));
-	model->setHeaderData( 3, Qt::Horizontal, trUtf8("Кол."));
-	model->setHeaderData( 4, Qt::Horizontal, trUtf8("Едм."));
-	model->setHeaderData( 5, Qt::Horizontal, trUtf8("Цена со ДДВ"));
-	model->setHeaderData( 6, Qt::Horizontal, trUtf8("Рабат %"));
-	model->setHeaderData( 7, Qt::Horizontal, trUtf8("Цена со Рабат"));
-	model->setHeaderData( 8, Qt::Horizontal, trUtf8("ДДВ %"));
-	model->setHeaderData( 9, Qt::Horizontal, trUtf8("Износ"));
-	model->setHeaderData( 10, Qt::Horizontal, trUtf8("ДДВ Износ"));
-	model->setHeaderData( 11, Qt::Horizontal, trUtf8("Износ со ДДВ"));
-	model->setHeaderData( 12, Qt::Horizontal, trUtf8("Коминтент ID"));
-	model->setHeaderData( 13, Qt::Horizontal, trUtf8("Набавна Цена"));
-	model->setHeaderData( 14, Qt::Horizontal, trUtf8("Набавна Стара Цена"));
-	model->setHeaderData( 15, Qt::Horizontal, trUtf8("Испратница"));
+	model->setHeaderData( 0, Qt::Horizontal, tr("Ид."));
+	model->setHeaderData( 1, Qt::Horizontal, tr("Шифра"));
+	model->setHeaderData( 2, Qt::Horizontal, tr("Артикал"));
+	model->setHeaderData( 3, Qt::Horizontal, tr("Кол."));
+	model->setHeaderData( 4, Qt::Horizontal, tr("Едм."));
+	model->setHeaderData( 5, Qt::Horizontal, tr("Цена со ДДВ"));
+	model->setHeaderData( 6, Qt::Horizontal, tr("Рабат %"));
+	model->setHeaderData( 7, Qt::Horizontal, tr("Цена со Рабат"));
+	model->setHeaderData( 8, Qt::Horizontal, tr("ДДВ %"));
+	model->setHeaderData( 9, Qt::Horizontal, tr("Износ"));
+	model->setHeaderData( 10, Qt::Horizontal, tr("ДДВ Износ"));
+	model->setHeaderData( 11, Qt::Horizontal, tr("Износ со ДДВ"));
+	model->setHeaderData( 12, Qt::Horizontal, tr("Коминтент ID"));
+	model->setHeaderData( 13, Qt::Horizontal, tr("Набавна Цена"));
+	model->setHeaderData( 14, Qt::Horizontal, tr("Набавна Стара Цена"));
+	model->setHeaderData( 15, Qt::Horizontal, tr("Испратница"));
 
     ui.tableView->setModel(model);
     header = new QHeaderView(Qt::Horizontal, this);
@@ -134,7 +134,7 @@ void QIzleznifaktmasterVnes::setFakturi(QStringList& listData)
 		else
 		{
 			QMessageBox msgBox;
-			msgBox.setText(trUtf8("Испратницата е веке импортирана!"));
+			msgBox.setText(tr("Испратницата е веке импортирана!"));
 			msgBox.setStandardButtons(QMessageBox::Ok);
 			msgBox.setDefaultButton(QMessageBox::Ok);
 			msgBox.exec();
@@ -224,7 +224,7 @@ void QIzleznifaktmasterVnes::on_pushButton_3_clicked()
 	if (!hclass.isArtikliExists(ui.lineEdit_2->text()))
 	{
 		QMessageBox msgBox;
-		msgBox.setText(trUtf8("Податокот за артикал е невалиден\nОдбери артикал од листата на артикли!"));
+		msgBox.setText(tr("Податокот за артикал е невалиден\nОдбери артикал од листата на артикли!"));
 		msgBox.setStandardButtons(QMessageBox::Ok);
 		msgBox.setDefaultButton(QMessageBox::Ok);
 		msgBox.exec();
@@ -423,8 +423,8 @@ void QIzleznifaktmasterVnes::on_pushButton_6_clicked()
 	if (tempId == 0)
 	{
 		QMessageBox msgBox;
-		msgBox.setText(trUtf8("Ставката ке биде избришана"));
-		msgBox.setInformativeText(trUtf8("Одбери OK за да потврдиш."));
+		msgBox.setText(tr("Ставката ке биде избришана"));
+		msgBox.setInformativeText(tr("Одбери OK за да потврдиш."));
 		msgBox.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
 		msgBox.setDefaultButton(QMessageBox::Ok);
 		int ret = msgBox.exec();
@@ -438,8 +438,8 @@ void QIzleznifaktmasterVnes::on_pushButton_6_clicked()
 	else
 	{
 		QMessageBox msgBox;
-		msgBox.setText(trUtf8("Ставките од испратницата :") + temp_ispratnicaID + trUtf8(" ке биде избришани"));
-		msgBox.setInformativeText(trUtf8("Одбери OK за да потврдиш."));
+		msgBox.setText(tr("Ставките од испратницата :") + temp_ispratnicaID + tr(" ке биде избришани"));
+		msgBox.setInformativeText(tr("Одбери OK за да потврдиш."));
 		msgBox.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
 		msgBox.setDefaultButton(QMessageBox::Ok);
 		int ret = msgBox.exec();
@@ -477,14 +477,14 @@ void QIzleznifaktmasterVnes::on_pushButton_6_clicked()
 				{
 					for(int j = 0; j <16; j++)
 					{
-						model->item(i, j)->setData(QBrush(QColor(140,255,255)), Qt::BackgroundColorRole);
+						model->item(i, j)->setData(QBrush(QColor(140,255,255)), Qt::BackgroundRole);
 					}
 				} 
 				else
 				{
 					for(int j = 0; j <16; j++)
 					{
-						model->item(i, j)->setData(QBrush(QColor(188,255,188)), Qt::BackgroundColorRole);
+						model->item(i, j)->setData(QBrush(QColor(188,255,188)), Qt::BackgroundRole);
 					}
 
 				}
@@ -537,7 +537,7 @@ void QIzleznifaktmasterVnes::on_pushButton_4_clicked()
 	if (!validateKomintent())
 	{
 		QMessageBox msgBox;  
-		msgBox.setText(trUtf8("Податокот за коминтент е невалиден\nОдбери коминтент од листата на коминтенти!"));
+		msgBox.setText(tr("Податокот за коминтент е невалиден\nОдбери коминтент од листата на коминтенти!"));
 		msgBox.setStandardButtons(QMessageBox::Ok);
 		msgBox.setDefaultButton(QMessageBox::Ok);
 		msgBox.exec();
@@ -546,8 +546,8 @@ void QIzleznifaktmasterVnes::on_pushButton_4_clicked()
 	}
 
 	QMessageBox msgBox;
-	msgBox.setText(trUtf8("ФАКТУРАТА ке биде ВНЕСЕНА"));
-	msgBox.setInformativeText(trUtf8("Одбери OK за да потврдиш."));
+	msgBox.setText(tr("ФАКТУРАТА ке биде ВНЕСЕНА"));
+	msgBox.setInformativeText(tr("Одбери OK за да потврдиш."));
 	msgBox.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
 	msgBox.setDefaultButton(QMessageBox::Ok);
 	int ret = msgBox.exec();
@@ -687,7 +687,7 @@ void QIzleznifaktmasterVnes::on_pushButton_4_clicked()
 		}
 
 		QMessageBox msgBox;
-		msgBox.setText(trUtf8("Фактурата е успешно внесена."));
+		msgBox.setText(tr("Фактурата е успешно внесена."));
 		msgBox.setStandardButtons(QMessageBox::Ok);
 		msgBox.setDefaultButton(QMessageBox::Ok);
 		msgBox.exec();
@@ -710,7 +710,7 @@ void QIzleznifaktmasterVnes::on_pushButton_4_clicked()
 		query.exec();
 
 		QMessageBox msgBox;
-		msgBox.setText(trUtf8("Фактурата не е внесена !!!."));
+		msgBox.setText(tr("Фактурата не е внесена !!!."));
 		msgBox.setStandardButtons(QMessageBox::Ok);
 		msgBox.setDefaultButton(QMessageBox::Ok);
 		msgBox.exec();
@@ -808,7 +808,7 @@ void QIzleznifaktmasterVnes::on_plineEdit4_Pressed()
     {
 
         QMessageBox msgBox;
-        msgBox.setText(trUtf8("Внеси количина."));
+        msgBox.setText(tr("Внеси количина."));
         msgBox.setStandardButtons(QMessageBox::Ok);
         msgBox.setDefaultButton(QMessageBox::Ok);
         msgBox.exec();
@@ -981,11 +981,11 @@ void QIzleznifaktmasterVnes::addItemFromIspratnicainit(int id, int color1)
 			QBrush brushColor;
 			if (color1)
 			{
-				item->setData(QBrush(QColor(140,255,255)), Qt::BackgroundColorRole);
+				item->setData(QBrush(QColor(140,255,255)), Qt::BackgroundRole);
 			} 
 			else
 			{
-				item->setData(QBrush(QColor(188,255,255)), Qt::BackgroundColorRole);
+				item->setData(QBrush(QColor(188,255,255)), Qt::BackgroundRole);
 			}
 
 			if ((i > 4)||(i == 3))

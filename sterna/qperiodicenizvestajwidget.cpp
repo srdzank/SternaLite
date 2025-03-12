@@ -2,7 +2,7 @@
 #include <QSqlQuery>
 #include <QSqlRecord>
 #include <QSqlError>
-#include <QDesktopWidget>
+#include <QScreen>
 #include "chelperclass.h"
 #include <QClipboard>
 #include <QDate>
@@ -13,8 +13,8 @@ QPeriodicenIzvestajWidget::QPeriodicenIzvestajWidget(QWidget *parent)
     ,m_selectedTextName("")
 {
 	ui.setupUi(this);
-	QDesktopWidget desk;
-	QRect deskRect = desk.screenGeometry();
+    QScreen *desk = QGuiApplication::primaryScreen();
+    QRect deskRect = desk->geometry();  // Get screen geometry
 	ui.layoutWidget->setFixedWidth(deskRect.width() - 250);
 	ui.layoutWidget->setFixedHeight(deskRect.height()-200);
     ui.tableView->setSelectionMode(QAbstractItemView::SingleSelection);
@@ -68,15 +68,15 @@ void QPeriodicenIzvestajWidget::lista(const QString& nameSearch, const QDate &da
 
 	QSqlError err = query.lastError();
 	model = new QStandardItemModel(r, c);
-	model->setHeaderData( 0, Qt::Horizontal, trUtf8("ID"));
-	model->setHeaderData( 1, Qt::Horizontal, trUtf8("Шифра"));
-	model->setHeaderData( 2, Qt::Horizontal, trUtf8("Артикал"));
-	model->setHeaderData( 3, Qt::Horizontal, trUtf8("Едм"));
-	model->setHeaderData( 4, Qt::Horizontal, trUtf8("Наб. Цена"));
-	model->setHeaderData( 5, Qt::Horizontal, trUtf8("Прод. Цена"));
-	model->setHeaderData( 6, Qt::Horizontal, trUtf8("Влез. Кол."));
-	model->setHeaderData( 7, Qt::Horizontal, trUtf8("Изл. Кол."));
-	model->setHeaderData( 8, Qt::Horizontal, trUtf8("Салдо"));
+	model->setHeaderData( 0, Qt::Horizontal, tr("ID"));
+	model->setHeaderData( 1, Qt::Horizontal, tr("Шифра"));
+	model->setHeaderData( 2, Qt::Horizontal, tr("Артикал"));
+	model->setHeaderData( 3, Qt::Horizontal, tr("Едм"));
+	model->setHeaderData( 4, Qt::Horizontal, tr("Наб. Цена"));
+	model->setHeaderData( 5, Qt::Horizontal, tr("Прод. Цена"));
+	model->setHeaderData( 6, Qt::Horizontal, tr("Влез. Кол."));
+	model->setHeaderData( 7, Qt::Horizontal, tr("Изл. Кол."));
+	model->setHeaderData( 8, Qt::Horizontal, tr("Салдо"));
 	ui.tableView->setModel(model);
 	header = new QHeaderView(Qt::Horizontal, this);
     header->setSectionsClickable(true);

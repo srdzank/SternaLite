@@ -7,7 +7,7 @@
 #include "chelperclass.h"
 #include <QLocale>
 #include "sterna.h"
-#include <QDesktopWidget>
+#include <QScreen>
 
 
 QIzleznipopismasterVnes::QIzleznipopismasterVnes(QWidget *parent)
@@ -59,20 +59,20 @@ QIzleznipopismasterVnes::QIzleznipopismasterVnes(QWidget *parent)
 
 	model = new QStandardItemModel(0,14);
 
-	model->setHeaderData( 0, Qt::Horizontal, trUtf8("Ид."));
-	model->setHeaderData( 1, Qt::Horizontal, trUtf8("Шифра"));
-	model->setHeaderData( 2, Qt::Horizontal, trUtf8("Артикал"));
-	model->setHeaderData( 3, Qt::Horizontal, trUtf8("Кол."));
-	model->setHeaderData( 4, Qt::Horizontal, trUtf8("Едм."));
-	model->setHeaderData( 5, Qt::Horizontal, trUtf8("Цена со ДДВ"));
-	model->setHeaderData( 6, Qt::Horizontal, trUtf8("Рабат %"));
-	model->setHeaderData( 7, Qt::Horizontal, trUtf8("Цена со Рабат"));
-	model->setHeaderData( 8, Qt::Horizontal, trUtf8("ДДВ %"));
-	model->setHeaderData( 9, Qt::Horizontal, trUtf8("Износ"));
-	model->setHeaderData( 10, Qt::Horizontal, trUtf8("ДДВ Износ"));
-	model->setHeaderData( 11, Qt::Horizontal, trUtf8("Износ со ДДВ"));
-	model->setHeaderData( 12, Qt::Horizontal, trUtf8("Коминтент ID"));
-	model->setHeaderData( 13, Qt::Horizontal, trUtf8("Набавна Цена"));
+	model->setHeaderData( 0, Qt::Horizontal, tr("Ид."));
+	model->setHeaderData( 1, Qt::Horizontal, tr("Шифра"));
+	model->setHeaderData( 2, Qt::Horizontal, tr("Артикал"));
+	model->setHeaderData( 3, Qt::Horizontal, tr("Кол."));
+	model->setHeaderData( 4, Qt::Horizontal, tr("Едм."));
+	model->setHeaderData( 5, Qt::Horizontal, tr("Цена со ДДВ"));
+	model->setHeaderData( 6, Qt::Horizontal, tr("Рабат %"));
+	model->setHeaderData( 7, Qt::Horizontal, tr("Цена со Рабат"));
+	model->setHeaderData( 8, Qt::Horizontal, tr("ДДВ %"));
+	model->setHeaderData( 9, Qt::Horizontal, tr("Износ"));
+	model->setHeaderData( 10, Qt::Horizontal, tr("ДДВ Износ"));
+	model->setHeaderData( 11, Qt::Horizontal, tr("Износ со ДДВ"));
+	model->setHeaderData( 12, Qt::Horizontal, tr("Коминтент ID"));
+	model->setHeaderData( 13, Qt::Horizontal, tr("Набавна Цена"));
 
     ui.tableView->setModel(model);
     header = new QHeaderView(Qt::Horizontal, this);
@@ -183,7 +183,7 @@ void QIzleznipopismasterVnes::on_pushButton_3_clicked()
 	if (!hclass.isArtikliExists(ui.lineEdit_2->text()))
 	{
 		QMessageBox msgBox;
-		msgBox.setText(trUtf8("Податокот за артикал е невалиден\nОдбери артикал од листата на артикли!"));
+		msgBox.setText(tr("Податокот за артикал е невалиден\nОдбери артикал од листата на артикли!"));
 		msgBox.setStandardButtons(QMessageBox::Ok);
 		msgBox.setDefaultButton(QMessageBox::Ok);
 		msgBox.exec();
@@ -397,7 +397,7 @@ void QIzleznipopismasterVnes::on_pushButton_4_clicked()
 	if (!validateKomintent())
 	{
 		QMessageBox msgBox;
-		msgBox.setText(trUtf8("Податокот за коминтент е невалиден\nОдбери коминтент од листата на коминтенти!"));
+		msgBox.setText(tr("Податокот за коминтент е невалиден\nОдбери коминтент од листата на коминтенти!"));
 		msgBox.setStandardButtons(QMessageBox::Ok);
 		msgBox.setDefaultButton(QMessageBox::Ok);
 		msgBox.exec();
@@ -406,8 +406,8 @@ void QIzleznipopismasterVnes::on_pushButton_4_clicked()
 	}
 
 	QMessageBox msgBox;
-	msgBox.setText(trUtf8("ПОПИСОТ ке биде ВНЕСЕН"));
-	msgBox.setInformativeText(trUtf8("Одбери OK за да потврдиш."));
+	msgBox.setText(tr("ПОПИСОТ ке биде ВНЕСЕН"));
+	msgBox.setInformativeText(tr("Одбери OK за да потврдиш."));
 	msgBox.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
 	msgBox.setDefaultButton(QMessageBox::Ok);
 	int ret = msgBox.exec();
@@ -499,7 +499,7 @@ void QIzleznipopismasterVnes::on_pushButton_4_clicked()
         }
 
         QMessageBox msgBox;
-        msgBox.setText(trUtf8("Пописот е успешно внесен."));
+        msgBox.setText(tr("Пописот е успешно внесен."));
         msgBox.setStandardButtons(QMessageBox::Ok);
         msgBox.setDefaultButton(QMessageBox::Ok);
         msgBox.exec();
@@ -522,7 +522,7 @@ void QIzleznipopismasterVnes::on_pushButton_4_clicked()
         query.exec();
 
         QMessageBox msgBox;
-        msgBox.setText(trUtf8("Пописот не е внесен !!!."));
+        msgBox.setText(tr("Пописот не е внесен !!!."));
         msgBox.setStandardButtons(QMessageBox::Ok);
         msgBox.setDefaultButton(QMessageBox::Ok);
         msgBox.exec();
@@ -620,7 +620,7 @@ void QIzleznipopismasterVnes::on_plineEdit4_Pressed()
     {
 
         QMessageBox msgBox;
-        msgBox.setText(trUtf8("Внеси количина."));
+        msgBox.setText(tr("Внеси количина."));
         msgBox.setStandardButtons(QMessageBox::Ok);
         msgBox.setDefaultButton(QMessageBox::Ok);
         msgBox.exec();

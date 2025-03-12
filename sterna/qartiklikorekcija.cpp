@@ -1,7 +1,7 @@
 #include "qartiklikorekcija.h"
 #include <QSqlQuery>
 #include <QMessageBox>
-#include <QDesktopWidget>
+#include <QScreen>
 #include "chelperclass.h"
 #include "xx.h"
 
@@ -67,7 +67,7 @@ void QArtikliKorekcija::on_pushButton_clicked()
 	if (ui.lineEdit_2->text().isEmpty())
 	{
 		QMessageBox msgBox;
-		msgBox.setText(trUtf8("Внеси име на артикалот!!!"));
+		msgBox.setText(tr("Внеси име на артикалот!!!"));
 		msgBox.setStandardButtons(QMessageBox::Ok);
 		msgBox.setDefaultButton(QMessageBox::Ok);
 		msgBox.exec();
@@ -79,7 +79,7 @@ void QArtikliKorekcija::on_pushButton_clicked()
 		if (chlp->isSifraArtikalExists(ui.lineEdit_2->text()))
 		{
 			QMessageBox msgBox;
-			msgBox.setText(trUtf8("Постои артикал со таа шифра!\nВнеси друга шифра"));
+			msgBox.setText(tr("Постои артикал со таа шифра!\nВнеси друга шифра"));
 			msgBox.setStandardButtons(QMessageBox::Ok);
 			msgBox.setDefaultButton(QMessageBox::Ok);
 			msgBox.exec();
@@ -90,7 +90,7 @@ void QArtikliKorekcija::on_pushButton_clicked()
 	if (ui.lineEdit_3->text().isEmpty())
 	{
 		QMessageBox msgBox;
-		msgBox.setText(trUtf8("Внеси име на артикалот!!!"));
+		msgBox.setText(tr("Внеси име на артикалот!!!"));
 		msgBox.setStandardButtons(QMessageBox::Ok);
 		msgBox.setDefaultButton(QMessageBox::Ok);
 		msgBox.exec();
@@ -99,8 +99,8 @@ void QArtikliKorekcija::on_pushButton_clicked()
 	}	
 
 	QMessageBox msgBox;
-	msgBox.setText(trUtf8("Документот ке биде изменет."));
-	msgBox.setInformativeText(trUtf8("Дали сакате да ги сочувате промените?"));
+	msgBox.setText(tr("Документот ке биде изменет."));
+	msgBox.setInformativeText(tr("Дали сакате да ги сочувате промените?"));
 	msgBox.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
 	msgBox.setDefaultButton(QMessageBox::Ok);	int ret = msgBox.exec();
 	if (ret == QMessageBox::Ok )
@@ -131,7 +131,7 @@ void QArtikliKorekcija::on_pushButton_clicked()
         if(query.exec())
 		{
 			QMessageBox msgBox;
-			msgBox.setText(trUtf8("Трансакцијата е успешна"));
+			msgBox.setText(tr("Трансакцијата е успешна"));
 			msgBox.setStandardButtons(QMessageBox::Ok);
 			msgBox.setDefaultButton(QMessageBox::Ok);
 			msgBox.exec();
@@ -140,7 +140,7 @@ void QArtikliKorekcija::on_pushButton_clicked()
 		else
 		{
 			QMessageBox msgBox;
-			msgBox.setText(trUtf8("Трансакцијата ne е успешна"));
+			msgBox.setText(tr("Трансакцијата ne е успешна"));
 			msgBox.setStandardButtons(QMessageBox::Ok);
 			msgBox.setDefaultButton(QMessageBox::Ok);
 			msgBox.exec();

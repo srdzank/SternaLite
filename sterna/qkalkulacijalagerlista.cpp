@@ -36,17 +36,17 @@ void QKalkulacijaLagerLista::lista(const QString& nameSearch)
 	QSqlQuery query(temp);
 	QSqlError err = query.lastError(); 
 	model = new QStandardItemModel(r, c);
-	model->setHeaderData( 0, Qt::Horizontal, trUtf8("ID\n"));
-	model->setHeaderData( 1, Qt::Horizontal, trUtf8("Шифра\n"));
-	model->setHeaderData( 2, Qt::Horizontal, trUtf8("Артикал\n"));
-	model->setHeaderData( 3, Qt::Horizontal, trUtf8("Един.\nмера"));
-	model->setHeaderData( 4, Qt::Horizontal, trUtf8("Набавна Цена\nсо ДДВ"));
-	model->setHeaderData( 5, Qt::Horizontal, trUtf8("Продажна Цена\nсо ДДВ"));
-	model->setHeaderData( 6, Qt::Horizontal, trUtf8("Влезна\nКоличина"));
-	model->setHeaderData( 7, Qt::Horizontal, trUtf8("Излезна\nКоличина"));
-	model->setHeaderData( 8, Qt::Horizontal, trUtf8("Салдо\nКоличина"));
-	//	model->setHeaderData( 9, Qt::Horizontal, trUtf8("Салдо Износ\nсо ДДВ"));
-	model->setHeaderData( 10, Qt::Horizontal, trUtf8("Коминтент\n"));
+	model->setHeaderData( 0, Qt::Horizontal, tr("ID\n"));
+	model->setHeaderData( 1, Qt::Horizontal, tr("Шифра\n"));
+	model->setHeaderData( 2, Qt::Horizontal, tr("Артикал\n"));
+	model->setHeaderData( 3, Qt::Horizontal, tr("Един.\nмера"));
+	model->setHeaderData( 4, Qt::Horizontal, tr("Набавна Цена\nсо ДДВ"));
+	model->setHeaderData( 5, Qt::Horizontal, tr("Продажна Цена\nсо ДДВ"));
+	model->setHeaderData( 6, Qt::Horizontal, tr("Влезна\nКоличина"));
+	model->setHeaderData( 7, Qt::Horizontal, tr("Излезна\nКоличина"));
+	model->setHeaderData( 8, Qt::Horizontal, tr("Салдо\nКоличина"));
+	//	model->setHeaderData( 9, Qt::Horizontal, tr("Салдо Износ\nсо ДДВ"));
+	model->setHeaderData( 10, Qt::Horizontal, tr("Коминтент\n"));
 
 	ui.tableView->setModel(model);
 	header = new QHeaderView(Qt::Horizontal, this);

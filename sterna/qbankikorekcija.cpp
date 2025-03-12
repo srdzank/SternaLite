@@ -2,7 +2,7 @@
 #include <QSqlQuery>
 #include <QMessageBox>
 #include <QSqlRecord>
-#include <QDesktopWidget>
+#include <QScreen>
 #include "xx.h"
 
 
@@ -44,7 +44,7 @@ void QBankiKorekcija::showData(const QString& id)
 void QBankiKorekcija::on_pushButton_clicked()
 {
 	QMessageBox msgBox;
-    msgBox.setText(trUtf8("Записот ќе биде изменет!"));
+    msgBox.setText(tr("Записот ќе биде изменет!"));
     msgBox.setStandardButtons(QMessageBox::Save | QMessageBox::Cancel);
 	msgBox.setDefaultButton(QMessageBox::Save);
 	int ret = msgBox.exec();
@@ -59,7 +59,7 @@ void QBankiKorekcija::on_pushButton_clicked()
 		if(query.exec())
 		{
 			QMessageBox msgBox;
-			msgBox.setText(trUtf8("Трансакцијата е успешна!"));
+			msgBox.setText(tr("Трансакцијата е успешна!"));
 			msgBox.setStandardButtons(QMessageBox::Ok);
 			msgBox.setDefaultButton(QMessageBox::Ok);
 			msgBox.exec();
@@ -68,7 +68,7 @@ void QBankiKorekcija::on_pushButton_clicked()
 		else
 		{
 			QMessageBox msgBox;
-			msgBox.setText(trUtf8("Трансакцијата не е успешна!"));
+			msgBox.setText(tr("Трансакцијата не е успешна!"));
 			msgBox.setStandardButtons(QMessageBox::Ok);
 			msgBox.setDefaultButton(QMessageBox::Ok);
 			msgBox.exec();

@@ -2,7 +2,7 @@
 #include <QSqlQuery>
 #include <QSqlRecord>
 #include <QSqlError>
-#include <QDesktopWidget>
+#include <QScreen>
 #include "chelperclass.h"
 #include <QDate>
 
@@ -12,8 +12,8 @@ QDnevenprometWidget::QDnevenprometWidget(QWidget *parent)
     ,m_selectedTextName("")
 {
 	ui.setupUi(this);
-	QDesktopWidget desk;
-	QRect deskRect = desk.screenGeometry();
+    QScreen *desk = QGuiApplication::primaryScreen();
+    QRect deskRect = desk->geometry();  // Get screen geometry
 	ui.layoutWidget->setFixedWidth(deskRect.width() - 250);
 	ui.layoutWidget->setFixedHeight(deskRect.height()-200);
     ui.tableView->setSelectionMode(QAbstractItemView::SingleSelection);
@@ -33,7 +33,7 @@ QDnevenprometWidget::~QDnevenprometWidget()
 QString QDnevenprometWidget::getDateAsString()
 {
 	QString dateString = "";
-	dateString = trUtf8("на ден ") + ui.dateTimeEdit->date().toString("dd/MM/yyyy");
+    dateString = tr("на ден ") + ui.dateTimeEdit->date().toString("dd/MM/yyyy");
 	return dateString;
 }
 
@@ -73,10 +73,10 @@ void QDnevenprometWidget::lista(const QString& nameSearch)
     QSqlQuery query(temp);
     QSqlError err = query.lastError();
     model = new QStandardItemModel(r, c);
-    model->setHeaderData( 0, Qt::Horizontal, trUtf8("Артикал Шифра"));
-    model->setHeaderData( 1, Qt::Horizontal, trUtf8("Артикал"));
-    model->setHeaderData( 2, Qt::Horizontal, trUtf8("Коминтент"));
-    model->setHeaderData( 3, Qt::Horizontal, trUtf8("Кол."));
+    model->setHeaderData( 0, Qt::Horizontal, tr("Артикал Шифра"));
+    model->setHeaderData( 1, Qt::Horizontal, tr("Артикал"));
+    model->setHeaderData( 2, Qt::Horizontal, tr("Коминтент"));
+    model->setHeaderData( 3, Qt::Horizontal, tr("Кол."));
 
     ui.tableView->setModel(model);
     header = new QHeaderView(Qt::Horizontal, this);

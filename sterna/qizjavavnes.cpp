@@ -5,7 +5,7 @@
 #include <QSqlRecord>
 #include <QSqlError>
 #include "chelperclass.h"
-#include <QDesktopWidget>
+#include <QScreen>
 #include <QKeyEvent>
 
 
@@ -19,8 +19,8 @@ QIzjavaVnes::QIzjavaVnes(QWidget *parent)
     ,artikal_id(0)
 {
 	ui.setupUi(this);
-	QDesktopWidget desk;
-	QRect deskRect = desk.screenGeometry();
+    QScreen *desk = QGuiApplication::primaryScreen();
+    QRect deskRect = desk->geometry();  // Get screen geometry
 	ui.layoutWidget->setFixedWidth(deskRect.width() - 250);
 	ui.layoutWidget->setFixedHeight(deskRect.height()-200);
 
@@ -54,12 +54,12 @@ QIzjavaVnes::QIzjavaVnes(QWidget *parent)
 
 
     model = new QStandardItemModel(0,6);
-	model->setHeaderData( 0, Qt::Horizontal, trUtf8("Ид."));
-	model->setHeaderData( 1, Qt::Horizontal, trUtf8("Шифра"));
-	model->setHeaderData( 2, Qt::Horizontal, trUtf8("Артикал"));
-	model->setHeaderData( 3, Qt::Horizontal, trUtf8("Едм"));
-	model->setHeaderData( 4, Qt::Horizontal, trUtf8("Количина"));
-    model->setHeaderData( 5, Qt::Horizontal, trUtf8("Цена"));
+	model->setHeaderData( 0, Qt::Horizontal, tr("Ид."));
+	model->setHeaderData( 1, Qt::Horizontal, tr("Шифра"));
+	model->setHeaderData( 2, Qt::Horizontal, tr("Артикал"));
+	model->setHeaderData( 3, Qt::Horizontal, tr("Едм"));
+	model->setHeaderData( 4, Qt::Horizontal, tr("Количина"));
+    model->setHeaderData( 5, Qt::Horizontal, tr("Цена"));
 
 	ui.tableView->setModel(model);
 	header = new QHeaderView(Qt::Horizontal, this);
@@ -148,7 +148,7 @@ void QIzjavaVnes::on_pushButton_3_clicked()
 	if (!hclass.isArtikliExists(ui.lineEdit_2->text()))
 	{
 		QMessageBox msgBox;
-		msgBox.setText(trUtf8("Податокот за артикал е невалиден\nОдбери артикал од листата на артикли!"));
+		msgBox.setText(tr("Податокот за артикал е невалиден\nОдбери артикал од листата на артикли!"));
 		msgBox.setStandardButtons(QMessageBox::Ok);
 		msgBox.setDefaultButton(QMessageBox::Ok);
 		msgBox.exec();
@@ -272,7 +272,7 @@ void QIzjavaVnes::on_pushButton_4_clicked()
 	if (!validateKomintent())
 	{
 		QMessageBox msgBox;
-		msgBox.setText(trUtf8("Податокот за коминтент е невалиден\nОдбери коминтент од листата на коминтенти!"));
+		msgBox.setText(tr("Податокот за коминтент е невалиден\nОдбери коминтент од листата на коминтенти!"));
 		msgBox.setStandardButtons(QMessageBox::Ok);
 		msgBox.setDefaultButton(QMessageBox::Ok);
 		msgBox.exec();
@@ -309,7 +309,7 @@ void QIzjavaVnes::on_pushButton_4_clicked()
     query.bindValue(":a6", komintentID);	
 
     query.exec();
-	if (query.lastError().number() == -1)
+   if (!query.lastError().isValid())
 	{
 		query.clear();
 		query.prepare("select max(id)mid from  dokumenti");
@@ -346,7 +346,7 @@ void QIzjavaVnes::on_pushButton_4_clicked()
 		}
 
 		QMessageBox msgBox;
-		msgBox.setText(trUtf8("Приемницата е успешно внесена."));
+		msgBox.setText(tr("Приемницата е успешно внесена."));
 		msgBox.setStandardButtons(QMessageBox::Ok);
 		msgBox.setDefaultButton(QMessageBox::Ok);
 		msgBox.exec();
@@ -355,7 +355,7 @@ void QIzjavaVnes::on_pushButton_4_clicked()
 	else
 	{
 		QMessageBox msgBox;
-		msgBox.setText(trUtf8("Приемницата ne е внесена!"));
+		msgBox.setText(tr("Приемницата ne е внесена!"));
 		msgBox.setStandardButtons(QMessageBox::Ok);
 		msgBox.setDefaultButton(QMessageBox::Ok);
 		msgBox.exec();

@@ -37,9 +37,9 @@ void QDdvLista::lista(const QString& nameSearch)
     temp += "%' ";
     QSqlQuery query(temp);
     model = new QStandardItemModel(r,c);
-    model->setHeaderData( 0, Qt::Horizontal, trUtf8("Ид."));
-    model->setHeaderData( 1, Qt::Horizontal, trUtf8("ДДВ Назив"));
-    model->setHeaderData( 2, Qt::Horizontal, trUtf8("ДДВ Износ"));
+    model->setHeaderData( 0, Qt::Horizontal, tr("Ид."));
+    model->setHeaderData( 1, Qt::Horizontal, tr("ДДВ Назив"));
+    model->setHeaderData( 2, Qt::Horizontal, tr("ДДВ Износ"));
     ui.tableView->setModel(model);
     header = new QHeaderView(Qt::Horizontal, this);
     ui.tableView->setHorizontalHeader(header);

@@ -1,15 +1,15 @@
 #include "qEmployekorekcija.h"
 #include <QSqlQuery>
 #include <QMessageBox>
-#include <QDesktopWidget>
+#include <QScreen>
 
 QEmployeKorekcija::QEmployeKorekcija(QWidget *parent)
 	: QMyBaseFormWidget(parent)
 ,m_id(0)
 {
 	ui.setupUi(this);
-	QDesktopWidget desk;
-	QRect deskRect = desk.screenGeometry();
+    QScreen *desk = QGuiApplication::primaryScreen();
+    QRect deskRect = desk->geometry();  // Get screen geometry
 	ui.layoutWidget->setFixedWidth(deskRect.width() - 250);
 	ui.layoutWidget->setFixedHeight(deskRect.height()-200);
 	ui.lineEdit_14->setFocus();
@@ -60,7 +60,7 @@ void QEmployeKorekcija::on_pushButton_clicked()
 	if(ui.lineEdit->text().isEmpty())
 	{
 		QMessageBox msgBox;
-		msgBox.setText(trUtf8("Внеси лозинка!!!"));
+		msgBox.setText(tr("Внеси лозинка!!!"));
 		msgBox.setStandardButtons(QMessageBox::Ok);
 		msgBox.setDefaultButton(QMessageBox::Ok);
 		msgBox.exec();
@@ -69,8 +69,8 @@ void QEmployeKorekcija::on_pushButton_clicked()
 	}
 
 	QMessageBox msgBox;
-	msgBox.setText(trUtf8("Записот ке биде променет"));
-	msgBox.setInformativeText(trUtf8("Дали сакате да ги сочувате промените?"));
+	msgBox.setText(tr("Записот ке биде променет"));
+	msgBox.setInformativeText(tr("Дали сакате да ги сочувате промените?"));
 	msgBox.setStandardButtons(QMessageBox::Save | QMessageBox::Cancel);
 	msgBox.setDefaultButton(QMessageBox::Save);
 	int ret = msgBox.exec();

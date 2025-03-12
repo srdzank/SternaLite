@@ -4,7 +4,7 @@
 #include <QSqlError>
 #include <QSqlRecord>
 #include "chelperclass.h"
-#include <QDesktopWidget>
+#include <QScreen>
 #include "xx.h"
 
 
@@ -57,19 +57,19 @@ QIzlezniIspratniciKorekcija::QIzlezniIspratniciKorekcija(QWidget *parent)
 
 	model = new QStandardItemModel(0,13);
 
-	model->setHeaderData( 0, Qt::Horizontal, trUtf8("Ид."));
-	model->setHeaderData( 1, Qt::Horizontal, trUtf8("Шифра"));
-	model->setHeaderData( 2, Qt::Horizontal, trUtf8("Артикал"));
-	model->setHeaderData( 3, Qt::Horizontal, trUtf8("Кол."));
-	model->setHeaderData( 4, Qt::Horizontal, trUtf8("Едм."));
-	model->setHeaderData( 5, Qt::Horizontal, trUtf8("Цена со ДДВ"));
-	model->setHeaderData( 6, Qt::Horizontal, trUtf8("Рабат %"));
-	model->setHeaderData( 7, Qt::Horizontal, trUtf8("Цена со Рабат"));
-	model->setHeaderData( 8, Qt::Horizontal, trUtf8("ДДВ %"));
-	model->setHeaderData( 9, Qt::Horizontal, trUtf8("Износ"));
-	model->setHeaderData( 10, Qt::Horizontal, trUtf8("ДДВ Износ"));
-	model->setHeaderData( 11, Qt::Horizontal, trUtf8("Износ со ДДВ"));
-	model->setHeaderData( 12, Qt::Horizontal, trUtf8("Коминтент ID"));
+	model->setHeaderData( 0, Qt::Horizontal, tr("Ид."));
+	model->setHeaderData( 1, Qt::Horizontal, tr("Шифра"));
+	model->setHeaderData( 2, Qt::Horizontal, tr("Артикал"));
+	model->setHeaderData( 3, Qt::Horizontal, tr("Кол."));
+	model->setHeaderData( 4, Qt::Horizontal, tr("Едм."));
+	model->setHeaderData( 5, Qt::Horizontal, tr("Цена со ДДВ"));
+	model->setHeaderData( 6, Qt::Horizontal, tr("Рабат %"));
+	model->setHeaderData( 7, Qt::Horizontal, tr("Цена со Рабат"));
+	model->setHeaderData( 8, Qt::Horizontal, tr("ДДВ %"));
+	model->setHeaderData( 9, Qt::Horizontal, tr("Износ"));
+	model->setHeaderData( 10, Qt::Horizontal, tr("ДДВ Износ"));
+	model->setHeaderData( 11, Qt::Horizontal, tr("Износ со ДДВ"));
+	model->setHeaderData( 12, Qt::Horizontal, tr("Коминтент ID"));
 
     ui.tableView->setModel(model);
     header = new QHeaderView(Qt::Horizontal, this);
@@ -197,7 +197,7 @@ void QIzlezniIspratniciKorekcija::on_pushButton_3_clicked()
 	if (!hclass.isArtikliExists(ui.lineEdit_2->text()))
 	{
 		QMessageBox msgBox;
-		msgBox.setText(trUtf8("Податокот за артикал е невалиден\nОдбери артикал од листата на артикли!"));
+		msgBox.setText(tr("Податокот за артикал е невалиден\nОдбери артикал од листата на артикли!"));
 		msgBox.setStandardButtons(QMessageBox::Ok);
 		msgBox.setDefaultButton(QMessageBox::Ok);
 		msgBox.exec();
@@ -474,19 +474,19 @@ void QIzlezniIspratniciKorekcija::init(int id)
 	QSqlQuery query(temp);
 
 	model = new QStandardItemModel(r,c);
-	model->setHeaderData( 0, Qt::Horizontal, trUtf8("Ид."));
-	model->setHeaderData( 1, Qt::Horizontal, trUtf8("Шифра"));
-	model->setHeaderData( 2, Qt::Horizontal, trUtf8("Артикал"));
-	model->setHeaderData( 3, Qt::Horizontal, trUtf8("Кол."));
-	model->setHeaderData( 4, Qt::Horizontal, trUtf8("Едм."));
-	model->setHeaderData( 5, Qt::Horizontal, trUtf8("Цена"));
-	model->setHeaderData( 6, Qt::Horizontal, trUtf8("Рабат %"));
-	model->setHeaderData( 7, Qt::Horizontal, trUtf8("Цена со Рабат"));
-	model->setHeaderData( 8, Qt::Horizontal, trUtf8("ДДВ %"));
-	model->setHeaderData( 9, Qt::Horizontal, trUtf8("Износ"));
-	model->setHeaderData( 10, Qt::Horizontal, trUtf8("ДДВ Износ"));
-	model->setHeaderData( 11, Qt::Horizontal, trUtf8("Износ со ДДВ"));
-	model->setHeaderData( 12, Qt::Horizontal, trUtf8("Коминтент ID"));
+	model->setHeaderData( 0, Qt::Horizontal, tr("Ид."));
+	model->setHeaderData( 1, Qt::Horizontal, tr("Шифра"));
+	model->setHeaderData( 2, Qt::Horizontal, tr("Артикал"));
+	model->setHeaderData( 3, Qt::Horizontal, tr("Кол."));
+	model->setHeaderData( 4, Qt::Horizontal, tr("Едм."));
+	model->setHeaderData( 5, Qt::Horizontal, tr("Цена"));
+	model->setHeaderData( 6, Qt::Horizontal, tr("Рабат %"));
+	model->setHeaderData( 7, Qt::Horizontal, tr("Цена со Рабат"));
+	model->setHeaderData( 8, Qt::Horizontal, tr("ДДВ %"));
+	model->setHeaderData( 9, Qt::Horizontal, tr("Износ"));
+	model->setHeaderData( 10, Qt::Horizontal, tr("ДДВ Износ"));
+	model->setHeaderData( 11, Qt::Horizontal, tr("Износ со ДДВ"));
+	model->setHeaderData( 12, Qt::Horizontal, tr("Коминтент ID"));
 
 	ui.tableView->setModel(model);
 	header = new QHeaderView(Qt::Horizontal, this);
@@ -545,7 +545,7 @@ void QIzlezniIspratniciKorekcija::on_pushButton_4_clicked()
 	if (!validateKomintent())
 	{
 		QMessageBox msgBox;
-		msgBox.setText(trUtf8("Податокот за коминтент е невалиден\nОдбери коминтент од листата на коминтенти!"));
+		msgBox.setText(tr("Податокот за коминтент е невалиден\nОдбери коминтент од листата на коминтенти!"));
 		msgBox.setStandardButtons(QMessageBox::Ok);
 		msgBox.setDefaultButton(QMessageBox::Ok);
 		msgBox.exec();
@@ -554,8 +554,8 @@ void QIzlezniIspratniciKorekcija::on_pushButton_4_clicked()
 	}
 	
 	QMessageBox msgBox;
-	msgBox.setText(trUtf8("ИСПРАТНИЦАТА ке биде КОРЕГИРАНА"));
-	msgBox.setInformativeText(trUtf8("Одбери OK за да потврдиш."));
+	msgBox.setText(tr("ИСПРАТНИЦАТА ке биде КОРЕГИРАНА"));
+	msgBox.setInformativeText(tr("Одбери OK за да потврдиш."));
 	msgBox.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
 	msgBox.setDefaultButton(QMessageBox::Ok);
 	int ret = msgBox.exec();
@@ -572,7 +572,7 @@ void QIzlezniIspratniciKorekcija::on_pushButton_4_clicked()
 	if ((user_id != 9999)&&(user_id != m_user_id))
 	{
 		QMessageBox msgBox;
-		msgBox.setText(trUtf8("Немате привилегија да ја направите измената!"));
+		msgBox.setText(tr("Немате привилегија да ја направите измената!"));
 		msgBox.setStandardButtons(QMessageBox::Ok);
 		msgBox.setDefaultButton(QMessageBox::Ok);
 		msgBox.exec();
@@ -654,7 +654,7 @@ void QIzlezniIspratniciKorekcija::on_pushButton_4_clicked()
 			QSqlError err = query.lastError();
 		}
 		QMessageBox msgBox;
-		msgBox.setText(trUtf8("Испратницата е успешно корегирана."));
+		msgBox.setText(tr("Испратницата е успешно корегирана."));
 		msgBox.setStandardButtons(QMessageBox::Ok);
 		msgBox.setDefaultButton(QMessageBox::Ok);
 		msgBox.exec();
@@ -676,7 +676,7 @@ void QIzlezniIspratniciKorekcija::on_pushButton_4_clicked()
         query.exec();
 
         QMessageBox msgBox;
-        msgBox.setText(trUtf8("Испратницата не е корегирана !!!."));
+        msgBox.setText(tr("Испратницата не е корегирана !!!."));
         msgBox.setStandardButtons(QMessageBox::Ok);
         msgBox.setDefaultButton(QMessageBox::Ok);
         msgBox.exec();
@@ -777,7 +777,7 @@ void QIzlezniIspratniciKorekcija::on_plineEdit4_Pressed()
     {
 
         QMessageBox msgBox;
-        msgBox.setText(trUtf8("Внеси количина."));
+        msgBox.setText(tr("Внеси количина."));
         msgBox.setStandardButtons(QMessageBox::Ok);
         msgBox.setDefaultButton(QMessageBox::Ok);
         msgBox.exec();

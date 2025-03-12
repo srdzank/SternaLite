@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'qPriemwidget.ui'
 **
-** Created by: Qt User Interface Compiler version 5.15.0
+** Created by: Qt User Interface Compiler version 6.8.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -36,39 +36,39 @@ public:
     void setupUi(QMyBaseFormWidget *QPriemWidgetClass)
     {
         if (QPriemWidgetClass->objectName().isEmpty())
-            QPriemWidgetClass->setObjectName(QString::fromUtf8("QPriemWidgetClass"));
+            QPriemWidgetClass->setObjectName("QPriemWidgetClass");
         QPriemWidgetClass->resize(2400, 2400);
         QFont font;
         font.setPointSize(10);
         QPriemWidgetClass->setFont(font);
         layoutWidget = new QWidget(QPriemWidgetClass);
-        layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
+        layoutWidget->setObjectName("layoutWidget");
         layoutWidget->setGeometry(QRect(21, 21, 791, 581));
         layoutWidget->setFont(font);
         gridLayout = new QGridLayout(layoutWidget);
         gridLayout->setSpacing(6);
         gridLayout->setContentsMargins(11, 11, 11, 11);
-        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
+        gridLayout->setObjectName("gridLayout");
         label_4 = new QLabel(layoutWidget);
-        label_4->setObjectName(QString::fromUtf8("label_4"));
+        label_4->setObjectName("label_4");
         label_4->setFont(font);
 
         gridLayout->addWidget(label_4, 0, 0, 1, 1);
 
         label = new QLabel(layoutWidget);
-        label->setObjectName(QString::fromUtf8("label"));
+        label->setObjectName("label");
         label->setFont(font);
 
         gridLayout->addWidget(label, 1, 0, 1, 1);
 
         lineEdit = new QLineEdit(layoutWidget);
-        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
+        lineEdit->setObjectName("lineEdit");
         lineEdit->setFont(font);
 
         gridLayout->addWidget(lineEdit, 1, 1, 1, 1);
 
         tableView = new QTableView(layoutWidget);
-        tableView->setObjectName(QString::fromUtf8("tableView"));
+        tableView->setObjectName("tableView");
         QPalette palette;
         QBrush brush(QColor(228, 228, 228, 255));
         brush.setStyle(Qt::SolidPattern);
@@ -82,7 +82,7 @@ public:
         gridLayout->addWidget(tableView, 2, 0, 1, 2);
 
         pushButton = new QPushButton(layoutWidget);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        pushButton->setObjectName("pushButton");
 
         gridLayout->addWidget(pushButton, 3, 0, 1, 1);
 

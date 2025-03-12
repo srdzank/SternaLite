@@ -1,15 +1,15 @@
 #include "qpriemnicalista.h"
 #include <QSqlQuery>
 #include <QSqlRecord>
-#include <QDesktopWidget>
+#include <QScreen>
 
 
 QPriemnicaLista::QPriemnicaLista(QWidget *parent)
 	: QMyBaseFormWidget(parent)
 {
 	ui.setupUi(this);
-	QDesktopWidget desk;
-	QRect deskRect = desk.screenGeometry();
+    QScreen *desk = QGuiApplication::primaryScreen();
+    QRect deskRect = desk->geometry();  // Get screen geometry
 	ui.layoutWidget->setFixedWidth(deskRect.width() - 250);
 	ui.layoutWidget->setFixedHeight(deskRect.height()-200);
 
@@ -56,12 +56,12 @@ void QPriemnicaLista::lista(const QString& nameSearch)
     ;
     QSqlQuery query(temp);
     model = new QStandardItemModel(r,c);
-    model->setHeaderData( 0, Qt::Horizontal, trUtf8("Id."));
-    model->setHeaderData( 1, Qt::Horizontal, trUtf8("Бр."));
-    model->setHeaderData( 2, Qt::Horizontal, trUtf8("Датум"));
-	model->setHeaderData( 3, Qt::Horizontal, trUtf8("Назив"));
-    model->setHeaderData( 4, Qt::Horizontal, trUtf8("Адреса"));
-    model->setHeaderData( 5, Qt::Horizontal, trUtf8("Град"));
+    model->setHeaderData( 0, Qt::Horizontal, tr("Id."));
+    model->setHeaderData( 1, Qt::Horizontal, tr("Бр."));
+    model->setHeaderData( 2, Qt::Horizontal, tr("Датум"));
+	model->setHeaderData( 3, Qt::Horizontal, tr("Назив"));
+    model->setHeaderData( 4, Qt::Horizontal, tr("Адреса"));
+    model->setHeaderData( 5, Qt::Horizontal, tr("Град"));
 
 	ui.tableView->setModel(model);
     header = new QHeaderView(Qt::Horizontal, this);
@@ -132,12 +132,12 @@ void QPriemnicaLista::lista_detail(const QString& nameSearch)
     QSqlQuery query(temp);
 
     model2 = new QStandardItemModel(r,c);
-    model2->setHeaderData( 0, Qt::Horizontal, trUtf8("Ид."));
-    model2->setHeaderData( 1, Qt::Horizontal, trUtf8("Шифра"));
-    model2->setHeaderData( 2, Qt::Horizontal, trUtf8("Артикал"));
-    model2->setHeaderData( 3, Qt::Horizontal, trUtf8("Едм."));
-    model2->setHeaderData( 4, Qt::Horizontal, trUtf8("Количина"));
-    model2->setHeaderData( 5, Qt::Horizontal, trUtf8("Цена"));
+    model2->setHeaderData( 0, Qt::Horizontal, tr("Ид."));
+    model2->setHeaderData( 1, Qt::Horizontal, tr("Шифра"));
+    model2->setHeaderData( 2, Qt::Horizontal, tr("Артикал"));
+    model2->setHeaderData( 3, Qt::Horizontal, tr("Едм."));
+    model2->setHeaderData( 4, Qt::Horizontal, tr("Количина"));
+    model2->setHeaderData( 5, Qt::Horizontal, tr("Цена"));
     ui.tableView_2->setModel(model2);
     header2 = new QHeaderView(Qt::Horizontal, this);
     header2->setSectionsClickable(true);

@@ -2,7 +2,7 @@
 #include <QSqlQuery>
 #include <QSqlRecord>
 #include <QSqlError>
-#include <QDesktopWidget>
+#include <QScreen>
 #include "xx.h"
 
 
@@ -79,12 +79,12 @@ void QFinAnalitKomintentiWidget::lista(const QString& nameSearch)
 	QSqlQuery query(temp);
     QSqlError err = query.lastError();
     model = new QStandardItemModel(r, c);
-    model->setHeaderData( 0, Qt::Horizontal, trUtf8("Ид."));
-    model->setHeaderData( 1, Qt::Horizontal, trUtf8("Шифра"));
-    model->setHeaderData( 2, Qt::Horizontal, trUtf8("Коминтент"));
-	model->setHeaderData( 3, Qt::Horizontal, trUtf8("Должи"));
-	model->setHeaderData( 4, Qt::Horizontal, trUtf8("Побарува"));
-	model->setHeaderData( 5, Qt::Horizontal, trUtf8("Салдо"));
+    model->setHeaderData( 0, Qt::Horizontal, tr("Ид."));
+    model->setHeaderData( 1, Qt::Horizontal, tr("Шифра"));
+    model->setHeaderData( 2, Qt::Horizontal, tr("Коминтент"));
+	model->setHeaderData( 3, Qt::Horizontal, tr("Должи"));
+	model->setHeaderData( 4, Qt::Horizontal, tr("Побарува"));
+	model->setHeaderData( 5, Qt::Horizontal, tr("Салдо"));
 
 	ui.tableView->setModel(model);
     header = new QHeaderView(Qt::Horizontal, this);
@@ -212,12 +212,12 @@ void QFinAnalitKomintentiWidget::lista_detail(const QString& nameSearch)
 	QSqlQuery query(temp);
 
 	model2 = new QStandardItemModel(r,c);
-	model2->setHeaderData( 0, Qt::Horizontal, trUtf8("Док.Ид."));
-	model2->setHeaderData( 1, Qt::Horizontal, trUtf8("Вид на документ"));
-	model2->setHeaderData( 2, Qt::Horizontal, trUtf8("Датум"));
-	model2->setHeaderData( 3, Qt::Horizontal, trUtf8("Должи "));
-	model2->setHeaderData( 4, Qt::Horizontal, trUtf8("Побарува"));
-	model2->setHeaderData( 5, Qt::Horizontal, trUtf8("Салдо"));
+	model2->setHeaderData( 0, Qt::Horizontal, tr("Док.Ид."));
+	model2->setHeaderData( 1, Qt::Horizontal, tr("Вид на документ"));
+	model2->setHeaderData( 2, Qt::Horizontal, tr("Датум"));
+	model2->setHeaderData( 3, Qt::Horizontal, tr("Должи "));
+	model2->setHeaderData( 4, Qt::Horizontal, tr("Побарува"));
+	model2->setHeaderData( 5, Qt::Horizontal, tr("Салдо"));
     ui.tableView_2->setModel(model2);
 	header2 = new QHeaderView(Qt::Horizontal, this);
     header2->setSectionsClickable(true);
@@ -263,7 +263,7 @@ void QFinAnalitKomintentiWidget::lista_detail(const QString& nameSearch)
 		{
 			case 20 : itemFinData.pobaruva = iznos;
 					  itemFinData.dolzi = 0.f;
-					  itemFinData.vidDok = trUtf8("ПРИЕМНИЦА");
+					  itemFinData.vidDok = tr("ПРИЕМНИЦА");
 
 					  itemFinData.vidDok_Detail = 
 					  m_priemnici_helper.getTipDokumentFromPriemnica(query.value(0).toString()) + " "+ 
@@ -273,19 +273,19 @@ void QFinAnalitKomintentiWidget::lista_detail(const QString& nameSearch)
 
 			case 40 : itemFinData.dolzi = iznos;
 					  itemFinData.pobaruva = 0.f;
-					  itemFinData.vidDok = trUtf8("ИЗЛЕЗНА ФАКТУРА");
+					  itemFinData.vidDok = tr("ИЗЛЕЗНА ФАКТУРА");
 					  listFinData.push_back(itemFinData);
 					  break;
 
 			case 60 : itemFinData.dolzi = iznos;
 				itemFinData.pobaruva = 0.f;
-				itemFinData.vidDok = trUtf8("ИСПРАТНИЦА");
+				itemFinData.vidDok = tr("ИСПРАТНИЦА");
 				listFinData.push_back(itemFinData);
 				break;
 
 			case 25 : itemFinData.pobaruva = iznos;
      				  itemFinData.dolzi = 0.f;
-					  itemFinData.vidDok = trUtf8("ПОВРАТНИЦА");
+					  itemFinData.vidDok = tr("ПОВРАТНИЦА");
 					  listFinData.push_back(itemFinData);
 					  break;
 		}
@@ -313,7 +313,7 @@ void QFinAnalitKomintentiWidget::lista_detail(const QString& nameSearch)
 		itemFinData2.datum = query2.value(2).toDateTime();
 		itemFinData2.pobaruva = query2.value(3).toFloat();
 		itemFinData2.dolzi = query2.value(4).toFloat();
-		itemFinData2.vidDok = trUtf8("ИЗВОД");
+		itemFinData2.vidDok = tr("ИЗВОД");
 		listFinData.push_back(itemFinData2);
 	}
 	std::sort (listFinData.begin(), listFinData.end(), sortFunction); // 12 32 45 71(26 33 53 80)
@@ -433,7 +433,7 @@ void QFinAnalitKomintentiWidget::selectionChanged(QModelIndex modelX, QModelInde
     m_selectedText = model->item(i, 0) ? model->item(i, 0)->text():"";
     m_selectedTextName = model->item(i, 2) ? model->item(i, 2)->text():"";
     m_selectedTextNameSaldo = model->item(i, 5) ? model->item(i, 5)->text():"";
-	ui.label_7->setText(trUtf8("Финансова Аналитика за коминтент: ") + m_selectedTextName);
+	ui.label_7->setText(tr("Финансова Аналитика за коминтент: ") + m_selectedTextName);
 	ui.lineEdit_7->setText(model->item(i, 3)->text());
 	ui.lineEdit_6->setText(model->item(i, 4)->text());
 	ui.lineEdit_5->setText(model->item(i, 5)->text());

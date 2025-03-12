@@ -1,7 +1,7 @@
 #include "qizjavalista.h"
 #include <QSqlQuery>
 #include <QSqlRecord>
-#include <QDesktopWidget>
+#include <QScreen>
 #include "chelperclass.h"
 
 
@@ -11,8 +11,8 @@ QIzjavaLista::QIzjavaLista(QWidget *parent)
 	,m_row(0)
 {
 	ui.setupUi(this);
-	QDesktopWidget desk;
-	QRect deskRect = desk.screenGeometry();
+    QScreen *desk = QGuiApplication::primaryScreen();
+    QRect deskRect = desk->geometry();  // Get screen geometry
 	ui.layoutWidget->setFixedWidth(deskRect.width() - 250);
 	ui.layoutWidget->setFixedHeight(deskRect.height()-200);
 
@@ -59,18 +59,18 @@ void QIzjavaLista::lista(const QString& nameSearch)
     ;
     QSqlQuery query(temp);
     model = new QStandardItemModel(r,c);
-    model->setHeaderData( 0, Qt::Horizontal, trUtf8("Id."));
-    model->setHeaderData( 1, Qt::Horizontal, trUtf8("Бр."));
-    model->setHeaderData( 2, Qt::Horizontal, trUtf8("Датум"));
-	model->setHeaderData( 3, Qt::Horizontal, trUtf8("Назив"));
-    model->setHeaderData( 4, Qt::Horizontal, trUtf8("Адреса"));
-    model->setHeaderData( 5, Qt::Horizontal, trUtf8("Град"));
-	model->setHeaderData( 6, Qt::Horizontal, trUtf8("ЕМБГ"));
-	model->setHeaderData( 7, Qt::Horizontal, trUtf8("Лична карта"));
-	model->setHeaderData( 8, Qt::Horizontal, trUtf8("Банка Депонент"));
-	model->setHeaderData( 9, Qt::Horizontal, trUtf8("Жиро сметка"));
-	model->setHeaderData( 10, Qt::Horizontal, trUtf8("Телефон"));
-	model->setHeaderData( 11, Qt::Horizontal, trUtf8("Мобилен"));
+    model->setHeaderData( 0, Qt::Horizontal, tr("Id."));
+    model->setHeaderData( 1, Qt::Horizontal, tr("Бр."));
+    model->setHeaderData( 2, Qt::Horizontal, tr("Датум"));
+	model->setHeaderData( 3, Qt::Horizontal, tr("Назив"));
+    model->setHeaderData( 4, Qt::Horizontal, tr("Адреса"));
+    model->setHeaderData( 5, Qt::Horizontal, tr("Град"));
+	model->setHeaderData( 6, Qt::Horizontal, tr("ЕМБГ"));
+	model->setHeaderData( 7, Qt::Horizontal, tr("Лична карта"));
+	model->setHeaderData( 8, Qt::Horizontal, tr("Банка Депонент"));
+	model->setHeaderData( 9, Qt::Horizontal, tr("Жиро сметка"));
+	model->setHeaderData( 10, Qt::Horizontal, tr("Телефон"));
+	model->setHeaderData( 11, Qt::Horizontal, tr("Мобилен"));
 
 	ui.tableView->setModel(model);
     header = new QHeaderView(Qt::Horizontal, this);
@@ -167,17 +167,17 @@ void QIzjavaLista::lista_detail(const QString& nameSearch)
     QSqlQuery query(temp);
 
     model2 = new QStandardItemModel(r,c);
-    model2->setHeaderData( 0, Qt::Horizontal, trUtf8("Ид."));
-    model2->setHeaderData( 1, Qt::Horizontal, trUtf8("Шифра"));
-    model2->setHeaderData( 2, Qt::Horizontal, trUtf8("Артикал"));
-    model2->setHeaderData( 3, Qt::Horizontal, trUtf8("Кол."));
-    model2->setHeaderData( 4, Qt::Horizontal, trUtf8("Едм."));
-    model2->setHeaderData( 5, Qt::Horizontal, trUtf8("Цена"));
-	model2->setHeaderData( 6, Qt::Horizontal, trUtf8("Рабат %"));
-	model2->setHeaderData( 7, Qt::Horizontal, trUtf8("Цена со Рабат"));
-	model2->setHeaderData( 8, Qt::Horizontal, trUtf8("ДДВ %"));
-	model2->setHeaderData( 9, Qt::Horizontal, trUtf8("ДДВ Износ"));
-	model2->setHeaderData( 10, Qt::Horizontal, trUtf8("Износ со ДДВ"));
+    model2->setHeaderData( 0, Qt::Horizontal, tr("Ид."));
+    model2->setHeaderData( 1, Qt::Horizontal, tr("Шифра"));
+    model2->setHeaderData( 2, Qt::Horizontal, tr("Артикал"));
+    model2->setHeaderData( 3, Qt::Horizontal, tr("Кол."));
+    model2->setHeaderData( 4, Qt::Horizontal, tr("Едм."));
+    model2->setHeaderData( 5, Qt::Horizontal, tr("Цена"));
+	model2->setHeaderData( 6, Qt::Horizontal, tr("Рабат %"));
+	model2->setHeaderData( 7, Qt::Horizontal, tr("Цена со Рабат"));
+	model2->setHeaderData( 8, Qt::Horizontal, tr("ДДВ %"));
+	model2->setHeaderData( 9, Qt::Horizontal, tr("ДДВ Износ"));
+	model2->setHeaderData( 10, Qt::Horizontal, tr("Износ со ДДВ"));
 
 	ui.tableView_2->setModel(model2);
     header2 = new QHeaderView(Qt::Horizontal, this);

@@ -1,6 +1,6 @@
 #include "qizvestaiwidget.h"
 #include <QPainter>
-#include <QDesktopWidget>
+#include <QScreen>
 #include <QMouseevent>
 #include "chelperclass.h"
 #include <QSqlQuery>
@@ -17,7 +17,7 @@ QIzvestaiWidget::QIzvestaiWidget(QWidget *parent)
 	,imag(0)
 {
 	ui.setupUi(this);
-    setGeometry(0, 0, qApp->desktop()->geometry().width() - 210 , qApp->desktop()->geometry().height() - 155);
+    setGeometry(0, 0, QGuiApplication::primaryScreen()->geometry().width() - 210 , QGuiApplication::primaryScreen()->geometry().height() - 155);
 	setGeometry(0, 0, 367 * ww , 1600);
 	setMouseTracking(true);
 	imag = new QImage(367 * ww , 1600, QImage::Format_ARGB32);
@@ -66,19 +66,19 @@ void QIzvestaiWidget::mouseMoveEvent(QMouseEvent * event)
 				+ naziv +
 				"</h3>"
 				"<p style=\"margin-left: 20px\" style=\"margin-right: 20px\">"
-				+ trUtf8("Датум: ") + faktData +
+				+ tr("Датум: ") + faktData +
 				"</p>"
 				"<p style=\"margin-left: 20px\" style=\"margin-right: 20px\">"
-				+ trUtf8("Валута: ") + Valuta +
+				+ tr("Валута: ") + Valuta +
 				"</p>"
 				"<p style=\"margin-left: 20px\" style=\"margin-right: 20px\">"
-				+ trUtf8("Вк.Износ: ") + QString::number( iznos, 'f', 2 ) +
+				+ tr("Вк.Износ: ") + QString::number( iznos, 'f', 2 ) +
 				"</p>"
 				"<p style=\"margin-left: 20px\" style=\"margin-right: 20px\">"
-				+ trUtf8("Платено: ") + QString::number( plateno, 'f', 2 ) +
+				+ tr("Платено: ") + QString::number( plateno, 'f', 2 ) +
 				"</p>"
 				"<h3 style=\"margin-left: 20px\" style=\"margin-right: 20px\">"
-				+ trUtf8("Останато: ") + QString::number( ostanato, 'f', 2 ) +
+				+ tr("Останато: ") + QString::number( ostanato, 'f', 2 ) +
 				"</h3>";
 
 			
@@ -162,13 +162,13 @@ void QIzvestaiWidget::createLagerList()
 		b->t = textString + " [" + QString::number((int)(ss * 100), 10) + " %]";
 		b->tt = textString + 
 		"<p style=\"margin-left: 20px\">"
-		+ trUtf8("Влезна количина: ") + QString::number( vkVlezKol ) +
+		+ tr("Влезна количина: ") + QString::number( vkVlezKol ) +
 		"</p>"
 		"<p style=\"margin-left: 20px\">"
-		+ trUtf8("Излезна количина: ") + QString::number( vkIzlezKol ) +
+		+ tr("Излезна количина: ") + QString::number( vkIzlezKol ) +
 		"</p>"
 		"<p style=\"margin-left: 20px\">"
-		+ trUtf8("Салдо: ") + QString::number( vkSaldo ) +
+		+ tr("Салдо: ") + QString::number( vkSaldo ) +
 		"</p>";
 
 		b->selected = false;
@@ -221,7 +221,7 @@ void QIzvestaiWidget::createTimeLine(QPainter &painter, int ww)
 		{
 		case 0: 
 			painter.drawLine(QPoint(10 + ww * (i - dayOffset), 10), QPoint(10 + ww * (i - dayOffset), 1600));
-			textDay = trUtf8("Н");
+			textDay = tr("Н");
 			b.setColor(Qt::red);
 			painter.setPen(b);
 			painter.drawText(QRect(20 + ww * (i - dayOffset), 23, 40, 30), textDay);
@@ -231,7 +231,7 @@ void QIzvestaiWidget::createTimeLine(QPainter &painter, int ww)
 			break;
 		case 1: 
 			painter.drawLine(QPoint(10 + ww * (i - dayOffset), 10), QPoint(10 + ww * (i - dayOffset), 1600));
-			textDay = trUtf8("П");
+			textDay = tr("П");
 			b.setColor(Qt::darkGreen);
 			painter.setPen(b);
 			painter.drawText(QRect(20 + ww * (i - dayOffset), 23, 40, 30), textDay);
@@ -241,14 +241,14 @@ void QIzvestaiWidget::createTimeLine(QPainter &painter, int ww)
 			d1.getDate(&god, &mes, &den);
 			b.setColor(Qt::darkBlue);
 			painter.setPen(b);
-			painter.drawText(QRect(13 + ww * (i - dayOffset), 10, 120, 30), QString::number(den) + "." + QDate::shortMonthName(mes) + "." + QString::number(god));
+            painter.drawText(QRect(13 + ww * (i - dayOffset), 10, 120, 30), QString::number(den) + "." + QLocale().monthName(mes, QLocale::ShortFormat) + "." + QString::number(god));
 			b.setColor(Qt::black);
 			painter.setPen(b);
 
 			break;
 		case 2: 
 			painter.drawLine(QPoint(10 + ww * (i - dayOffset), 23), QPoint(10 + ww * (i - dayOffset), 1600));
-			textDay = trUtf8("В");
+			textDay = tr("В");
 			b.setColor(Qt::darkGreen);
 			painter.setPen(b);
 			painter.drawText(QRect(20 + ww * (i - dayOffset), 23, 40, 30), textDay);
@@ -258,7 +258,7 @@ void QIzvestaiWidget::createTimeLine(QPainter &painter, int ww)
 			break;
 		case 3: 
 			painter.drawLine(QPoint(10 + ww * (i - dayOffset), 23), QPoint(10 + ww * (i - dayOffset), 1600));
-			textDay = trUtf8("С");
+			textDay = tr("С");
 			b.setColor(Qt::darkGreen);
 			painter.setPen(b);
 			painter.drawText(QRect(20 + ww * (i - dayOffset), 23, 40, 30), textDay);
@@ -268,7 +268,7 @@ void QIzvestaiWidget::createTimeLine(QPainter &painter, int ww)
 			break;
 		case 4: 
 			painter.drawLine(QPoint(10 + ww * (i - dayOffset), 23), QPoint(10 + ww * (i - dayOffset), 1600));
-			textDay = trUtf8("Ч");
+			textDay = tr("Ч");
 			b.setColor(Qt::darkGreen);
 			painter.setPen(b);
 			painter.drawText(QRect(20 + ww * (i - dayOffset), 23, 40, 30), textDay);
@@ -278,7 +278,7 @@ void QIzvestaiWidget::createTimeLine(QPainter &painter, int ww)
 			break;
 		case 5: 
 			painter.drawLine(QPoint(10 + ww * (i - dayOffset), 23), QPoint(10 + ww * (i - dayOffset), 1600));
-			textDay = trUtf8("П");
+			textDay = tr("П");
 			b.setColor(Qt::darkGreen);
 			painter.setPen(b);
 			painter.drawText(QRect(20 + ww * (i - dayOffset), 23, 40, 30), textDay);
@@ -288,7 +288,7 @@ void QIzvestaiWidget::createTimeLine(QPainter &painter, int ww)
 			break;
 		case 6: 
 			painter.drawLine(QPoint(10 + ww * (i - dayOffset), 10), QPoint(10 + ww * (i - dayOffset), 1600));
-			textDay = trUtf8("С");
+			textDay = tr("С");
 			b.setColor(Qt::red);
 			painter.setPen(b);
 			painter.drawText(QRect(20 + ww * (i - dayOffset), 23, 40, 30), textDay);
@@ -304,7 +304,7 @@ void QIzvestaiWidget::createTimeLine(QPainter &painter, int ww)
 	painter.drawLine(QPoint(10, 36), QPoint(367 * ww, 36));
 	
 //	QRect r(10, 10, 300, 20);
-	//painter.drawText(r, Qt::AlignRight, trUtf8("Лагер Листа"));
+	//painter.drawText(r, Qt::AlignRight, tr("Лагер Листа"));
 }
 
 

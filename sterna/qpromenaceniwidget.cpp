@@ -2,7 +2,7 @@
 #include <QSqlQuery>
 #include <QSqlRecord>
 #include <QSqlError>
-#include <QDesktopWidget>
+#include <QScreen>
 #include "chelperclass.h"
 #include <QClipboard>
 
@@ -12,8 +12,8 @@ QPromenaCeniWidget::QPromenaCeniWidget(QWidget *parent)
     ,m_selectedTextName("")
 {
 	ui.setupUi(this);
-	QDesktopWidget desk;
-	QRect deskRect = desk.screenGeometry();
+    QScreen *desk = QGuiApplication::primaryScreen();
+    QRect deskRect = desk->geometry();  // Get screen geometry
 	ui.layoutWidget->setFixedWidth(deskRect.width() - 250);
 	ui.layoutWidget->setFixedHeight(deskRect.height()-200);
     ui.tableView->setSelectionMode(QAbstractItemView::SingleSelection);
@@ -56,19 +56,19 @@ void QPromenaCeniWidget::lista(const QString& nameSearch)
 	QSqlQuery query(temp);
     QSqlError err = query.lastError(); 
     model = new QStandardItemModel(r, c);
-    model->setHeaderData( 0, Qt::Horizontal, trUtf8("ID\n"));
-    model->setHeaderData( 1, Qt::Horizontal, trUtf8("Шифра\n"));
-    model->setHeaderData( 2, Qt::Horizontal, trUtf8("Артикал\n"));
-    model->setHeaderData( 3, Qt::Horizontal, trUtf8("Един.\nмера"));
-	model->setHeaderData( 4, Qt::Horizontal, trUtf8("Количина\n"));
-	model->setHeaderData( 5, Qt::Horizontal, trUtf8("Набавна Цена\nсо ДДВ"));
-    model->setHeaderData( 6, Qt::Horizontal, trUtf8("Стара продажна\nЦена со ДДВ"));
-	model->setHeaderData( 7, Qt::Horizontal, trUtf8("Нова продажна\nЦена со ДДВ"));
-	model->setHeaderData( 8, Qt::Horizontal, trUtf8("Задолжи\n"));
-	model->setHeaderData( 9, Qt::Horizontal, trUtf8("Одобри\n"));
-	model->setHeaderData( 10, Qt::Horizontal, trUtf8("Коминтент\n"));
-	model->setHeaderData( 11, Qt::Horizontal, trUtf8("Документ број\n"));
-	model->setHeaderData( 12, Qt::Horizontal, trUtf8("Тип Документ\n"));
+    model->setHeaderData( 0, Qt::Horizontal, tr("ID\n"));
+    model->setHeaderData( 1, Qt::Horizontal, tr("Шифра\n"));
+    model->setHeaderData( 2, Qt::Horizontal, tr("Артикал\n"));
+    model->setHeaderData( 3, Qt::Horizontal, tr("Един.\nмера"));
+	model->setHeaderData( 4, Qt::Horizontal, tr("Количина\n"));
+	model->setHeaderData( 5, Qt::Horizontal, tr("Набавна Цена\nсо ДДВ"));
+    model->setHeaderData( 6, Qt::Horizontal, tr("Стара продажна\nЦена со ДДВ"));
+	model->setHeaderData( 7, Qt::Horizontal, tr("Нова продажна\nЦена со ДДВ"));
+	model->setHeaderData( 8, Qt::Horizontal, tr("Задолжи\n"));
+	model->setHeaderData( 9, Qt::Horizontal, tr("Одобри\n"));
+	model->setHeaderData( 10, Qt::Horizontal, tr("Коминтент\n"));
+	model->setHeaderData( 11, Qt::Horizontal, tr("Документ број\n"));
+	model->setHeaderData( 12, Qt::Horizontal, tr("Тип Документ\n"));
 
 	ui.tableView->setModel(model);
     header = new QHeaderView(Qt::Horizontal, this);
@@ -187,8 +187,8 @@ void QPromenaCeniWidget::lista(const QString& nameSearch)
 			{
 				switch(query.value(12).toInt())
 				{
-				case 40 : temp = trUtf8("ФАКТУРА");break;
-				case 48 : temp = trUtf8("СМЕТКА");break;
+				case 40 : temp = tr("ФАКТУРА");break;
+				case 48 : temp = tr("СМЕТКА");break;
 				}
 				item = new QStandardItem(temp);
 				item->setTextAlignment(Qt::AlignLeft);

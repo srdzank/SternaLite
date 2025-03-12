@@ -7,7 +7,7 @@
 #include "chelperclass.h"
 #include <QLocale>
 #include "sterna.h"
-#include <QDesktopWidget>
+#include <QScreen>
 #include "qfiscalform.h"
 #include "xx.h"
 
@@ -52,17 +52,17 @@ QIzlezniSmetkiVnes::QIzlezniSmetkiVnes(QWidget *parent)
 
 
 	model = new QStandardItemModel(0,11);
-	model->setHeaderData( 0, Qt::Horizontal, trUtf8("Ид."));
-	model->setHeaderData( 1, Qt::Horizontal, trUtf8("Шифра"));
-	model->setHeaderData( 2, Qt::Horizontal, trUtf8("Артикал"));
-	model->setHeaderData( 3, Qt::Horizontal, trUtf8("Едм."));
-	model->setHeaderData( 4, Qt::Horizontal, trUtf8("ДДВ (%)"));
-	model->setHeaderData( 5, Qt::Horizontal, trUtf8("Количина"));
-	model->setHeaderData( 6, Qt::Horizontal, trUtf8("Цена"));
-	model->setHeaderData( 7, Qt::Horizontal, trUtf8("Износ"));
-	model->setHeaderData( 8, Qt::Horizontal, trUtf8(""));
-	model->setHeaderData( 9, Qt::Horizontal, trUtf8(""));
-	model->setHeaderData( 10, Qt::Horizontal, trUtf8(""));
+	model->setHeaderData( 0, Qt::Horizontal, tr("Ид."));
+	model->setHeaderData( 1, Qt::Horizontal, tr("Шифра"));
+	model->setHeaderData( 2, Qt::Horizontal, tr("Артикал"));
+	model->setHeaderData( 3, Qt::Horizontal, tr("Едм."));
+	model->setHeaderData( 4, Qt::Horizontal, tr("ДДВ (%)"));
+	model->setHeaderData( 5, Qt::Horizontal, tr("Количина"));
+	model->setHeaderData( 6, Qt::Horizontal, tr("Цена"));
+	model->setHeaderData( 7, Qt::Horizontal, tr("Износ"));
+	model->setHeaderData( 8, Qt::Horizontal, tr(""));
+	model->setHeaderData( 9, Qt::Horizontal, tr(""));
+	model->setHeaderData( 10, Qt::Horizontal, tr(""));
 
     ui.tableView->setModel(model);
     header = new QHeaderView(Qt::Horizontal, this);
@@ -165,7 +165,7 @@ void QIzlezniSmetkiVnes::on_pushButton_3_clicked()
 	if (!hclass.isArtikliExists(ui.lineEdit_2->text()))
 	{
 		QMessageBox msgBox;
-		msgBox.setText(trUtf8("Податокот за артикал е невалиден\nОдбери артикал од листата на артикли!"));
+		msgBox.setText(tr("Податокот за артикал е невалиден\nОдбери артикал од листата на артикли!"));
 		msgBox.setStandardButtons(QMessageBox::Ok);
 		msgBox.setDefaultButton(QMessageBox::Ok);
 		msgBox.exec();
@@ -202,7 +202,7 @@ void QIzlezniSmetkiVnes::on_pushButton_3_clicked()
 
     int row = model->rowCount();
 
-	model->setHeaderData( 0, Qt::Horizontal, trUtf8("Ид."));
+	model->setHeaderData( 0, Qt::Horizontal, tr("Ид."));
 	QStandardItem *item = new QStandardItem(country1);
     item->setEditable(false);
     ui.tableView->setRowHeight(row, 18);
@@ -210,28 +210,28 @@ void QIzlezniSmetkiVnes::on_pushButton_3_clicked()
     model->setItem(row, 0, item);
 
 
-	model->setHeaderData( 1, Qt::Horizontal, trUtf8("Шифра"));
+	model->setHeaderData( 1, Qt::Horizontal, tr("Шифра"));
 	item = new QStandardItem(country2);
     item->setEditable(false);
     ui.tableView->setRowHeight(row, 18);
     ui.tableView->setColumnWidth(1, 100);
     model->setItem(row, 1, item);
 
-	model->setHeaderData( 2, Qt::Horizontal, trUtf8("Артикал"));
+	model->setHeaderData( 2, Qt::Horizontal, tr("Артикал"));
 	item = new QStandardItem(country3);
     item->setEditable(false);
     ui.tableView->setRowHeight(row, 18);
     ui.tableView->setColumnWidth(2, 250);
     model->setItem(row, 2, item);
 
-	model->setHeaderData( 3, Qt::Horizontal, trUtf8("Едм."));
+	model->setHeaderData( 3, Qt::Horizontal, tr("Едм."));
 	item = new QStandardItem(country4);
     item->setEditable(false);
     ui.tableView->setRowHeight(row, 18);
     ui.tableView->setColumnWidth(2, 250);
     model->setItem(row, 3, item);
 
-	model->setHeaderData( 4, Qt::Horizontal, trUtf8("ДДВ (%)"));
+	model->setHeaderData( 4, Qt::Horizontal, tr("ДДВ (%)"));
     item = new QStandardItem(loc.toString(loc.toFloat(country5), 'f', 2));
     item->setTextAlignment(Qt::AlignRight);
     item->setEditable(false);
@@ -239,7 +239,7 @@ void QIzlezniSmetkiVnes::on_pushButton_3_clicked()
     ui.tableView->setColumnWidth(2, 250);
     model->setItem(row, 4, item);
 
-	model->setHeaderData( 5, Qt::Horizontal, trUtf8("Количина"));
+	model->setHeaderData( 5, Qt::Horizontal, tr("Количина"));
 	item = new QStandardItem(loc.toString(loc.toFloat(ui.lineEdit_4->text()), 'f', 2));
     item->setTextAlignment(Qt::AlignRight);
     item->setEditable(false);
@@ -247,7 +247,7 @@ void QIzlezniSmetkiVnes::on_pushButton_3_clicked()
     ui.tableView->setColumnWidth(6, 80);
     model->setItem(row, 5, item);
 
-	model->setHeaderData( 6, Qt::Horizontal, trUtf8("Цена"));
+	model->setHeaderData( 6, Qt::Horizontal, tr("Цена"));
 	item = new QStandardItem(loc.toString(loc.toFloat(ui.lineEdit_3->text()), 'f', 2));
     item->setTextAlignment(Qt::AlignRight);
     item->setEditable(false);
@@ -255,7 +255,7 @@ void QIzlezniSmetkiVnes::on_pushButton_3_clicked()
     ui.tableView->setColumnWidth(7, 80);
     model->setItem(row, 6, item);
 
-	model->setHeaderData( 7, Qt::Horizontal, trUtf8("Рабат"));
+	model->setHeaderData( 7, Qt::Horizontal, tr("Рабат"));
 	item = new QStandardItem(loc.toString(0.f, 'f', 2));
     item->setTextAlignment(Qt::AlignRight);
     item->setEditable(false);
@@ -264,7 +264,7 @@ void QIzlezniSmetkiVnes::on_pushButton_3_clicked()
 	model->setItem(row, 7, item);
 	
 
-	model->setHeaderData( 8, Qt::Horizontal, trUtf8("Износ"));
+	model->setHeaderData( 8, Qt::Horizontal, tr("Износ"));
 	double iznos = (loc.toFloat(ui.lineEdit_3->text()) * 
 		loc.toFloat(ui.lineEdit_4->text()) * 
 		(1 - 0.f/100));
@@ -358,8 +358,8 @@ void QIzlezniSmetkiVnes::on_pushButton_4_clicked()
 {
 
 	QMessageBox msgBox;
-	msgBox.setText(trUtf8("СМЕТКАТА ке биде Внесена"));
-	msgBox.setInformativeText(trUtf8("Одбери OK за да потврдиш."));
+	msgBox.setText(tr("СМЕТКАТА ке биде Внесена"));
+	msgBox.setInformativeText(tr("Одбери OK за да потврдиш."));
 	msgBox.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
 	msgBox.setDefaultButton(QMessageBox::Ok);
 	int ret = msgBox.exec();
@@ -403,7 +403,7 @@ void QIzlezniSmetkiVnes::on_pushButton_4_clicked()
 		query.bindValue(":a7", "0");	
 		query.bindValue(":a8", "");	
 		query.bindValue(":a9", user_id);	
-		query.bindValue(":a10", trUtf8("отворена сметка"));	
+		query.bindValue(":a10", tr("отворена сметка"));	
 		query.exec();
 
 		query.clear();
@@ -458,7 +458,7 @@ void QIzlezniSmetkiVnes::on_pushButton_4_clicked()
 		}
 
 // 		QMessageBox msgBox;
-// 		msgBox.setText(trUtf8("Сметката е успешно внесена."));
+// 		msgBox.setText(tr("Сметката е успешно внесена."));
 // 		msgBox.setStandardButtons(QMessageBox::Ok);
 // 		msgBox.setDefaultButton(QMessageBox::Ok);
 // 		msgBox.exec();
@@ -469,8 +469,8 @@ void QIzlezniSmetkiVnes::on_pushButton_4_clicked()
 		{
 			//call fiscal printer
 
-			msgBox.setText(trUtf8("Печати ФИСКАЛНА СМЕТКАТА !!!"));
-			msgBox.setInformativeText(trUtf8("Одбери OK за да потврдиш."));
+			msgBox.setText(tr("Печати ФИСКАЛНА СМЕТКАТА !!!"));
+			msgBox.setInformativeText(tr("Одбери OK за да потврдиш."));
 			msgBox.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
 			msgBox.setDefaultButton(QMessageBox::Ok);
 			int ret = msgBox.exec();
@@ -478,7 +478,7 @@ void QIzlezniSmetkiVnes::on_pushButton_4_clicked()
 			{
 				CHelperClass chlp(this);
 				int  statErr = (int)chlp.printFiscal(artList);
-				QString errText = QString(statErr);
+                QString errText = QString::number(statErr);
 				QString info5 = chlp.checkFiscal();
 				if (!info5.contains("F"))
 				{
@@ -487,9 +487,9 @@ void QIzlezniSmetkiVnes::on_pushButton_4_clicked()
 					query1.clear();
 					query1.prepare("update dokumenti set fisc_platen_iznos = :a0, tip_dokument = :a1 where dok_id=:aid and dok_tip = 48");
 					query1.bindValue(":a0", platenIznos);	
-					query1.bindValue(":a1", trUtf8("фискална сметка"));	
+					query1.bindValue(":a1", tr("фискална сметка"));	
 					query1.bindValue(":aid", m_id);	
-					msgBox.setText(trUtf8("ФИСКАЛНАТА СМЕТКА\nЕ ОТПЕЧАТЕНА  !!!"));
+					msgBox.setText(tr("ФИСКАЛНАТА СМЕТКА\nЕ ОТПЕЧАТЕНА  !!!"));
 					msgBox.setInformativeText(info5);
 					msgBox.setStandardButtons(QMessageBox::Cancel);
 					msgBox.setDefaultButton(QMessageBox::Cancel);
@@ -505,9 +505,9 @@ void QIzlezniSmetkiVnes::on_pushButton_4_clicked()
 					query1.clear();
 					query1.prepare("update dokumenti set fisc_platen_iznos = :a0, tip_dokument = :a1 where dok_id=:aid and dok_tip = 48");
 					query1.bindValue(":a0", platenIznos);	
-					query1.bindValue(":a1", trUtf8("грешка -неиспечатена фискална сметка"));	
+					query1.bindValue(":a1", tr("грешка -неиспечатена фискална сметка"));	
 					query1.bindValue(":aid", m_id);	
-					msgBox.setText(trUtf8("ФИСКАЛНАТА СМЕТКА\nНЕ Е ОТПЕЧАТЕНА  !!!"));
+					msgBox.setText(tr("ФИСКАЛНАТА СМЕТКА\nНЕ Е ОТПЕЧАТЕНА  !!!"));
 					msgBox.setInformativeText(info5);
 					msgBox.setStandardButtons(QMessageBox::Cancel);
 					msgBox.setDefaultButton(QMessageBox::Cancel);
@@ -536,7 +536,7 @@ void QIzlezniSmetkiVnes::on_pushButton_4_clicked()
 		query.exec();
 
 		QMessageBox msgBox;
-		msgBox.setText(trUtf8("Сметката не е внесена !!!."));
+		msgBox.setText(tr("Сметката не е внесена !!!."));
 		msgBox.setStandardButtons(QMessageBox::Ok);
 		msgBox.setDefaultButton(QMessageBox::Ok);
 		msgBox.exec();
@@ -610,7 +610,7 @@ void QIzlezniSmetkiVnes::on_plineEdit4_Pressed()
     {
 
         QMessageBox msgBox;
-        msgBox.setText(trUtf8("Внеси количина."));
+        msgBox.setText(tr("Внеси количина."));
         msgBox.setStandardButtons(QMessageBox::Ok);
         msgBox.setDefaultButton(QMessageBox::Ok);
         msgBox.exec();

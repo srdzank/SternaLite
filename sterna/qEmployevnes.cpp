@@ -5,8 +5,8 @@ QEmployeVnes::QEmployeVnes(QWidget *parent)
 	: QMyBaseFormWidget(parent)
 {
 	ui.setupUi(this);
-	QDesktopWidget desk;
-	QRect deskRect = desk.screenGeometry();
+    QScreen *desk = QGuiApplication::primaryScreen();
+    QRect deskRect = desk->geometry();  // Get screen geometry
 	ui.layoutWidget->setFixedWidth(deskRect.width() - 250);
 	ui.layoutWidget->setFixedHeight(deskRect.height()-200);
 
@@ -39,8 +39,8 @@ void QEmployeVnes::pressF9()
 void QEmployeVnes::on_pushButton_clicked()
 {
 	QMessageBox msgBox;
-	msgBox.setText(trUtf8("Записот ке биде внесен"));
-	msgBox.setInformativeText(trUtf8("Дали сакате да ги сочувате промените"));
+	msgBox.setText(tr("Записот ке биде внесен"));
+	msgBox.setInformativeText(tr("Дали сакате да ги сочувате промените"));
 	msgBox.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
 	msgBox.setDefaultButton(QMessageBox::Ok);
 	int ret = msgBox.exec();
