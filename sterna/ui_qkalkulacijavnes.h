@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'qkalkulacijavnes.ui'
 **
-** Created by: Qt User Interface Compiler version 6.8.2
+** Created by: Qt User Interface Compiler version 6.9.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -145,10 +145,10 @@ public:
         tableView->setObjectName("tableView");
         QPalette palette;
         QBrush brush(QColor(215, 215, 215, 255));
-        brush.setStyle(Qt::SolidPattern);
-        palette.setBrush(QPalette::Active, QPalette::AlternateBase, brush);
-        palette.setBrush(QPalette::Inactive, QPalette::AlternateBase, brush);
-        palette.setBrush(QPalette::Disabled, QPalette::AlternateBase, brush);
+        brush.setStyle(Qt::BrushStyle::SolidPattern);
+        palette.setBrush(QPalette::ColorGroup::Active, QPalette::ColorRole::AlternateBase, brush);
+        palette.setBrush(QPalette::ColorGroup::Inactive, QPalette::ColorRole::AlternateBase, brush);
+        palette.setBrush(QPalette::ColorGroup::Disabled, QPalette::ColorRole::AlternateBase, brush);
         tableView->setPalette(palette);
         tableView->setFont(font);
         tableView->setAlternatingRowColors(true);

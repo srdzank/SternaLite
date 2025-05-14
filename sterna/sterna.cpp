@@ -15,7 +15,9 @@
 
 // 
 
- #define _demo
+
+#define _dmcreative
+// #define _dеmo
 // #define _juruk_01
 // #define _juruk_02
 // #define _ekolend
@@ -304,6 +306,25 @@ sterna::sterna(QWidget *parent, Qt::WindowFlags flags)
 	moi_fakturiral = "";
 
 #endif 
+
+#ifdef _dmcreative
+    moi_firma_info1 = tr("Дигитал Медиа Креативе ПРО - ДООЕЛ Скопје");
+    moi_firma_info2 = tr("ул.Бриселска бр.23/4-3 ");
+    moi_firma_info3 = tr("1000 Скопје ");
+    moi_firma_tel = tr("тел/факс: +389 78 246 801");
+    moi_firma_email = tr(" e-mail : contact@dmcreative.pro");
+    moi_firma_web = ("http://www.dmcreative.pro");
+    moi_firma_banka1 = tr("НЛБ Тутунска банка АД Скопје: 210074473450193");
+    moi_firma_banka2 = tr("");
+    moi_firma_edb = tr("ДБ. MK4057020551581");
+    moi_logo = ":/sterna/Resources/dmc.png";
+    moi_izjava1 = tr("Изјавувам дека продавам артикли од домашно");
+    moi_izjava2 = tr("потекло кои се во моја сопственост________");
+    moi_direktor = "Горан Димитровски";
+    moi_fakturiral = "";
+
+#endif
+
 
 
 	moi_nozici = ":/sterna/Resources/scissors.png";
@@ -2481,16 +2502,16 @@ void sterna::filePreview(int orient)
     if (orient)
     {
         printer.setPageOrientation(QPageLayout::Landscape);
-        m_pageWidth = printer.pageRect(QPrinter::Point).height();
-        m_pageHeight = printer.pageRect(QPrinter::Point).width();
+        m_pageWidth = printer.pageRect(QPrinter::DevicePixel).height();
+        m_pageHeight = printer.pageRect(QPrinter::DevicePixel).width();
         m_pageHeightScale = static_cast<float>(m_pageWidth) / 4961.0f;
         m_pageWidthScale = static_cast<float>(m_pageHeight) / 7016.0f;
     }
     else
     {
         printer.setPageOrientation(QPageLayout::Portrait);
-        m_pageWidth = printer.pageRect(QPrinter::Point).width();
-        m_pageHeight = printer.pageRect(QPrinter::Point).height();
+        m_pageWidth = printer.pageRect(QPrinter::DevicePixel).width();
+        m_pageHeight = printer.pageRect(QPrinter::DevicePixel).height();
         m_pageWidthScale = static_cast<float>(m_pageWidth) / 4961.0f;
         m_pageHeightScale = static_cast<float>(m_pageHeight) / 7016.0f;
     }
@@ -3413,7 +3434,8 @@ void sterna::drawFakturaMaster(QPrinter *printer, QPainter& painter)
 		painter.drawText(relX(0), relY(20), relX(210), relY(9), Qt::AlignCenter, moi_firma_info2);
 
 		QPixmap image1(moi_logo);
-		painter.drawPixmap(relX(90), relY(30), relX(30), relX(20), image1);
+        float k = ((float)image1.size().height())/((float)image1.size().width());
+        painter.drawPixmap(relX(90), relY(30), relX(45), k*relX(45), image1);
 
 		f.setPointSize(18);
 		painter.setFont(f);
@@ -3458,9 +3480,9 @@ void sterna::drawFakturaMaster(QPrinter *printer, QPainter& painter)
 		f.setBold(false);
 		painter.setFont(f);
 
-		painter.drawText(relX(10), relY(35), relX(60), relY(40), Qt::AlignLeft, moi_firma_banka1);
-		painter.drawText(relX(10), relY(40), relX(60), relY(45), Qt::AlignLeft, moi_firma_banka2);
-		painter.drawText(relX(10), relY(45), relX(60), relY(50), Qt::AlignLeft, moi_firma_edb);
+        painter.drawText(relX(10), relY(35), relX(80), relY(40), Qt::AlignLeft, moi_firma_banka1);
+        painter.drawText(relX(10), relY(40), relX(80), relY(45), Qt::AlignLeft, moi_firma_banka2);
+        painter.drawText(relX(10), relY(45), relX(80), relY(50), Qt::AlignLeft, moi_firma_edb);
 
 		painter.drawRoundedRect(relX(10), relY(90), relX(190), relY(145), relX(2), relY(2), Qt::AbsoluteSize );
 		path.moveTo(relX(10),relY(97)); //rb
