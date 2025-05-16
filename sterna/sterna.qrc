@@ -67,5 +67,6 @@
         <file>Resources/doralek.png</file>
         <file>Resources/jurukov1.png</file>
         <file>Resources/dmc.png</file>
+        <file>Resources/dmc-logo-invoice.png</file>
     </qresource>
 </RCC>
