@@ -22,7 +22,6 @@ QKomintentiLista::QKomintentiLista(QWidget *parent)
 	ui.tableView->setSelectionBehavior(QAbstractItemView::SelectRows);
 	ui.tableView->setSortingEnabled(true);
 	connect(ui.tableView->horizontalHeader(),SIGNAL(sectionClicked(int)), ui.tableView, SLOT(sortByColumn(int)));
-
 	ui.lineEdit->setFocus();
 }
 

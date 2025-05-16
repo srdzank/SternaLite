@@ -24,6 +24,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 CONFIG += c++11
 
+
 HEADERS += ./resource1.h \
     ./xx.h \
     ./quserform.h \

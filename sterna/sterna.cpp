@@ -356,6 +356,8 @@ sterna::sterna(QWidget *parent, Qt::WindowFlags flags)
 	readSettingsFaktura();
 	readSettingsSmetka();
 
+    Singleton *s = Singleton::Instance();
+    s->setScale(1.0);
 // 	readSettingsPovratnica();
 // 	readSettingsProFaktura();
 // 	readSettingsLagerLista();

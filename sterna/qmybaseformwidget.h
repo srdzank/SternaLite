@@ -59,6 +59,7 @@ public:
 
     void setCategoryWidget(QWidget * mWidget) { m_Widget = mWidget; }
     QWidget *getCategoryWidget() { return m_Widget; }
+    void showEvent(QShowEvent *event);
 
 public slots:
     void zoomIn();
@@ -77,7 +78,7 @@ protected:
 private:
     Ui::QMyBaseFormWidgetClass ui;
     QWidget *m_Widget;
-    double m_zoomFactor = 1.0;
+    double m_zoomFactor;
     void scaleWidgets(double factor);
 };
 

@@ -85,6 +85,9 @@ public:
 	QStringList getSmetkaKorekcija_ColumnWidth(){return m_colWidth_smetkaKorekcija;}
 	void setSmetkaKorekcija_ColumnWidth(QStringList a_colWidth_smetkaKorekcija){ m_colWidth_smetkaKorekcija = a_colWidth_smetkaKorekcija;}
 
+    double getScale(){return m_scale;}
+    void setScale(double a_scale){ m_scale = a_scale;}
+
 
 protected: 
 	//Singleton();
@@ -121,7 +124,7 @@ private:
 	QStringList m_colWidth_smetka_detail;
 	QStringList m_colWidth_smetkaVnes;
 	QStringList m_colWidth_smetkaKorekcija;
-
+    double m_scale;
 
 };
 #endif // Singleton_H
