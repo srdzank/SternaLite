@@ -1,3 +1,9 @@
-/sterna/.qtc_clangd
 /sterna/build
 /sterna/debug
+/sterna/release
+sterna/sterna.pro.user
+sterna/.qmake.stash
+sterna/Makefile
+sterna/Makefile.Debug
+sterna/Makefile.Release
+sterna/.qmake.stash

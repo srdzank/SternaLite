@@ -4,12 +4,15 @@
 #include <QTableView>
 #include <QWheelEvent>
 #include <QApplication>
+#include "xx.h" // содржи Singleton
 
 QMyBaseFormWidget::QMyBaseFormWidget(QWidget *parent)
     : QWidget(parent), m_Widget(nullptr), m_zoomFactor(1.0)
 {
     ui.setupUi(this);
     setMouseTracking(true);
+
+    // Чита тековна скала без примена
 }
 
 QMyBaseFormWidget::~QMyBaseFormWidget()
@@ -72,20 +75,26 @@ void QMyBaseFormWidget::pressF9() {}
 
 void QMyBaseFormWidget::zoomIn()
 {
-    scaleWidgets(1.1);
-    m_zoomFactor *= 1.1;
+    double factor = 1.1;
+    m_zoomFactor *= factor;
+    Singleton::Instance()->setScale(m_zoomFactor);
+    scaleWidgets(factor);
 }
 
 void QMyBaseFormWidget::zoomOut()
 {
-    scaleWidgets(0.9);
-    m_zoomFactor *= 0.9;
+    double factor = 0.9;
+    m_zoomFactor *= factor;
+    Singleton::Instance()->setScale(m_zoomFactor);
+    scaleWidgets(factor);
 }
 
 void QMyBaseFormWidget::resetZoom()
 {
-    scaleWidgets(1.0 / m_zoomFactor);
+    double factor = 1.0 / m_zoomFactor;
     m_zoomFactor = 1.0;
+    Singleton::Instance()->setScale(m_zoomFactor);
+    scaleWidgets(factor);
 }
 
 void QMyBaseFormWidget::scaleWidgets(double factor)
@@ -115,4 +124,17 @@ void QMyBaseFormWidget::scaleWidgets(double factor)
     }
 
     this->resize(this->size() * factor);
+}
+
+void QMyBaseFormWidget::showEvent(QShowEvent *event)
+{
+    QWidget::showEvent(event);
+
+    double globalZoom = Singleton::Instance()->getScale();
+    if (!qFuzzyCompare(globalZoom, m_zoomFactor))
+    {
+        double factor = globalZoom / m_zoomFactor;
+        scaleWidgets(factor);
+        m_zoomFactor = globalZoom;
+    }
 }
