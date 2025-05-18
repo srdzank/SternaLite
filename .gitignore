@@ -7,3 +7,4 @@ sterna/Makefile
 sterna/Makefile.Debug
 sterna/Makefile.Release
 sterna/.qmake.stash
+/sterna/out
