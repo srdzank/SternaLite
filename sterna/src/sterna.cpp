@@ -309,7 +309,7 @@ sterna::sterna(QWidget *parent, Qt::WindowFlags flags)
 
 #ifdef _dmcreative
     moi_firma_info1 = tr("Дигитал Медиа Креативе ПРО - ДООЕЛ Скопје");
-    moi_firma_info2 = tr("ул.Бриселска бр.23/4-3 ");
+    moi_firma_info2 = tr("ул.Бриселска бр.23/4-3 Скопје");
     moi_firma_info3 = tr("1000 Скопје ");
     moi_firma_tel = tr("тел/факс: +389 78 246 801");
     moi_firma_email = tr(" e-mail : contact@dmcreative.pro");
@@ -317,7 +317,7 @@ sterna::sterna(QWidget *parent, Qt::WindowFlags flags)
     moi_firma_banka1 = tr("НЛБ Тутунска банка АД Скопје: 210074473450193");
     moi_firma_banka2 = tr("");
     moi_firma_edb = tr("ДБ. MK4057020551581");
-    moi_logo = ":/sterna/Resources/dmc.png";
+    moi_logo = ":/sterna/Resources/dmc-logo-invoice.png";
     moi_izjava1 = tr("Изјавувам дека продавам артикли од домашно");
     moi_izjava2 = tr("потекло кои се во моја сопственост________");
     moi_direktor = "Горан Димитровски";
