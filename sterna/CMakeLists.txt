@@ -24,7 +24,7 @@ file(GLOB_RECURSE FORMS
 )
 
 file(GLOB_RECURSE RESOURCES
-    src/*.qrc
+    *.qrc
 )
 
 include_directories(${CMAKE_SOURCE_DIR}/src)
