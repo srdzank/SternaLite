@@ -2423,11 +2423,11 @@ void sterna::closeMyWidget()
 
 void sterna::connectToDatabase()
 {
-    QString dataDir = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
-    QDir().mkpath(dataDir);
+    QString exeDir = QCoreApplication::applicationDirPath();
+    QString dbPath = exeDir + "/Baza.db";
 
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
-    db.setDatabaseName(dataDir + "/Baza.db");
+    db.setDatabaseName(dbPath);
 
     if (!db.open()) {
         QMessageBox::critical(nullptr, "Database Error",

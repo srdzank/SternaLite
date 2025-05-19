@@ -79,3 +79,10 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
 )
 
 install(TARGETS ${PROJECT_NAME} DESTINATION bin)
+
+# Copy Baza.db to the build directory next to the executable
+add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+        ${CMAKE_SOURCE_DIR}/Baza.db
+        $<TARGET_FILE_DIR:${PROJECT_NAME}>
+)
