@@ -6,8 +6,12 @@
     ]
   },
   "ExpandedNodes": [
-    ""
+    "",
+    "\\src",
+    "\\src\\Artikli",
+    "\\src\\Banki",
+    "\\src\\Employee"
   ],
-  "SelectedNode": "\\CMakeLists.txt",
+  "SelectedNode": "\\src\\Artikli\\qmyartiklilista.cpp",
   "PreviewInSolutionExplorer": false
 }

@@ -86,3 +86,7 @@ add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
         ${CMAKE_SOURCE_DIR}/Baza.db
         $<TARGET_FILE_DIR:${PROJECT_NAME}>
 )
+
+set_target_properties(${PROJECT_NAME} PROPERTIES
+    WIN32_EXECUTABLE TRUE
+)

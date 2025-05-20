@@ -8,7 +8,6 @@ int main(int argc, char *argv[])
 	w.showMaximized();
 	w.createDockWindows();
 	a.connect(&a, SIGNAL(lastWindowClosed()), &a, SLOT(quit()));
-
 	return a.exec();
 }
 
